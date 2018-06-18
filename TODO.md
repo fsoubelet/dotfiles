@@ -5,16 +5,17 @@
 * Write nvim/config/* files
 * Complete init.vim
 
+
 ## Tmux
 
 * Write tmux.conf
 
+
 ## Install script
 
-* Correct errors in install.sh
+* Implement dotfiles/vim/config/ files symlink
 
 
 ## Misc
 
 * Write vimrc
-* Finish zshrc
