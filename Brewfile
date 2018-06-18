@@ -17,6 +17,7 @@ cask "java"
 # Homebrew
 # https://github.com/Homebrew/brew/
 
+
 # Early necessary dependency
 brew "openssl"
 brew "openssl@1.1" # wget dependency
