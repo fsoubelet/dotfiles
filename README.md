@@ -44,7 +44,7 @@ Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 [git]: https://git-scm.com/
 [homebrew]: http://brew.sh
 [iterm2]: https://www.iterm2.com/
-[license]:
+[license]: https://github.com/fsoubelet/dotfiles/blob/master/LICENSE
 [neovim]: https://neovim.io/
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh
 [tmux]: https://github.com/tmux/tmux/wiki
