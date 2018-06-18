@@ -15,5 +15,6 @@ source $HOME/dotfiles/zsh/functions.sh
 # Added by Anaconda2 4.3.1 installer
 export PATH="/Users/felixsoubelet/anaconda2/bin:$PATH"
 
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
