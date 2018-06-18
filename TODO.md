@@ -19,3 +19,4 @@
 ## Misc
 
 * Write vimrc
+* Adapt macos_defaults file
