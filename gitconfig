@@ -1,0 +1,77 @@
+# https://git-scm.com/docs/git-config
+
+[user]
+  # these are about the most basic and should pretty much always exist
+  email = REDACTED     #ptmadress
+  name = Felix Soubelet
+
+
+[alias]
+  # tweak at your convinience
+  a = add
+  aa = add --all
+  b = branch
+  ba = 'git branch --all
+  cl = clone
+  cm = commit -mv
+  co = checkout
+  com = checkout master
+  d = diff
+  df = diff --word-diff --color-words
+  ds = diff --word-diff --cached --color-words
+  f = fetch
+  # everybody has their favorite log format view, you can find variations with a quick online search
+  l = log --date=format:'%b %d, %Y' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n'
+  lg = log --graph --stat --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n'
+  pl = pull
+  ps = push
+  ra = remote add
+  rr = remote rm
+  s = status
+  ta = tag -am
+  uncommit = reset --soft HEAD^
+  unstage = reset
+  # Show all of my configured aliases
+  aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+
+
+[color]
+  # turn on default colors for many commands
+  ui = auto
+  filemode = false
+  diff = auto
+  status = auto
+  branch = auto
+  pager = true
+
+
+[core]
+  pager = less -FRSX
+  editor = nvim
+  # lets you define a global .gitignore for all those *.swp, *~, *.o, etc things that you're frequently sticking in .gitignore
+  excludes = ~/.gitignore_global
+  # tells git to ignore file permission changes
+  filemode = false
+  # lets you tweak the default pager, see 'man less' for the meaning of these flags
+  pager = 'less -FRSX'
+
+
+[pull]
+  # Don't flatten locally created merge commits when rebasing.
+  rebase = preserve
+
+
+[push]
+  # Refuse to push if upstream branch name is different from local.
+  default = simple
+
+
+[rerere]
+  # git remembers your partial merge choices and replays them next time
+  enabled = true
+  autoupdate = true
+
+
+[merge]
+  # personnal favorite merge visualization tool
+  tool = kdiff3
