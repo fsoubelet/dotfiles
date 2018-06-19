@@ -34,8 +34,10 @@ node_modules
 .gitconfig.local
 .project
 tmp/
+.vscode
 .zshrc.local
 *.local
+*~
 
 
 # Vim / Neovim
