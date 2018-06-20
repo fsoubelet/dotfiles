@@ -23,7 +23,7 @@ The `install.sh` script leaves some things to be done manually, specifically ins
 * Set up iTerm2 profile (see below)
 * Add personnal data to `~/.gitconfig.local`, `~/.vimrc.local`, and `~/.zshrc.local` if used.
 * Complete [Brew Bundle][brew-bundle] with `brew bundle install`
-* If you wish to act on [macOS defaults][macos-defaults], customize 'macos_defaults.sh' and run ['. ~/dotfiles/macos_defaults.sh']
+* If you wish to act on [macOS defaults][macos-defaults], customize 'macos_defaults.sh' and run '. ~/dotfiles/macos_defaults.sh'
 * After opening Neovim, run [`:checkhealth`][checkhealth] and resolve errors/warnings.
 
 ## Setting up iTerm2
