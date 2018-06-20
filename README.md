@@ -5,10 +5,11 @@ This folder contains useful dotfiles that I use on my Mac, currently running mac
 These dotfiles assume you are running macOS with the following software:
 
 * [Oh-My-Zsh][oh-my-zsh]
-* [Homebrew][homebrew]
-* [Vim][vim] and [Neovim][neovim]
 * [Git][git]
+* [Homebrew][homebrew]
+* [Spaceship][spaceship] prompt. If you don't use it, make sure to comment its line in `zshrc`. It's easy to find.
 * [Tmux][tmux]
+* [Vim][vim] and [Neovim][neovim]
 
 ## Implementation
 ```sh
@@ -49,5 +50,6 @@ Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 [macos-defaults]: https://mths.be/macos
 [neovim]: https://neovim.io/
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh
+[spaceship]: https://github.com/denysdovhan/spaceship-prompt
 [tmux]: https://github.com/tmux/tmux/wiki
 [vim]: http://www.vim.org/
