@@ -9,7 +9,7 @@ export EDITOR="nvim"
 source $HOME/dotfiles/zsh/oh_my_zsh_settings.sh
 source $HOME/dotfiles/zsh/aliases.sh
 source $HOME/dotfiles/zsh/functions.sh
-#source $HOME/dotfiles/zsh/spaceship.sh     # To implement the spaceship prompt
+source $HOME/dotfiles/zsh/spaceship.sh     # If you use the spaceship prompt
 
 
 # Added by Anaconda2 4.3.1 installer
