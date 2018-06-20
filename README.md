@@ -18,11 +18,12 @@ git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
 
 ## Post-install
 
-The `install.sh` script leaves some things to be done manually.
+The `install.sh` script leaves some things to be done manually, specifically installing profiles, setting personnal information and changing some defaults.
 
 * Set up iTerm2 profile (see below)
 * Add personnal data to `~/.gitconfig.local`, `~/.vimrc.local`, and `~/.zshrc.local` if used.
 * Complete [Brew Bundle][brew-bundle] with `brew bundle install`
+* If you wish to act on [macOS defaults][macos-defaults], customize '~/dotfiles/macos_defaults' and run ['. ']
 * After opening Neovim, run [`:checkhealth`][checkhealth] and resolve errors/warnings.
 
 ## Setting up iTerm2
