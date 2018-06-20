@@ -56,6 +56,10 @@
   pager = 'less -FRSX'
 
 
+[github]
+  user = fsoubelet
+
+
 [pull]
   # Don't flatten locally created merge commits when rebasing.
   rebase = preserve
