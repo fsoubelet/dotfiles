@@ -18,5 +18,7 @@
 
 ## Misc
 
+* Write a dotfile command
+* Update README with dotfile command
 * Write vimrc
 * Adapt macos_defaults file
