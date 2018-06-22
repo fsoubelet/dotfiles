@@ -9,7 +9,7 @@
 ## Tmux
 
 * Write tmux.conf
-
+* Customise tmux.sh
 
 ## Install script
 
