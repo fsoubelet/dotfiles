@@ -135,13 +135,13 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
+#defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
+#defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-# Show language menu in the top right corner of the boot screen
-sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+# Hide language menu in the top right corner of the boot screen
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool false
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values - unwise if you move a lot
 # sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
