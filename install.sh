@@ -11,7 +11,9 @@ dotfiles_echo() {
   local fmt="$1"; shift
 
   # shellcheck disable=SC2059
-  printf "\\n[DOTFILES] $fmt\\n" "$@"
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 5) DOTFILES: $fmt $(tput sgr 0)" "$@"
+  echo "---------------------------------------------------------"
 }
 
 set -e # Terminate script if anything exits with a non-zero value
@@ -86,7 +88,7 @@ ln -nfs "$DOTFILES_DIR"/vim/UltiSnips "$VIM_DIR"/UltiSnips
 dotfiles_echo "-> Linking $DOTFILES_DIR/init.vim to $NVIM_DIR/init.vim..."
 ln -nfs "$DOTFILES_DIR"/init.vim "$NVIM_DIR"/init.vim
 
-# WORK ON THESE -> Link dotfiles/vim/config/ files 
+# WORK ON THESE -> Link dotfiles/vim/config/ files
 #dotfiles_echo "-> Linking $DOTFILES_DIR/vim/config/general.vimrc" to $NVIM_CONFIG_DIR/general.vimrc"
 #ln -nfs "$DOTFILES_DIR/vim/config"/general.vimrc "$NVIM_CONFIG_DIR"/general.vimrc
 
