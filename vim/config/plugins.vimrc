@@ -1,1 +1,0 @@
-" Holds all plugins specifics
