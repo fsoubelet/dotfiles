@@ -2,8 +2,8 @@
 
 ################################################################################
 # install
-# This script backs up existing dotfiles and symlinks the right ones into the
-# home directory. It then proceeds to install needed software.
+# 
+# This script symlinks dotfiles into the home directory.
 ################################################################################
 
 
