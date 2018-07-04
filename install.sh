@@ -2,8 +2,8 @@
 
 ################################################################################
 # install
-#
-# This script symlinks the dotfiles into the home directory.
+# This script backs up existing dotfiles and symlinks the right ones into the
+# home directory. It then proceeds to install needed software.
 ################################################################################
 
 
@@ -23,7 +23,7 @@ VIM_DIR=$HOME/.vim
 NVIM_DIR=$HOME/.config/nvim
 NVIM_CONFIG_DIR=$HOME/.config/nvim/config
 
-files=(
+home_files=(
 "default-gems"
 "default-npm-packages"
 "gitconfig"
@@ -36,7 +36,7 @@ files=(
 dotfiles_echo "Installing dotfiles..."
 
 
-for file in "${files[@]}"; do
+for file in "${home_files[@]}"; do
   if [ -f "$HOME"/."$file" ]; then
     dotfiles_echo ".$file already present. Backing up..."
     cp "$HOME"/."$file" "$HOME"/."${file}"_backup
