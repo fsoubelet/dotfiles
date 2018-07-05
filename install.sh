@@ -58,9 +58,9 @@ dotfiles_echo "Installing system packages."
 brew bundle "$DOTFILES_DIR"/"Brewfile"
 
 
-##########################################
-# Install additional packages for Neovim #
-##########################################
+#####################################
+# Install python support for Neovim #
+#####################################
 dotfiles_echo "Installing Python Neovim client."
 pip3 install neovim
 
@@ -168,6 +168,11 @@ done
 #############################
 # Installing Neovim plugins #
 #############################
+dotfiles_echo "Installing the vim-plug Neovim plugin manager."
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+dotfiles_echo "Installing Neovim plugins."
 nvim +PlugInstall +qall
 nvim +UpdateRemotePlugins +qall
 
@@ -178,6 +183,16 @@ dotfiles_echo "Installing tmux plugin manager"
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   ~/.tmux.plugins/tpm/scripts/install_plugins.sh
+fi
+
+
+##################################
+# Installing Tmux plugin manager #
+##################################
+dotfiles_echo "Installing tmux plugin manager."
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 fi
 
 
@@ -196,8 +211,7 @@ dotfiles_echo "Dotfiles installation complete!"
 
 
 dotfiles_echo "Post-install recommendations:"
-dotfiles_echo "- Complete Brew Bundle installation by running 'brew bundle install'"
-dotfiles_echo "- The first time you launch Vim or Neovim, plugins will be installed automatically."
-dotfiles_echo "- After launching Neovim, run :checkhealth and resolve any errors/warnings."
+dotfiles_echo "The first time you launch Vim or Neovim, plugins will be installed."
+dotfiles_echo "After launching Neovim, run :checkhealth and resolve any errors/warnings."
 
 exit 0
