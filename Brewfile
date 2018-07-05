@@ -110,7 +110,7 @@ brew "mpv"
 brew "mysql"
 brew "ncdu"
 brew "neofetch"
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 brew "net-snmp"
 brew "nmap"
 brew "openssh"
