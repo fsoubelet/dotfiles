@@ -210,8 +210,9 @@ chsh -s $(which zsh)
 dotfiles_echo "Dotfiles installation complete!"
 
 
-dotfiles_echo "Post-install recommendations:"
-dotfiles_echo "The first time you launch Vim or Neovim, plugins will be installed."
-dotfiles_echo "After launching Neovim, run :checkhealth and resolve any errors/warnings."
+dotfiles_info "Post-install recommendations:"
+dotfiles_info "The first time you launch Vim or Neovim, plugins will be installed."
+dotfiles_info "After launching Neovim, run :checkhealth and resolve any errors/warnings."
+dotfiles_info "Remember to set you iterm profile."
 
 exit 0
