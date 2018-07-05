@@ -5,7 +5,7 @@ This folder contains my dotfiles, used on a mac currently running macOS Sierra (
 
 ## Package overview
 
-This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home. These includes os defaults and terminal profile as well as shell, git, editor and package manager configurations. An installation script is included to automatically implement them on a fresh new macOS machine.
+This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home. These includes OS defaults and terminal profile as well as shell, git, editors and package manager configurations. An installation script is included to automatically implement them on a fresh new macOS machine.
 
 ## Prerequisites
 
