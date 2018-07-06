@@ -136,9 +136,17 @@ for file in "${home_files[@]}"; do
   ln -nfs "$DOTFILES_DIR"/"$file" "$HOME"/."$file"
 done
 
-
 dotfiles_info "-> Linking $DOTFILES_DIR/Brewfile to $HOME/Brewfile..."
 ln -nfs "$DOTFILES_DIR"/Brewfile "$HOME"/Brewfile
+
+if [ -f "$HOME"/".matplotlibrc/matplotlibrc" ]; then
+  dotfiles_info "$HOME/.matplotlibrc/matplotlibrc already present. Backing up..."
+  cp "$HOME"/.matplotlibrc/matplotlibrc "$HOME"/.matplotlibrc/matplotlibrc_backup
+else
+  dotfiles_info "$HOME/.matplotlibrc/matplotlibrc does not exist at the moment. It will be symlinked shortly."
+fi
+dotfiles_info "-> Linking $DOTFILES_DIR/matplotlibrc to $HOME/.matplotlibrc/matplotlibrc..."
+ln -nfs "$DOTFILES_DIR"/matplotlibrc "$HOME"/.matplotlibrc/matplotlibrc
 
 
 ####################################
