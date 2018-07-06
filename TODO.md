@@ -1,24 +1,16 @@
 # TODO
 
-## Neovim
-
-* Write nvim/config/* files
-* Complete init.vim
-
-
-## Tmux
-
-* Write tmux.conf
-* Customise tmux.sh
 
 ## Install script
 
-* Implement dotfiles/vim/config/ files symlink
+* Implement python specifics
+* Implement Atom specifics
 
 
 ## Misc
 
 * Write a dotfile command
 * Update README with dotfile command
-* Write vimrc
 * Include atom keymap file
+* Update readme on editors and matplotlibrc
+* Update readme on installation process
