@@ -9,6 +9,7 @@
 
 ## Misc
 
+* Mention need for anaconda install
 * Write a dotfile command
 * Update README with dotfile command
 * Include atom keymap file

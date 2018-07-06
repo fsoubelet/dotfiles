@@ -102,7 +102,8 @@ npm install -g vtop
 
 ## CHECK NOT FORGETING ANYTHING
 ## TAKE CARE OF PYTHON STUFF?
-
+# NEEDS ANACONDA INSTALLED FIRST
+pip install -r pip_requirements.txt
 
 
 
