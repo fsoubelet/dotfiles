@@ -103,7 +103,9 @@ npm install -g vtop
 ## CHECK NOT FORGETING ANYTHING
 ## TAKE CARE OF PYTHON STUFF?
 # NEEDS ANACONDA INSTALLED FIRST
-pip install -r pip_requirements.txt
+#bash ~/Downloads/Anaconda2-5.2.0-MacOSX-x86_64.sh
+#conda create -n py36 python=3.6 anaconda
+#pip install -r pip_requirements.txt
 
 
 
