@@ -9,14 +9,16 @@ This repository contains my configurations for a series of software and utilitie
 
 ## Prerequisites
 
-These dotfiles assume you are running macOS with the following software:
+These dotfiles are meant be have your machine working with the following software:
 
 * [Oh-My-Zsh][oh-my-zsh]
 * [Git][git]
 * [Homebrew][homebrew]
-* [Spaceship][spaceship] prompt. If you don't use it, make sure to comment its line in `zshrc`. It's easy to find.
+* [Spaceship][spaceship] prompt. If you don't use it, make sure to comment out its line in `oh_my_zsh_settings.sh`. It's easy to find.
 * [Tmux][tmux]
 * [Vim][vim] and [Neovim][neovim]
+
+These will be installed automatically if not already present. 
 
 ## Install
 
