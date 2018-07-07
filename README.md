@@ -26,7 +26,7 @@ These will be installed automatically if not already present. The script will th
 
 ### Prerequisites
 
-ANACONDA
+
 
 ### Necessary tools
 
@@ -41,7 +41,7 @@ xcode-select --install
 
 ```sh
 git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
-. ~/dotfiles/install.sh
+source ~/dotfiles/install.sh
 ```
 
 
