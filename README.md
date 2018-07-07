@@ -13,7 +13,7 @@ These dotfiles are meant to have your machine working with the following softwar
 * [iTerm][iterm2] as terminal.
 * The [Z shell][zsh] as shell.
 * [Oh-My-Zsh][oh-my-zsh] as shell configuration manager.
-* [Spaceship][spaceship] as prompt theme. If you don't use it, make sure to comment out its line in `oh_my_zsh_settings.sh`. It's easy to find.
+* [Spaceship][spaceship] as prompt theme. If you don't use it, make sure to comment out its line in `oh_my_zsh_settings.sh`.
 * [Atom][atom] in macOS and [Vim][vim] and [Neovim][neovim] in terminal sessions as editors.
 * [Homebrew][homebrew] as package manager.
 * [Tmux][tmux] as terminal multiplexer.
