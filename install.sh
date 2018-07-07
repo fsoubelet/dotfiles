@@ -62,7 +62,7 @@ brew bundle "$DOTFILES_DIR"/"Brewfile"
 # Install python support for Neovim #
 #####################################
 dotfiles_echo "Installing Python Neovim client."
-pip3 install neovim
+pip install neovim
 
 dotfiles_echo "Installing vim linter (vint)."
 pip install vim-vint
@@ -105,12 +105,14 @@ npm install -g vtop
 # Install pip packages
 #pip install -r pip_requirements.txt
 
+# Create a conda python 3.6 environment named py36
+#conda create -n py36 python=3.6 anaconda
+#source activate py36
+
 # Make python3 kernel also available for jupyter (python2 is by default)
 #pip3 install jupyter
 #jupyter kernelspec install python3
-
-# Create a conda python 3.6 environment named py36
-#conda create -n py36 python=3.6 anaconda
+#source deactivate py36
 
 
 ####################################
