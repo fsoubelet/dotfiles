@@ -104,8 +104,17 @@ npm install -g vtop
 ## TAKE CARE OF PYTHON STUFF?
 # NEEDS ANACONDA INSTALLED FIRST
 #bash ~/Downloads/Anaconda2-5.2.0-MacOSX-x86_64.sh
-#conda create -n py36 python=3.6 anaconda
+
+# Install pip packages
 #pip install -r pip_requirements.txt
+
+# Make python3 kernel also available for jupyter (python2 is by default)
+#pip3 install jupyter
+#jupyter kernelspec install python3
+
+# Create a conda python 3.6 environment named py36
+#conda create -n py36 python=3.6 anaconda
+
 
 
 
