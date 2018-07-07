@@ -26,7 +26,7 @@ These will be installed automatically if not already present. The script will th
 
 ### Prerequisites
 
-
+My go-to python distribution is the [Anaconda][anaconda] distribution. It is highly recommended to download it before running the installation
 
 ### Necessary tools
 
@@ -71,6 +71,7 @@ Here are the steps to import your profile.
 
 Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 
+[anaconda]: https://www.anaconda.com/
 [atom]: https://atom.io/
 [brew-bundle]: https://github.com/Homebrew/homebrew-bundle
 [checkhealth]: https://neovim.io/doc/user/pi_health.html#:checkhealth

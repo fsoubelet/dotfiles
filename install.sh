@@ -96,14 +96,11 @@ dotfiles_info "Installing vtop."
 npm install -g vtop
 
 
+#################################################
+# Setting up useful python packages as well as  #
+#################################################
 
-
-
-
-## CHECK NOT FORGETING ANYTHING
-## TAKE CARE OF PYTHON STUFF?
-# NEEDS ANACONDA INSTALLED FIRST
-#bash ~/Downloads/Anaconda2-5.2.0-MacOSX-x86_64.sh
+# It is recommended to install the anaconda python distribution first.
 
 # Install pip packages
 #pip install -r pip_requirements.txt
@@ -114,9 +111,6 @@ npm install -g vtop
 
 # Create a conda python 3.6 environment named py36
 #conda create -n py36 python=3.6 anaconda
-
-
-
 
 
 ####################################
