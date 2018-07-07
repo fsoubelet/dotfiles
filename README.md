@@ -7,18 +7,20 @@ This folder contains my dotfiles, used on a mac currently running macOS Sierra (
 
 This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home. These includes OS defaults and terminal profile as well as shell, git, editors and package manager configurations. An installation script is included to automatically implement them on a fresh new macOS machine.
 
-## Prerequisites
+The `install.sh` script will install some needed software and setup configuration files.
+These dotfiles are meant to have your machine working with the following software:
 
-These dotfiles are meant be have your machine working with the following software:
-
-* [Oh-My-Zsh][oh-my-zsh]
+* [iTerm][iterm2] as terminal.
+* The [Z shell][zsh] as shell.
+* [Oh-My-Zsh][oh-my-zsh] as shell configuration manager.
+* [Spaceship][spaceship] as prompt theme. If you don't use it, make sure to comment out its line in `oh_my_zsh_settings.sh`. It's easy to find.
+* [Atom][atom] in macOS and [Vim][vim] and [Neovim][neovim] in terminal sessions as editors.
+* [Homebrew][homebrew] as package manager.
+* [Tmux][tmux] as terminal multiplexer.
 * [Git][git]
-* [Homebrew][homebrew]
-* [Spaceship][spaceship] prompt. If you don't use it, make sure to comment out its line in `oh_my_zsh_settings.sh`. It's easy to find.
-* [Tmux][tmux]
-* [Vim][vim] and [Neovim][neovim]
 
-These will be installed automatically if not already present. 
+
+These will be installed automatically if not already present. The script will then backup your configuration files if already present, and symlink thoses of this repository. 
 
 ## Install
 
@@ -41,11 +43,10 @@ git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
 
 ## Post-install
 
-The `install.sh` script leaves some things to be done manually, specifically installing profiles, setting personnal information and changing some defaults.
+The `install.sh` script leaves some things to be done manually, specifically setting personnal information, installing profiles and changing some defaults.
 
-* Set up iTerm2 profile (see below)
-* Add personnal data to `~/.gitconfig.local`, `~/.vimrc.local`, and `~/.zshrc.local` if used.
-* Complete [Brew Bundle][brew-bundle] with `brew bundle install`
+* Set up iTerm profile (see below).
+* Add personnal data (and touch) to `~/.gitconfig.local`, and `~/.zshrc.local`.
 * If you wish to act on [macOS defaults][macos-defaults], customize `macos_defaults.sh`
  and run `. ~/dotfiles/macos_defaults.sh`.
 * After opening Neovim, run [`:checkhealth`][checkhealth] and resolve errors/warnings.
@@ -66,6 +67,7 @@ Here are the steps to import your profile.
 
 Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 
+[atom]: https://atom.io/
 [brew-bundle]: https://github.com/Homebrew/homebrew-bundle
 [checkhealth]: https://neovim.io/doc/user/pi_health.html#:checkhealth
 [git]: https://git-scm.com/
@@ -78,3 +80,4 @@ Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 [spaceship]: https://github.com/denysdovhan/spaceship-prompt
 [tmux]: https://github.com/tmux/tmux/wiki
 [vim]: http://www.vim.org/
+[zsh]: https://en.wikipedia.org/wiki/Z_shell

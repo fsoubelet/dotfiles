@@ -89,13 +89,13 @@ alias brewup='bubo && bubc && bd'
 # -------------------------------------------------------------------
 
 # SSH CERN alias
-alias 'sshcern=ssh -X fsoubele@lxplus.cern.ch'
+alias sshcern='ssh -X fsoubele@lxplus.cern.ch'
 
 # oh-my-zsh
 alias upz='upgrade_oh_my_zsh'
 
 # Easier notebook alias
-alias 'note=jupyter notebook'
+alias note='jupyter notebook'
 
 # Wifi cli utility alias (options are on and off)
 alias wifi='osx-wifi-cli'
