@@ -30,7 +30,7 @@ My go-to python distribution is the [Anaconda][anaconda] distribution. It is rec
 
 ### Necessary tools
 
-Make sure you have up-to-date software and Xcode command line tools. On a sparkling fresh installation of macOSn run:
+Make sure you have up-to-date software and Xcode command line tools. On a sparkling fresh installation of macOS, run:
 
 ```sh
 sudo softwareupdate -i -a
