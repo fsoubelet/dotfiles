@@ -20,9 +20,13 @@ These dotfiles are meant to have your machine working with the following softwar
 * [Git][git]
 
 
-These will be installed automatically if not already present. The script will then backup your configuration files if already present, and symlink thoses of this repository. 
+These will be installed automatically if not already present. The script will then backup your configuration files if already present, and symlink thoses of this repository.
 
 ## Install
+
+### Prerequisites
+
+ANACONDA
 
 ### Necessary tools
 

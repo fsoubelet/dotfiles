@@ -19,6 +19,7 @@ cask "java"
 
 
 # Early necessary dependency
+brew "coreutils"
 brew "openssl"
 brew "openssl@1.1" # wget dependency
 
@@ -47,7 +48,6 @@ brew "emacs"
 brew "cask"
 brew "ccrypt"
 brew "cmake"
-brew "coreutils"
 brew "cowsay"
 brew "cscope"
 brew "ctags"
