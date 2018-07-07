@@ -26,11 +26,11 @@ These will be installed automatically if not already present. The script will th
 
 ### Prerequisites
 
-My go-to python distribution is the [Anaconda][anaconda] distribution. It is recommended to install it before running the installation script. You can download your wanted version [here][anacondadownload]. 
+My go-to python distribution is the [Anaconda][anaconda] distribution. It is recommended to install it before running the installation script. You can download your favorite version [here][anacondadownload].
 
 ### Necessary tools
 
-Make sure you have up-to-date software and Xcode command line tools. On a sparkling fresh installation of macOS:
+Make sure you have up-to-date software and Xcode command line tools. On a sparkling fresh installation of macOSn run:
 
 ```sh
 sudo softwareupdate -i -a
@@ -50,21 +50,18 @@ source ~/dotfiles/install.sh
 The `install.sh` script leaves some things to be done manually, specifically setting personnal information, installing profiles and changing some defaults.
 
 * Set up iTerm profile (see below).
-* Add personnal data (and touch) to `~/.gitconfig.local`, and `~/.zshrc.local`.
+* Add personnal data (and touch) to `~/.gitconfig.local`, and `~/.zshrc`.
 * If you wish to act on [macOS defaults][macos-defaults], customize `macos_defaults.sh`
- and run `. ~/dotfiles/macos_defaults.sh`.
+ and run `source ~/dotfiles/macos_defaults.sh`.
 * After opening Neovim, run [`:checkhealth`][checkhealth] and resolve errors/warnings.
 
 
-### Setting up iTerm2
+### Setting up iTerm2 profile
 
-Here are the steps to import your profile.
-
-1. Open iTerm2.
-1. Select iTerm2 > Preferences.
-1. Under the General tab, check the box labeled "Load preferences from a custom folder or URL:"
-1. Press "Browse" and point it to `~/dotfiles/iterm2/com.googlecode.iterm2.plist`.
-1. Restart iTerm2.
+1. OPEN iTerm2 > Preferences.
+2. Under the General tab, check the box labeled "Load preferences from a custom folder or URL:"
+3. Press "Browse" and point it to `~/dotfiles/iterm2/com.googlecode.iterm2.plist`.
+4. Restart iTerm2.
 
 
 ## License
