@@ -3,7 +3,7 @@
 ################################################################################
 # Install
 #
-# This script symlinks dotfiles into the home directory.
+# This script installs software and symlinks dotfiles into the home directory.
 ################################################################################
 
 
@@ -229,6 +229,7 @@ dotfiles_echo "Dotfiles installation complete!"
 dotfiles_info "Post-install recommendations:"
 dotfiles_info "The first time you launch Vim or Neovim, plugins will be installed."
 dotfiles_info "After launching Neovim, run :checkhealth and resolve any errors/warnings."
-dotfiles_info "Remember to set you iterm profile."
+dotfiles_info "Remember to set you iTerm profile."
+dotfiles_info "If you wish to act on OS defaults, customise and run ~/dotfiles/macos_defaults.sh"
 
 exit 0
