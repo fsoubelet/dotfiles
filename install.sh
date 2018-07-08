@@ -38,9 +38,9 @@ NVIM_DIR=$HOME/.config/nvim
 NVIM_CONFIG_DIR=$HOME/.config/nvim/config
 
 
-###########################################
-# Check and install homebrew if necessary #
-###########################################
+######################################################
+# I homebrew if necessary and then homebrew packages #
+######################################################
 dotfiles_echo "Checking for Homebrew installation."
 brew ="/usr/local/bin/brew"
 if [ -f "$brew" ]; then
@@ -50,10 +50,6 @@ else
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-
-###########################################
-# Install all brew packages from Brewfile #
-###########################################
 dotfiles_echo "Installing system packages."
 brew bundle "$DOTFILES_DIR"/"Brewfile"
 
@@ -78,6 +74,13 @@ if ! [[ -f "$localGit" ]]; then
 fi
 
 
+###################
+# Installing vtop #
+###################
+dotfiles_info "Installing vtop."
+npm install -g vtop
+
+
 #####################
 # Install oh-my-zsh #
 #####################
@@ -87,13 +90,6 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 else
   dotfiles_info "oh-my-zsh already installed."
 fi
-
-
-###################
-# Installing vtop #
-###################
-dotfiles_info "Installing vtop."
-npm install -g vtop
 
 
 #################################################
@@ -121,11 +117,9 @@ npm install -g vtop
 home_files=(
 "default-gems"
 "default-npm-packages"
-"config/nvim"
 "gitconfig"
 "gitignore_global"
 "tmux.conf"
-"vimrc"
 "zshrc"
 )
 
@@ -147,14 +141,27 @@ done
 dotfiles_info "-> Linking $DOTFILES_DIR/Brewfile to $HOME/Brewfile..."
 ln -nfs "$DOTFILES_DIR"/Brewfile "$HOME"/Brewfile
 
+# Matplotlibrc config file
 if [ -f "$HOME"/".matplotlibrc/matplotlibrc" ]; then
   dotfiles_info "$HOME/.matplotlibrc/matplotlibrc already present. Backing up..."
   cp "$HOME"/.matplotlibrc/matplotlibrc "$HOME"/.matplotlibrc/matplotlibrc_backup
+  rm -f "$HOME"/.matplotlibrc/matplotlibrc
 else
   dotfiles_info "$HOME/.matplotlibrc/matplotlibrc does not exist at the moment. It will be symlinked shortly."
 fi
 dotfiles_info "-> Linking $DOTFILES_DIR/matplotlibrc to $HOME/.matplotlibrc/matplotlibrc..."
 ln -nfs "$DOTFILES_DIR"/matplotlibrc "$HOME"/.matplotlibrc/matplotlibrc
+
+# Atom packages file
+if [ -f "$HOME"/".atom/packages.cson" ]; then
+  dotfiles_info "$HOME/.atom/packages.cson already present. Backing up..."
+  cp "$HOME"/.atom/packages.cson "$HOME"/.atom/packages.cson_backup
+  rf -f "$HOME"/.atom/packages.cson
+else
+  dotfiles_info "$HOME/.atom/packages.cson does not exist at the moment. It will be symlinked shortly."
+fi
+dotfiles_info "-> Linking $DOTFILES_DIR/atom/packages.cson to $HOME/.atom/packages.cson..."
+ln -nfs "$DOTFILES_DIR"/atom/packages.cson "$HOME"/.atom/packages.cson
 
 
 ####################################
@@ -226,10 +233,11 @@ chsh -s $(which zsh)
 dotfiles_echo "Dotfiles installation complete!"
 
 
-dotfiles_info "Post-install recommendations:"
+dotfiles_echo "Post-install recommendations:"
 dotfiles_info "The first time you launch Vim or Neovim, plugins will be installed."
 dotfiles_info "After launching Neovim, run :checkhealth and resolve any errors/warnings."
-dotfiles_info "Remember to set you iTerm profile."
+dotfiles_info "Remember to set you iTerm profile as well as Atom themes."
 dotfiles_info "If you wish to act on OS defaults, customise and run ~/dotfiles/macos_defaults.sh"
+dotfiles_echo "You should log out for some changes to take effect."
 
 exit 0

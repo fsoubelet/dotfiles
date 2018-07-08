@@ -21,7 +21,7 @@ These will be installed automatically if not already present. The script will th
 
 #### Atom
 
-Atom is my choice editor when on macOS. I keep my packages in sync with [package-sync][package-sync]. the installation script takes care of symlinking `~/.atom/packages.cson` to the `atom/packages.cson` file of this repository. To implement your packages, you can use the `Create Package List` command to create your `packages.cson` file and overwrite mine. Package-sync will download and install your packages when starting Atom.
+Atom is my choice editor when on macOS. I keep my packages in sync with [package-sync][package-sync]. the installation script takes care of symlinking `~/.atom/packages.cson` to the `atom/packages.cson` file of this repository. To implement your packages, you can use the `Create Package List` command to create your `packages.cson` file and overwrite mine. Package-sync will download and install your packages when starting Atom. You may have to set your themes manually.
 
 #### Neovim
 
