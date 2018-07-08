@@ -77,6 +77,10 @@ The `install.sh` script leaves some things to be done manually, specifically set
 4. Restart iTerm2.
 
 
+## Credits
+
+Many thanks to the [dotfiles community][dotcomu] and the [awesome dotfiles][awesomedots] repository.
+
 ## License
 
 Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
@@ -84,8 +88,10 @@ Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 [anaconda]: https://www.anaconda.com/
 [anacondadownload]: https://www.anaconda.com/download/#macos
 [atom]: https://atom.io/
+[awesomedots]: https://github.com/webpro/awesome-dotfiles
 [brew-bundle]: https://github.com/Homebrew/homebrew-bundle
 [checkhealth]: https://neovim.io/doc/user/pi_health.html#:checkhealth
+[dotcomu]: https://dotfiles.github.io/
 [git]: https://git-scm.com/
 [homebrew]: http://brew.sh
 [iterm2]: https://www.iterm2.com/
