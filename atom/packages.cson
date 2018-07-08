@@ -1,0 +1,16 @@
+packages: [
+  "autocomplete-python"
+  "base-16-ocean-dark-ui-theme"
+  "base16-ocean-dark-spacegray"
+  "language-madx"
+  "language-tmux"
+  "language-viml"
+  "minimap"
+  "minimap-autohide"
+  "ocean-dark-syntax"
+  "package-sync"
+  "python-ident"
+  "python-isort"
+  "python-tools"
+  "seti-icons"
+]

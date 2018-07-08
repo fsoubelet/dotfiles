@@ -7,13 +7,10 @@ This folder contains my dotfiles, used on a mac currently running macOS Sierra (
 
 This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home. These includes OS defaults and terminal profile as well as shell, git, editors and package manager configurations. An installation script is included to automatically implement them on a fresh new macOS machine.
 
-The `install.sh` script will install some needed software and setup configuration files.
-These dotfiles are meant to have your machine working with the following software:
+The `install.sh` script will install some needed software and setup configuration files. Here's some of the core software in my configuration:
 
 * [iTerm][iterm2] as terminal.
 * The [Z shell][zsh] as shell.
-* [Oh-My-Zsh][oh-my-zsh] as shell configuration manager.
-* [Spaceship][spaceship] as prompt theme. If you don't use it, make sure to comment out its line in `oh_my_zsh_settings.sh`.
 * [Atom][atom] in macOS and [Vim][vim] and [Neovim][neovim] in terminal sessions as editors.
 * [Homebrew][homebrew] as package manager.
 * [Tmux][tmux] as terminal multiplexer.
@@ -21,6 +18,22 @@ These dotfiles are meant to have your machine working with the following softwar
 
 
 These will be installed automatically if not already present. The script will then backup your configuration files if already present, and symlink thoses of this repository.
+
+#### Atom
+
+Atom is my choice editor when on macOS. I keep my packages in sync with [package-sync][package-sync]. the installation script takes care of symlinking `~/.atom/packages.cson` to the `atom/packages.cson` file of this repository. To implement your packages, you can use the `Create Package List` command to create your `packages.cson` file and overwrite mine. Package-sync will download and install your packages when starting Atom.
+
+#### Neovim
+
+Even though Atom is my choice editor, it so happens that I can't use it in ssh sessions, and need a classic modal editor. Neovim is an excellent in-terminal editor, that I run with [vim-plug][vim-plug] to manage plugins. The many plugins I use can be found in `config/nvim/plugins.vim`, which you can configure to your convenience.
+
+#### Zsh
+
+I run [Zsh][zsh] as my shell, finding it to be a great middle ground between additional niceties and features while remaining a largely compatible shell scripting target. I use [Oh-My-Zsh][oh-my-zsh] as shell configuration manager and [Spaceship][spaceship] as my prompt, both of which are installed automatically. If you don't with to use this prompt, make sure to comment out its line in `oh_my_zsh_settings.sh` and craft your own.
+
+#### Tmux
+
+Tmux allows to combine processes, shells, and editors in any way for a project at hand. Vim and tmux work seamlessly together thanks to the wonderful [vim-tmux-navigator][vim-tmux-navigator] plugin.
 
 ## Install
 
@@ -80,7 +93,10 @@ Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 [macos-defaults]: https://mths.be/macos
 [neovim]: https://neovim.io/
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh
+[package-sync]: https://atom.io/packages/package-sync
 [spaceship]: https://github.com/denysdovhan/spaceship-prompt
 [tmux]: https://github.com/tmux/tmux/wiki
 [vim]: http://www.vim.org/
+[vim-plug]: https://github.com/junegunn/vim-plug
+[vim-tmux-navigator]: https://github.com/christoomey/vim-tmux-navigator
 [zsh]: https://en.wikipedia.org/wiki/Z_shell
