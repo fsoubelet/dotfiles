@@ -74,12 +74,13 @@ if ! [[ -f "$localGit" ]]; then
 fi
 
 
-###################
-# Installing vtop #
-###################
+#############################
+# Installing vtop & colorls #
+#############################
 dotfiles_info "Installing vtop."
 npm install -g vtop
-
+dotfiles_info "Installing colorls."
+gem install colorls
 
 #####################
 # Install oh-my-zsh #
