@@ -14,7 +14,6 @@ The `install.sh` script will install some needed software and setup configuratio
 * [Atom][atom] in macOS and [Vim][vim] and [Neovim][neovim] in terminal sessions as editors.
 * [Homebrew][homebrew] as package manager.
 * [Tmux][tmux] as terminal multiplexer.
-* [Git][git] as versioning software.
 
 
 These will be installed automatically if not already present. The script will then backup your configuration files if already present, and symlink thoses of this repository.
