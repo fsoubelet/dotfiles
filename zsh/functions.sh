@@ -3,9 +3,48 @@
 #######################
 
 
+# A convenient way to print some statements
+function_echo() {
+  local fmt="$1"; shift
+  # shellcheck disable=SC2059
+  echo "---------------------------------------------------------"
+  echo "$(tput setaf 5) Status: $fmt $(tput sgr 0)" "$@"
+  echo "---------------------------------------------------------"
+}
+
+function_info() {
+  local fmt="$1"; shift
+  # shellcheck disable=SC2059
+  printf "\\n[HOMEBREW] $fmt\\n" "$@"
+}
+
+# Full run of keeping everything Homebrew-related up to date
+function brewup() {
+  function_echo "Updating Homebrew."
+  brew update
+  function_info "Homebrew Updated."
+
+  function_echo "Upgrading Homebrew."
+  brew upgrade
+  function_info "Homebrew Upgraded."
+
+  function_echo "Checking and establishing symlinks."
+  brew prune -v
+  function_info "Done."
+
+  function_echo "Cleaning up old kegs."
+  brew doctor
+  function_info "Cleaned up."
+
+  function_echo "Checking installation."
+  brew doctor
+  function_info "Set and ready to go!"
+}
+
+
 # Turning hidden files on/off in Finder
-function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; killall Finder }
-function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; killall Finder }
+function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
+function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
 
 
 # Viewing man pages in Preview

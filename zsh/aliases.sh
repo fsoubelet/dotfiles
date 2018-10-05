@@ -81,7 +81,6 @@ alias bo='brew outdated'
 alias bu='brew update'
 alias bubc='brew upgrade && brew cleanup && brew cask cleanup'
 alias bubo='brew update && brew outdated'
-alias brewup='bubo && bubc && bd'
 
 
 # -------------------------------------------------------------------
