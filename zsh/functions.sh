@@ -18,7 +18,7 @@ function_info() {
   printf "\\n[HOMEBREW] $fmt\\n" "$@"
 }
 
-# Full run of keeping everything Homebrew-related up to date
+## Full run of keeping everything Homebrew-related up to date
 function brewup() {
   function_echo "Updating Homebrew."
   brew update
@@ -39,6 +39,7 @@ function brewup() {
   function_echo "Checking installation."
   brew doctor
   function_info "Set and ready to go!"
+  printf "[BREWUP] Please read and acknowledge the warnings.\\n"
 }
 
 
