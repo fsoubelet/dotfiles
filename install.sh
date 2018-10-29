@@ -38,9 +38,9 @@ NVIM_DIR=$HOME/.config/nvim
 NVIM_CONFIG_DIR=$HOME/.config/nvim/config
 
 
-######################################################
-# I homebrew if necessary and then homebrew packages #
-######################################################
+############################################################
+# Install homebrew if necessary and then homebrew packages #
+############################################################
 dotfiles_echo "Checking for Homebrew installation."
 brew ="/usr/local/bin/brew"
 if [ -f "$brew" ]; then

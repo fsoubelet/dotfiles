@@ -34,10 +34,9 @@ alias .5='cd ../../../../..'
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
-alias chatty="open -a Chatty.app"
+alias atom="open -a 'Atom.app'"
 alias code="open -a 'Xcode.app'"
 alias runner="open -a 'Coderunner.app'"
-alias subl="open -a 'Sublime Text.app'"
 alias tex="open -a 'TeXnicle.app'"
 alias zshconfig="open -a 'Atom.app' ~/.zshrc"
 
@@ -94,7 +93,7 @@ alias sshcern='ssh -X fsoubele@lxplus.cern.ch'
 alias upz='upgrade_oh_my_zsh'
 
 # Easier notebook alias
-alias note='jupyter notebook'
+alias jupy='jupyter notebook --browser=safari'
 
 # Wifi cli utility alias (options are on and off)
 alias wifi='osx-wifi-cli'

@@ -1,5 +1,6 @@
-export ZSH = $HOME/.oh-my-zsh
-export UPDATE_ZSH_DAYS = 7
+# Path to oh-my-zsh installation
+export ZSH=$HOME/.oh-my-zsh
+export UPDATE_ZSH_DAYS=7
 
 
 ZSH_THEME="spaceship"
@@ -19,6 +20,6 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="dd-mm-yyyy"
 
-plugins = (git colorize osx python sudo fast_syntax_highlighting history shrink_path)
+plugins=(git osx python sudo fast_syntax_highlighting history colorize)
 
 source $ZSH/oh-my-zsh.sh

@@ -468,15 +468,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>422 57 878 94 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>435 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>22 439 599 401 0 0 1440 878 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>503 209 918 512 0 0 1440 877 </string>
+	<string>503 248 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 294 592 584 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>51 0 689 877 0 0 1440 877 </string>
+	<string>142 302 934 500 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 385 570 377 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -1491,7 +1491,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-04T15:35:59Z</date>
+	<date>2018-10-22T09:16:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1529,7 +1529,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.2</string>
+	<string>3.2.3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

@@ -46,4 +46,4 @@ ensure_tmux_is_running() {
 
 # ensure_tmux_is_running
 
-. ~/bin/tmuxinator.zsh
+#. ~/bin/tmuxinator.zsh
