@@ -2,7 +2,6 @@
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=7
 
-
 ZSH_THEME="spaceship"
 
 # Set Spaceship ZSH as a prompt
@@ -20,6 +19,6 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="dd-mm-yyyy"
 
-plugins=(git osx python sudo fast_syntax_highlighting history colorize)
+plugins=(git colorize osx python sudo fast-syntax-highlighting history shrink_path)
 
 source $ZSH/oh-my-zsh.sh
