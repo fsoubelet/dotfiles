@@ -1,19 +1,9 @@
-########################################################################
-# Set personal aliases, overriding those provided by oh-my-zsh libs,   #
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh    #
-# users are encouraged to define aliases within the ZSH_CUSTOM folder. #
-# For a full list of active aliases, run `alias`.                      #
-#                                                                      #
-# Example aliases:                                                     #
-# alias ohmyzsh="mate ~/.oh-my-zsh"                                    #
-########################################################################
-
-
 # -------------------------------------------------------------------
 # General UNIX
 # -------------------------------------------------------------------
-alias cclear='clear && archey && ls'
-alias cdclear='cd && clear && archey && ls'
+alias clr='clear'
+alias cclr='clear && archey && ls'
+alias qlr='cd && clear && archey && ls'
 alias cp='cp -iv'
 alias df='df -h'
 alias ls='colorls'
@@ -24,11 +14,18 @@ alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
 alias src='. ~/.zshrc'
 
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
 # Moving around
 alias .2='cd ../../'
 alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
+alias dotfiles='cd ~/dotfiles'
+[ -d ~/Desktop ]   && alias dt='cd ~/Desktop'
+[ -d ~/Downloads ] && alias dl='cd ~/Downloads'
+[ -d ~/Dropbox ]   && alias dr='cd ~/Dropbox'
 
 
 # -------------------------------------------------------------------
@@ -38,7 +35,7 @@ alias atom="open -a 'Atom.app'"
 alias code="open -a 'Xcode.app'"
 alias runner="open -a 'Coderunner.app'"
 alias tex="open -a 'TeXnicle.app'"
-alias zshconfig="open -a 'Atom.app' ~/.zshrc"
+alias zshconfig="open -a 'Atom.app' ~/dotfiles/zshrc"
 
 # Vim/Neovim
 alias vi='nvim'
@@ -83,6 +80,22 @@ alias bubo='brew update && brew outdated'
 
 
 # -------------------------------------------------------------------
+# Safety first
+# -------------------------------------------------------------------
+
+_exists() {
+  command -v $1 > /dev/null 2>&1
+}
+
+# Avoid stupidity with trash-cli on macOs
+if _exists trash; then
+  alias rm='trash'
+else
+  alias rm='rm -i'
+fi
+
+
+# -------------------------------------------------------------------
 # Miscellaneous
 # -------------------------------------------------------------------
 
@@ -100,3 +113,12 @@ alias wifi='osx-wifi-cli'
 
 # Cleaner PATH output command
 alias path='echo -e ${PATH//:/\\n}'
+
+# Download web page with all assets
+alias getpage='wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories'
+
+# Download file with original filename
+alias get="curl -O -L"
+
+# Load modifications to zsh environment
+alias reload!='. ~/.zshrc'
