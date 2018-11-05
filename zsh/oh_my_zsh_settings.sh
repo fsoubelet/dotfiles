@@ -8,8 +8,8 @@ ZSH_THEME="spaceship"
 autoload -U promptinit; promptinit
 prompt spaceship
 
-# Enable flags completion
-source $(dirname $(gem which colorls))/tab_complete.sh
+# Enable flags completion // file seems to be missing
+#source $(dirname $(which colorls))/tab_complete.sh
 
 DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
@@ -19,6 +19,6 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="dd-mm-yyyy"
 
-plugins=(git colorize osx python sudo fast-syntax-highlighting history shrink_path)
+plugins=(git colorize osx python sudo fast-syntax-highlighting history you-should-use)
 
 source $ZSH/oh-my-zsh.sh
