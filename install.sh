@@ -105,7 +105,7 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 # Setting up useful python packages as well as  #
 #################################################
 
-# It is recommended to install the anaconda python distribution first.
+# It is recommended to install the anaconda python3 distribution first.
 
 # Install pip packages
 #pip install -r pip_requirements.txt
