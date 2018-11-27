@@ -247,6 +247,7 @@ dotfiles_info "The first time you launch Vim or Neovim, plugins will be installe
 dotfiles_info "After launching Neovim, run :checkhealth and resolve any errors/warnings."
 dotfiles_info "Remember to set you iTerm profile as well as Atom themes."
 dotfiles_info "If you wish to act on OS defaults, customise and run ~/dotfiles/macos_defaults.sh"
-dotfiles_echo "You should log out for some changes to take effect."
+dotfiles_info "You should log out for some changes to take effectn or run 'reload!'."
+dotfiles_echo "Enjoy your new home!"
 
 exit 0

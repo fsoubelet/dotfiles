@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------
 alias clr='clear'
 alias cclr='clear && archey && ls'
-alias qlr='cd && clear && archey && ls'
+alias cdlr='cd && clear && archey && ls'
 alias cp='cp -iv'
 alias df='df -h'
 alias ls='colorls'
@@ -12,7 +12,6 @@ alias lsa='colorls -lA --sf'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
-alias src='. ~/.zshrc'
 
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
@@ -22,10 +21,11 @@ alias .2='cd ../../'
 alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
-alias dotfiles='cd ~/dotfiles'
 [ -d ~/Desktop ]   && alias dt='cd ~/Desktop'
+[ -d ~/dotfiles ]  && alias dotfiles='cd ~/dotfiles'
 [ -d ~/Downloads ] && alias dl='cd ~/Downloads'
 [ -d ~/Dropbox ]   && alias dr='cd ~/Dropbox'
+[ -d ~/cernbox ]   && alias cb='cd ~/cernbox'
 
 
 # -------------------------------------------------------------------
@@ -96,11 +96,20 @@ fi
 
 
 # -------------------------------------------------------------------
-# Miscellaneous
+# SSH CERN LXPLUS aliases
 # -------------------------------------------------------------------
 
-# SSH CERN alias
-alias sshcern='ssh -X fsoubele@lxplus.cern.ch'
+alias sshcern='ssh -X fsoubele@lxplus.cern.ch'         # Remote connection into LXPLUS x86_64 running SLC6. Set to be deprecated in the future.
+alias sshcern7='ssh -X fsoubele@lxplus7.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7. Set to become default in the future.
+
+# Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
+alias jupycern='ssh -L 4000:localhost:3000 fsoubele@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'   # For SLC6 environment.
+alias jupycern7='ssh -L 4000:localhost:3000 fsoubele@lxplus7.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"' # For CC7 environment.
+
+
+# -------------------------------------------------------------------
+# Miscellaneous
+# -------------------------------------------------------------------
 
 # oh-my-zsh
 alias upz='upgrade_oh_my_zsh'
