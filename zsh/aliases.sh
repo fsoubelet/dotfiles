@@ -46,7 +46,7 @@ alias nv='nvim'
 # Git aliases
 # -------------------------------------------------------------------
 alias ga='git add'
-alias gaa='git add --all'
+alias gaa='git add --all -v'
 alias gb='git branch'
 alias gba='git branch --all'
 alias gbd='git branch -d'

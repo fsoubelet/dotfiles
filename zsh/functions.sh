@@ -33,7 +33,7 @@ function brewup() {
   function_info "Done."
 
   function_echo "Cleaning up old kegs."
-  brew doctor
+  brew cleanup
   function_info "Cleaned up."
 
   function_echo "Checking installation."
