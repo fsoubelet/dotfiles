@@ -1,11 +1,11 @@
 # Dotfiles
 
-This folder contains my dotfiles, used on a mac currently running macOS Sierra (10.12).
+This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.1).
 
 
 ## Package overview
 
-This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home. These includes OS defaults and terminal profile as well as shell, git, editors and package manager configurations. An installation script is included to automatically implement them on a fresh new macOS machine.
+This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home. These include OS defaults and terminal profile as well as shell, git, editors and package manager configurations. An installation script is included to automatically implement them on a fresh new macOS machine.
 
 The `install.sh` script will install some needed software and setup configuration files. Here's some of the core software in my configuration:
 
@@ -53,7 +53,7 @@ xcode-select --install
 
 ```sh
 git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
-source ~/dotfiles/install.sh
+sh ~/dotfiles/install.sh
 ```
 
 
@@ -64,7 +64,7 @@ The `install.sh` script leaves some things to be done manually, specifically set
 * Set up iTerm profile (see below).
 * Add personnal data (and touch) to `~/.gitconfig.local`, and `~/.zshrc`.
 * If you wish to act on [macOS defaults][macos-defaults], customize `macos_defaults.sh`
- and run `source ~/dotfiles/macos_defaults.sh`.
+ and run `sh ~/dotfiles/macos_defaults.sh`.
 * After opening Neovim, run [`:checkhealth`][checkhealth] and resolve errors/warnings.
 
 
