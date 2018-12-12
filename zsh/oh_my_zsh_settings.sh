@@ -19,6 +19,6 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="dd-mm-yyyy"
 
-plugins=(git colorize osx python sudo fast-syntax-highlighting history you-should-use)
+plugins=(fast-syntax-highlighting you-should-use)
 
 source $ZSH/oh-my-zsh.sh
