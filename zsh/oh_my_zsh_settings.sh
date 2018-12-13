@@ -13,12 +13,16 @@ prompt spaceship
 
 DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
+ENABLE_CORRECTION="true"
 
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="dd-mm-yyyy"
 
-plugins=(fast-syntax-highlighting you-should-use)
+# Enabled true color support for terminals
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+plugins=(brew fast-syntax-highlighting you-should-use zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
