@@ -26,7 +26,7 @@ function brewup() {
 
   function_echo "Upgrading Homebrew."
   brew upgrade
-  function_info "Homebrew Upgraded."
+  function_info "Formulae Upgraded."
 
   function_echo "Checking and establishing symlinks."
   brew prune -v

@@ -70,28 +70,35 @@ brew "trash"
 brew "tree"
 brew "wget"
 brew "wine"
+brew "youtube-dl"
 brew "zsh"
 brew "zsh-completions"
 cask "alfred"
 cask "arduino"
 cask "atom"
-cask "cleanmymac"
+cask "balenaetcher"
+cask "bettertouchtool"
+cask "cheatsheet"
 cask "discord"
+cask "docker"
 cask "dropbox"
 cask "firefox"
 cask "flux"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
 cask "iina"
-cask "malwarebytes"
+cask "mendeley"
 cask "spotify"
+cask "steam"
 cask "telegram"
 mas "1Password 7", id: 1333542190
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
+mas "Agenda", id: 1287445660
 mas "Keynote", id: 409183694
+mas "Magnet", id: 441258766
+mas "NordVPN IKE", id: 1116599239
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Shazam", id: 897118787
 mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
