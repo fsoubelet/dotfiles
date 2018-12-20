@@ -1,38 +1,8 @@
 # https://git-scm.com/docs/git-config
 
 [user]
-  # these are about the most basic and should pretty much always exist
-  email = REDACTED     #ptmadress
   name = Felix Soubelet
-
-
-[alias]
-  # tweak at your convinience
-  a = add
-  aa = add --all
-  b = branch
-  ba = 'git branch --all
-  cl = clone
-  cm = commit -mv
-  co = checkout
-  com = checkout master
-  d = diff
-  df = diff --word-diff --color-words
-  ds = diff --word-diff --cached --color-words
-  f = fetch
-  # everybody has their favorite log format view, you can find variations with a quick online search
-  l = log --date=format:'%b %d, %Y' --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n'
-  lg = log --graph --stat --pretty=format:'%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n'
-  pl = pull
-  ps = push
-  ra = remote add
-  rr = remote rm
-  s = status
-  ta = tag -am
-  uncommit = reset --soft HEAD^
-  unstage = reset
-  # Show all of my configured aliases
-  aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+  email = felix.soubelet@protonmail.com
 
 
 [color]
