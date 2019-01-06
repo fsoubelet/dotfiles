@@ -27,6 +27,8 @@ alias .5='cd ../../../../..'
 [ -d ~/Dropbox ]   && alias dr='cd ~/Dropbox'
 [ -d ~/cernbox ]   && alias cb='cd ~/cernbox'
 
+# A bit of cursing around
+alias fuck='sudo $(fc -ln -1)'
 
 # -------------------------------------------------------------------
 # Global applications aliases
