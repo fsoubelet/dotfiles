@@ -38,6 +38,8 @@ alias code="open -a 'Xcode.app'"
 alias runner="open -a 'Coderunner.app'"
 alias tex="open -a 'TeXnicle.app'"
 alias zshconfig="open -a 'Atom.app' ~/dotfiles/zshrc"
+alias gtp='gotop'
+
 
 # Vim/Neovim
 alias vi='nvim'
