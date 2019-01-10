@@ -28,11 +28,7 @@ function brewup() {
   brew upgrade
   function_info "Formulae Upgraded."
 
-  function_echo "Checking and establishing symlinks."
-  brew prune -v
-  function_info "Done."
-
-  function_echo "Cleaning up old kegs."
+  function_echo "Cleaning up old kegs and checking symlinks."
   brew cleanup
   function_info "Cleaned up."
 
