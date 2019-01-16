@@ -97,39 +97,3 @@ function mov_to_mp4() {
     trash $file
   done
 }
-
-
-# Autoconnect to starbucks wifi network
-function connect_to_starbucks() {
-  # Make sure we have a network connection.
-  curl -s -o /dev/null http://www.google.com
-  if [ $? -ne 0 ]
-  then
-     echo "Can't resolve host."
-     exit 1
-  fi
-
-  APNAME=`curl -s -o /dev/null -w "%{redirect_url}\n" http://www.google.com | grep -o "apname.*"`
-
-  # Already authenticated.
-  if [ -z $APNAME ]
-  then
-      echo "Connected."
-      exit 0
-  else
-      echo "Connecting..."
-  fi
-
-  # Attempt authentication.
-  SUBMIT_URL=http://sbux-portal.appspot.com/submit
-  AUTHENTICATED=`curl -s -F $APNAME $SUBMIT_URL | grep -oh "sbux-portal-authenticated"`
-
-  if [ $AUTHENTICATED = "sbux-portal-authenticated" ]
-  then
-      echo "Successfully connected."
-      exit 0
-  else
-      echo "Connection failed."
-      exit 1
-  fi
-}

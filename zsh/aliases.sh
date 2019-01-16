@@ -94,13 +94,6 @@ _exists() {
   command -v $1 > /dev/null 2>&1
 }
 
-# Avoid stupidity with trash-cli on macOs
-if _exists trash; then
-  alias rm='trash'
-else
-  alias rm='rm -i'
-fi
-
 
 # -------------------------------------------------------------------
 # CERN & LXPLUS aliases
