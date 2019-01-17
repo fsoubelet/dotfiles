@@ -5,8 +5,8 @@ export UPDATE_ZSH_DAYS=7
 ZSH_THEME="spaceship"
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+#autoload -U promptinit; promptinit
+#prompt spaceship
 
 # Enable flags completion // file seems to be missing
 #source $(dirname $(which colorls))/tab_complete.sh
