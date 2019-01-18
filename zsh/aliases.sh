@@ -6,9 +6,9 @@ alias cclr='clear && archey && ls'
 alias cdlr='cd && clear && archey && ls'
 alias cp='cp -iv'
 alias df='df -h'
-alias ls='colorls'
-alias lsg='colorls --git-status . --tree'
-alias lsa='colorls -lA --sf'
+#alias ls='colorls'
+#alias lsg='colols --git-status . --tree'
+alias lsa='ls -lA'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
@@ -21,6 +21,7 @@ alias .2='cd ../../'
 alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
+alias work='cd /afs/cern.ch/work/f/fesoubel'
 [ -d ~/Desktop ]   && alias dt='cd ~/Desktop'
 [ -d ~/dotfiles ]  && alias dotfiles='cd ~/dotfiles'
 [ -d ~/Downloads ] && alias dl='cd ~/Downloads'
@@ -35,13 +36,15 @@ alias fuck='sudo $(fc -ln -1)'
 # -------------------------------------------------------------------
 alias atom="open -a 'Atom.app'"
 alias code="open -a 'Xcode.app'"
-alias zshconfig="vi ~/.zshrc"
+alias runner="open -a 'Coderunner.app'"
+alias tex="open -a 'TeXnicle.app'"
+alias zshconfig="open -a 'Atom.app' ~/dotfiles/zshrc"
 alias gtp='gotop'
 
 
 # Vim/Neovim
-alias vi='nvim'
-alias nv='nvim'
+#alias vi='nvim'
+#alias nv='nvim'
 
 
 # -------------------------------------------------------------------
@@ -91,6 +94,13 @@ alias bubo='brew update && brew outdated'
 _exists() {
   command -v $1 > /dev/null 2>&1
 }
+
+# Avoid stupidity with trash-cli on macOs
+if _exists trash; then
+  alias rm='trash'
+else
+  alias rm='rm -i'
+fi
 
 
 # -------------------------------------------------------------------
