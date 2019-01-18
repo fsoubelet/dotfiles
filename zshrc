@@ -4,8 +4,8 @@ export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export EDITOR="nvim"
-export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
-export LESS_TERMCAP_md="${yellow}" # Highlight section titles in manual pages
+#export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
+#export LESS_TERMCAP_md="${yellow}" # Highlight section titles in manual pages
 
 # Making sure to not tune the homebrew sbin out of the PATH. Will be preceeded
 # by Anaconda installs later in this file

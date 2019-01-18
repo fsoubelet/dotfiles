@@ -7,7 +7,7 @@ alias cdlr='cd && clear && archey && ls'
 alias cp='cp -iv'
 alias df='df -h'
 alias ls='colorls'
-alias lsg='colols --git-status . --tree'
+alias lsg='colorls --git-status . --tree'
 alias lsa='colorls -lA --sf'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
@@ -35,9 +35,7 @@ alias fuck='sudo $(fc -ln -1)'
 # -------------------------------------------------------------------
 alias atom="open -a 'Atom.app'"
 alias code="open -a 'Xcode.app'"
-alias runner="open -a 'Coderunner.app'"
-alias tex="open -a 'TeXnicle.app'"
-alias zshconfig="open -a 'Atom.app' ~/dotfiles/zshrc"
+alias zshconfig="vi ~/.zshrc"
 alias gtp='gotop'
 
 
