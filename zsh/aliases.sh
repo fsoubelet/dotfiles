@@ -5,7 +5,6 @@ alias clr='clear'
 alias cclr='clear && archey && ls'
 alias cdlr='cd && clear && archey && ls'
 alias cp='cp -iv'
-alias cpv="rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --"  # Copy with progress bar
 alias df='df -h'
 alias ls='colorls'
 alias lsg='colorls --git-status . --tree'
