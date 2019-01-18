@@ -23,6 +23,6 @@ HIST_STAMPS="dd-mm-yyyy"
 # Enabled true color support for terminals
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-plugins=(brew fast-syntax-highlighting you-should-use zsh-autosuggestions)
+plugins=(brew github fast-syntax-highlighting you-should-use zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
