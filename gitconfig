@@ -16,7 +16,7 @@
 
 
 [core]
-  pager = less -FRSX
+  pager = less
   editor = nvim
   # lets you define a global .gitignore for all those *.swp, *~, *.o, etc things that you're frequently sticking in .gitignore
   excludes = ~/.gitignore_global
@@ -24,6 +24,7 @@
   filemode = false
   # lets you tweak the default pager, see 'man less' for the meaning of these flags
   pager = 'less -FRSX'
+  pager = /usr/bin/less
 
 
 [github]
