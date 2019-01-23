@@ -25,6 +25,7 @@
   # lets you tweak the default pager, see 'man less' for the meaning of these flags
   pager = 'less -FRSX'
   pager = /usr/bin/less
+	excludesfile = /Users/felixsoubelet/.gitignore_global
 
 
 [github]
