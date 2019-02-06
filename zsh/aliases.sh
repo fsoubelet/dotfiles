@@ -16,6 +16,12 @@ alias path='echo -e ${PATH//:/\\n}'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
+#alias grep='ack'
+alias cat='bat'
+alias exa='exa --all --long --tree --level=2'
+alias find='fd'
+alias rsync='rsync -avhz'
+
 # Moving around
 alias .2='cd ../../'
 alias .3='cd ../../../'
@@ -36,6 +42,7 @@ alias fuck='sudo $(fc -ln -1)'
 alias atom="open -a 'Atom.app'"
 alias code="open -a 'Xcode.app'"
 alias zshconfig="vi ~/.zshrc"
+alias pycharm='open -a PyCharm.app'
 alias gtp='gotop'
 
 
@@ -97,8 +104,7 @@ _exists() {
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-alias sshcern='ssh -X fesoubel@lxplus.cern.ch'         # Remote connection into LXPLUS x86_64 running SLC6. Set to be deprecated in the future.
-alias sshcern7='ssh -X fesoubel@lxplus7.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7. Set to become default in the future.
+alias sshcern='ssh -X fesoubel@lxplus7.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7. Set to become default in the future.
 
 # Copying files from remote CERN afs to local     scp -r cern:/full_path/to/origin /local_path/destination
 # Copying files from local to remote CERN afs     scp -r /local_path/origin cern:/full_path/to/destination
@@ -107,10 +113,8 @@ alias sshcern7='ssh -X fesoubel@lxplus7.cern.ch'       # Remote connection into 
 #   User fesoubel
 #   Hostname lxplus.cern.ch
 
-
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
-alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'   # For SLC6 environment.
-alias jupycern7='ssh -L 4000:localhost:3000 fesoubel@lxplus7.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"' # For CC7 environment.
+alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus7.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"' # For CC7 environment.
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
@@ -125,6 +129,7 @@ alias upz='upgrade_oh_my_zsh'
 
 # Easier notebook alias
 alias jupy='jupyter notebook --browser=safari'
+alias jupylab='jupyter lab --browser=safari'
 
 # Wifi cli utility alias (options are on and off)
 alias wifi='osx-wifi-cli'
