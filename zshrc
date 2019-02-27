@@ -18,7 +18,7 @@ source $HOME/dotfiles/zsh/functions.sh
 source $HOME/dotfiles/zsh/tmux.sh
 
 # Added by Anaconda3 5.3.0 installer
-export PATH="/Users/felixsoubelet/anaconda3/bin:$PATH"  # commented out by conda initialize
+export PATH="/Users/felixsoubelet/anaconda3/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

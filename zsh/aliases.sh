@@ -18,7 +18,7 @@ alias ff='find . -type f -name'
 
 #alias grep='ack'
 alias cat='bat'
-alias exa='exa --all --long --tree --level=2'
+alias exa='exa --all --long --tree --level=1'
 alias find='fd'
 alias rsync='rsync -avhz'
 
@@ -36,6 +36,7 @@ alias .5='cd ../../../../..'
 # A bit of cursing around
 alias fuck='sudo $(fc -ln -1)'
 
+
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
@@ -47,8 +48,7 @@ alias gtp='gotop'
 
 
 # Vim/Neovim
-alias vi='nvim'
-alias nv='nvim'
+alias vim="/usr/local/bin/vim"
 
 
 # -------------------------------------------------------------------
@@ -104,7 +104,7 @@ _exists() {
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-alias sshcern='ssh -X fesoubel@lxplus.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7. Set to become default in the future.
+alias sshcern='ssh -X fesoubel@lxplus.cern.ch'       # Remote connection into LXPLUS x86_64 running SLC6. Set to be replaced by CC7 in the future.
 
 # Copying files from remote CERN afs to local     scp -r cern:/full_path/to/origin /local_path/destination
 # Copying files from local to remote CERN afs     scp -r /local_path/origin cern:/full_path/to/destination
