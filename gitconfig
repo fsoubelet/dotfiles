@@ -7,7 +7,7 @@
 
 [color]
   # turn on default colors for many commands
-  ui = auto
+	ui = true
   filemode = false
   diff = auto
   status = auto
@@ -25,6 +25,7 @@
   # lets you tweak the default pager, see 'man less' for the meaning of these flags
   pager = 'less -FRSX'
   pager = /usr/bin/less
+	excludesfile = /Users/felixsoubelet/.gitignore_global
 
 
 [github]
@@ -50,3 +51,15 @@
 [merge]
   # personnal favorite merge visualization tool
   tool = kdiff3
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse

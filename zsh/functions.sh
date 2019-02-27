@@ -97,3 +97,14 @@ function mov_to_mp4() {
     trash $file
   done
 }
+
+
+# Convert every mp4 file in current directory into mkv format
+function mp4_to_mkv() {
+  # Written to fun in the same directory of the .mov files.
+  for file in *.mp4;
+  do
+    ffmpeg -i "$file" -r 30 "${file%.mov.mp4}.mkv"
+    trash $file
+  done
+}

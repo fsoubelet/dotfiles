@@ -1,31 +1,103 @@
-# Folder view configuration files
-.DS_Store
+####################################################
+# Global .gitignore Flle
+# Reference:  http://help.github.com/ignore-files/
+# Save this in a file: ~/.gitignore_global
+# Then at the command line (you will see more info if a repo is in the current folder):
+# git config --global core.excludesfile ~/.gitignore_global
+# git config --list
+#####################
+
+
+# For vim #
+###########
+*.swp
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+.vimrc.local
+vim/bundle
+
+
+# Logs and databases #
+######################
+*.log
+*.cache
+
+
+# OS generated files #
+######################
 .DS_Store?
+.DS_Store
+.CFUserTextEncoding
+.Trash
+.Xauthority
 Desktop.ini
-
-
-# Thumbnail cache files
-._*
+thumbs.db
 Thumbs.db
+Icon?
+.cache
+.pid
+.sock
+._*
 
 
-# Files that might appear on external disks
+# Files that might appear on external disks #
+#############################################
 .Spotlight-V100
 .Trashes
 
 
-# Compiled Python files
-*.pyc
-
-
-# Compiled C++ files
-*.out
-
-
-# Application specific files
-venv
-node_modules
+# Code stuffs #
+###############
+.svn
+.git
+.swp
+.idea
+.*.swp
+*~
+.tags
+tags
 .sass-cache
+tmp
+venv
+.codekit-cache
+config.codekit
+
+
+# Compiled thangs #
+###################
+*.class
+*.exe
+*.o
+*.so
+*.dll
+*.zwc
+*.pyc
+*.pyo
+*.pyc
+*.elc
+
+
+.git/
+.cask/
+.local/
+chromium/
+void-packages/
+usr/
+tmp/
+var/
+node_modules/
+npm-packages/
+*.old
+*.gz
+*.7z
+*.flac
+*.o
+*.so
+*.out
+*.ogg
+*.mp3
 
 
 # Miscellaneous
@@ -38,11 +110,3 @@ tmp/
 .zshrc.local
 *.local
 *~
-
-
-# Vim / Neovim
-Session.vim
-vim/bundle
-vim/.netrwhist
-*.swp
-.vimrc.local

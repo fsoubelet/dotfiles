@@ -1,5 +1,12 @@
 # Dotfiles
 
+<p align="center">
+  <a href="https://xkcd.com/1319/">
+    <img src="https://imgs.xkcd.com/comics/automation.png" />
+  </a>
+</p>
+
+
 This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.1).
 
 

@@ -25,3 +25,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Getting Poetry tool in the PATH
 export PATH="$PATH:$HOME/.poetry/bin"
+
+# Adding fuzzy-finder completion and keymaps
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
