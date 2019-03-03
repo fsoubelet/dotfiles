@@ -2,6 +2,13 @@
 "                             Vim-Plug SECTION                             "
 "##########################################################################"
 
+"Auto-install vim-plug if it's not already here
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
@@ -17,9 +24,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " NERDTree syntax highlighting.
 Plug 'kien/ctrlp.vim'                           " Fuzzy file, buffer, mru, etc finder.
 Plug 'airblade/vim-gitgutter'                   " Git diff in the gutter.
 Plug 'plasticboy/vim-markdown'                  " Markdown syntax.
-Plug 'vim-airline/vim-airline'                  " Swift light status line.
-Plug 'vim-airline/vim-airline-themes'           " Themes for airline.
+Plug 'itchyny/lightline.vim'                    "Minimalist status line.
 Plug 'flazz/vim-colorschemes'                   " Colorscheme collection.
+Plug 'drewtempelmeyer/palenight.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -88,13 +95,26 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " Enable accessing out-of-vim clipboard
 set clipboard=unnamed
 
-let g:airline_theme='onedark'
+" Enable folder icons for vim-devicons
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
 " Default mapping for ctrlp plugin 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" Using Vim8 package manager to set colorscheme to onedark
-"packadd! onedark.vim
-"syntax on
-"colorscheme onedark
+" Configuring lightline
+set laststatus=2
+set noshowmode
+
+if !has('gui_running')
+  set t_Co=256
+endif
+
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
+
+" Set colorscheme
+set background=dark
+colorscheme palenight 
+"colorscheme desert, colorful
