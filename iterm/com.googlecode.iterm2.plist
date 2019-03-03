@@ -469,14 +469,16 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>799 281 787 282 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>542 541 796 486 0 0 1680 1050 </string>
+	<string>478 152 918 514 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1027 0 0 1680 1050 </string>
+	<string>191 124 1298 712 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>ASCII Ligatures</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -688,7 +690,7 @@
 			<key>Blend</key>
 			<real>1</real>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Bold Color</key>
@@ -707,7 +709,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>115</integer>
+			<integer>161</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Boost</key>
@@ -747,6 +749,8 @@
 				<key>Red Component</key>
 				<real>0.072135128080844879</real>
 			</dict>
+			<key>Cursor Type</key>
+			<integer>2</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -833,7 +837,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>35</integer>
+			<integer>43</integer>
 			<key>Screen</key>
 			<integer>-2</integer>
 			<key>Scrollback Lines</key>
@@ -890,6 +894,16 @@
 					<key>regex</key>
 					<string>Connection closed</string>
 				</dict>
+				<dict>
+					<key>action</key>
+					<string>GrowlTrigger</string>
+					<key>parameter</key>
+					<string>MADX Tracking completed</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>+          MAD-X finished normally         +</string>
+				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
 			<false/>
@@ -902,7 +916,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<true/>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -1340,6 +1354,8 @@
 			<string>/Users/ctay20</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -1347,7 +1363,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D95C75DD-063C-426A-92F6-3B446DF9D175</string>
 	<key>NoSyncLastTipTime</key>
-	<real>569426680.96330202</real>
+	<real>573073088.89160299</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1379,6 +1395,38 @@
 		<string>0017</string>
 		<string>0018</string>
 		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
+		<string>0026</string>
+		<string>0027</string>
+		<string>0028</string>
+		<string>0029</string>
+		<string>0030</string>
+		<string>0031</string>
+		<string>0032</string>
+		<string>0033</string>
+		<string>0034</string>
+		<string>0035</string>
+		<string>0036</string>
+		<string>0037</string>
+		<string>0038</string>
+		<string>0039</string>
+		<string>0040</string>
+		<string>0041</string>
+		<string>0042</string>
+		<string>0043</string>
+		<string>0044</string>
+		<string>0045</string>
+		<string>0046</string>
+		<string>0047</string>
+		<string>0048</string>
+		<string>0049</string>
+		<string>0050</string>
+		<string>0051</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -1444,7 +1492,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-14T22:02:22Z</date>
+	<date>2019-02-28T19:39:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
