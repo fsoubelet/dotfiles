@@ -95,6 +95,9 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Disable auto-correct
 #defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Do not write .DS_Store files on network shares (your colleagues working on remote will appreciate this)
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
 
 ###############################################################################
 # SSD-specific tweaks                                                         #
