@@ -24,8 +24,10 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " NERDTree syntax highlighting.
 Plug 'kien/ctrlp.vim'                           " Fuzzy file, buffer, mru, etc finder.
 Plug 'airblade/vim-gitgutter'                   " Git diff in the gutter.
 Plug 'plasticboy/vim-markdown'                  " Markdown syntax.
-Plug 'itchyny/lightline.vim'                    "Minimalist status line.
-Plug 'flazz/vim-colorschemes'                   " Colorscheme collection.
+Plug 'itchyny/lightline.vim'                    " Minimalist status line.
+" Colorschemes I like
+Plug 'nightsense/cosmic_latte'
+Plug 'KeitaNakamura/neodark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -115,6 +117,8 @@ let g:lightline = {
       \ }
 
 " Set colorscheme
+set termguicolors    " Activate true color support mode (which iTerm supports since v3.0)
 set background=dark
-colorscheme palenight 
-"colorscheme desert, colorful
+"colorscheme neodark
+colorscheme cosmic_latte
+"colorscheme palenight 
