@@ -112,13 +112,17 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+" Set colorscheme
+" Activate true color support mode (which iTerm supports since v3.0)
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+set background=dark
+"colorscheme neodark
+"colorscheme cosmic_latte
+colorscheme palenight 
+
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ }
-
-" Set colorscheme
-set termguicolors    " Activate true color support mode (which iTerm supports since v3.0)
-set background=dark
-"colorscheme neodark
-colorscheme cosmic_latte
-"colorscheme palenight 
