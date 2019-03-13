@@ -21,6 +21,7 @@ alias ff='find . -type f -name'
 alias cat='bat'
 alias exa='exa --all --long --tree --level=1'
 alias find='fd'
+alias th='trash'
 alias rsync='rsync -avhz'
 
 # Moving around

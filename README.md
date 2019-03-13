@@ -7,7 +7,7 @@
 </p>
 
 
-This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.1).
+This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.3).
 
 
 ## Package overview
@@ -18,20 +18,15 @@ The `install.sh` script will install some needed software and setup configuratio
 
 * [iTerm][iterm2] as terminal.
 * The [Z shell][zsh] as shell.
-* [Atom][atom] in macOS and [Vim][vim] and [Neovim][neovim] in terminal sessions as editors.
+* [Vim][vim] as editor.
 * [Homebrew][homebrew] as package manager.
 * [Tmux][tmux] as terminal multiplexer.
 
+These will be installed automatically if not already present. The script will then backup your configuration files if already present, and symlink the new ones to those of this repository.
 
-These will be installed automatically if not already present. The script will then backup your configuration files if already present, and symlink thoses of this repository.
+#### Vim
 
-#### Atom
-
-Atom is my choice editor when on macOS. I keep my packages in sync with [package-sync][package-sync]. the installation script takes care of symlinking `~/.atom/packages.cson` to the `atom/packages.cson` file of this repository. To implement your packages, you can use the `Create Package List` command to create your `packages.cson` file and overwrite mine. Package-sync will download and install your packages when starting Atom. You may have to set your themes manually.
-
-#### Neovim
-
-Even though Atom is my choice editor, it so happens that I can't use it in ssh sessions, and need a classic modal editor. Neovim is an excellent in-terminal editor, that I run with [vim-plug][vim-plug] to manage plugins. The many plugins I use can be found in `config/nvim/plugins.vim`, which you can configure to your convenience.
+A classic modal editor, Vim is excellent. I use [Vim-Plug][vim-plug] to manage plugins. The section for plugins is at the beginning of my `vimrc` file, and with a few lines to auto-install Vim-Plug if it isn't already, so as long as your `~/.vimrc` is symlinked to `vimrc` in this repository, you can launch Vim, run `:PlugInstall` and enjoy a fully ready configuration.
 
 #### Zsh
 
@@ -51,14 +46,14 @@ My go-to python distribution is the [Anaconda][anaconda] distribution. It is rec
 
 Make sure you have up-to-date software and Xcode command line tools. On a sparkling fresh installation of macOS, run:
 
-```sh
+```
 sudo softwareupdate -i -a
 xcode-select --install
 ```
 
 ### Install with Git
 
-```sh
+```
 git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
 sh ~/dotfiles/install.sh
 ```
@@ -69,10 +64,10 @@ sh ~/dotfiles/install.sh
 The `install.sh` script leaves some things to be done manually, specifically setting personnal information, installing profiles and changing some defaults.
 
 * Set up iTerm profile (see below).
-* Add personnal data (and touch) to `~/.gitconfig.local`, and `~/.zshrc`.
+* Create a `~/.gitconfig.local` in which you can put personal data.
+* Add a personnal touch to `~/.zshrc`.
 * If you wish to act on [macOS defaults][macos-defaults], customize `macos_defaults.sh`
- and run `sh ~/dotfiles/macos_defaults.sh`.
-* After opening Neovim, run [`:checkhealth`][checkhealth] and resolve errors/warnings.
+ and run `bash ~/dotfiles/macos_defaults.sh`.
 
 
 ### Setting up iTerm2 profile

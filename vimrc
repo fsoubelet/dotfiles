@@ -21,6 +21,7 @@ Plug 'scrooloose/nerdtree'                      " NERDTree.
 Plug 'ryanoasis/vim-devicons'                   " NERDTree icons.
 Plug 'Xuyuanp/nerdtree-git-plugin'              " NERDTree git integration.
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " NERDTree syntax highlighting.
+Plug 'christoomey/vim-tmux-navigator'           " Integration with tmux.
 Plug 'kien/ctrlp.vim'                           " Fuzzy file, buffer, mru, etc finder.
 Plug 'airblade/vim-gitgutter'                   " Git diff in the gutter.
 Plug 'plasticboy/vim-markdown'                  " Markdown syntax.
@@ -93,6 +94,9 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 "##########################################################################"
 "                              Miscellaneous                               "
 "##########################################################################"
+
+" Auto syntax for madx files
+au BufReadPost,BufNewFile *.madx,*.mad,*.seq setf madx
 
 " Enable accessing out-of-vim clipboard
 set clipboard=unnamed
