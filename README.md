@@ -12,9 +12,12 @@ This folder contains my dotfiles, used on a mac currently running macOS Mojave (
 
 ## Package overview
 
-This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home. These include OS defaults and terminal profile as well as shell, git, editors and package manager configurations. An installation script is included to automatically implement them on a fresh new macOS machine.
+This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home.
+These include OS defaults and terminal profile as well as shell, git, editors and package manager configurations.
+An installation script is included to automatically implement them on a fresh new macOS machine.
 
-The `install.sh` script will install some needed software and setup configuration files. Here's some of the core software in my configuration:
+The `install.sh` script will install some needed software and setup configuration files.
+Here's some of the core software in my configuration:
 
 * [iTerm][iterm2] as terminal.
 * The [Z shell][zsh] as shell.
@@ -22,29 +25,38 @@ The `install.sh` script will install some needed software and setup configuratio
 * [Homebrew][homebrew] as package manager.
 * [Tmux][tmux] as terminal multiplexer.
 
-These will be installed automatically if not already present. The script will then backup your configuration files if already present, and symlink the new ones to those of this repository.
+These will be installed automatically if not already present.
+The script will then backup your configuration files if already present, and symlink the new ones to those of this repository.
 
 #### Vim
 
-A classic modal editor, Vim is excellent. I use [Vim-Plug][vim-plug] to manage plugins. The section for plugins is at the beginning of my `vimrc` file, and with a few lines to auto-install Vim-Plug if it isn't already, so as long as your `~/.vimrc` is symlinked to `vimrc` in this repository, you can launch Vim, run `:PlugInstall` and enjoy a fully ready configuration.
+A classic modal editor, Vim is excellent.
+I use [Vim-Plug][vim-plug] to manage plugins.
+The section for plugins is at the beginning of my `vimrc` file, and with a few lines to auto-install Vim-Plug if it isn't already, so as long as your `~/.vimrc` is symlinked to `vimrc` in this repository, you can launch Vim, run `:PlugInstall` and enjoy a fully ready configuration.
 
 #### Zsh
 
-I run [Zsh][zsh] as my shell, finding it to be a great middle ground between additional niceties and features while remaining a largely compatible shell scripting target. I use [Oh-My-Zsh][oh-my-zsh] as shell configuration manager and [Spaceship][spaceship] as my prompt, both of which are installed automatically. If you don't with to use this prompt, make sure to comment out its line in `oh_my_zsh_settings.sh` and craft your own.
+I run [Zsh][zsh] as my shell, finding it to be a great middle ground between additional niceties and features while remaining a largely compatible shell scripting target.
+I use [Oh-My-Zsh][oh-my-zsh] as shell configuration manager and [Spaceship][spaceship] as my prompt, both of which are installed automatically.
+If you don't wish to use this prompt, make sure to comment out its line in `oh_my_zsh_settings.sh` and craft your own.
 
 #### Tmux
 
-Tmux allows to combine processes, shells, and editors in any way for a project at hand. Vim and tmux work seamlessly together thanks to the wonderful [vim-tmux-navigator][vim-tmux-navigator] plugin.
+Tmux allows to combine processes, shells, and editors in any way for a project at hand.
+Vim and tmux work seamlessly together thanks to the wonderful [vim-tmux-navigator][vim-tmux-navigator] plugin.
 
 ## Install
 
 ### Prerequisites
 
-My go-to python distribution is the [Anaconda][anaconda] distribution. It is recommended to install it before running the installation script. You can download your favorite version [here][anacondadownload].
+My go-to python distribution is the [Anaconda][anaconda] distribution.
+It is recommended to install it before running the installation script.
+You can download your favorite version [here][anacondadownload].
 
 ### Necessary tools
 
-Make sure you have up-to-date software and Xcode command line tools. On a sparkling fresh installation of macOS, run:
+Make sure you have up-to-date software and Xcode command line tools.
+On a sparkling fresh installation of macOS, run:
 
 ```
 sudo softwareupdate -i -a
@@ -55,7 +67,7 @@ xcode-select --install
 
 ```
 git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
-sh ~/dotfiles/install.sh
+bash ~/dotfiles/install.sh
 ```
 
 
