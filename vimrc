@@ -12,24 +12,25 @@ endif
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
+" Plugins for programming
+Plug 'davidhalter/jedi-vim'                     " Jedi-based completion.
 Plug 'tmhedberg/SimpylFold'                     " Colde folding.
 Plug 'vim-scripts/indentpython.vim'             " Proper Python indentation.
-Plug 'davidhalter/jedi-vim'                     " Jedi-based completion.
 Plug 'nvie/vim-flake8'                          " PEP8 checking.  
 Plug 'scrooloose/syntastic'                     " Syntax checking.
+Plug 'cjrh/vim-conda'                           " Conda environments integration (jedi & commands).
+Plug 'plasticboy/vim-markdown'                  " Markdown syntax.
+Plug 'lervag/vimtex'                            " Making LaTeX easy.
+" UX & UI plugins
 Plug 'scrooloose/nerdtree'                      " NERDTree.
 Plug 'ryanoasis/vim-devicons'                   " NERDTree icons.
 Plug 'Xuyuanp/nerdtree-git-plugin'              " NERDTree git integration.
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " NERDTree syntax highlighting.
-Plug 'christoomey/vim-tmux-navigator'           " Integration with tmux.
+Plug 'christoomey/vim-tmux-navigator'           " Tmux integration.
 Plug 'kien/ctrlp.vim'                           " Fuzzy file, buffer, mru, etc finder.
 Plug 'airblade/vim-gitgutter'                   " Git diff in the gutter.
-Plug 'plasticboy/vim-markdown'                  " Markdown syntax.
 Plug 'itchyny/lightline.vim'                    " Minimalist status line.
-" Colorschemes I like
-Plug 'nightsense/cosmic_latte'
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'drewtempelmeyer/palenight.vim'            " Colorscheme I like.
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

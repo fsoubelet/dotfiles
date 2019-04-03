@@ -7,7 +7,7 @@
 </p>
 
 
-This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.3).
+This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.4).
 
 
 ## Package overview
