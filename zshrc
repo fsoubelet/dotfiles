@@ -20,7 +20,7 @@ source $HOME/dotfiles/zsh/functions.sh
 export PATH="$PATH:/afs/cern.ch/user/m/mad/bin"
 
 # Added by Anaconda3 installer
- export PATH="/afs/cern.ch/work/f/fesoubel/anaconda3/bin:$PATH"
+export PATH="/afs/cern.ch/work/f/fesoubel/public/anaconda3/bin:$PATH"
 
 # Getting Poetry tool in the PATH
 export PATH="$PATH:$HOME/.poetry/bin"

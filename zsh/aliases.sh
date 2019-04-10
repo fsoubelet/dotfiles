@@ -16,12 +16,23 @@ alias path='echo -e ${PATH//:/\\n}'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
+# Because you forget
+alias :q='exit'
+alias :w='echo "You are not in vim!"'
+alias :wq='echo "You are not in vim!"'
+
 # Moving around
 alias .2='cd ../../'
 alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 alias work='cd /afs/cern.ch/work/f/fesoubel'
+alias phd='cd /afs/cern.ch/work/f/fesoubel/PhD'
+alias ip_coupling='cd /afs/cern.ch/work/f/fesoubel/PhD/STUDY.19.HLLHC.ip_problems/Compute_IP_Beam_Size_With_Coupling'
+alias wipetracks='for FILE in track.obs0001.*; do rm -f "$FILE"; done && for FILE in track.obs0002.*; do rm -f "$FILE"; done'
+alias clean_lhc='rm -f after_addingSkew.twiss bare_lhc before_correction_lhc dr_ptc_twiss_nnn.twiss internal_mag_pot.txt matched_lhc.twiss'
+alias clean_hllhc='rm -f bare_hllhc.twiss before_correction_hllhc.twiss dr_ptc_twiss_nnn.twiss internal_mag_pot.txt matched_hllhc.twiss tfs_to_rdts.tfs'
+
 [ -d ~/Desktop ]   && alias dt='cd ~/Desktop'
 [ -d ~/dotfiles ]  && alias dotfiles='cd ~/dotfiles'
 [ -d ~/Downloads ] && alias dl='cd ~/Downloads'

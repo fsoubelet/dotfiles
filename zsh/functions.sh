@@ -47,6 +47,10 @@ function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
 # Viewing man pages in Preview
 function pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t "$@" > "$ps" ; open "$ps" ; }
 
+# Stop any of my pending jobs on lxplus
+function stop_pending() {
+  bkill `bjobs -u fesoubel | grep PEND | cut -f1 -d" "`
+}
 
 # Prompting IP address
 function myip() {
