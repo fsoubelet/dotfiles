@@ -19,7 +19,7 @@ function_info() {
 }
 
 # Full run of keeping everything Homebrew-related up to date
-function brewup() {
+function_brewup() {
   function_echo "Updating Homebrew."
   brew update
   function_info "Homebrew Updated."

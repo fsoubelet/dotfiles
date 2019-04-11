@@ -106,21 +106,23 @@ _exists() {
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-alias sshcern='ssh -X fesoubel@lxplus.cern.ch'       # Remote connection into LXPLUS x86_64 running SLC6. Set to be replaced by CC7 in the future.
+alias sshcern='ssh -X fesoubel@lxplus.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7.
 
 # Copying files from remote CERN afs to local     scp -r cern:/full_path/to/origin /local_path/destination
 # Copying files from local to remote CERN afs     scp -r /local_path/origin cern:/full_path/to/destination
+
 # Make sure to have a ~/.ssh.config file containing
 # Host cern
 #   User fesoubel
 #   Hostname lxplus.cern.ch
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
-alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus7.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"' # For CC7 environment.
+alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
+
 
 # -------------------------------------------------------------------
 # Miscellaneous
