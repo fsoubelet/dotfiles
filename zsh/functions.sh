@@ -40,16 +40,16 @@ function_brewup() {
 
 
 # Turning hidden files on/off in Finder
-function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
-function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
+function_hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
+function_hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
 
 
 # Viewing man pages in Preview
-function pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t "$@" > "$ps" ; open "$ps" ; }
+function_pman() { ps=$(mktemp -t manpageXXXX).ps ; man -t "$@" > "$ps" ; open "$ps" ; }
 
 
 # Prompting IP address
-function myip() {
+function_myip() {
   ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
 	ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
 	ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
@@ -59,13 +59,13 @@ function myip() {
 
 
 # Getting a status updates on new packages versions and software updates
-function whatsnew() {
+function_whatsnew() {
   # homebrew
   echo "Checking homebrew packages..."
   brew update > /dev/null;
   new_packages=$(brew outdated --quiet; brew cask outdated --quiet)
-  num_packages=$(echo $new_packages | wc -w)
-  if [ $num_packages -gt 0 ]; then
+  num_packages=$(echo "$new_packages" | wc -w)
+  if [ "$num_packages" -gt 0 ]; then
       echo "New package updates available:"
       for package in $new_packages; do
   	echo "   * $package";
@@ -80,7 +80,7 @@ function whatsnew() {
 
 
 # Convert every flac file in current directory into mp3 format
-function flac_to_mp3() {
+function_flac_to_mp3() {
   # Written to run in the same directory of the .flac files.
   for FILE in *.flac; do
       ffmpeg -i "$FILE" -q:a 0 "${FILE/.flac/.mp3}"
@@ -89,22 +89,22 @@ function flac_to_mp3() {
 
 
 # Convert every mov file in current directory into mp4 format
-function mov_to_mp4() {
+function_mov_to_mp4() {
   # Written to fun in the same directory of the .mov files.
   for file in *.mov;
   do
     ffmpeg -i "$file" -r 30 "${file%.mov.mp4}.mp4"
-    trash $file
+    trash "$file"
   done
 }
 
 
 # Convert every mp4 file in current directory into mkv format
-function mp4_to_mkv() {
+function_mp4_to_mkv() {
   # Written to fun in the same directory of the .mov files.
   for file in *.mp4;
   do
     ffmpeg -i "$file" -r 30 "${file%.mov.mp4}.mkv"
-    trash $file
+    trash "$file"
   done
 }
