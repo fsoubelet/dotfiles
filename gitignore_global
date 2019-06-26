@@ -7,6 +7,11 @@
 # git config --list
 #####################
 
+# Python byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
 
 # For vim #
 ###########
