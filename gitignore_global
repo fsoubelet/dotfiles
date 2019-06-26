@@ -7,6 +7,11 @@
 # git config --list
 #####################
 
+# Python byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
 
 # For vim #
 ###########
@@ -33,6 +38,7 @@ vim/bundle
 .Trash
 .Xauthority
 Desktop.ini
+ehthumbs.db
 thumbs.db
 Thumbs.db
 Icon?
@@ -88,8 +94,6 @@ usr/
 tmp/
 var/
 *.old
-*.gz
-*.7z
 *.flac
 *.o
 *.so
@@ -98,7 +102,21 @@ var/
 *.mp3
 
 
-# Miscellaneous
+# Packages # 
+############
+# it's better to unpack these files and commit the raw source
+# git has tis owm built-in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.tar
+*.rar
+*.zip
+
+# Miscellaneous #
+#################
 .bundle
 .env
 .gitconfig.local

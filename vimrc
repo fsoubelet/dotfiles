@@ -14,9 +14,11 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins for programming
 Plug 'davidhalter/jedi-vim'                     " Jedi-based completion.
+Plug 'ervandew/supertab'                        " Make completion on <tab> command.
 Plug 'tmhedberg/SimpylFold'                     " Colde folding.
 Plug 'vim-scripts/indentpython.vim'             " Proper Python indentation.
 Plug 'nvie/vim-flake8'                          " PEP8 checking.  
+Plug 'python/black'                             " Python formatting.
 Plug 'scrooloose/syntastic'                     " Syntax checking.
 Plug 'cjrh/vim-conda'                           " Conda environments integration (jedi & commands).
 Plug 'plasticboy/vim-markdown'                  " Markdown syntax.
@@ -90,6 +92,8 @@ au BufNewFile,BufRead *.py:
 " Ignore .pyc files in NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
+" Set line length for Black formatting
+let g:black_linelength = 100
 
 
 "##########################################################################"
@@ -124,8 +128,6 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-"colorscheme neodark
-"colorscheme cosmic_latte
 colorscheme palenight 
 
 let g:lightline = {
