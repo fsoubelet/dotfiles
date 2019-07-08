@@ -33,6 +33,7 @@ Plug 'kien/ctrlp.vim'                           " Fuzzy file, buffer, mru, etc f
 Plug 'airblade/vim-gitgutter'                   " Git diff in the gutter.
 Plug 'itchyny/lightline.vim'                    " Minimalist status line.
 Plug 'drewtempelmeyer/palenight.vim'            " Colorscheme I like.
+Plug 'mhinz/vim-startify'                       " Vim startup page.
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -48,6 +49,20 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
+
+"####################"
+"     1. General     "
+"####################"
+syntax on
+set autoread   " Auto read files when changed outside
+let g:tex_flavor = "latex" " Auto detect latex filetype
+
+
+"####################"
+"     2. Hotkeys     "
+"####################"
+nnoremap <C-T> :%s/\s\+$//<CR> " <leader>T = Delete all trailing space in file
+nnoremap <C-R> :retab<CR> " <leader>R = Converts tabs to spaces in file
 
 
 "##########################################################################"
