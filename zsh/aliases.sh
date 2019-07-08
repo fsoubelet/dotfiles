@@ -48,7 +48,6 @@ alias zshconfig="vi ~/.zshrc"
 alias pycharm='open -a PyCharm.app'
 alias gtp='gotop'
 
-
 # Vim/Neovim
 alias vim="/usr/local/bin/vim"
 
@@ -94,6 +93,13 @@ alias bubo='brew update && brew outdated'
 
 
 # -------------------------------------------------------------------
+# Docker aliases
+# -------------------------------------------------------------------
+alias docker_clean='docker rm $(docker ps -a -q -f status=exited)'  # Delete all containers that have a status of exited
+alias dkrm='docker system prune -a'  # DANGEROUS. Will delete everything from docker.
+
+
+# -------------------------------------------------------------------
 # Safety first
 # -------------------------------------------------------------------
 
@@ -132,8 +138,8 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 alias upz='upgrade_oh_my_zsh'
 
 # Easier notebook alias
-alias jupy='jupyter notebook --browser=safari'
-alias jupylab='jupyter lab --browser=safari'
+alias jupy='jupyter notebook --browser=firefox'
+alias jupylab='jupyter lab --browser=firefox'
 
 # Wifi cli utility alias (options are on and off)
 alias wifi='osx-wifi-cli'
