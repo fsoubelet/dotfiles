@@ -147,6 +147,14 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 
 
+###################################################
+# Installing Anaconda distribution - Python 3.7.3 #
+###################################################
+wget https://repo.continuum.io/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
+bash Anaconda3-2019.03-MacOSX-x86_64.sh -b -p ~/anaconda3
+rm Anaconda3-2019.03-MacOSX-x86_64.sh
+
+
 ##########################
 # Switching to Zsh shell #
 ##########################
@@ -163,7 +171,7 @@ dotfiles_echo "Dotfiles installation complete!"
 
 dotfiles_echo "Post-install recommendations:"
 dotfiles_info "The first time you launch Vim, Vim-Plug will be installed. Run :PlugInstall to install plugins, then relaunch Vim."
-dotfiles_info "Remember to set you iTerm profile."
+dotfiles_info "Remember to set your iTerm profile."
 dotfiles_info "If you wish to act on OS defaults, customise and run ~/dotfiles/macos_defaults.sh"
 dotfiles_info "You should log out for some changes to take effect or run 'reload!'."
 dotfiles_echo "Enjoy your new home!"
