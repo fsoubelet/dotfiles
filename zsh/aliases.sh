@@ -48,7 +48,7 @@ alias zshconfig="vi ~/.zshrc"
 alias pycharm='open -a PyCharm.app'
 alias gtp='gotop'
 
-# Vim/Neovim
+# Vim
 alias vim="/usr/local/bin/vim"
 
 
@@ -97,6 +97,7 @@ alias bubo='brew update && brew outdated'
 # -------------------------------------------------------------------
 alias docker_clean='docker rm $(docker ps -a -q -f status=exited)'  # Delete all containers that have a status of exited
 alias dkrm='docker system prune -a'  # DANGEROUS. Will delete everything from docker.
+alias lzd='lazydocker'
 
 
 # -------------------------------------------------------------------

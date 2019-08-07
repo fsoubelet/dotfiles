@@ -34,6 +34,7 @@ Plug 'airblade/vim-gitgutter'                   " Git diff in the gutter.
 Plug 'itchyny/lightline.vim'                    " Minimalist status line.
 Plug 'drewtempelmeyer/palenight.vim'            " Colorscheme I like.
 Plug 'mhinz/vim-startify'                       " Vim startup page.
+Plug 'kristijanhusak/vim-carbon-now-sh'         " Pretty code images
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
