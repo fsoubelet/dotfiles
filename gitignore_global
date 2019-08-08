@@ -8,12 +8,15 @@
 #####################
 
 
+<<<<<<< HEAD
 # Python byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
 
+=======
+>>>>>>> 3401ae234909fc59b026bdf4d220af796a44ea49
 # For vim #
 ###########
 *.swp

@@ -32,7 +32,10 @@ alias ip_coupling='cd /afs/cern.ch/work/f/fesoubel/PhD/STUDY.19.HLLHC.ip_problem
 alias wipetracks='for FILE in track.obs0001.*; do rm -f "$FILE"; done && for FILE in track.obs0002.*; do rm -f "$FILE"; done'
 alias clean_lhc='rm -f after_addingSkew.twiss bare_lhc before_correction_lhc dr_ptc_twiss_nnn.twiss internal_mag_pot.txt matched_lhc.twiss'
 alias clean_hllhc='rm -f bare_hllhc.twiss before_correction_hllhc.twiss dr_ptc_twiss_nnn.twiss internal_mag_pot.txt matched_hllhc.twiss tfs_to_rdts.tfs'
+<<<<<<< HEAD
 alias stop_pending='bkill `bjobs -u fesoubel | grep PEND | cut -f1 -d" "`'
+=======
+>>>>>>> 3401ae234909fc59b026bdf4d220af796a44ea49
 
 [ -d ~/Desktop ]   && alias dt='cd ~/Desktop'
 [ -d ~/dotfiles ]  && alias dotfiles='cd ~/dotfiles'
