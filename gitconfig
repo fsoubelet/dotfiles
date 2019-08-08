@@ -17,7 +17,7 @@
 
 [core]
   pager = less
-  editor = nvim
+  editor = vim
   # lets you define a global .gitignore for all those *.swp, *~, *.o, etc things that you're frequently sticking in .gitignore
   excludes = ~/.gitignore_global
   # tells git to ignore file permission changes
@@ -33,7 +33,7 @@
 
 [pull]
   # Don't flatten locally created merge commits when rebasing.
-  rebase = preserve
+  #rebase = preserve
 
 
 [push]
