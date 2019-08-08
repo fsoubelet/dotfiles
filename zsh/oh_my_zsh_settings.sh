@@ -5,6 +5,10 @@ export UPDATE_ZSH_DAYS=7
 # Setting prompt appearance
 ZSH_THEME="oxide"
 
+# getting python repositories in PYTHONPATH
+# WARNING: it is better to sys.path.append("/path/to/modules") in a script!
+##export PYTHONPATH="$PYTHONPATH:/afs/cern.ch/work/f/fesoubel/Repositories/Beta-Beat.src"
+
 # Enable flags completion // file seems to be missing
 #source $(dirname $(which colorls))/tab_complete.sh
 
