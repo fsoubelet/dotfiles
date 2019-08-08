@@ -24,6 +24,3 @@ export PATH="/afs/cern.ch/work/f/fesoubel/public/anaconda3/bin:$PATH"
 
 # Getting Poetry tool in the PATH
 export PATH="$PATH:$HOME/.poetry/bin"
-
-# Adding gotop in the PATH
-export PATH="$HOME/.gotop:$PATH"
