@@ -51,9 +51,9 @@ macos:
 
 link:
 	ln -nfs ${DOTFILES_DIR}/tmux.conf $(HOME)/.tmux.conf
-	ln -nfs ${DOTFILES_DIR}/zsh/.zshrc $(HOME)/.zshrc
-	ln -nfs ${DOTFILES_DIR}/git/.gitconfig $(HOME)/.gitconfig
-	ln -nfs ${DOTFILES_DIR}/git/.gitignore_global $(HOME)/.gitignore_global
+	ln -nfs ${DOTFILES_DIR}/zsh/zshrc $(HOME)/.zshrc
+	ln -nfs ${DOTFILES_DIR}/git/gitconfig $(HOME)/.gitconfig
+	ln -nfs ${DOTFILES_DIR}/git/gitignore_global $(HOME)/.gitignore_global
 	ln -nfs ${DOTFILES_DIR}/python/matplotlibrc $(HOME)/.matplotlib/matplotlibrc
 	ln -nfs ${DOTFILES_DIR}/vim/vimrc $(HOME)/.vimrc
 	ln -nfs ${DOTFILES_DIR}/macos/Brewfile $(HOME)/.Brewfile
