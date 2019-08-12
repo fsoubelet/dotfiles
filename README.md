@@ -7,13 +7,13 @@
 </p>
 
 
-This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.5).
+This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.6).
 
 
 ## Package overview
 
-This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home.
-These include OS defaults and terminal profile as well as shell, git, editors and package manager configurations.
+This repository contains my configurations for a series of software and utilities that make my mac and the commandline feel like home.
+These include OS defaults and terminal profile as well as shell, git, editor and package manager configurations.
 An installation script is included to automatically implement them on a fresh new macOS machine.
 
 The `install.sh` script will install some needed software and setup configuration files.
@@ -26,13 +26,15 @@ Here's some of the core software in my configuration:
 * [Tmux][tmux] as terminal multiplexer.
 
 These will be installed automatically if not already present.
-The script will then backup your configuration files if already present, and symlink the new ones to those of this repository.
+The script will backup your configuration files if already present, and symlink the new ones to those of this repository.
 
 #### Vim
 
 A classic modal editor, Vim is excellent.
 I use [Vim-Plug][vim-plug] to manage plugins.
-The section for plugins is at the beginning of my `vimrc` file, and with a few lines to auto-install Vim-Plug if it isn't already, so as long as your `~/.vimrc` is symlinked to `vimrc` in this repository, you can launch Vim, run `:PlugInstall` and enjoy a fully ready configuration.
+The plugins section is at the top of the `vimrc` file.
+Vim-Plug will be auto-installed on the first Vim launch if it isn't already, as long as your `~/.vimrc` is symlinked to `vimrc` in this repository.
+After that step, run `:PlugInstall` and enjoy a fully ready configuration.
 
 #### Zsh
 
@@ -47,45 +49,31 @@ Vim and tmux work seamlessly together thanks to the wonderful [vim-tmux-navigato
 
 ## Install
 
-### Prerequisites
-
-My go-to python distribution is the [Anaconda][anaconda] distribution.
-It is recommended to install it before running the installation script.
-You can download your favorite version [here][anacondadownload].
-
-### Necessary tools
-
-Make sure you have up-to-date software and Xcode command line tools.
-On a sparkling fresh installation of macOS, run:
-
-```
-sudo softwareupdate -i -a
-xcode-select --install
-```
-
-### Install with Git
+If git is already installed on your machine, you can clone this repository to your home folder.
+Otherwise, you can simply download and unzip it from github.
+Everything will be handled by the `Makefile` commands, so in the case of a git install simply run:
 
 ```
 git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
-bash ~/dotfiles/install.sh
+cd ~/dotfiles
+make all
 ```
 
 
 ## Post-install
 
-The `install.sh` script leaves some things to be done manually, specifically setting personnal information, installing profiles and changing some defaults.
+Some things are left to be done manually, specifically setting personnal information, installing profiles and changing some defaults.
 
 * Set up iTerm profile (see below).
 * Create a `~/.gitconfig.local` in which you can put personal data.
 * Add a personnal touch to `~/.zshrc`.
-* If you wish to act on [macOS defaults][macos-defaults], customize `macos_defaults.sh`
- and run `bash ~/dotfiles/macos_defaults.sh`.
+* If you wish to act on [macOS defaults][macos-defaults], customize the `macos_defaults.sh` file and run `make defaults`.
 
 
-### Setting up iTerm2 profile
+### Setting up iTerm2 profile (valid for iTerm2 v3.3.0)
 
-1. OPEN iTerm2 > Preferences.
-2. Under the General tab, check the box labeled "Load preferences from a custom folder or URL:"
+1. OPEN `iTerm2` > `Preferences`, or `cmd + ,`.
+2. Under the `General` tab, `Preferences` section, check the box labeled "Load preferences from a custom folder or URL:"
 3. Press "Browse" and point it to `~/dotfiles/iterm2/com.googlecode.iterm2.plist`.
 4. Restart iTerm2.
 
