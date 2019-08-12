@@ -475,7 +475,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>478 285 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>86 140 1490 810 0 0 1680 1027 </string>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -884,6 +884,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Title Components</key>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -1368,9 +1370,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-1920, 99}, {1920, 1080}}</string>
+		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{-1282, 961}</string>
+		<string>{234, 813}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1381,9 +1383,9 @@
 	<key>NoSyncInstallationId</key>
 	<string>D95C75DD-063C-426A-92F6-3B446DF9D175</string>
 	<key>NoSyncLastTipTime</key>
-	<real>586992996.16161096</real>
+	<real>587290343.97566199</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>11</integer>
+	<integer>16</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2140,6 +2142,8 @@
 		<string>0072</string>
 		<string>0073</string>
 		<string>0074</string>
+		<string>0075</string>
+		<string>0076</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>

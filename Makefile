@@ -22,13 +22,13 @@ usage:
 	printf "\\n\
 	\\033[1mDOTFILES\\033[0m\\n\
 	\\n\
-	$(OS) settings installation script.\\n\
+	$(OS)          Settings installation script.\\n\
 	\\n\
-	  make         install all configurations and applications.\\n\
+	  make         Install all configurations and applications.\\n\
 	\\n\
-	  make link    create symbolic links to the bash configuration files.\\n\
+	  make link    Create symbolic links to the bash configuration files.\\n\
 	\\n\
-	  make unlink  remove symbolic links created by \`make link\`.\\n\
+	  make unlink  Remove symbolic links created by \`make link\`.\\n\
 	\\n\
 	"
 
