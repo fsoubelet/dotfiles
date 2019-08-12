@@ -12,11 +12,11 @@ This folder contains my dotfiles, used on a mac currently running macOS Mojave (
 
 ## Package overview
 
-This repository contains my configurations for a series of software and utilities that make my mac and the commandline feel like home.
+This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home.
 These include OS defaults and terminal profile as well as shell, git, editor and package manager configurations.
 An installation script is included to automatically implement them on a fresh new macOS machine.
 
-The `install.sh` script will install some needed software and setup configuration files.
+The `Makefile`  will take care of installing some needed software and setup configuration files.
 Here's some of the core software in my configuration:
 
 * [iTerm][iterm2] as terminal.
@@ -33,8 +33,8 @@ The script will backup your configuration files if already present, and symlink 
 A classic modal editor, Vim is excellent.
 I use [Vim-Plug][vim-plug] to manage plugins.
 The plugins section is at the top of the `vimrc` file.
-Vim-Plug will be auto-installed on the first Vim launch if it isn't already, as long as your `~/.vimrc` is symlinked to `vimrc` in this repository.
-After that step, run `:PlugInstall` and enjoy a fully ready configuration.
+Vim-Plug will be auto-installed on the first Vim launch if it isn't already, as long as your `~/.vimrc` is symlinked to the one in this repository.
+After that, run `:PlugInstall` and enjoy a fully ready configuration.
 
 #### Zsh
 
