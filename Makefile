@@ -34,9 +34,8 @@ linux:
 
 macos:
 	xcode-select --install
-	anaconda
 	softwareupdate -ai
-	bash $(DOTFILES_DIR)/macos/defaults.sh
+	anaconda
 	brew
 	omz
 	spaceship
@@ -62,7 +61,7 @@ unlink:
 	unlink $(HOME)/.vimrc
 	unlink $(HOME)/.Brewfile
 
-.PHONY: anaconda brew omz spaceship tmux zsh
+.PHONY: anaconda brew defaults omz spaceship tmux zsh
 
 anaconda:
 	wget https://repo.continuum.io/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
@@ -77,6 +76,9 @@ brew:
 	brew analytics off
 	brew bundle $(DOTFILES_DIR)/macos/Brewfile
 	gem install colorls
+
+defaults:
+	bash $(DOTFILES_DIR)/macos/defaults.sh
 
 omz:
 	if [ ! -d "$(HOME)/.oh-my-zsh" ]; then
