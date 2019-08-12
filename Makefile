@@ -21,15 +21,10 @@ help: usage
 usage:
 	printf "\\n\
 	\\033[1mDOTFILES\\033[0m\\n\
-	\\n\
-	$(OS)          Settings installation script.\\n\
-	\\n\
+	  $(OS)        Settings installation script.\\n\
 	  make         Install all configurations and applications.\\n\
-	\\n\
-	  make link    Create symbolic links to the bash configuration files.\\n\
-	\\n\
+	  make link    Create symbolic links to the zsh configuration files.\\n\
 	  make unlink  Remove symbolic links created by \`make link\`.\\n\
-	\\n\
 	"
 
 
