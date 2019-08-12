@@ -48,9 +48,9 @@ fail () {
 set -e # Terminate script if anything exits with a non-zero value
 
 
-###################
-# Useful aliases #
-##################
+####################
+# Define locations #
+####################
 DOTFILES_DIR=$HOME/dotfiles
 VIM_DIR=$HOME/.vim
 
@@ -68,7 +68,7 @@ else
 fi
 
 dotfiles_echo "Installing Homebrew packages."
-brew bundle "$DOTFILES_DIR"/"Brewfile"
+brew bundle "$DOTFILES_DIR"/"macos"/"Brewfile"
 
 
 #################################
@@ -110,16 +110,30 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 ####################################
 # Setup all dotfiles with symlinks #
 ####################################
-home_files=(
-"gitconfig"
-"gitignore_global"
-"tmux.conf"
-"vimrc"
-"zshrc"
-)
 
 dotfiles_echo "Installing dotfiles..."
 dotfiles_echo "Creating backup for existing files."
+
+git_files=(
+"gitconfig"
+"gitignore_global"
+)
+
+for file in "${git_files[@]}"; do
+  if [ -f "$HOME"/."$file" ]; then
+    dotfiles_info ".$file already present. Backing up..."
+    cp "$HOME"/."$file" "$HOME"/."${file}"_backup
+    rm -f "$HOME"/."$file"
+  else
+    dotfiles_info ".$file does not exist at the moment. It will be symlinked shortly."
+  fi
+  dotfiles_info "-> Linking $DOTFILES_DIR/git/$file to $HOME/.$file..."
+  ln -nfs "$DOTFILES_DIR"/"git"/"$file" "$HOME"/."$file"
+done
+
+home_files=(
+"tmux.conf"
+)
 
 for file in "${home_files[@]}"; do
   if [ -f "$HOME"/."$file" ]; then
@@ -133,8 +147,69 @@ for file in "${home_files[@]}"; do
   ln -nfs "$DOTFILES_DIR"/"$file" "$HOME"/."$file"
 done
 
-dotfiles_info "-> Linking $DOTFILES_DIR/Brewfile to $HOME/Brewfile..."
-ln -nfs "$DOTFILES_DIR"/Brewfile "$HOME"/Brewfile
+vim_files=(
+"vimrc"
+)
+
+for file in "${vim_files[@]}"; do
+  if [ -f "$HOME"/."$file" ]; then
+    dotfiles_info ".$file already present. Backing up..."
+    cp "$HOME"/."$file" "$HOME"/."${file}"_backup
+    rm -f "$HOME"/."$file"
+  else
+    dotfiles_info ".$file does not exist at the moment. It will be symlinked shortly."
+  fi
+  dotfiles_info "-> Linking $DOTFILES_DIR/vim/$file to $HOME/.$file..."
+  ln -nfs "$DOTFILES_DIR"/"vim"/"$file" "$HOME"/."$file"
+done
+
+zsh_files=(
+"zshrc"
+)
+
+for file in "${zsh_files[@]}"; do
+  if [ -f "$HOME"/."$file" ]; then
+    dotfiles_info ".$file already present. Backing up..."
+    cp "$HOME"/."$file" "$HOME"/."${file}"_backup
+    rm -f "$HOME"/."$file"
+  else
+    dotfiles_info ".$file does not exist at the moment. It will be symlinked shortly."
+  fi
+  dotfiles_info "-> Linking $DOTFILES_DIR/zsh/$file to $HOME/.$file..."
+  ln -nfs "$DOTFILES_DIR"/"zsh"/"$file" "$HOME"/."$file"
+done
+
+mac_files=(
+"Brewfile"
+)
+
+for file in "${mac_files[@]}"; do
+  if [ -f "$HOME"/."$file" ]; then
+    dotfiles_info ".$file already present. Backing up..."
+    cp "$HOME"/."$file" "$HOME"/."${file}"_backup
+    rm -f "$HOME"/."$file"
+  else
+    dotfiles_info ".$file does not exist at the moment. It will be symlinked shortly."
+  fi
+  dotfiles_info "-> Linking $DOTFILES_DIR/mac/$file to $HOME/.$file..."
+  ln -nfs "$DOTFILES_DIR"/"mac"/"$file" "$HOME"/."$file"
+done
+
+python_files=(
+"matplotlibrc"
+)
+
+for file in "${python_files[@]}"; do
+  if [ -f "$HOME"/."$file" ]; then
+    dotfiles_info ".$file already present. Backing up..."
+    cp "$HOME"/."$file" "$HOME"/."${file}"_backup
+    rm -f "$HOME"/."$file"
+  else
+    dotfiles_info ".$file does not exist at the moment. It will be symlinked shortly."
+  fi
+  dotfiles_info "-> Linking $DOTFILES_DIR/python/$file to $HOME/.matplotlib/$file..."
+  ln -nfs "$DOTFILES_DIR"/"python"/"$file" "$HOME"/"matplotlib"/"$file"
+done
 
 
 ##################################
