@@ -4,6 +4,7 @@
 alias clr='clear'
 alias cclr='clear && archey && ls'
 alias cdlr='cd && clear && archey && ls'
+alias cld='clr && lsd'
 alias cp='cp -iv'
 alias df='df -h'
 alias ls='colorls'

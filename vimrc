@@ -23,6 +23,8 @@ Plug 'scrooloose/syntastic'                     " Syntax checking.
 Plug 'cjrh/vim-conda'                           " Conda environments integration (jedi & commands).
 Plug 'plasticboy/vim-markdown'                  " Markdown syntax.
 Plug 'lervag/vimtex'                            " Making LaTeX easy.
+Plug 'scrooloose/nerdcommenter'                 " Commenting lines made easy
+
 " UX & UI plugins
 Plug 'scrooloose/nerdtree'                      " NERDTree.
 Plug 'ryanoasis/vim-devicons'                   " NERDTree icons.
@@ -38,6 +40,12 @@ Plug 'kristijanhusak/vim-carbon-now-sh'         " Pretty code images
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" Making sure filetype plugin is on for plugins using it.
+filetype plugin on
+
+" Setting the Leader key
+let mapleader = ','
 
 " Split panes control: Ctrl and natural vim keymap navigation (hjkl)
 nnoremap <C-J> <C-W><C-J>
@@ -79,6 +87,25 @@ nnoremap <C-R> :retab<CR> " <leader>R = Converts tabs to spaces in file
 " Shortcut to toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+
+"##########################################################################"
+"                          NERDCommenter SECTION                           "
+"##########################################################################"
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 0 
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
 
 
 "##########################################################################"
