@@ -3,6 +3,8 @@
 
 ## Install script
 
+* Change install script accordingly to new structure
+* Add 'ln -s dotfiles/python/matplotlibrc ~/.matplotlib/matplotlibrc'
 * Implement python specifics
 
 
