@@ -208,7 +208,7 @@ for file in "${python_files[@]}"; do
     dotfiles_info ".$file does not exist at the moment. It will be symlinked shortly."
   fi
   dotfiles_info "-> Linking $DOTFILES_DIR/python/$file to $HOME/.matplotlib/$file..."
-  ln -nfs "$DOTFILES_DIR"/"python"/"$file" "$HOME"/"matplotlib"/"$file"
+  ln -nfs "$DOTFILES_DIR"/"python"/"$file" "$HOME"/".matplotlib"/"$file"
 done
 
 
