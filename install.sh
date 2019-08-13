@@ -242,8 +242,6 @@ chsh -s $(which zsh)
 # Finished! #
 #############
 dotfiles_echo "Dotfiles installation complete!"
-
-
 dotfiles_echo "Post-install recommendations:"
 dotfiles_info "The first time you launch Vim, Vim-Plug will be installed. Run :PlugInstall to install plugins, then relaunch Vim."
 dotfiles_info "Remember to set your iTerm profile."

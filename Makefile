@@ -27,7 +27,6 @@ usage:
 	  make unlink  Remove symbolic links created by \`make link\`.\\n\
 	"
 
-
 .PHONY: linux macos link unlink
 
 linux:
@@ -87,9 +86,10 @@ omz:
 
 spaceship:
 	git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-	ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-t    heme"
+	ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 tmux:
+	echo "Installing tmux plugin manager."
 	if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 	  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	  ~/.tmux/plugins/tpm/scripts/install_plugins.sh
