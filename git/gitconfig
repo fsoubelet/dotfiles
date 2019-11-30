@@ -38,7 +38,7 @@
 
 [push]
   # Refuse to push if upstream branch name is different from local.
-  default = simple
+#  default = simple
 
 
 [rerere]

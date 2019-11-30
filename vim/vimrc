@@ -143,6 +143,9 @@ let g:black_linelength = 100
 "                              Miscellaneous                               "
 "##########################################################################"
 
+" Using fzf in Vim
+set rtp+=/usr/local/opt/fzf
+
 " Auto syntax for madx files
 au BufReadPost,BufNewFile *.madx,*.mad,*.seq setf madx
 
