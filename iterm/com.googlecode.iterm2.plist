@@ -474,8 +474,10 @@
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>478 285 796 486 0 0 1680 1027 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>191 124 1410 680 0 0 1680 1027 </string>
+	<string>191 124 1330 760 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -829,7 +831,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>HackNerdFontComplete-Regular 13</string>
+			<string>HackNerdFontComplete-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -1372,7 +1374,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{234, 813}</string>
+		<string>{769, 956}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1383,9 +1385,9 @@
 	<key>NoSyncInstallationId</key>
 	<string>D95C75DD-063C-426A-92F6-3B446DF9D175</string>
 	<key>NoSyncLastTipTime</key>
-	<real>587290343.97566199</real>
+	<real>587378996.26045895</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>21</integer>
+	<integer>85</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2144,6 +2146,7 @@
 		<string>0074</string>
 		<string>0075</string>
 		<string>0076</string>
+		<string>0077</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -2238,6 +2241,8 @@
 	<integer>0</integer>
 	<key>TerminalVMargin</key>
 	<integer>1</integer>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1565775232</real>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>

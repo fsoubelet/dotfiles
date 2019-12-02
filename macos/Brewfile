@@ -67,7 +67,9 @@ brew "go"
 brew "pkg-config"
 brew "grep"
 brew "hdf5"
+brew "hexyl"
 brew "htop"
+brew "hyperfine"
 brew "imagemagick"
 brew "lynx"
 brew "magic-wormhole"
@@ -85,6 +87,7 @@ brew "rsync"
 brew "ruby"
 brew "shellcheck"
 brew "speedtest-cli"
+brew "ssh-copy-id"
 brew "starship"
 brew "streamlink"
 brew "textql"
@@ -115,6 +118,7 @@ cask "font-fira-code"
 cask "font-hack-nerd-font"
 cask "iina"
 cask "jupyter-notebook-viewer"
+cask "maccy"
 cask "malwarebytes"
 cask "mendeley"
 cask "processing"
@@ -134,6 +138,5 @@ mas "NordVPN IKE", id: 1116599239
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Shazam", id: 897118787
-mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835

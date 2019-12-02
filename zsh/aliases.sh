@@ -10,7 +10,7 @@ alias df='df -h'
 alias ls='colorls'
 alias lsg='colorls --git-status . --tree'
 alias lsa='colorls -lA --sf'
-alias lsd='exa'
+alias lsd='exa --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
@@ -20,7 +20,7 @@ alias ff='find . -type f -name'
 
 #alias grep='ack'
 alias cat='bat'
-alias exa='exa --all --long --tree --level=1'
+#alias exa='exa --all --long --tree --icons --level=1'
 alias find='fd'
 alias th='trash'
 alias rsync='rsync -avhz'
@@ -43,7 +43,6 @@ alias fuck='sudo $(fc -ln -1)'
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
-alias atom="open -a 'Atom.app'"
 alias code="open -a 'Xcode.app'"
 alias zshconfig="vi ~/.zshrc"
 alias pycharm='open -a PyCharm.app'
@@ -68,7 +67,7 @@ alias gcom='git checkout master'
 alias gd='git diff'
 alias gdf='git diff --word-diff --color-words'
 alias gf='git fetch'
-alias gl='git log --date=format:"%b %d, %Y" --oneline --decorate --all --graph --pretty=format:"%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n"'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 alias glg='git log --graph --stat --pretty=format:"%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n"'
 alias gm='git merge'
 alias gpl='git pull'
