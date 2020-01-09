@@ -16,7 +16,7 @@ COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
 
 HISTFILE=~/.zsh_history
-HIST_STAMPS="dd-mm-yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt APPEND_HISTORY                       # Allow multiple terminal sessions to all append to one zsh command history
@@ -25,6 +25,6 @@ setopt HIST_EXPIRE_DUPS_FIRST               # When duplicates are entered, get r
 # Enabled true color support for terminals
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-plugins=(brew github fast-syntax-highlighting you-should-use zsh-autosuggestions)
+plugins=(brew github git-flow fast-syntax-highlighting you-should-use zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+source ${ZSH}/oh-my-zsh.sh

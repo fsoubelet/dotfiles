@@ -7,7 +7,7 @@
 </p>
 
 
-This folder contains my dotfiles, used on a mac currently running macOS Mojave (10.14.6).
+This folder contains my dotfiles, used on a mac currently running macOS Catalina (10.15.2).
 
 
 ## Package overview
@@ -56,7 +56,7 @@ Everything will be handled by the `Makefile` commands, so in the case of a git i
 ```
 git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-make all
+make
 ```
 
 

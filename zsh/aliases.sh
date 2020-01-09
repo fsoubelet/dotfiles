@@ -77,7 +77,7 @@ alias grm='git rm'
 alias grr='git remote rm'
 alias gs='git status'
 alias gta='git tag -am'
-
+alias gfl='git flow'
 
 # -------------------------------------------------------------------
 # Homebrew
@@ -95,8 +95,10 @@ alias bubo='brew update && brew outdated'
 # -------------------------------------------------------------------
 # Docker aliases
 # -------------------------------------------------------------------
-alias docker_clean='docker rm $(docker ps -a -q -f status=exited)'  # Delete all containers that have a status of exited
-alias dkrm='docker system prune -a'  # DANGEROUS. Will delete everything from docker.
+alias docklean='docker rm $(docker ps -a -q -f status=exited)'                          # Delete all CONTAINERS that have a status of exited.
+alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'    # Forcefully remove  DANGLING IMAGES.
+alias dockrmi='docker rmi $(docker images -q) -f'                                       # Forcefully remove ALL IMAGES.
+alias dkapocalypse='docker system prune -a'                                             # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
 
 
@@ -105,7 +107,7 @@ alias lzd='lazydocker'
 # -------------------------------------------------------------------
 
 _exists() {
-  command -v $1 > /dev/null 2>&1
+  command -v "$1" > /dev/null 2>&1
 }
 
 
