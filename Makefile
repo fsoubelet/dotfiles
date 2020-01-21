@@ -27,7 +27,7 @@ all: install
 
 install: $(OS)
 
-.PHONY: help anaconda brew defaults link linux macos omz spaceship tmux unlink zsh
+.PHONY: help anaconda brew defaults link linux macos omz plugins unlink zsh
 
 help:
 	@echo "Dotfiles Makefile. Please use 'make $(R)<target>$(E)' where $(R)<target>$(E) is one of:"
@@ -37,10 +37,9 @@ help:
 	@echo "  $(R) anaconda $(E)     to install an Anaconda distribution, with Python 3. Currently this installs '2019.10'."
 	@echo "  $(R) brew $(E)         to install Homebrew if not present already, and install packages listed in the Brewfile."
 	@echo "  $(R) defaults $(E)     to change macos defaults as specified in 'macos/macos_defaults.sh'."
-	@echo "  $(R) oh_my_zsh $(E)    to install oh-my-zsh if not present already."
-	@echo "  $(R) spaceship $(E)    to locally install the required files for the spaceship prompt for zsh."
-	@echo "  $(R) tmux $(E)         to install tmux if not present already."
-	@echo "  $(R) zsh $(E)          to switch to the zsh shell."
+	@echo "  $(R) omz $(E)          to install oh-my-zsh if not present already."
+	@echo "  $(R) plugins $(E)      to locally install the required files for oh-my-zsh plugins."
+	@echo "  $(R) zsh $(E)          to switch to the Z shell."
 
 linux:
 	@echo "This is not yet implemented."
@@ -49,14 +48,35 @@ macos:
 	@echo "Installing Xcode command-line tools."
 	@xcode-select --install
 	@softwareupdate -ai
-	@make anaconda
 	@make brew
+	@make anaconda
+	@make zsh
 	@make oh_my_zsh
 	@make plugins
-	@make spaceship
 	@make link
 	@make tmux
-	@make zsh
+
+anaconda:
+	@echo "$(B)Downloading Anaconda distribution.$(E)"
+	@wget https://repo.anaconda.com/archive/Anaconda3-2019.10-MacOSX-x86_64.sh
+	@echo "$(B)Installing Anaconda distribution.$(E)"
+	@bash Anaconda3-2019.03-MacOSX-x86_64.sh -b -p ~/anaconda3
+	@echo "$(B)Removing installer from disk.$(E)"
+	@rm -rf Anaconda3-2019.03-MacOSX-x86_64.sh
+
+brew:
+	@echo "$(B)Checking valid Homebrew installation.$(E)"
+	@bash ${DOTFILES_DIR}/macos/homebrew_install.sh
+	@brew analytics off
+	@echo "$(B)Installing Homebrew packages from Brewfile.$(E)"
+	@cd $(DOTFILES_DIR)/macos; brew bundle; cd $(DOTFILES_DIR)
+	@rm -rf $(DOTFILES_DIR)/macos/Brewfile.lock.json
+	@sudo gem install colorls
+
+defaults:
+	@echo "Changing some macos defaults according to configuration file."
+	@echo "Make sure you customize this file to your needs.$(E)."
+	@bash $(DOTFILES_DIR)/macos/defaults.sh
 
 link:
 	@echo "Linking tmux configuration file to home folder."
@@ -71,8 +91,23 @@ link:
 	@echo "Linking Brewfile to home folder."
 	@ln -nfs ${DOTFILES_DIR}/macos/Brewfile $(HOME)/.Brewfile
 
+omz:
+	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
+	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
+
+plugins:
+	@echo "$(B)Cloning 'fast-syntax-highlighting' files to local plugins directory.$(E)"
+	@git clone https://github.com/zdharma/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
+	@echo "$(B)Cloning 'you-should-use' files to local plugins directory.$(E)"
+	@git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+	@echo "$(B)Cloning 'zsh-autosuggestions' files to local plugins directory.$(E)"
+	@git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+	@echo "$(B)Cloning files for Spaceship prompt.$(E)"
+	@git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+	@ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
 unlink:
-	@echo "Removing symlinks."
+	@echo "$(B)Removing symlinks.$(E)"
 	@unlink $(HOME)/.tmux.conf
 	@unlink $(HOME)/.zshrc
 	@unlink $(HOME)/.gitconfig
@@ -80,59 +115,7 @@ unlink:
 	@unlink $(HOME)/.vimrc
 	@unlink $(HOME)/.Brewfile
 
-anaconda:
-	@echo "Downloading Anaconda distribution."
-	@wget https://repo.anaconda.com/archive/Anaconda3-2019.10-MacOSX-x86_64.sh
-	@echo "Installing Anaconda distribution."
-	@bash Anaconda3-2019.03-MacOSX-x86_64.sh -b -p ~/anaconda3
-	@echo "Removing installer from disk."
-	@rm -rf Anaconda3-2019.03-MacOSX-x86_64.sh
-
-brew:
-	@echo "Checking valid Homebrew installation."
-	@if [ -f "/usr/local/bin/brew"]; then\
-	  @echo "Good news: Homebrew is installed."\
-	@else\
-	  @echo "No installation found. Downloading and installing Homebrew." \
-	  @/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" \
-	@brew analytics off \
-	@echo "Installing Homebrew packages from Brewfile." \
-	@brew bundle $(DOTFILES_DIR)/macos/Brewfile \
-	@gem install colorls \
-
-defaults:
-	@echo "Changing some macos defaults according to the
-	@bash $(DOTFILES_DIR)/macos/defaults.sh
-
-oh_my_zsh:
-	@echo "Checking valid oh-my-zsh installation."
-	@if [ ! -d "$(HOME)/.oh-my-zsh" ]
-	then
-		@echo "No installation found. Downloading and installing oh-my-zsh."
-		@sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	@fi
-
-plugins:
-	@echo "Cloning 'fast-syntax-highlighting' files to local plugins directory."
-	@git clone https://github.com/zdharma/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
-	@echo "Cloning 'you-should-use' files to local plugins directory."
-	@git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
-	@echo "Cloning 'zsh-autosuggestions' files to local plugins directory."
-	@git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
-spaceship:
-	@echo "Cloning files for Spaceship prompt."
-	@git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-	@ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
-tmux:
-	@echo "Installing tmux plugin manager."
-	@if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-	  @git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	  @~/.tmux/plugins/tpm/scripts/install_plugins.sh
-	@fi
-
 zsh:
-	@echo "Switching to zsh shell."
+	@echo "$(B)Switching to the Z shell.$(E)"
 	@sudo sh -c "echo $(which zsh) >> /etc/shells"
-	@chsh -s $(which zsh)
+	@chsh -s "/usr/local/bin/zsh"

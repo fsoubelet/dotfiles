@@ -65,9 +65,9 @@ whatsnew() {
   brew update > /dev/null;
   new_packages=$(brew outdated --quiet; brew cask outdated --quiet)
   num_packages=$(echo "$new_packages" | wc -w)
-  if [ "$num_packages" -gt 0 ]; then
+  if [[ "$num_packages" -gt 0 ]]; then
       echo "New package updates available:"
-      for package in $new_packages; do
+      for package in ${new_packages}; do
   	echo "   * $package";
       done
   else
