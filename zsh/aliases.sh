@@ -18,9 +18,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
-#alias grep='ack'
-alias cat='bat'
-#alias exa='exa --all --long --tree --icons --level=1'
+#alias cat='bat'
 alias find='fd'
 alias th='trash'
 alias rsync='rsync -avhz'
@@ -30,11 +28,11 @@ alias .2='cd ../../'
 alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
-[ -d ~/Desktop ]   && alias dt='cd ~/Desktop'
-[ -d ~/dotfiles ]  && alias dotfiles='cd ~/dotfiles'
-[ -d ~/Downloads ] && alias dl='cd ~/Downloads'
-[ -d ~/Dropbox ]   && alias dr='cd ~/Dropbox'
-[ -d ~/cernbox ]   && alias cb='cd ~/cernbox'
+[[ -d ~/Desktop ]]   && alias dt='cd ~/Desktop'
+[[ -d ~/dotfiles ]]  && alias dotfiles='cd ~/dotfiles'
+[[ -d ~/Downloads ]] && alias dl='cd ~/Downloads'
+[[ -d ~/Dropbox ]]   && alias dr='cd ~/Dropbox'
+[[ -d ~/cernbox ]]   && alias cb='cd ~/cernbox'
 
 # A bit of cursing around
 alias fuck='sudo $(fc -ln -1)'
@@ -98,8 +96,9 @@ alias bubo='brew update && brew outdated'
 alias docklean='docker rm $(docker ps -a -q -f status=exited)'                          # Delete all CONTAINERS that have a status of exited.
 alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'    # Forcefully remove  DANGLING IMAGES.
 alias dockrmi='docker rmi $(docker images -q) -f'                                       # Forcefully remove ALL IMAGES.
-alias dkapocalypse='docker system prune -a'                                             # DANGEROUS. Will delete everything from docker!?
+alias dockapocalypse='docker system prune -a'                                             # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
+alias condexport='conda env export > environment.yml --no-builds'
 
 
 # -------------------------------------------------------------------
