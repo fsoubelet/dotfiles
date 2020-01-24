@@ -13,12 +13,9 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tmhedberg/SimpylFold'                     " Colde folding.
-<<<<<<< HEAD
 Plug 'davidhalter/jedi-vim'
 "Plug 'python-mode/python-mode', { 'branch': 'develop' } " Full python features. 
-=======
 Plug 'python-mode/python-mode', { 'branch': 'develop' } " Full python features. 
->>>>>>> 3401ae234909fc59b026bdf4d220af796a44ea49
 Plug 'scrooloose/nerdtree'                      " NERDTree.
 Plug 'ryanoasis/vim-devicons'                   " NERDTree icons.
 Plug 'Xuyuanp/nerdtree-git-plugin'              " NERDTree git integration.

@@ -43,6 +43,8 @@ function brewup() {
 function hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
 function hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
 
+# An easier du utility
+inspect() { for folder in *; do du -sh $folder; done }
 
 # Viewing man pages in Preview
 function pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t "$@" > "$ps" ; open "$ps" ; }

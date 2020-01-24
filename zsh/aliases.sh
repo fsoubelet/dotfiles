@@ -121,6 +121,7 @@ fi
 
 alias sshcern='ssh -X fesoubel@lxplus.cern.ch'         # Remote connection into LXPLUS x86_64 running SLC6. Set to be deprecated in the future.
 alias sshcern7='ssh -X fesoubel@lxplus7.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7. Set to become default in the future.
+alias machine='ssh -X root@fesoubel-lxplus'
 
 # Copying files from remote CERN afs to local     scp -r cern:/full_path/to/origin /local_path/destination
 # Copying files from local to remote CERN afs     scp -r /local_path/origin cern:/full_path/to/destination
