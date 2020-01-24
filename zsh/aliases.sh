@@ -7,11 +7,9 @@ alias cdlr='cd && clear && archey && ls'
 alias cp='cp -iv'
 alias df='df -h'
 alias lsl='ls -l'
-#alias lsg='colols --git-status . --tree'
 alias lsa='ls -lA'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
-alias path='echo -e ${PATH//:/\\n}'
 
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
@@ -22,17 +20,12 @@ alias :w='echo "You are not in vim!"'
 alias :wq='echo "You are not in vim!"'
 
 # Moving around
-alias .2='cd ../../'
-alias .3='cd ../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
 alias work='cd /afs/cern.ch/work/f/fesoubel'
 alias phd='cd /afs/cern.ch/work/f/fesoubel/PhD'
 alias ip_coupling='cd /afs/cern.ch/work/f/fesoubel/PhD/STUDY.19.HLLHC.ip_problems/Compute_IP_Beam_Size_With_Coupling'
 alias wipetracks='for FILE in track.obs0001.*; do rm -f "$FILE"; done && for FILE in track.obs0002.*; do rm -f "$FILE"; done'
 alias clean_lhc='rm -f after_addingSkew.twiss bare_lhc before_correction_lhc dr_ptc_twiss_nnn.twiss internal_mag_pot.txt matched_lhc.twiss'
 alias clean_hllhc='rm -f bare_hllhc.twiss before_correction_hllhc.twiss dr_ptc_twiss_nnn.twiss internal_mag_pot.txt matched_hllhc.twiss tfs_to_rdts.tfs'
-alias stop_pending='bkill `bjobs -u fesoubel | grep PEND | cut -f1 -d" "`'
 
 [ -d ~/Desktop ]   && alias dt='cd ~/Desktop'
 [ -d ~/dotfiles ]  && alias dotfiles='cd ~/dotfiles'
@@ -43,20 +36,11 @@ alias stop_pending='bkill `bjobs -u fesoubel | grep PEND | cut -f1 -d" "`'
 # A bit of cursing around
 alias fuck='sudo $(fc -ln -1)'
 
+
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
-alias atom="open -a 'Atom.app'"
-alias code="open -a 'Xcode.app'"
-alias runner="open -a 'Coderunner.app'"
-alias tex="open -a 'TeXnicle.app'"
-alias zshconfig="open -a 'Atom.app' ~/dotfiles/zshrc"
-alias gtp='gotop'
-
-
-# Vim/Neovim
-#alias vi='nvim'
-#alias nv='nvim'
+alias gtp'gotop'
 
 
 # -------------------------------------------------------------------
@@ -119,21 +103,19 @@ fi
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-alias sshcern='ssh -X fesoubel@lxplus.cern.ch'         # Remote connection into LXPLUS x86_64 running SLC6. Set to be deprecated in the future.
-alias sshcern7='ssh -X fesoubel@lxplus7.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7. Set to become default in the future.
+alias sshcern='ssh -X fesoubel@lxplus.cern.ch'         # Remote connection into LXPLUS x86_64 running CC7.
 alias machine='ssh -X root@fesoubel-lxplus'
 
-# Copying files from remote CERN afs to local     scp -r cern:/full_path/to/origin /local_path/destination
-# Copying files from local to remote CERN afs     scp -r /local_path/origin cern:/full_path/to/destination
-# Make sure to have a ~/.ssh.config file containing
-# Host cern
-#   User fesoubel
-#   Hostname lxplus.cern.ch
-
-
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
-alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'   # For SLC6 environment.
-alias jupycern7='ssh -L 4000:localhost:3000 fesoubel@lxplus7.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"' # For CC7 environment.
+alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
+
+
+# HTCondor functionality on lxplus
+alias cdjobs='condor_q'
+alias cdsub='condor_submit' 
+
+# From lsf, to be deprecated
+alias stop_pending='bkill `bjobs -u fesoubel | grep PEND | cut -f1 -d" "`'
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
@@ -145,12 +127,6 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 
 # oh-my-zsh
 alias upz='upgrade_oh_my_zsh'
-
-# Easier notebook alias
-alias jupy='jupyter notebook --browser=safari'
-
-# Wifi cli utility alias (options are on and off)
-alias wifi='osx-wifi-cli'
 
 # Cleaner PATH output command
 alias path='echo -e ${PATH//:/\\n}'
