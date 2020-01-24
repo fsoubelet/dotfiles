@@ -50,3 +50,5 @@
 [merge]
   # personnal favorite merge visualization tool
   tool = kdiff3
+[push]
+	default = simple
