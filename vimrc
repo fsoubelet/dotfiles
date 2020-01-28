@@ -85,13 +85,16 @@ nnoremap <C-R> :retab<CR> " <leader>R = Converts tabs to spaces in file
 " Enable accessing out-of-vim clipboard
 set clipboard=unnamed
 
-" Auto syntax for madx files
-au BufReadPost,BufNewFile *.madx,*.mad,*.seq setf madx
+" Highlight search
+if has('extra_search')
+	set hlsearch                                                           " Enable search highlighting
+	set incsearch                                                          " Highlight search pattern as it is being typed
+endif
 
 " Using fzf in Vim
 set rtp+=/usr/local/opt/fzf
 
-" Enabling auto syntax highlighting on madx files
+" Enabling auto syntax highlighting on madx files for lxplus
 au BufNewFile,BufRead *.madx set syntax=fortran
 au BufNewFile,BufRead *.seq set syntax=fortran
 
@@ -168,6 +171,9 @@ let g:lightline = {
 
 " Use UTF-8 encoding (especially important for Python3)
 set encoding=utf-8
+
+" Highlight column 100
+set colorcolumn=100
 
 " Enable python syntax highlighting
 let python_highlight_all = 1
