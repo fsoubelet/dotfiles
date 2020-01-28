@@ -2,12 +2,12 @@
 # General UNIX
 # -------------------------------------------------------------------
 alias clr='clear'
-alias cclr='clear && archey && ls'
-alias cdlr='cd && clear && archey && ls'
+alias cclr='clear && neofetch && ls'
+alias cdlr='cd && clear && neofetch && ls'
 alias cld='clr && lsd'
 alias cp='cp -iv'
 alias df='df -h'
-alias ls='colorls'
+alias less='less -R'
 alias lsg='colorls --git-status . --tree'
 alias lsa='colorls -lA --sf'
 alias lsd='exa --all --long --tree --icons --level=1'
@@ -18,7 +18,6 @@ alias path='echo -e ${PATH//:/\\n}'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
-#alias cat='bat'
 alias find='fd'
 alias th='trash'
 alias rsync='rsync -avhz'
@@ -47,7 +46,8 @@ alias pycharm='open -a PyCharm.app'
 alias gtp='gotop'
 
 # Vim
-alias vim="/usr/local/bin/vim"
+#alias vim="/usr/local/bin/vim"
+alias vi='vim'
 
 
 # -------------------------------------------------------------------
@@ -140,7 +140,7 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 alias upz='upgrade_oh_my_zsh'
 
 # Easier notebook alias
-alias jupy='jupyter notebook --browser=firefox'
+#alias jupy='jupyter notebook --browser=firefox'
 alias jupylab='jupyter lab --browser=firefox'
 
 # Wifi cli utility alias (options are on and off)
@@ -156,4 +156,4 @@ alias getpage='wget --no-clobber --page-requisites --html-extension --convert-li
 alias get="curl -O -L"
 
 # Load modifications to zsh environment
-alias reload!='. ~/.zshrc'
+alias reload!='source ~/.zshrc'

@@ -18,7 +18,7 @@ source "$HOME"/dotfiles/zsh/functions.sh
 source "$HOME"/dotfiles/zsh/tmux.sh
 
 # Added by Anaconda3 installer
-export PATH="/Users/felixsoubelet/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -26,5 +26,15 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Getting Poetry tool in the PATH
 export PATH="$PATH:$HOME/.poetry/bin"
 
+# Getting Cargo tool in the PATH
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # Adding fuzzy-finder completion and keymaps
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Added for kerberos / htcondor lxplus sync
+PATH="/home/felix/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/felix/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/felix/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/felix/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/felix/perl5"; export PERL_MM_OPT;
