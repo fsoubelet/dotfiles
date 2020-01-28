@@ -14,6 +14,8 @@ alias mv='mv -iv'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
+alias view='vi -R'
+
 # Because you forget
 alias :q='exit'
 alias :w='echo "You are not in vim!"'
