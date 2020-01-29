@@ -18,21 +18,9 @@ alias path='echo -e ${PATH//:/\\n}'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
-#alias cat='bat'
-alias find='fd'
 alias th='trash'
 alias rsync='rsync -avhz'
-
-# Moving around
-alias .2='cd ../../'
-alias .3='cd ../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
-[[ -d ~/Desktop ]]   && alias dt='cd ~/Desktop'
-[[ -d ~/dotfiles ]]  && alias dotfiles='cd ~/dotfiles'
-[[ -d ~/Downloads ]] && alias dl='cd ~/Downloads'
-[[ -d ~/Dropbox ]]   && alias dr='cd ~/Dropbox'
-[[ -d ~/cernbox ]]   && alias cb='cd ~/cernbox'
+alias gtp='gotop'
 
 # A bit of cursing around
 alias fuck='sudo $(fc -ln -1)'
@@ -41,10 +29,7 @@ alias fuck='sudo $(fc -ln -1)'
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
-alias code="open -a 'Xcode.app'"
 alias zshconfig="vi ~/.zshrc"
-alias pycharm='open -a PyCharm.app'
-alias gtp='gotop'
 
 # Vim
 alias vim="/usr/local/bin/vim"
@@ -93,10 +78,10 @@ alias bubo='brew update && brew outdated'
 # -------------------------------------------------------------------
 # Docker aliases
 # -------------------------------------------------------------------
-alias docklean='docker rm $(docker ps -a -q -f status=exited)'                          # Delete all CONTAINERS that have a status of exited.
-alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'    # Forcefully remove  DANGLING IMAGES.
-alias dockrmi='docker rmi $(docker images -q) -f'                                       # Forcefully remove ALL IMAGES.
-alias dockapocalypse='docker system prune -a'                                             # DANGEROUS. Will delete everything from docker!?
+alias docklean='docker rm $(docker ps -a -q -f status=exited)'                           # Delete all CONTAINERS that have a status of exited.
+alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'     # Forcefully remove  DANGLING IMAGES.
+alias dockrmi='docker rmi $(docker images -q) -f'                                        # Forcefully remove ALL IMAGES.
+alias dockapocalypse='docker system prune -a'                                            # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
 alias condexport='conda env export > environment.yml --no-builds'
 
@@ -114,15 +99,7 @@ _exists() {
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-alias sshcern='ssh -X fesoubel@lxplus.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7.
-
-# Copying files from remote CERN afs to local     scp -r cern:/full_path/to/origin /local_path/destination
-# Copying files from local to remote CERN afs     scp -r /local_path/origin cern:/full_path/to/destination
-
-# Make sure to have a ~/.ssh.config file containing
-# Host cern
-#   User fesoubel
-#   Hostname lxplus.cern.ch
+alias sshcern='ssh -X fesoubel@lxplus.cern.ch'                                           # Remote connection into LXPLUS x86_64 running CC7.
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
 alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
@@ -140,7 +117,7 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 alias upz='upgrade_oh_my_zsh'
 
 # Easier notebook alias
-alias jupy='jupyter notebook --browser=firefox'
+alias jupy='jupylab'
 alias jupylab='jupyter lab --browser=firefox'
 
 # Wifi cli utility alias (options are on and off)

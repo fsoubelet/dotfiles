@@ -95,13 +95,13 @@ omz:
 	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
 	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
 
-plugins:
+plugins: omz
 	@echo "$(B)Cloning 'fast-syntax-highlighting' files to local plugins directory.$(E)"
-	@git clone https://github.com/zdharma/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
+	@git clone https://github.com/zdharma/fast-syntax-highlighting.git "$ZSH_CUSTOM/plugins/fast-syntax-highlighting"
 	@echo "$(B)Cloning 'you-should-use' files to local plugins directory.$(E)"
-	@git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+	@git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$ZSH_CUSTOM/plugins/you-should-use"
 	@echo "$(B)Cloning 'zsh-autosuggestions' files to local plugins directory.$(E)"
-	@git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+	@git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 	@echo "$(B)Cloning files for Spaceship prompt.$(E)"
 	@git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 	@ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
@@ -118,4 +118,4 @@ unlink:
 zsh:
 	@echo "$(B)Switching to the Z shell.$(E)"
 	@sudo sh -c "echo $(which zsh) >> /etc/shells"
-	@chsh -s "/usr/local/bin/zsh"
+	@chsh -s $(which zsh)

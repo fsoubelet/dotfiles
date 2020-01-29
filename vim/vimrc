@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'                                                   " Minimalist status line.
 Plug 'mhinz/vim-startify'                                                      " Vim startup page.
 Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I like.
-Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images
+Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images.
 Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
 Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
 
@@ -28,10 +28,11 @@ Plug 'scrooloose/nerdtree'                                                     "
 Plug 'Xuyuanp/nerdtree-git-plugin'                                             " NERDTree git integration.
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                                 " NERDTree syntax highlighting.
 Plug 'ryanoasis/vim-devicons'                                                  " NERDTree icons.
-Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy
+Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy.
 Plug 'christoomey/vim-tmux-navigator'                                          " Tmux integration.
 Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }       " Testing python IDE for now
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }       " Testing python IDE for now.
+Plug 'liuchengxu/vim-clap'                                                     " Interactive finder / dispatcher.
 
 "----------------------------- Python tools ------------------------------
 
@@ -47,6 +48,13 @@ Plug 'plasticboy/vim-markdown'                                                 "
 Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
 Plug 'ervandew/supertab'                                                       " Make completion on <tab> command.
 Plug 'tmhedberg/SimpylFold'                                                    " Colde folding.
+
+"---------------------------- Miscellaneous ------------------------------
+
+Plug 'elzr/vim-json'                                                           " JSON highlighting.
+Plug 'cespare/vim-toml'                                                        " Toml highlighting.
+Plug 'tommcdo/vim-lion'                                                        " Text aligner.
+Plug 'tpope/vim-surround'                                                      " Surroundings mappings.
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

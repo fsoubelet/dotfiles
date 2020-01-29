@@ -9,31 +9,28 @@
 
 This folder contains my dotfiles, used on a mac currently running macOS Catalina (10.15.2).
 
-
 ## Package overview
 
 This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home.
 These include OS defaults and terminal profile as well as shell, git, editor and package manager configurations.
-An installation script is included to automatically implement them on a fresh new macOS machine.
 
-The `Makefile`  will take care of installing some needed software and setup configuration files.
+The present `Makefile`  will take care of installing some needed software and setup configuration files.
 Here's some of the core software in my configuration:
 
 * [iTerm][iterm2] as terminal.
 * The [Z shell][zsh] as shell.
-* [Vim][vim] as editor.
+* [Vim][vim] as modal editor.
 * [Homebrew][homebrew] as package manager.
 * [Tmux][tmux] as terminal multiplexer.
 
 These will be installed automatically if not already present.
-The script will backup your configuration files if already present, and symlink the new ones to those of this repository.
 
 #### Vim
 
-A classic modal editor, Vim is excellent.
+A classic modal editor, Vim is simply excellent.
 I use [Vim-Plug][vim-plug] to manage plugins.
-The plugins section is at the top of the `vimrc` file.
-Vim-Plug will be auto-installed on the first Vim launch if it isn't already, as long as your `~/.vimrc` is symlinked to the one in this repository.
+The plugins section is at the top of my `vimrc` file.
+Vim-Plug should be auto-installed on the first Vim launch if it isn't already, as long as your `~/.vimrc` is symlinked to the one in this repository.
 After that, run `:PlugInstall` and enjoy a fully ready configuration.
 
 #### Zsh
@@ -56,9 +53,10 @@ Everything will be handled by the `Makefile` commands, so in the case of a git i
 ```
 git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-make
+make install
 ```
 
+When in doubt you can run `make help`.
 
 ## Post-install
 
@@ -66,17 +64,20 @@ Some things are left to be done manually, specifically setting personnal informa
 
 * Set up iTerm profile (see below).
 * Create a `~/.gitconfig.local` in which you can put personal data.
-* Add a personnal touch to `~/.zshrc`.
+* Add a personnal touch to `~/.zshrc`  or other shell configuration files present in the `zsh` folder.
 * If you wish to act on [macOS defaults][macos-defaults], customize the `macos_defaults.sh` file and run `make defaults`.
-
 
 ### Setting up iTerm2 profile (valid for iTerm2 v3.3.0)
 
 1. OPEN `iTerm2` > `Preferences`, or `cmd + ,`.
 2. Under the `General` tab, `Preferences` section, check the box labeled "Load preferences from a custom folder or URL:"
-3. Press "Browse" and point it to `~/dotfiles/iterm2/com.googlecode.iterm2.plist`.
+3. Press "Browse" and point it to the `iterm2/com.googlecode.iterm2.plist` file located in this repository.
 4. Restart iTerm2.
 
+## Note
+
+Currently, running `make install` only works on macOS.
+If on a Linux distribution, have a look at the different targets (`make  help` will be useful) and run them individually. 
 
 ## Credits
 
@@ -84,7 +85,7 @@ Many thanks to the [dotfiles community][dotcomu] and the [awesome dotfiles][awes
 
 ## License
 
-Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
+Copyright &copy; 2018-2020 Felix Soubelet. [MIT License][license]
 
 [anaconda]: https://www.anaconda.com/
 [anacondadownload]: https://www.anaconda.com/download/#macos
