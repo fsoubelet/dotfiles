@@ -19,7 +19,7 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 alias find='fd'
-alias th='trash'
+alias th='rm -rf'
 alias rsync='rsync -avhz'
 
 # Moving around
@@ -46,7 +46,6 @@ alias pycharm='open -a PyCharm.app'
 alias gtp='gotop'
 
 # Vim
-#alias vim="/usr/local/bin/vim"
 alias vi='vim'
 
 
@@ -98,8 +97,16 @@ alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-tru
 alias dockrmi='docker rmi $(docker images -q) -f'                                       # Forcefully remove ALL IMAGES.
 alias dockapocalypse='docker system prune -a'                                             # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
-alias condexport='conda env export > environment.yml --no-builds'
 
+
+# -------------------------------------------------------------------
+# Python Development
+# -------------------------------------------------------------------
+
+# Clean the shit left by pytest
+alias cl='th .pytest_cache/ && th tests/.coverage && th tests/coverage.xml && th .eggs && th .coverage && th coverage.xml && th'
+alias pythest='python setup.py test pytest && cl'
+alias condexport='conda env export > environment.yml --no-builds --name'
 
 # -------------------------------------------------------------------
 # Safety first
@@ -140,7 +147,7 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 alias upz='upgrade_oh_my_zsh'
 
 # Easier notebook alias
-#alias jupy='jupyter notebook --browser=firefox'
+alias jupy='jupylab'
 alias jupylab='jupyter lab --browser=firefox'
 
 # Wifi cli utility alias (options are on and off)
@@ -157,3 +164,11 @@ alias get="curl -O -L"
 
 # Load modifications to zsh environment
 alias reload!='source ~/.zshrc'
+
+
+# -------------------------------------------------------------------
+# Random shit
+# -------------------------------------------------------------------
+
+# Shortcut to run Osu! from local build dir
+alias osu!='dotnet run --project osu.Desktop -c Release'

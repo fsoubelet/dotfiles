@@ -23,8 +23,9 @@ export PATH="$HOME/anaconda3/bin:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Getting Poetry tool in the PATH
+# Getting Poetry tool in the PATH and configuring completion
 export PATH="$PATH:$HOME/.poetry/bin"
+fpath+=~/.zfunc
 
 # Getting Cargo tool in the PATH
 export PATH="$PATH:$HOME/.cargo/bin"
