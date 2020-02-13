@@ -1,9 +1,10 @@
 # -------------------------------------------------------------------
 # General UNIX
 # -------------------------------------------------------------------
+
 alias clr='clear'
-alias cclr='clear && archey && ls'
-alias cdlr='cd && clear && archey && ls'
+alias cclr='clear && neofetch && ls'
+alias cdlr='cd && clear && neofetch && ls'
 alias cp='cp -iv'
 alias df='df -h'
 alias lsl='ls -l'
@@ -14,7 +15,8 @@ alias mv='mv -iv'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
-alias view='vi -R'
+alias view='vim -R'
+alias vi='vim'
 
 # Because you forget
 alias :q='exit'
@@ -42,12 +44,14 @@ alias fuck='sudo $(fc -ln -1)'
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
+
 alias gtp'gotop'
 
 
 # -------------------------------------------------------------------
 # Git aliases
 # -------------------------------------------------------------------
+
 alias ga='git add'
 alias gaa='git add --all -v'
 alias gb='git branch'
@@ -60,7 +64,7 @@ alias gcom='git checkout master'
 alias gd='git diff'
 alias gdf='git diff --word-diff --color-words'
 alias gf='git fetch'
-alias gl='git log --date=format:"%b %d, %Y" --pretty=format:"%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n"'
+alias gl='git log --date=format:"%Y-%m-%d %H:%M" --pretty=format:"%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n"'
 alias glg='git log --graph --stat --pretty=format:"%C(yellow bold)%h%Creset%C(white)%d%Creset %s%n %C(blue)%aN (%cd)%n"'
 alias gm='git merge'
 alias gpl='git pull'
@@ -75,6 +79,7 @@ alias gta='git tag -am'
 # -------------------------------------------------------------------
 # Homebrew
 # -------------------------------------------------------------------
+
 alias bc='brew cleanup'
 alias bd='brew doctor'
 alias bg='brew upgrade --all'
@@ -106,7 +111,8 @@ fi
 # -------------------------------------------------------------------
 
 alias sshcern='ssh -X fesoubel@lxplus.cern.ch'         # Remote connection into LXPLUS x86_64 running CC7.
-alias machine='ssh -X root@fesoubel-lxplus'
+alias machine='ssh -X root@fesoubel-lxplus'            # Connecting to my CERN openstack instance.
+alias technet='ssh cs-ccr-dev3'                        # Connecting into the technical network, to get access to slops.
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
 alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'

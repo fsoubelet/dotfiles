@@ -24,3 +24,7 @@ export PATH="/afs/cern.ch/work/f/fesoubel/public/anaconda3/bin:$PATH"
 
 # Getting Poetry tool in the PATH
 export PATH="$PATH:$HOME/.poetry/bin"
+
+# Getting neofetch in the PATH
+export PATH="$PATH:$HOME/neofetch/"
+clear && neofetch && ls
