@@ -14,15 +14,11 @@ alias lsd='exa --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias path='echo -e ${PATH//:/\\n}'
-
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
-
 alias th='trash'
 alias rsync='rsync -avhz'
 alias gtp='gotop'
 
-# A bit of cursing around
+# A bit of cursing around: re-execute previous command as root
 alias fuck='sudo $(fc -ln -1)'
 
 
@@ -62,6 +58,7 @@ alias gs='git status'
 alias gta='git tag -am'
 alias gfl='git flow'
 
+
 # -------------------------------------------------------------------
 # Homebrew
 # -------------------------------------------------------------------
@@ -83,7 +80,7 @@ alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-tru
 alias dockrmi='docker rmi $(docker images -q) -f'                                        # Forcefully remove ALL IMAGES.
 alias dockapocalypse='docker system prune -a'                                            # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
-alias condexport='conda env export > environment.yml --no-builds'
+alias condexport='conda env export > environment.yml --no-builds --name'
 
 
 # -------------------------------------------------------------------
@@ -99,10 +96,10 @@ _exists() {
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-alias sshcern='ssh -X fesoubel@lxplus.cern.ch'                                           # Remote connection into LXPLUS x86_64 running CC7.
+# Make sure to define a Host for cern in your .ssh/config file
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
-alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
+alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH

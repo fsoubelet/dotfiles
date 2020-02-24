@@ -1,0 +1,15 @@
+Host cern
+    Hostname lxplus.cern.ch
+    User fesoubel
+    StrictHostKeyChecking no
+
+Host machine
+    Hostname fesoubel-lxplus
+    User root
+    ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
+
+Host *
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa
+    ForwardAgent yes
+    ForwardX11 yes

@@ -12,6 +12,7 @@ E = \033[0m
 P = \033[95m
 R = \033[31m
 
+BAT_CONFIG := $(shell bat --config-file)
 DOTFILES_DIR := $(shell pwd)
 UNAME := $(shell uname -s)
 
@@ -54,7 +55,6 @@ macos:
 	@make oh_my_zsh
 	@make plugins
 	@make link
-	@make tmux
 
 anaconda:
 	@echo "$(B)Downloading Anaconda distribution.$(E)"
@@ -90,6 +90,10 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/vim/vimrc $(HOME)/.vimrc
 	@echo "Linking Brewfile to home folder."
 	@ln -nfs ${DOTFILES_DIR}/macos/Brewfile $(HOME)/.Brewfile
+	@echo "Linking SSH config file."
+	@ln -nfs ${DOTFILES_DIR}/configs/ssh_config $(HOME)/.ssh/config
+	@echo "Linking configuration files."
+	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
 
 omz:
 	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
@@ -114,6 +118,8 @@ unlink:
 	@unlink $(HOME)/.gitignore_global
 	@unlink $(HOME)/.vimrc
 	@unlink $(HOME)/.Brewfile
+	@unlink $(HOME)/.ssh/config
+	@unlink $(HOME)/.config/bat/config
 
 zsh:
 	@echo "$(B)Switching to the Z shell.$(E)"
