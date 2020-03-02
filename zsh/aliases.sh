@@ -18,7 +18,6 @@ alias path='echo -e ${PATH//:/\\n}'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
-alias find='fd'
 alias th='rm -rf'
 alias rsync='rsync -avhz'
 
@@ -75,6 +74,9 @@ alias grr='git remote rm'
 alias gs='git status'
 alias gta='git tag -am'
 alias gfl='git flow'
+# A convenient alias to see which files in git repo have been the most worked on
+alias gitinspect='git log --format=format: --name-only | egrep -v "^$" | sort | uniq -c | sort -rg | head -10'
+
 
 # -------------------------------------------------------------------
 # Homebrew
@@ -95,7 +97,7 @@ alias bubo='brew update && brew outdated'
 alias docklean='docker rm $(docker ps -a -q -f status=exited)'                          # Delete all CONTAINERS that have a status of exited.
 alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'    # Forcefully remove  DANGLING IMAGES.
 alias dockrmi='docker rmi $(docker images -q) -f'                                       # Forcefully remove ALL IMAGES.
-alias dockapocalypse='docker system prune -a'                                             # DANGEROUS. Will delete everything from docker!?
+alias dockapocalypse='docker system prune -a'                                           # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
 
 

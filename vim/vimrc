@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'                                                   " Minimalist status line.
 Plug 'mhinz/vim-startify'                                                      " Vim startup page.
 Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I like.
+Plug 'joshdick/onedark.vim'                                                    " Another colorscheme I like
 Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images
 Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
 Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
@@ -36,7 +37,7 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }       "
 "----------------------------- Python tools ------------------------------
 
 Plug 'davidhalter/jedi-vim'                                                    " Jedi-based completion.
-Plug 'nvie/vim-flake8'                                                         " Python linting.  
+"Plug 'nvie/vim-flake8'                                                         " Python linting.  
 "Plug 'python/black'                                                            " PEP8 formatting.
 Plug 'scrooloose/syntastic'                                                    " Python syntax checking.
 Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
@@ -85,7 +86,7 @@ nnoremap <C-R> :retab<CR> " <leader>R = Converts tabs to spaces in file
 set clipboard=unnamed
 
 " Auto syntax for madx files
-au BufReadPost,BufNewFile *.madx,*.mad,*.seq setf madx
+au BufReadPost,BufNewFile *.madx,*.mad,*.seq,*.mask setf madx
 
 " Using fzf in Vim
 set rtp+=/usr/local/opt/fzf
@@ -150,10 +151,14 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-colorscheme palenight 
+"colorscheme palenight 
+colorscheme onedark
 
+"let g:lightline = {
+"      \ 'colorscheme': 'jellybeans',
+"      \ }
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'onedark',
       \ }
 
 

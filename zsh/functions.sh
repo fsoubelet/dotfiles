@@ -38,6 +38,10 @@ brewup() {
   printf "[BREWUP] Please read and acknowledge the warnings.\\n"
 }
 
+# An easier du utility
+inspect() {
+  for folder in *; do du -sh $folder; done
+}
 
 # Turning hidden files on/off in Finder
 hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
