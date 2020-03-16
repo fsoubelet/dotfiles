@@ -18,35 +18,21 @@ function_info() {
   printf "\\n[HOMEBREW] $fmt\\n" "$@"
 }
 
-# Full run of keeping everything Homebrew-related up to date
-brewup() {
-  function_echo "Updating Homebrew."
-  brew update
-  function_info "Homebrew Updated."
-
-  function_echo "Upgrading Homebrew."
-  brew upgrade
-  function_info "Formulae Upgraded."
-
-  function_echo "Cleaning up old kegs and checking symlinks."
-  brew cleanup
-  function_info "Cleaned up."
-
-  function_echo "Checking installation."
-  brew doctor
-  function_info "Set and ready to go!"
-  printf "[BREWUP] Please read and acknowledge the warnings.\\n"
-}
 
 # An easier du utility
 inspect() {
   for folder in *; do du -sh $folder; done
 }
 
-# Turning hidden files on/off in Finder
-hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
-hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
-
+# Nuclear bomb utility, beware!
+wipe() {
+  read "choice?This will remove ALL elements in the current directory, are you sure? [y/n] "
+  case "$choice" in
+    y|Y|yes|YES) for element in *; do th $element; done && echo "Cleaned directory.";;
+    n|N|no|NO) echo "Aborting";;
+    *) echo "This is an invalid choice, aborting.";;
+  esac
+}
 
 # Viewing man pages in Preview
 pman() { ps=$(mktemp -t manpageXXXX).ps ; man -t "$@" > "$ps" ; open "$ps" ; }
@@ -55,31 +41,10 @@ pman() { ps=$(mktemp -t manpageXXXX).ps ; man -t "$@" > "$ps" ; open "$ps" ; }
 # Prompting IP address
 myip() {
   ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
-	ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-	ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-	ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-	ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-}
-
-
-# Getting a status updates on new packages versions and software updates
-whatsnew() {
-  # homebrew
-  echo "Checking homebrew packages..."
-  brew update > /dev/null;
-  new_packages=$(brew outdated --quiet; brew cask outdated --quiet)
-  num_packages=$(echo "$new_packages" | wc -w)
-  if [[ "$num_packages" -gt 0 ]]; then
-      echo "New package updates available:"
-      for package in ${new_packages}; do
-  	echo "   * $package";
-      done
-  else
-      echo "No new package updates available."
-  fi
-  # macOS
-  echo "Checking macOS updates..."
-  softwareupdate -l | tail +5
+  ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
+  ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
+  ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
+  ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 }
 
 

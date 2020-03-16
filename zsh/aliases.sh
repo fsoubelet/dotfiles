@@ -13,36 +13,18 @@ alias lsa='colorls -lA --sf'
 alias lsd='exa --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
-alias path='echo -e ${PATH//:/\\n}'
-
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
-
 alias th='rm -rf'
 alias rsync='rsync -avhz'
+alias gtp='gotop'
 
-# Moving around
-alias .2='cd ../../'
-alias .3='cd ../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
-[[ -d ~/Desktop ]]   && alias dt='cd ~/Desktop'
-[[ -d ~/dotfiles ]]  && alias dotfiles='cd ~/dotfiles'
-[[ -d ~/Downloads ]] && alias dl='cd ~/Downloads'
-[[ -d ~/Dropbox ]]   && alias dr='cd ~/Dropbox'
-[[ -d ~/cernbox ]]   && alias cb='cd ~/cernbox'
-
-# A bit of cursing around
+# A bit of cursing around: re-execute previous command as root
 alias fuck='sudo $(fc -ln -1)'
 
 
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
-alias code="open -a 'Xcode.app'"
 alias zshconfig="vi ~/.zshrc"
-alias pycharm='open -a PyCharm.app'
-alias gtp='gotop'
 
 # Vim
 alias vi='vim'
@@ -79,35 +61,15 @@ alias gitinspect='git log --format=format: --name-only | egrep -v "^$" | sort | 
 
 
 # -------------------------------------------------------------------
-# Homebrew
-# -------------------------------------------------------------------
-alias bc='brew cleanup'
-alias bd='brew doctor'
-alias bg='brew upgrade --all'
-alias bp='brew prune'
-alias bo='brew outdated'
-alias bu='brew update'
-alias bubc='brew upgrade && brew cleanup'
-alias bubo='brew update && brew outdated'
-
-
-# -------------------------------------------------------------------
 # Docker aliases
 # -------------------------------------------------------------------
+alias docker='sudo docker'
 alias docklean='docker rm $(docker ps -a -q -f status=exited)'                          # Delete all CONTAINERS that have a status of exited.
 alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'    # Forcefully remove  DANGLING IMAGES.
 alias dockrmi='docker rmi $(docker images -q) -f'                                       # Forcefully remove ALL IMAGES.
 alias dockapocalypse='docker system prune -a'                                           # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
 
-
-# -------------------------------------------------------------------
-# Python Development
-# -------------------------------------------------------------------
-
-# Clean the shit left by pytest
-alias cl='th .pytest_cache/ && th tests/.coverage && th tests/coverage.xml && th .eggs && th .coverage && th coverage.xml && th'
-alias pythest='python setup.py test pytest && cl'
 alias condexport='conda env export > environment.yml --no-builds --name'
 
 # -------------------------------------------------------------------
@@ -123,18 +85,12 @@ _exists() {
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-alias sshcern='ssh -X fesoubel@lxplus.cern.ch'       # Remote connection into LXPLUS x86_64 running CC7.
-
-# Copying files from remote CERN afs to local     scp -r cern:/full_path/to/origin /local_path/destination
-# Copying files from local to remote CERN afs     scp -r /local_path/origin cern:/full_path/to/destination
-
-# Make sure to have a ~/.ssh.config file containing
-# Host cern
-#   User fesoubel
-#   Hostname lxplus.cern.ch
+# Make sure to define a Host for cern in your .ssh/config file
+alias work='cd /afs/cern.ch/work/f/fesoubel/'
+alias clean_madlinks='unlink db5 && unlink fidel && unlink optics2016 && unlink optics2017 && unlink optics2018 && unlink scripts && unlink slhc && unlink wise'
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
-alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
+alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
@@ -151,9 +107,6 @@ alias upz='upgrade_oh_my_zsh'
 # Easier notebook alias
 alias jupy='jupylab'
 alias jupylab='jupyter lab --browser=firefox'
-
-# Wifi cli utility alias (options are on and off)
-alias wifi='osx-wifi-cli'
 
 # Cleaner PATH output command
 alias path='echo -e ${PATH//:/\\n}'
