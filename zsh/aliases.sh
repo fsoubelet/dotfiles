@@ -110,20 +110,17 @@ fi
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-alias sshcern='ssh -X fesoubel@lxplus.cern.ch'         # Remote connection into LXPLUS x86_64 running CC7.
-alias machine='ssh -X root@fesoubel-lxplus'            # Connecting to my CERN openstack instance.
-alias technet='ssh cs-ccr-dev3'                        # Connecting into the technical network, to get access to slops.
+#alias machine='ssh -X root@fesoubel-lxplus'            # Connecting to my CERN openstack instance.
+#alias technet='ssh -X cs-ccr-dev3'                        # Connecting into the technical network, to get access to slops.
+alias ssh='ssh -X'
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
 alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
 
 
 # HTCondor functionality on lxplus
-alias cdjobs='condor_q'
-alias cdsub='condor_submit' 
-
-# From lsf, to be deprecated
-alias stop_pending='bkill `bjobs -u fesoubel | grep PEND | cut -f1 -d" "`'
+alias bjobs='condor_q'
+alias bsub='condor_submit' 
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
