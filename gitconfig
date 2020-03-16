@@ -53,4 +53,4 @@
 [push]
 	default = simple
 [credential]
-	helper = store
+	helper = wincred
