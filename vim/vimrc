@@ -15,13 +15,14 @@ call plug#begin('~/.vim/plugged')
 
 "------------------------------ Theming Vim ------------------------------
 
-Plug 'itchyny/lightline.vim'                                                   " Minimalist status line.
 Plug 'mhinz/vim-startify'                                                      " Vim startup page.
-Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I like.
-Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'                                                   " Minimalist status line.
 Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images.
-Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
-Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
+Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I love.
+Plug 'joshdick/onedark.vim'                                                    " Colorscheme I like.
+Plug 'ayu-theme/ayu-vim'                                                       " Colorscheme I like.
+Plug 'arcticicestudio/nord-vim'                                                " Colorscheme I like.
+Plug 'rakr/vim-two-firewatch'                                                  " Colorscheme I like.
 
 "------------------------------ Vim as IDE -------------------------------
 
@@ -34,6 +35,9 @@ Plug 'christoomey/vim-tmux-navigator'                                          "
 Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }       " Testing python IDE for now.
 Plug 'liuchengxu/vim-clap'                                                     " Interactive finder / dispatcher.
+Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
+Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
+Plug 'janko/vim-test'                                                          " Easily launch tests from Vim.
 
 "----------------------------- Python tools ------------------------------
 
@@ -54,8 +58,10 @@ Plug 'tmhedberg/SimpylFold'                                                    "
 
 Plug 'elzr/vim-json'                                                           " JSON highlighting.
 Plug 'cespare/vim-toml'                                                        " Toml highlighting.
+Plug 'junegunn/goyo.vim'                                                       " Distraction-free writing. 
 Plug 'tommcdo/vim-lion'                                                        " Text aligner.
 Plug 'tpope/vim-surround'                                                      " Surroundings mappings.
+Plug 'yuttie/comfortable-motion.vim'                                           " Physics-based smooth scrolling.
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -161,6 +167,10 @@ endif
 set background=dark
 colorscheme palenight 
 "colorscheme onedark
+"colorscheme nord
+
+"let ayucolor="mirage"
+"colorscheme ayu
 
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',

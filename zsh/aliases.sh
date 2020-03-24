@@ -13,7 +13,6 @@ alias lsa='colorls -lA --sf'
 alias lsd='exa --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
-alias path='echo -e ${PATH//:/\\n}'
 alias th='trash'
 alias rsync='rsync -avhz'
 alias gtp='gotop'
@@ -80,6 +79,7 @@ alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-tru
 alias dockrmi='docker rmi $(docker images -q) -f'                                        # Forcefully remove ALL IMAGES.
 alias dockapocalypse='docker system prune -a'                                            # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
+
 alias condexport='conda env export > environment.yml --no-builds --name'
 
 
@@ -97,6 +97,15 @@ _exists() {
 # -------------------------------------------------------------------
 
 # Make sure to define a Host for cern in your .ssh/config file
+
+# Connecting directly into CERN desktop
+alias desktop='ssh -J cern desktop'
+
+# Connecting directly into CERN technical network
+alias technet='ssh -J cern technet'
+
+# Connecting directly into my CERN OpenStack machine
+alias machine='ssh -J cern machine'
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
 alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'

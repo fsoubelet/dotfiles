@@ -8,8 +8,18 @@ Host machine
     User root
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
 
+Host desktop
+    Hostname pcbe16711.cern.ch
+    User felix
+    StrictHostKeyChecking no
+
+Host lxplus.cern.ch
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+
 Host *
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_rsa
     ForwardAgent yes
     ForwardX11 yes
+    ForwardX11Timeout 12h
