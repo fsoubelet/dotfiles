@@ -7,17 +7,16 @@
 </p>
 
 
-This folder contains my dotfiles, used on a mac currently running macOS Catalina (10.15.2).
+This folder contains my dotfiles, used on a mac currently running macOS Catalina (10.15.4).
 
 ## Package overview
 
 This repository contains my configurations for a series of software and utilities that make my mac and the command line feel like home.
 These include OS defaults and terminal profile as well as shell, git, editor and package manager configurations.
 
-The present `Makefile`  will take care of installing some needed software and setup configuration files.
 Here's some of the core software in my configuration:
 
-* [iTerm][iterm2] as terminal.
+* [iTerm2][iterm2] as terminal.
 * The [Z shell][zsh] as shell.
 * [Vim][vim] as modal editor.
 * [Homebrew][homebrew] as package manager.
@@ -62,22 +61,23 @@ When in doubt you can run `make help`.
 
 Some things are left to be done manually, specifically setting personnal information, installing profiles and changing some defaults.
 
-* Set up iTerm profile (see below).
+* Set up iTerm2 profile (see below).
 * Create a `~/.gitconfig.local` in which you can put personal data.
 * Add a personnal touch to `~/.zshrc`  or other shell configuration files present in the `zsh` folder.
-* If you wish to act on [macOS defaults][macos-defaults], customize the `macos_defaults.sh` file and run `make defaults`.
+* If you wish to act on [macOS defaults][macos-defaults], customize the `macos_defaults.sh` file and run `make defaults`. This command is not ran by default.
 
-### Setting up iTerm2 profile (valid for iTerm2 v3.3.0)
+### Setting up iTerm2 profile (valid as of iTerm2 v3.3.0)
 
 1. OPEN `iTerm2` > `Preferences`, or `cmd + ,`.
-2. Under the `General` tab, `Preferences` section, check the box labeled "Load preferences from a custom folder or URL:"
-3. Press "Browse" and point it to the `iterm2/com.googlecode.iterm2.plist` file located in this repository.
+2. Under the `General` tab, `Preferences` section, check the box labeled `Load preferences from a custom folder or URL:`
+3. Press "Browse" and point it to the `iterm2/com.googlecode.iterm2.plist` file located in this repository's `iterm` folder.
 4. Restart iTerm2.
 
 ## Note
 
-Currently, running `make install` only works on macOS.
-If on a Linux distribution, have a look at the different targets (`make  help` will be useful) and run them individually. 
+Currently, running `make` only works on macOS.
+If on a Linux distribution, have a look at the different targets (`make  help` will be useful) and run them individually.
+Most of them should run without issue.
 
 ## Credits
 

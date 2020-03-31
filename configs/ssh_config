@@ -1,6 +1,7 @@
 Host cern
     Hostname lxplus.cern.ch
     User fesoubel
+    ForwardX11Trusted yes
     StrictHostKeyChecking no
 
 Host machine
@@ -14,6 +15,7 @@ Host desktop
     StrictHostKeyChecking no
 
 Host lxplus.cern.ch
+    ForwardX11Trusted yes
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
 
