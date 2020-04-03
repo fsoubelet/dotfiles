@@ -70,6 +70,22 @@ alias dockrmi='docker rmi $(docker images -q) -f'                               
 alias dockapocalypse='docker system prune -a'                                           # DANGEROUS. Will delete everything from docker!?
 alias lzd='lazydocker'
 
+
+# -------------------------------------------------------------------
+# Conda aliases
+# -------------------------------------------------------------------
+_remove_last_lines () {
+  # First argument is number of lines to remove, second is file name
+  # Very fast because it reads from the end, does not read the whole file and doesn't rewrite anything
+  tail -n "$1" "$2" | wc -c | xargs -I {} truncate "$2" -s -{}
+}
+
+condexport () {
+  # Export without build dir for provided name as argument under <name>_environment.yml
+  conda env export > "$1"_environment.yml --no-builds --name "$1" --verbose
+  # Get rid of the last two lines (one empty, one is prefix, platform specific)
+  _remove_last_lines 2 "$1"_environment.yml
+}
 alias condexport='conda env export > environment.yml --no-builds --name'
 
 # -------------------------------------------------------------------
