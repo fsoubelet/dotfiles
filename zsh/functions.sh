@@ -18,10 +18,21 @@ function_info () {
   printf "\\n[HOMEBREW] $fmt\\n" "$@"
 }
 
-
 # An easier du utility
 inspect () {
-  for folder in "$1"/*; do du -sh $folder; done
+  if [[ $# -eq 0 ]]
+  then
+    echo "No arguments were provided, please provided the directory to inspect."
+    echo "Examples:"
+    echo "          inspect <dir_name>"
+    echo "          inspect ."
+    echo "          inspect ~/"
+  elif [[ ! -d "$1" ]]
+  then
+    echo "There is no such directory."
+  else
+    for folder in "$1"/*; do du -sh "$folder"; done
+  fi
 }
 
 # Nuclear bomb utility, beware!
