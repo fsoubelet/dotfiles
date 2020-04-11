@@ -58,11 +58,11 @@ macos:
 
 anaconda:
 	@echo "$(B)Downloading Anaconda distribution.$(E)"
-	@wget https://repo.anaconda.com/archive/Anaconda3-2019.10-MacOSX-x86_64.sh
+	@wget https://repo.anaconda.com/archive/Anaconda3-2020.02-MacOSX-x86_64.sh
 	@echo "$(B)Installing Anaconda distribution.$(E)"
-	@bash Anaconda3-2019.03-MacOSX-x86_64.sh -b -p ~/anaconda3
+	@bash Anaconda3-2020.02-MacOSX-x86_64.sh -b -p ~/anaconda3
 	@echo "$(B)Removing installer from disk.$(E)"
-	@rm -rf Anaconda3-2019.03-MacOSX-x86_64.sh
+	@rm -rf Anaconda3-2020.02-MacOSX-x86_64.sh
 
 brew:
 	@echo "$(B)Checking valid Homebrew installation.$(E)"
