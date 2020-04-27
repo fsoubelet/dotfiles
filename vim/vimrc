@@ -43,7 +43,7 @@ Plug 'janko/vim-test'                                                          "
 
 Plug 'davidhalter/jedi-vim'                                                    " Jedi-based completion.
 Plug 'nvie/vim-flake8'                                                         " Python linting.  
-Plug 'python/black'                                                            " PEP8 formatting.
+"Plug 'python/black'                                                            " PEP8 formatting.
 Plug 'scrooloose/syntastic'                                                    " Python syntax checking.
 Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
 
