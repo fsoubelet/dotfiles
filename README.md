@@ -65,6 +65,7 @@ Some things are left to be done manually, specifically setting personnal informa
 * Create a `~/.gitconfig.local` in which you can put personal data.
 * Add a personnal touch to `~/.zshrc`  or other shell configuration files present in the `zsh` folder.
 * If you wish to act on [macOS defaults][macos-defaults], customize the `macos_defaults.sh` file and run `make defaults`. This command is not ran by default.
+* Choose a `spicetify` theme if you wish.
 
 ### Setting up iTerm2 profile (valid as of iTerm2 v3.3.0)
 
