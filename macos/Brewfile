@@ -15,6 +15,9 @@ tap "khanhas/tap"
 brew "ack"
 brew "archey"
 brew "aria2"
+brew "readline"
+brew "xz"
+brew "asciinema"
 brew "autoconf"
 brew "automake"
 brew "bamtools"
@@ -28,8 +31,6 @@ brew "bork"
 brew "cabextract"
 brew "freetype"
 brew "gettext"
-brew "readline"
-brew "xz"
 brew "pixman"
 brew "cairo"
 brew "calc"
@@ -63,11 +64,14 @@ brew "gawk"
 brew "gcc"
 brew "gd"
 brew "geoip"
+brew "gifski"
 brew "pcre2"
 brew "git"
 brew "git-flow"
 brew "git-lfs"
 brew "git-secrets"
+brew "pinentry"
+brew "gnupg"
 brew "gnuplot"
 brew "go"
 brew "pkg-config"
@@ -79,6 +83,7 @@ brew "httpie"
 brew "hyperfine"
 brew "imagemagick"
 brew "jq"
+brew "keychain"
 brew "lynx"
 brew "magic-wormhole"
 brew "mas"
@@ -89,6 +94,8 @@ brew "ncdu"
 brew "nmap"
 brew "openssh"
 brew "pandoc"
+brew "pinentry-mac"
+brew "postgresql"
 brew "ranger"
 brew "ripgrep"
 brew "rsync"
@@ -127,8 +134,10 @@ cask "firefox"
 cask "flux"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
+cask "gpg-suite"
 cask "iina"
 cask "mattermost"
+cask "postman"
 cask "processing"
 cask "spotify"
 cask "steam"
@@ -138,11 +147,14 @@ mas "1Password 7", id: 1333542190
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
 mas "Agenda", id: 1287445660
+mas "Gifski", id: 1351639930
+mas "Glance", id: 1513574319
 mas "Keka", id: 470158793
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "NordVPN IKE", id: 1116599239
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Spark", id: 1176895641
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835

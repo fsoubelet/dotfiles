@@ -26,3 +26,7 @@ export PATH="$PATH:$HOME/.poetry/bin"
 
 # Adding fuzzy-finder completion and keymaps
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Using GNUPG encryption
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent

@@ -3,6 +3,7 @@
 [user]
   name = Felix Soubelet
   email = felix.soubelet@protonmail.com
+  signingkey = 99F42628
 
 
 [color]
@@ -68,3 +69,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
+[gpg]
+	program = /usr/local/bin/gpg
