@@ -39,7 +39,7 @@ alias gb='git branch'
 alias gba='git branch --all'
 alias gbd='git branch -d'
 alias gcl='git clone'
-alias gcm='git commit'
+alias gcm='git commit -S'  # automatically GPG sign the commits
 alias gco='git checkout'
 alias gcom='git checkout master'
 alias gd='git diff'
@@ -54,7 +54,7 @@ alias gra='git remote add'
 alias grm='git rm'
 alias grr='git remote rm'
 alias gs='git status'
-alias gta='git tag -am'
+alias gta='git tag -sm'  # automatically GPG sign and annotate tags
 alias gfl='git flow'
 
 
