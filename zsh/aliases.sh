@@ -72,16 +72,6 @@ alias bubo='brew update && brew outdated'
 
 
 # -------------------------------------------------------------------
-# Docker aliases
-# -------------------------------------------------------------------
-alias docklean='docker rm $(docker ps -a -q -f status=exited)'                           # Delete all CONTAINERS that have a status of exited.
-alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'     # Forcefully remove  DANGLING IMAGES.
-alias dockrmi='docker rmi $(docker images -q) -f'                                        # Forcefully remove ALL IMAGES.
-alias dockapocalypse='docker system prune -a'                                            # DANGEROUS. Will delete everything from docker!?
-alias lzd='lazydocker'
-
-
-# -------------------------------------------------------------------
 # Conda aliases
 # -------------------------------------------------------------------
 _remove_last_lines () {
@@ -96,6 +86,7 @@ condexport () {
   # Get rid of the last two lines (one empty, one is prefix, platform specific)
   _remove_last_lines 2 "$1"_environment.yml
 }
+
 
 # -------------------------------------------------------------------
 # Safety first
@@ -155,3 +146,6 @@ alias get="curl -O -L"
 
 # Load modifications to zsh environment
 alias reload!='. ~/.zshrc'
+
+# Download an entire profile's videos
+alias ytdl_user='youtube-dl -f "bestvideo[height>=720]+bestaudio/best" -ciw -o "%(title)s.%(ext)s" -v'
