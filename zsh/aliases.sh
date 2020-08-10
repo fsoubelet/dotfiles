@@ -63,7 +63,6 @@ alias gitinspect='git log --format=format: --name-only | egrep -v "^$" | sort | 
 # -------------------------------------------------------------------
 # Docker aliases
 # -------------------------------------------------------------------
-alias docker='sudo docker'
 alias docklean='docker rm $(docker ps -a -q -f status=exited)'                          # Delete all CONTAINERS that have a status of exited.
 alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'    # Forcefully remove  DANGLING IMAGES.
 alias dockrmi='docker rmi $(docker images -q) -f'                                       # Forcefully remove ALL IMAGES.
@@ -86,7 +85,6 @@ condexport () {
   # Get rid of the last two lines (one empty, one is prefix, platform specific)
   _remove_last_lines 2 "$1"_environment.yml
 }
-alias condexport='conda env export > environment.yml --no-builds --name'
 
 # -------------------------------------------------------------------
 # Safety first
@@ -118,7 +116,7 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 # -------------------------------------------------------------------
 
 # oh-my-zsh
-alias upz='upgrade_oh_my_zsh'
+alias upz='omz update'
 
 # Easier notebook alias
 alias jupy='jupylab'
