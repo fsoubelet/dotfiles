@@ -15,14 +15,13 @@ call plug#begin('~/.vim/plugged')
 
 "------------------------------ Theming Vim ------------------------------
 
-Plug 'itchyny/lightline.vim'                                                   " Minimalist status line.
 Plug 'mhinz/vim-startify'                                                      " Vim startup page.
+Plug 'itchyny/lightline.vim'                                                   " Minimalist status line.
+Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images
 Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I like.
 Plug 'nightsense/cosmic_latte'                                                 " Colorscheme ok for lxplus
 Plug 'KeitaNakamura/neodark.vim'                                               " Colorscheme ok for lxplus
-Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images
 Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
-Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
 
 "------------------------------ Vim as IDE -------------------------------
 
@@ -33,11 +32,15 @@ Plug 'ryanoasis/vim-devicons'                                                  "
 Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy
 Plug 'christoomey/vim-tmux-navigator'                                          " Tmux integration.
 Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }       " Testing python IDE for now
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }       " Testing python IDE for now
+Plug 'liuchengxu/vim-clap'                                                     " Interactive finder / dispatcher.
+Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
+Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
+Plug 'janko/vim-test'                                                          " Easily launch tests from Vim.
 
 "----------------------------- Python tools ------------------------------
 
-Plug 'davidhalter/jedi-vim'                                                    " Jedi-based completion.
+"Plug 'davidhalter/jedi-vim'                                                    " Jedi-based completion.
 Plug 'nvie/vim-flake8'                                                         " Python linting.  
 Plug 'scrooloose/syntastic'                                                    " Python syntax checking.
 Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
@@ -48,6 +51,14 @@ Plug 'plasticboy/vim-markdown'                                                 "
 Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
 Plug 'ervandew/supertab'                                                       " Make completion on <tab> command.
 Plug 'tmhedberg/SimpylFold'                                                    " Colde folding.
+
+"---------------------------- Miscellaneous ------------------------------
+Plug 'elzr/vim-json'                                                           " JSON highlighting.
+Plug 'cespare/vim-toml'                                                        " Toml highlighting.
+Plug 'junegunn/goyo.vim'                                                       " Distraction-free writing.
+Plug 'tommcdo/vim-lion'                                                        " Text aligner.
+Plug 'tpope/vim-surround'                                                      " Surroundings mappings.
+Plug 'yuttie/comfortable-motion.vim'                                           " Physics-based smooth scrolling.
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
