@@ -3,6 +3,7 @@
 # -------------------------------------------------------------------
 
 alias clr='clear'
+alias cld='clr & ls -la'
 alias cclr='clear && neofetch && ls'
 alias cdlr='cd && clear && neofetch && ls'
 alias cp='cp -iv'
@@ -26,19 +27,10 @@ alias :wq='echo "You are not in vim!"'
 # Moving around
 alias work='cd /afs/cern.ch/work/f/fesoubel'
 alias phd='cd /afs/cern.ch/work/f/fesoubel/PhD'
-alias ip_coupling='cd /afs/cern.ch/work/f/fesoubel/PhD/STUDY.19.HLLHC.ip_problems/Compute_IP_Beam_Size_With_Coupling'
 alias wipetracks='for FILE in track.obs0001.*; do rm -f "$FILE"; done && for FILE in track.obs0002.*; do rm -f "$FILE"; done'
-alias clean_lhc='rm -f after_addingSkew.twiss bare_lhc before_correction_lhc dr_ptc_twiss_nnn.twiss internal_mag_pot.txt matched_lhc.twiss'
-alias clean_hllhc='rm -f bare_hllhc.twiss before_correction_hllhc.twiss dr_ptc_twiss_nnn.twiss internal_mag_pot.txt matched_hllhc.twiss tfs_to_rdts.tfs'
-
-[ -d ~/Desktop ]   && alias dt='cd ~/Desktop'
-[ -d ~/dotfiles ]  && alias dotfiles='cd ~/dotfiles'
-[ -d ~/Downloads ] && alias dl='cd ~/Downloads'
-[ -d ~/Dropbox ]   && alias dr='cd ~/Dropbox'
-[ -d ~/cernbox ]   && alias cb='cd ~/cernbox'
 
 # A bit of cursing around
-alias fuck='sudo $(fc -ln -1)'
+alias please='sudo $(fc -ln -1)'
 
 
 # -------------------------------------------------------------------
@@ -77,20 +69,6 @@ alias gta='git tag -am'
 
 
 # -------------------------------------------------------------------
-# Homebrew
-# -------------------------------------------------------------------
-
-alias bc='brew cleanup'
-alias bd='brew doctor'
-alias bg='brew upgrade --all'
-alias bp='brew prune'
-alias bo='brew outdated'
-alias bu='brew update'
-alias bubc='brew upgrade && brew cleanup'
-alias bubo='brew update && brew outdated'
-
-
-# -------------------------------------------------------------------
 # Safety first
 # -------------------------------------------------------------------
 
@@ -111,16 +89,12 @@ fi
 # -------------------------------------------------------------------
 
 #alias machine='ssh -X root@fesoubel-lxplus'            # Connecting to my CERN openstack instance.
-#alias technet='ssh -X cs-ccr-dev3'                        # Connecting into the technical network, to get access to slops.
 alias ssh='ssh -X'
-
-# Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
-alias jupycern='ssh -L 4000:localhost:3000 fesoubel@lxplus.cern.ch "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
-
 
 # HTCondor functionality on lxplus
 alias bjobs='condor_q'
 alias bsub='condor_submit' 
+alias bhist='condor_history fesoubel'
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
@@ -131,7 +105,7 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 # -------------------------------------------------------------------
 
 # oh-my-zsh
-alias upz='upgrade_oh_my_zsh'
+alias upz='omz update'
 
 # Cleaner PATH output command
 alias path='echo -e ${PATH//:/\\n}'

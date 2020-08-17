@@ -44,7 +44,7 @@ pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t "$@" > "$ps" ; open "$ps" ; }
 
 # Stop any of my pending jobs on lxplus
 stop_pending() {
-  bkill `bjobs -u fesoubel | grep PEND | cut -f1 -d" "`
+  condor_rm `bjobs -u fesoubel | grep PEND | cut -f1 -d" "`
 }
 
 # Prompting IP address

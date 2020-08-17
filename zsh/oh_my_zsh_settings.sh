@@ -4,6 +4,7 @@ export UPDATE_ZSH_DAYS=7
 
 # Setting prompt appearance
 ZSH_THEME="oxide"
+#ZSH_THEME="pi"
 
 # getting python repositories in PYTHONPATH
 # WARNING: it is better to sys.path.append("/path/to/modules") in a script!
