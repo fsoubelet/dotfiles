@@ -23,6 +23,7 @@ Plug 'joshdick/onedark.vim'                                                    "
 Plug 'ayu-theme/ayu-vim'                                                       " Colorscheme I like.
 Plug 'arcticicestudio/nord-vim'                                                " Colorscheme I like.
 Plug 'rakr/vim-two-firewatch'                                                  " Colorscheme I like.
+Plug 'chuling/ci_dark'                                                         " Colorscheme I like.
 
 "------------------------------ Vim as IDE -------------------------------
 

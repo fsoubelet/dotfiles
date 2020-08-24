@@ -75,3 +75,5 @@
 	gpgSign = true
 [gpg]
 	program = /usr/local/bin/gpg
+[alias]
+	yeet = push

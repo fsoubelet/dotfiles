@@ -928,6 +928,16 @@
 					<key>regex</key>
 					<string>Traceback (most recent call last)</string>
 				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermUserNotificationTrigger</string>
+					<key>parameter</key>
+					<string>SSH Connection Error</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>Connection refused</string>
+				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
 			<false/>
@@ -1403,7 +1413,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>587378996.26045895</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>358</integer>
+	<integer>822</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>

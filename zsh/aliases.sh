@@ -126,7 +126,7 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 # -------------------------------------------------------------------
 
 # oh-my-zsh
-alias upz='upgrade_oh_my_zsh'
+alias upz='omz update'
 
 # Easier notebook alias
 alias jupy='jupylab'

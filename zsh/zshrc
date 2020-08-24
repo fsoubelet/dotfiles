@@ -31,3 +31,6 @@ export PATH="$PATH:$HOME/.poetry/bin"
 # Using GNUPG encryption
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent
+
+# For bat to allow mouse scrolling
+export BAT_PAGER="less -RF"
