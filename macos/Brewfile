@@ -52,9 +52,9 @@ brew "fd"
 brew "flac"
 brew "gmp"
 brew "libunistring"
+brew "pkg-config"
 brew "nettle"
 brew "gnutls"
-brew "pkg-config"
 brew "lame"
 brew "little-cms2"
 brew "xvid"
@@ -68,6 +68,7 @@ brew "gcc"
 brew "gd"
 brew "geckodriver"
 brew "geoip"
+brew "gh"
 brew "gifski"
 brew "pcre2"
 brew "git"
@@ -126,8 +127,6 @@ brew "zsh-completions"
 brew "cjbassi/gotop/gotop"
 brew "emeryberger/scalene/libscalene", args: ["HEAD"]
 brew "eth-p/software/bat-extras"
-brew "github/gh/gh"
-brew "go-gitea/gitea/gitea"
 brew "heroku/brew/heroku"
 brew "jesseduffield/lazydocker/lazydocker"
 brew "khanhas/tap/spicetify-cli"
@@ -158,6 +157,7 @@ mas "Affinity Photo", id: 824183456
 mas "Agenda", id: 1287445660
 mas "Gifski", id: 1351639930
 mas "Glance", id: 1513574319
+mas "iMovie", id: 408981434
 mas "Keka", id: 470158793
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766

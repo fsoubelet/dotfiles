@@ -77,3 +77,5 @@
 	program = /usr/local/bin/gpg
 [alias]
 	yeet = push
+[pull]
+	ff = only
