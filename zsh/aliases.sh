@@ -57,6 +57,7 @@ alias gs='git status'
 alias gta='git tag -sm'  # automatically GPG sign and annotate tags
 alias gfl='git flow'
 
+alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
 
 # -------------------------------------------------------------------
 # Homebrew
