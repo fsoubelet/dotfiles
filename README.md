@@ -7,7 +7,7 @@
 </p>
 
 
-This folder contains my dotfiles, used on a mac currently running macOS Catalina (10.15.4).
+This folder contains my dotfiles, used on a mac currently running macOS Catalina (10.15.7).
 
 ## Package overview
 
@@ -18,18 +18,18 @@ Here's some of the core software in my configuration:
 
 * [iTerm2][iterm2] as terminal.
 * The [Z shell][zsh] as shell.
-* [Vim][vim] as modal editor.
+* [NeoVim][neovim] as modal editor.
 * [Homebrew][homebrew] as package manager.
 * [Tmux][tmux] as terminal multiplexer.
 
 These will be installed automatically if not already present.
 
-#### Vim
+#### NeoVim
 
-A classic modal editor, Vim is simply excellent.
+A modern modal editor, NeoVim is simply excellent.
 I use [Vim-Plug][vim-plug] to manage plugins.
-The plugins section is at the top of my `vimrc` file.
-Vim-Plug should be auto-installed on the first Vim launch if it isn't already, as long as your `~/.vimrc` is symlinked to the one in this repository.
+The plugins section is at the top of my `init.vim` file.
+Vim-Plug should be auto-installed on the first NeoVim launch if it isn't already, as long as your `init.vim` is symlinked to the one in this repository.
 After that, run `:PlugInstall` and enjoy a fully ready configuration.
 
 #### Zsh
