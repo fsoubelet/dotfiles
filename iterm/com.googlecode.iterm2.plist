@@ -1400,7 +1400,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1680, 1050}}</string>
 		<key>topLeft</key>
-		<string>{566, 901}</string>
+		<string>{422, 877}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -1413,7 +1413,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>587378996.26045895</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>822</integer>
+	<integer>998</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
