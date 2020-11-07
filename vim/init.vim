@@ -1,3 +1,7 @@
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+"source ~/.vimrc
+
 "##########################################################################"
 "                             Vim-Plug SECTION                             "
 "##########################################################################"
@@ -35,17 +39,17 @@ Plug 'ryanoasis/vim-devicons'                                                  "
 Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy.
 Plug 'christoomey/vim-tmux-navigator'                                          " Tmux integration.
 Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }       " Testing python IDE for now.
-Plug 'liuchengxu/vim-clap'                                                     " Interactive finder / dispatcher.
+"Plug 'liuchengxu/vim-clap'                                                     " Interactive finder / dispatcher.
 Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
 Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
 Plug 'janko/vim-test'                                                          " Easily launch tests from Vim.
+Plug 'neoclide/coc.nvim'                                                       " Conquer of Completion is amazing.
 
 "----------------------------- Python tools ------------------------------
 
-Plug 'davidhalter/jedi-vim'                                                    " Jedi-based completion.
-Plug 'nvie/vim-flake8'                                                         " Python linting.  
-"Plug 'python/black'                                                            " PEP8 formatting.
+"Plug 'davidhalter/jedi-vim'                                                    " Jedi-based completion.
+Plug 'nvie/vim-flake8'                                                         " Python linting.
+Plug 'python/black'                                                            " PEP8 formatting.
 Plug 'scrooloose/syntastic'                                                    " Python syntax checking.
 Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
 
@@ -53,15 +57,15 @@ Plug 'cjrh/vim-conda'                                                          "
 
 Plug 'plasticboy/vim-markdown'                                                 " Markdown syntax.
 Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
-Plug 'ervandew/supertab'                                                       " Make completion on <tab> command.
+"Plug 'ervandew/supertab'                                                       " Make completion on <tab> command.
 Plug 'tmhedberg/SimpylFold'                                                    " Colde folding.
 
 "---------------------------- Miscellaneous ------------------------------
 
 Plug 'elzr/vim-json'                                                           " JSON highlighting.
 Plug 'cespare/vim-toml'                                                        " Toml highlighting.
-Plug 'junegunn/goyo.vim'                                                       " Distraction-free writing. 
-Plug 'tommcdo/vim-lion'                                                        " Text aligner.
+"Plug 'junegunn/goyo.vim'                                                       " Distraction-free writing.
+"Plug 'tommcdo/vim-lion'                                                        " Text aligner.
 Plug 'tpope/vim-surround'                                                      " Surroundings mappings.
 Plug 'yuttie/comfortable-motion.vim'                                           " Physics-based smooth scrolling.
 
@@ -130,7 +134,7 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "----------------------------- NERDCommenter -----------------------------
 
 " Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 0 
+let g:NERDSpaceDelims = 0
 
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
@@ -141,12 +145,12 @@ let g:NERDDefaultAlign = 'left'
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
+" Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
 "-------------------------------- ctrl-p --------------------------------
 
-" Default mapping for ctrlp plugin 
+" Default mapping for ctrlp plugin
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -167,7 +171,7 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-colorscheme palenight 
+colorscheme palenight
 "colorscheme onedark
 "colorscheme nord
 
@@ -208,3 +212,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Set line length for Black formatting
 let g:black_linelength = 100
+
+let g:loaded_python_provider = 0
+let g:python3_host_prog = '/Users/felixsoubelet/anaconda3/envs/neovim/bin/python'

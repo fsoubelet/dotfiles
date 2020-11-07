@@ -24,10 +24,12 @@ alias fuck='sudo $(fc -ln -1)'
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
-alias zshconfig="vi ~/.zshrc"
+alias zshconfig='vi ~/.zshrc'
 
-# Vim
-alias vim="/usr/local/bin/vim"
+# NeoVim
+alias vi='vim'
+alias vim='nvim'
+alias nvim='/usr/local/bin/nvim'
 
 
 # -------------------------------------------------------------------
