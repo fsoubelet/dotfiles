@@ -91,6 +91,8 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/git/gitignore_global $(HOME)/.gitignore_global
 	@echo "Linking .vimrc to home folder."
 	@ln -nfs ${DOTFILES_DIR}/vim/vimrc $(HOME)/.vimrc
+	@mkdir -p $(HOME)/.config/nvim
+	@ln -nfs ${DOTFILES_DIR}/vim/init.vim $(HOME)/.config/nvim/init.vim
 	@echo "Linking Brewfile to home folder."
 	@ln -nfs ${DOTFILES_DIR}/macos/Brewfile $(HOME)/.Brewfile
 	@echo "Linking SSH config file."
