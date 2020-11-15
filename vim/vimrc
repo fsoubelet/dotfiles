@@ -51,6 +51,7 @@ Plug 'cjrh/vim-conda'                                                          "
 
 "---------------------------- Other Languages ----------------------------
 
+Plug 'alaviss/nim.nvim'                                                        " Nim language support
 Plug 'plasticboy/vim-markdown'                                                 " Markdown syntax.
 Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
 Plug 'ervandew/supertab'                                                       " Make completion on <tab> command.

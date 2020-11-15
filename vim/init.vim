@@ -28,7 +28,6 @@ Plug 'ayu-theme/ayu-vim'                                                       "
 Plug 'arcticicestudio/nord-vim'                                                " Colorscheme I like.
 Plug 'rakr/vim-two-firewatch'                                                  " Colorscheme I like.
 Plug 'ryuta69/elly.vim'                                                        " Colorscheme I like.
-"Plug 'chuling/ci_dark'                                                         " Colorscheme I like.
 
 "------------------------------ Vim as IDE -------------------------------
 
@@ -39,7 +38,6 @@ Plug 'ryanoasis/vim-devicons'                                                  "
 Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy.
 Plug 'christoomey/vim-tmux-navigator'                                          " Tmux integration.
 Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
-"Plug 'liuchengxu/vim-clap'                                                     " Interactive finder / dispatcher.
 Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
 Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
 Plug 'janko/vim-test'                                                          " Easily launch tests from Vim.
@@ -47,25 +45,22 @@ Plug 'neoclide/coc.nvim'                                                       "
 
 "----------------------------- Python tools ------------------------------
 
-"Plug 'davidhalter/jedi-vim'                                                    " Jedi-based completion.
 Plug 'nvie/vim-flake8'                                                         " Python linting.
 Plug 'python/black'                                                            " PEP8 formatting.
 Plug 'scrooloose/syntastic'                                                    " Python syntax checking.
-Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
+"Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
 
 "---------------------------- Other Languages ----------------------------
 
+Plug 'alaviss/nim.nvim'                                                        " Nim language support
 Plug 'plasticboy/vim-markdown'                                                 " Markdown syntax.
 Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
-"Plug 'ervandew/supertab'                                                       " Make completion on <tab> command.
 Plug 'tmhedberg/SimpylFold'                                                    " Colde folding.
 
 "---------------------------- Miscellaneous ------------------------------
 
 Plug 'elzr/vim-json'                                                           " JSON highlighting.
 Plug 'cespare/vim-toml'                                                        " Toml highlighting.
-"Plug 'junegunn/goyo.vim'                                                       " Distraction-free writing.
-"Plug 'tommcdo/vim-lion'                                                        " Text aligner.
 Plug 'tpope/vim-surround'                                                      " Surroundings mappings.
 Plug 'yuttie/comfortable-motion.vim'                                           " Physics-based smooth scrolling.
 
@@ -201,7 +196,7 @@ au BufNewFile,BufRead *.py:
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
-    \ set textwidth=79
+    \ set textwidth=100
     \ set expandtab
     \ set showmatch
     \ set autoindent
@@ -213,5 +208,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " Set line length for Black formatting
 let g:black_linelength = 100
 
+" Let NeoVim know we don't want Python 2 and which env to source pynvim from
 let g:loaded_python_provider = 0
 let g:python3_host_prog = '/Users/felixsoubelet/anaconda3/envs/neovim/bin/python'
