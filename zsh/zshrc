@@ -25,6 +25,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Getting Poetry tool in the PATH
 export PATH="$PATH:$HOME/.poetry/bin"
 
+# Getting Cargo binaries (from Rust) in the PATH
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # Adding fuzzy-finder completion and keymaps
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -34,3 +37,5 @@ gpgconf --launch gpg-agent
 
 # For bat to allow mouse scrolling
 export BAT_PAGER="less -RF"
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/bit bit

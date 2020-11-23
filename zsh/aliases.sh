@@ -132,6 +132,9 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 # oh-my-zsh
 alias upz='omz update'
 
+# Setup analysis from cookiecutter
+alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'
+
 # Easier notebook alias
 alias jupy='jupylab'
 alias jupylab='jupyter lab --browser=firefox'

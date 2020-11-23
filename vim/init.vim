@@ -52,7 +52,7 @@ Plug 'scrooloose/syntastic'                                                    "
 
 "---------------------------- Other Languages ----------------------------
 
-Plug 'alaviss/nim.nvim'                                                        " Nim language support
+"Plug 'alaviss/nim.nvim'                                                        " Nim language support
 Plug 'plasticboy/vim-markdown'                                                 " Markdown syntax.
 Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
 Plug 'tmhedberg/SimpylFold'                                                    " Colde folding.
