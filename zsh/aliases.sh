@@ -88,12 +88,13 @@ fi
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-#alias machine='ssh -X root@fesoubel-lxplus'            # Connecting to my CERN openstack instance.
 alias ssh='ssh -X'
+alias schedule='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/OMC/bin/python /afs/cern.ch/work/f/fesoubel/public/Repositories/PyLHC/pylhc/job_submitter.py'
 
 # HTCondor functionality on lxplus
 alias bjobs='condor_q'
 alias bsub='condor_submit' 
+alias bkill='condor_rm fesoubel'
 alias bhist='condor_history fesoubel'
 
 # If need be, for some reason, to get jws again
