@@ -70,12 +70,14 @@
 	process = git-lfs filter-process
 	required = true
 [commit]
-	gpgSign = true
+	gpgsign = true
 [tag]
 	gpgSign = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = gpg
 [alias]
 	yeet = push
 [pull]
 	ff = only
+[credential]
+	helper = osxkeychain

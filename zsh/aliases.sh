@@ -135,6 +135,9 @@ alias upz='omz update'
 # Setup analysis from cookiecutter
 alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'
 
+# Sourced mkdocs command
+alias pydoc='~/anaconda3/envs/docmc/bin/python -m mkdocs'
+
 # Easier notebook alias
 alias jupy='jupylab'
 alias jupylab='jupyter lab --browser=firefox'
