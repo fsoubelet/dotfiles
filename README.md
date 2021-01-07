@@ -20,7 +20,6 @@ Here's some of the core software in my configuration:
 * The [Z shell][zsh] as shell.
 * [NeoVim][neovim] as modal editor.
 * [Homebrew][homebrew] as package manager.
-* [Tmux][tmux] as terminal multiplexer.
 
 These will be installed automatically if not already present.
 
@@ -37,11 +36,6 @@ After that, run `:PlugInstall` and enjoy a fully ready configuration.
 I run [Zsh][zsh] as my shell, finding it to be a great middle ground between additional niceties and features while remaining a largely compatible shell scripting target.
 I use [Oh-My-Zsh][oh-my-zsh] as shell configuration manager and [Spaceship][spaceship] as my prompt, both of which are installed automatically.
 If you don't wish to use this prompt, make sure to comment out its line in `oh_my_zsh_settings.sh` and craft your own.
-
-#### Tmux
-
-Tmux allows to combine processes, shells, and editors in any way for a project at hand.
-Vim and tmux work seamlessly together thanks to the wonderful [vim-tmux-navigator][vim-tmux-navigator] plugin.
 
 ## Install
 
@@ -104,8 +98,6 @@ Copyright &copy; 2018-2020 Felix Soubelet. [MIT License][license]
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh
 [package-sync]: https://atom.io/packages/package-sync
 [spaceship]: https://github.com/denysdovhan/spaceship-prompt
-[tmux]: https://github.com/tmux/tmux/wiki
 [vim]: http://www.vim.org/
 [vim-plug]: https://github.com/junegunn/vim-plug
-[vim-tmux-navigator]: https://github.com/christoomey/vim-tmux-navigator
 [zsh]: https://en.wikipedia.org/wiki/Z_shell

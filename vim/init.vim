@@ -36,7 +36,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'                                             "
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                                 " NERDTree syntax highlighting.
 Plug 'ryanoasis/vim-devicons'                                                  " NERDTree icons.
 Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy.
-Plug 'christoomey/vim-tmux-navigator'                                          " Tmux integration.
 Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
 Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
 Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
