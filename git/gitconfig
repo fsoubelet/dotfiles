@@ -28,6 +28,7 @@
   pager = /usr/bin/less
   excludesfile = /Users/felixsoubelet/.gitignore_global
 	autocrlf = input
+	symlinks = false
 
 
 [github]

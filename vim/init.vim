@@ -24,10 +24,11 @@ Plug 'itchyny/lightline.vim'                                                   "
 Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images.
 Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I love.
 Plug 'joshdick/onedark.vim'                                                    " Colorscheme I like.
-Plug 'ayu-theme/ayu-vim'                                                       " Colorscheme I like.
-Plug 'arcticicestudio/nord-vim'                                                " Colorscheme I like.
-Plug 'rakr/vim-two-firewatch'                                                  " Colorscheme I like.
-Plug 'ryuta69/elly.vim'                                                        " Colorscheme I like.
+"Plug 'ayu-theme/ayu-vim'                                                       " Colorscheme I like.
+"Plug 'arcticicestudio/nord-vim'                                                " Colorscheme I like.
+"Plug 'rakr/vim-two-firewatch'                                                  " Colorscheme I like.
+"Plug 'ryuta69/elly.vim'                                                        " Colorscheme I like.
+Plug 'glepnir/oceanic-material'                                                " The great oceanic material
 
 "------------------------------ Vim as IDE -------------------------------
 
@@ -167,7 +168,7 @@ endif
 set background=dark
 colorscheme palenight
 "colorscheme onedark
-"colorscheme nord
+"colorscheme oceanic_material
 
 "let ayucolor="mirage"
 "colorscheme ayu
