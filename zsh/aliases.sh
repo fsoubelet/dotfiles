@@ -128,6 +128,8 @@ alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser -
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
 
+# Establish a SOCKS5 proxy through CERN to access GPN restricted resources
+alias cernprox='ssh -D 8090 fesoubel@lxtunnel.cern.ch'
 
 # -------------------------------------------------------------------
 # Miscellaneous

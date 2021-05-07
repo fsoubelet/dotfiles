@@ -19,6 +19,9 @@ source "$HOME"/dotfiles/zsh/tmux.sh
 # Added Anaconda3 install to path
 export PATH="$HOME/anaconda3/bin:$PATH"
 
+# Add MacTex elements bin in the PATH
+export PATH="$PATH:/usr/local/texlive/2021/bin/universal-darwin"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
