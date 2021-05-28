@@ -37,7 +37,7 @@ alias please='sudo $(fc -ln -1)'
 # Global applications aliases
 # -------------------------------------------------------------------
 
-alias gtp'gotop'
+alias gtp='gotop'
 
 
 # -------------------------------------------------------------------
@@ -89,17 +89,21 @@ fi
 # -------------------------------------------------------------------
 
 alias ssh='ssh -X'
-alias schedule='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/OMC/bin/python /afs/cern.ch/work/f/fesoubel/public/Repositories/PyLHC/pylhc/job_submitter.py'
+alias schedule='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/submit/bin/python -m pylhc_submitter.job_submitter'  # call pylhc_submitter for HTCondor studies
+alias pydule='schedule --executable /afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/python'  # call pylhc_submitter with PHD python env as executable
 
 # HTCondor functionality on lxplus
 alias bjobs='condor_q'
 alias bsub='condor_submit' 
 alias bkill='condor_rm fesoubel'
 alias bhist='condor_history fesoubel'
+alias bcheck='condor_tail -f -auto-retry' # need to add job ID afterwards
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
+
+alias monitor='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/python /afs/cern.ch/work/f/fesoubel/public/Repositories/PyhDToolkit/pyhdtoolkit/utils/htc_monitor.py'
 
 # -------------------------------------------------------------------
 # Miscellaneous
