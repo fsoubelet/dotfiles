@@ -24,10 +24,13 @@ alias fuck='sudo $(fc -ln -1)'
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
-alias zshconfig="vi ~/.zshrc"
+alias zshconfig='vi ~/.zshrc'
+alias vinit='vi ~/.config/nvim/init.vim'
 
 # Vim
 alias vi='vim'
+alias vim='nvim'
+alias nvim='/usr/bin/nvim'
 
 
 # -------------------------------------------------------------------
@@ -101,7 +104,7 @@ _exists() {
 
 # Make sure to define a Host for cern in your .ssh/config file
 alias work='cd /afs/cern.ch/work/f/fesoubel/'
-alias clean_madlinks='unlink db5 && unlink fidel && unlink optics2016 && unlink optics2017 && unlink optics2018 && unlink scripts && unlink slhc && unlink wise'
+alias lintrack='/afs/cern.ch/eng/sl/lintrack/'
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
 alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
@@ -110,6 +113,9 @@ alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser -
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
 
+# Needs to have kinit-ed and aklog-ed, updates lxplus envs with local pyhdtoolkit build
+alias afsenvs='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/pip uninstall pyhdtoolkit --yes && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/OMC/bin/pip uninstall pyhdtoolkit --yes && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/OMC/bin/pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl'
+alias updatenvs='source activate PHD && pip uninstall pyhdtoolkit --yes && pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && conda deactivate'
 
 # -------------------------------------------------------------------
 # Miscellaneous
