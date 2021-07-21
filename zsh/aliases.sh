@@ -34,13 +34,6 @@ alias please='sudo $(fc -ln -1)'
 
 
 # -------------------------------------------------------------------
-# Global applications aliases
-# -------------------------------------------------------------------
-
-alias gtp='gotop'
-
-
-# -------------------------------------------------------------------
 # Git aliases
 # -------------------------------------------------------------------
 
@@ -88,9 +81,11 @@ fi
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
+# Useful when jumping to the optics server for apps
 alias ssh='ssh -X'
-alias schedule='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/submit/bin/python -m pylhc_submitter.job_submitter'  # call pylhc_submitter for HTCondor studies
-alias pydule='schedule --executable /afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/python'  # call pylhc_submitter with PHD python env as executable
+
+# Moving around
+alias lintrack='cd /afs/cern.ch/eng/sl/lintrack/'
 
 # HTCondor functionality on lxplus
 alias bjobs='condor_q'
@@ -103,7 +98,8 @@ alias bcheck='condor_tail -f -auto-retry' # need to add job ID afterwards
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
 
-alias monitor='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/python /afs/cern.ch/work/f/fesoubel/public/Repositories/PyhDToolkit/pyhdtoolkit/utils/htc_monitor.py'
+# Get a nice monitoring of basic HTCondor statuses
+alias monitor='/afs/cern.ch/work/f/fesoubel/public/felix_prodenv/bin/python -m pyhdtoolkit.utils.htc_monitor'
 
 # -------------------------------------------------------------------
 # Miscellaneous
