@@ -24,7 +24,7 @@ source "$HOME"/dotfiles/zsh/tmux.sh
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Getting Poetry tool in the PATH and configuring completion
-export PATH="$PATH:$HOME/.poetry/bin"
+export PATH="/home/felix/.local/bin:$PATH"
 fpath+=~/.zfunc
 
 # Getting Cargo tool in the PATH
