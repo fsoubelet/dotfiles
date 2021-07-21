@@ -3,7 +3,7 @@
 [user]
   name = Felix Soubelet
   email = felix.soubelet@protonmail.com
-  signingkey = 99F42628
+	signingkey = 4B9EE0C499F42628
 
 
 [color]
@@ -75,7 +75,7 @@
 [tag]
 	gpgSign = true
 [gpg]
-	program = gpg
+	program = /usr/local/bin/gpg
 [alias]
 	yeet = push
 [pull]
