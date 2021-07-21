@@ -24,7 +24,7 @@ brewup () {
   brew update
   function_info "Homebrew Updated."
 
-  function_echo "Upgrading Homebrew."
+  function_echo "Upgrading formulae and casks."
   brew upgrade
   function_info "Formulae Upgraded."
 
