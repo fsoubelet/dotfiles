@@ -104,7 +104,7 @@ _exists() {
 
 # Make sure to define a Host for cern in your .ssh/config file
 alias work='cd /afs/cern.ch/work/f/fesoubel/'
-alias lintrack='/afs/cern.ch/eng/sl/lintrack/'
+alias lintrack='cd /afs/cern.ch/eng/sl/lintrack/'
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
 alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
@@ -114,6 +114,8 @@ alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser -
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
 
 # Needs to have kinit-ed and aklog-ed, updates lxplus envs with local pyhdtoolkit build
+alias get_omc_accpy='source /afs/cern.ch/eng/sl/lintrack/OMC_Acc_Py/base/2020.11/setup.sh'
+alias omcenv='/afs/cern.ch/eng/sl/lintrack/OMC_Python3/bin/python -m pip install --upgrade tfs-pandas generic_parser optics_functions pylhc-submitter sdds'
 alias afsenvs='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/pip uninstall pyhdtoolkit --yes && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/OMC/bin/pip uninstall pyhdtoolkit --yes && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/OMC/bin/pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl'
 alias updatenvs='source activate PHD && pip uninstall pyhdtoolkit --yes && pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && conda deactivate'
 
