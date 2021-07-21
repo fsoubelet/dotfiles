@@ -19,28 +19,9 @@ source $HOME/dotfiles/zsh/functions.sh
 # Adding lxplus madx to PATH
 export PATH="$PATH:/afs/cern.ch/user/m/mad/bin"
 
-# Added by Anaconda3 installer
-# export PATH="/afs/cern.ch/work/f/fesoubel/public/anaconda3/bin:$PATH"  # commented out by conda initialize
-
-# Getting Poetry tool in the PATH
-export PATH="$PATH:$HOME/.poetry/bin"
-
 # Getting neofetch in the PATH
-export PATH="$PATH:$HOME/neofetch/"
+export PATH="$PATH:$HOME/.neofetch/"
 clear && neofetch && ls
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/afs/cern.ch/work/f/fesoubel/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/afs/cern.ch/work/f/fesoubel/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/afs/cern.ch/work/f/fesoubel/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/afs/cern.ch/work/f/fesoubel/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+# Source production Python environment
+source /afs/cern.ch/work/f/fesoubel/public/felix_prodenv/bin/activate
