@@ -66,6 +66,10 @@ alias gfl='git flow'
 
 alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
 
+# Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
+alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
+
+
 # -------------------------------------------------------------------
 # Homebrew
 # -------------------------------------------------------------------
@@ -82,6 +86,8 @@ alias bubo='brew update && brew outdated'
 # -------------------------------------------------------------------
 # Conda aliases
 # -------------------------------------------------------------------
+alias cda='conda deactivate'
+
 _remove_last_lines () {
   # First argument is number of lines to remove, second is file name
   # Very fast because it reads from the end, does not read the whole file and doesn't rewrite un-necessary stuff 
