@@ -20,6 +20,9 @@ alias gtp='gotop'
 # A bit of cursing around: re-execute previous command as root
 alias fuck='sudo $(fc -ln -1)'
 
+# Useful 'find' shortcuts
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
 
 # -------------------------------------------------------------------
 # Global applications aliases
