@@ -19,6 +19,9 @@ source $HOME/dotfiles/zsh/functions.sh
 # Adding lxplus madx to PATH
 export PATH="$PATH:/afs/cern.ch/user/m/mad/bin"
 
+# Getting cargo in the PATH
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # Getting neofetch in the PATH
 export PATH="$PATH:$HOME/.neofetch/"
 clear && neofetch && ls
