@@ -1,17 +1,18 @@
 # -------------------------------------------------------------------
 # General UNIX
 # -------------------------------------------------------------------
-
 alias clr='clear'
-alias cld='clr & ls -la'
 alias cclr='clear && neofetch && ls'
 alias cdlr='cd && clear && neofetch && ls'
+alias cld='clr & lsd'
 alias cp='cp -iv'
 alias df='df -h'
-alias lsl='ls -l'
+alias less='less -R -S'
 alias lsa='ls -lA'
+alias lsd='exa --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
+alias th='rm -rf'
 
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
@@ -27,7 +28,6 @@ alias :wq='echo "You are not in vim!"'
 # Moving around
 alias work='cd /afs/cern.ch/work/f/fesoubel'
 alias phd='cd /afs/cern.ch/work/f/fesoubel/PhD'
-alias wipetracks='for FILE in track.obs0001.*; do rm -f "$FILE"; done && for FILE in track.obs0002.*; do rm -f "$FILE"; done'
 
 # A bit of cursing around
 alias please='sudo $(fc -ln -1)'
