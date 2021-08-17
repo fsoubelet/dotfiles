@@ -16,6 +16,7 @@ alias mv='mv -iv'
 alias th='rm -rf'
 alias rsync='rsync -avhz'
 alias gtp='gotop'
+alias less='less -S'
 
 # A bit of cursing around: re-execute previous command as root
 alias fuck='sudo $(fc -ln -1)'
