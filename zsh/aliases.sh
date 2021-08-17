@@ -16,6 +16,7 @@ alias mv='mv -iv'
 alias th='trash'
 alias rsync='rsync -avhz'
 alias gtp='gotop'
+alias less='less -S'
 
 alias sush='sort | uniq -c | sort -nr | head'
 
