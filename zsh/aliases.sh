@@ -65,6 +65,8 @@ alias gfl='git flow'
 # A convenient alias to see which files in git repo have been the most worked on
 alias gitinspect='git log --format=format: --name-only | egrep -v "^$" | sort | uniq -c | sort -rg | head -10'
 
+# Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
+alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
 
 # -------------------------------------------------------------------
 # Docker aliases
@@ -92,6 +94,8 @@ condexport () {
   _remove_last_lines 2 "$1"_environment.yml
 }
 
+alias cda='conda deactivate'
+
 # -------------------------------------------------------------------
 # Safety first
 # -------------------------------------------------------------------
@@ -108,6 +112,7 @@ _exists() {
 # Make sure to define a Host for cern in your .ssh/config file
 alias work='cd /afs/cern.ch/work/f/fesoubel/'
 alias lintrack='cd /afs/cern.ch/eng/sl/lintrack/'
+alias optics='cd /afs/cern.ch/eng/lhc/optics/'
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
 alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
@@ -118,9 +123,8 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 
 # Needs to have kinit-ed and aklog-ed, updates lxplus envs with local pyhdtoolkit build
 alias get_omc_accpy='source /afs/cern.ch/eng/sl/lintrack/OMC_Acc_Py/base/2020.11/setup.sh'
-alias omcenv='/afs/cern.ch/eng/sl/lintrack/OMC_Python3/bin/python -m pip install --upgrade tfs-pandas generic_parser optics_functions pylhc-submitter sdds'
-alias afsenvs='/afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/pip uninstall pyhdtoolkit --yes && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/PHD/bin/pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/OMC/bin/pip uninstall pyhdtoolkit --yes && /afs/cern.ch/work/f/fesoubel/anaconda3/envs/OMC/bin/pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl'
-alias updatenvs='source activate PHD && pip uninstall pyhdtoolkit --yes && pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && conda deactivate'
+alias prodenv='source /afs/cern.ch/work/f/fesoubel/public/felix_prodenv/bin/activate'
+alias updatenvs='/home/felix/anaconda3/envs/PHD/bin/python -m pip uninstall pyhdtoolkit --yes && /home/felix/anaconda3/envs/PHD/bin/python -m pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl'
 
 # -------------------------------------------------------------------
 # Miscellaneous
@@ -144,11 +148,3 @@ alias get="curl -O -L"
 
 # Load modifications to zsh environment
 alias reload!='source ~/.zshrc'
-
-
-# -------------------------------------------------------------------
-# Random shit
-# -------------------------------------------------------------------
-
-# Shortcut to run Osu! from local build dir
-alias osu!='dotnet run --project osu.Desktop -c Release'
