@@ -45,6 +45,24 @@ wipe () {
   esac
 }
 
+# Clean Python mess anywhere
+clean() {
+  function_echo "Cleaning up bytecode files and python cache."
+  find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
+
+  function_echo "Cleaning up pytest cache & test artifacts."
+  find . -type d -name '*.pytest_cache' -exec rm -rf {} + -o -type f -name '*.pytest_cache' -exec rm -rf {} +
+  find . -type f -name 'fc.*' -delete -o -type f -name 'fort.*' -delete
+
+  function_echo "Cleaning up mypy cache."
+  find . -type d -name "*.mypy_cache" -exec rm -rf {} +
+
+  function_echo "Cleaning up coverage reports."
+  find . -type f -name '.coverage*' -exec rm -rf {} + -o -type f -name 'coverage.xml' -delete
+
+  function_echo "All cleaned up."
+}
+
 # Viewing man pages in Preview
 pman () { ps=$(mktemp -t manpageXXXX).ps ; man -t "$@" > "$ps" ; open "$ps" ; }
 
