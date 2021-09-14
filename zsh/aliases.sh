@@ -23,6 +23,10 @@ alias sush='sort | uniq -c | sort -nr | head'
 # A bit of cursing around: re-execute previous command as root
 alias fuck='sudo $(fc -ln -1)'
 
+# Useful 'find' shortcuts
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
 alias updatenvs='source activate PHD && pip uninstall pyhdtoolkit --yes && pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && conda deactivate'
 
 # -------------------------------------------------------------------
