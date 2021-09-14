@@ -24,8 +24,8 @@ alias sush='sort | uniq -c | sort -nr | head'
 alias fuck='sudo $(fc -ln -1)'
 
 # Useful 'find' shortcuts
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias fd='find . -type d -name'  # example: fd 'foldername' -exec rm -rv {} +
+alias ff='find . -type f -name'  # example: ff '*.ini' -delete
 
 alias updatenvs='source activate PHD && pip uninstall pyhdtoolkit --yes && pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && conda deactivate'
 
