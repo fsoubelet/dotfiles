@@ -28,6 +28,7 @@ Plug 'ryuta69/elly.vim'                                                        "
 
 "------------------------------ Vim as IDE -------------------------------
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}                                " Conquer of Completion.
 Plug 'scrooloose/nerdtree'                                                     " NERDTree.
 Plug 'Xuyuanp/nerdtree-git-plugin'                                             " NERDTree git integration.
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                                 " NERDTree syntax highlighting.

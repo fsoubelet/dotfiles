@@ -106,6 +106,8 @@ condexport () {
   _remove_last_lines 2 "$1"_environment.yml
 }
 
+# Useful for re-creating or updating PHD env
+alias makephdenv='conda install -c conda-forge hdf5 --yes && pip install --upgrade click cpymad h5py ipykernel ipython isort jupyterlab-widgets loguru matplotlib numba numpy optics-functions pandas pendulum pip pyarrow pydantic pyhdtoolkit pynaff pytz requests rich scikit-learn scipy sdds seaborn sympy tfs-pandas generic-parser'
 
 # -------------------------------------------------------------------
 # Safety first
