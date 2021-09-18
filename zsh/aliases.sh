@@ -82,6 +82,8 @@ alias lzd='lazydocker'
 # -------------------------------------------------------------------
 # Conda aliases
 # -------------------------------------------------------------------
+alias cda='conda deactivate'
+
 _remove_last_lines () {
   # First argument is number of lines to remove, second is file name
   # Very fast because it reads from the end, does not read the whole file and doesn't rewrite anything
@@ -95,7 +97,8 @@ condexport () {
   _remove_last_lines 2 "$1"_environment.yml
 }
 
-alias cda='conda deactivate'
+# Useful for re-creating or updating PHD env
+alias makephdenv='conda install -c conda-forge hdf5 --yes && pip install --upgrade click cpymad fastparquet h5py htcondor ipykernel ipython isort jupyterlab-widgets loguru matplotlib numba numpy optics-functions pandas pendulum pip pyarrow pydantic pyhdtoolkit pynaff pytz requests rich scikit-learn scipy sdds seaborn sympy tfs-pandas generic-parser'
 
 # -------------------------------------------------------------------
 # Safety first
