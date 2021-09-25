@@ -140,6 +140,11 @@ whatsnew () {
   softwareupdate -l | tail +5
 }
 
+# Using streamlink to pull a stream and send it to iina
+getstream () {
+  streamlink --stdout "$1" best | iina --stdin # First and only argument should be url to the stream
+}
+
 
 # Convert every flac file in current directory into mp3 format
 flac_to_mp3 () {
