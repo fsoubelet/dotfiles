@@ -40,22 +40,25 @@ PERL_LOCAL_LIB_ROOT="/home/felix/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_R
 PERL_MB_OPT="--install_base \"/home/felix/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/felix/perl5"; export PERL_MM_OPT;
 
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/felix/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/felix/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/felix/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/felix/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
 # Using GNUPG encryption
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent
 
 # For bat to have better scrolling
 export BAT_PAGER="less -RF"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/felix/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/felix/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/felix/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/felix/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
