@@ -20,10 +20,7 @@ Plug 'itchyny/lightline.vim'                                                   "
 Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images.
 Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I love.
 Plug 'joshdick/onedark.vim'                                                    " Colorscheme I like.
-Plug 'ayu-theme/ayu-vim'                                                       " Colorscheme I like.
-Plug 'arcticicestudio/nord-vim'                                                " Colorscheme I like.
-Plug 'rakr/vim-two-firewatch'                                                  " Colorscheme I like.
-Plug 'ryuta69/elly.vim'                                                        " Colorscheme I like.
+Plug 'pacokwon/onedarkhc.vim'                                                  " Like One Dark but high contrast
 "Plug 'chuling/ci_dark'                                                         " Colorscheme I like.
 
 "------------------------------ Vim as IDE -------------------------------
@@ -168,8 +165,9 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-colorscheme palenight 
+"colorscheme palenight 
 "colorscheme onedark
+colorscheme onedarkhc
 "colorscheme nord
 
 "let ayucolor="mirage"
