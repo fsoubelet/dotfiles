@@ -60,6 +60,8 @@ alias grr='git remote rm'
 alias gs='git status'
 alias gta='git tag -am'
 
+# Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
+alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
 
 # -------------------------------------------------------------------
 # Safety first
@@ -86,6 +88,7 @@ alias ssh='ssh -X'
 
 # Moving around
 alias lintrack='cd /afs/cern.ch/eng/sl/lintrack/'
+alias repos='cd /afs/cern.ch/eng/sl/lintrack/OMC_Repositories/'
 
 # HTCondor functionality on lxplus
 alias bjobs='condor_q'

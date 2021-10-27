@@ -28,3 +28,6 @@ clear && neofetch && ls
 
 # Source production Python environment
 source /afs/cern.ch/work/f/fesoubel/public/felix_prodenv/bin/activate
+
+# For bat to have better scrolling
+export BAT_PAGER="less -RF"
