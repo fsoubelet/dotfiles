@@ -157,6 +157,9 @@ alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'
 # Sourced mkdocs command
 alias pydoc='~/anaconda3/envs/docmc/bin/python -m mkdocs'
 
+# Safety in pip operations
+alias pip='python -m pip'
+
 # Easier notebook alias
 alias jupy='jupylab'
 alias jupylab='jupyter lab --browser=firefox'
