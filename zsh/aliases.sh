@@ -83,6 +83,7 @@ alias lzd='lazydocker'
 # Conda aliases
 # -------------------------------------------------------------------
 alias cda='conda deactivate'
+alias pip='python -m pip'
 
 _remove_last_lines () {
   # First argument is number of lines to remove, second is file name
@@ -116,6 +117,7 @@ _exists() {
 # Make sure to define a Host for cern in your .ssh/config file
 alias work='cd /afs/cern.ch/work/f/fesoubel/'
 alias lintrack='cd /afs/cern.ch/eng/sl/lintrack/'
+alias repos='cd /afs/cern.ch/eng/sl/lintrack/OMC_Repositories/'
 alias optics='cd /afs/cern.ch/eng/lhc/optics/'
 
 # Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
