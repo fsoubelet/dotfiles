@@ -16,9 +16,6 @@ source "$HOME"/dotfiles/zsh/functions.sh
 source "$HOME"/dotfiles/zsh/dockerfunc.sh
 source "$HOME"/dotfiles/zsh/tmux.sh
 
-# Added Anaconda3 install to path
-export PATH="$HOME/anaconda3/bin:$PATH"
-
 # Add MacTex elements bin in the PATH
 export PATH="$PATH:/usr/local/texlive/2021/bin/universal-darwin"
 
