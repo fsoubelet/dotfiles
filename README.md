@@ -80,7 +80,7 @@ Many thanks to the [dotfiles community][dotcomu] and the [awesome dotfiles][awes
 
 ## License
 
-Copyright &copy; 2018-2020 Felix Soubelet. [MIT License][license]
+Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 
 [anaconda]: https://www.anaconda.com/
 [anacondadownload]: https://www.anaconda.com/download/#macos
