@@ -14,6 +14,12 @@ Host desktop
     User felix
     StrictHostKeyChecking no
 
+Host workstation
+    Hostname pcbe-abp-hpc002.cern.ch
+    User fesoubel
+    ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
+    StrictHostKeyChecking no
+
 Host lxplus.cern.ch
     ForwardX11Trusted yes
     GSSAPIAuthentication yes
