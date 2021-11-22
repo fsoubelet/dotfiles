@@ -19,8 +19,8 @@ source "$HOME"/dotfiles/zsh/tmux.sh
 # Add MacTex elements bin in the PATH
 export PATH="$PATH:/usr/local/texlive/2021/bin/universal-darwin"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# Add Ruby and RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Getting Poetry tool in the PATH
 export PATH="$PATH:$HOME/.poetry/bin"
@@ -54,4 +54,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
+eval "$(rbenv init - zsh)"
