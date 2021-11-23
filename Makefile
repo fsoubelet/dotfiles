@@ -99,7 +99,7 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/configs/ssh_config $(HOME)/.ssh/config
 	@echo "Linking configuration files."
 	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
-	@mkdir $(HOME)/spicetify_data; ln -nfs ${DOTFILES_DIR}/configs/spicetify/Themes $(HOME)/spicetify_data/Themes
+	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
 
 omz:
 	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
@@ -107,7 +107,7 @@ omz:
 
 plugins: omz
 	@echo "$(B)Cloning 'fast-syntax-highlighting' files to local plugins directory.$(E)"
-	@git clone https://github.com/zdharma/fast-syntax-highlighting.git "$ZSH_CUSTOM/plugins/fast-syntax-highlighting"
+	@git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZSH_CUSTOM/plugins/fast-syntax-highlighting"
 	@echo "$(B)Cloning 'you-should-use' files to local plugins directory.$(E)"
 	@git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$ZSH_CUSTOM/plugins/you-should-use"
 	@echo "$(B)Cloning 'zsh-autosuggestions' files to local plugins directory.$(E)"

@@ -38,7 +38,6 @@ alias vinit='vi ~/.config/nvim/init.vim'
 # NeoVim
 alias vi='vim'
 alias vim='nvim'
-alias nvim='/usr/local/bin/nvim'
 
 
 # -------------------------------------------------------------------
