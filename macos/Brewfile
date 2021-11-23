@@ -9,7 +9,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "jesseduffield/lazydocker"
 tap "khanhas/tap"
 tap "louisbrunner/valgrind"
 tap "orf/brew"
@@ -24,7 +23,6 @@ brew "bash"
 brew "bash-completion"
 brew "bash-snippets"
 brew "bat"
-brew "bench"
 brew "bit-git"
 brew "blast"
 brew "boost"
@@ -45,13 +43,13 @@ brew "gmp"
 brew "coreutils"
 brew "cscope"
 brew "ctags"
-brew "libunistring"
 brew "diff-so-fancy"
 brew "elinks"
 brew "exa"
 brew "exiftool"
 brew "faac"
 brew "flac"
+brew "libunistring"
 brew "nettle"
 brew "gnutls"
 brew "lame"
@@ -74,6 +72,7 @@ brew "git-secrets"
 brew "pinentry"
 brew "gnupg"
 brew "gnupg@1.4"
+brew "gnupg@2.2"
 brew "gnuplot"
 brew "go"
 brew "grep"
@@ -82,7 +81,6 @@ brew "hexyl"
 brew "htop"
 brew "httpie"
 brew "imagemagick"
-brew "julia"
 brew "keychain"
 brew "ldns"
 brew "llvm"
@@ -95,13 +93,13 @@ brew "ncdu"
 brew "neovim"
 brew "nim"
 brew "ninja"
+brew "node"
 brew "onefetch"
 brew "openssh"
 brew "pandoc"
 brew "pinentry-mac"
 brew "podman"
 brew "postgresql"
-brew "pypy3"
 brew "ranger"
 brew "rbenv"
 brew "rename"
@@ -147,17 +145,16 @@ cask "zoom"
 cask "zotero"
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
-mas "Agenda", id: 1287445660
-mas "Gifski", id: 1351639930
-mas "Glance", id: 1513574319
+mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keka", id: 470158793
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
+mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "NordVPN IKE", id: 1116599239
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Spark", id: 1176895641
+mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
-mas "Xcode", id: 497799835
