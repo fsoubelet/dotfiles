@@ -3,7 +3,7 @@
 [user]
   name = Felix Soubelet
   email = felix.soubelet@protonmail.com
-	signingkey = 4B9EE0C499F42628
+	signingkey = E701664A16046BDE
 
 
 [color]
@@ -27,8 +27,8 @@
   pager = 'less -FRSX'
   pager = /usr/bin/less
   excludesfile = /Users/felixsoubelet/.gitignore_global
-	autocrlf = input
-	symlinks = false
+  autocrlf = input
+  symlinks = false
 
 
 [github]
@@ -73,14 +73,14 @@
 [commit]
 	gpgsign = true
 [tag]
-	gpgSign = true
+  gpgSign = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = gpg
 [alias]
-	yeet = push
+  yeet = push
 [pull]
-	ff = only
+  ff = only
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [init]
-	defaultBranch = master
+  defaultBranch = master
