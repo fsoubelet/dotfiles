@@ -1,0 +1,14 @@
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[conda]
+format = "via [$symbol$environment](blue) "
+ignore_base = false
+
+[git_commit]
+format = "[\\($hash$tag\\)]($style) "
+style = "red"
+
+[git_metrics]
+disabled = false

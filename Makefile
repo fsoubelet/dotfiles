@@ -100,6 +100,7 @@ link:
 	@echo "Linking configuration files."
 	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
+	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
 
 omz:
 	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
