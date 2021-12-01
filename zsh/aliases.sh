@@ -34,7 +34,7 @@ alias vinit='vi ~/.config/nvim/init.vim'
 # Vim
 alias vi='vim'
 alias vim='nvim'
-alias nvim='/usr/bin/nvim'
+alias nvim='$HOME/.nvim'
 
 
 # -------------------------------------------------------------------
@@ -84,6 +84,7 @@ alias lzd='lazydocker'
 # -------------------------------------------------------------------
 alias cda='conda deactivate'
 alias pip='python -m pip'
+alias mamba='/home/fesoubel/mambaforge/bin/mamba'
 
 _remove_last_lines () {
   # First argument is number of lines to remove, second is file name
