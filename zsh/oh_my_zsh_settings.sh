@@ -2,10 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=5
 
-ZSH_THEME=""
-
-# Enable flags completion // file seems to be missing
-#source $(dirname $(which colorls))/tab_complete.sh
+ZSH_THEME=""  # not set and will let Starship handle it
 
 DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
@@ -21,6 +18,6 @@ setopt HIST_EXPIRE_DUPS_FIRST               # When duplicates are entered, get r
 # Enabled true color support for terminals
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-plugins=(brew docker github fast-syntax-highlighting you-should-use zsh-autosuggestions)
+plugins=(brew docker poetry github fast-syntax-highlighting you-should-use zsh-autosuggestions)
 
 source "${ZSH}"/oh-my-zsh.sh
