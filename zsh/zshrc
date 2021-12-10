@@ -6,9 +6,6 @@ export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 export PATH="/opt/homebrew/bin:$PATH"
 export EDITOR="vim"
 
-# Making sure to not tune the homebrew sbin out of the PATH. Will be preceeded
-# by Anaconda installs later in this file
-export PATH="/usr/local/sbin:$PATH"
 
 # All shell customization
 source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
@@ -17,20 +14,11 @@ source "$HOME"/dotfiles/zsh/functions.sh
 source "$HOME"/dotfiles/zsh/dockerfunc.sh
 source "$HOME"/dotfiles/zsh/tmux.sh
 
-# Add MacTex elements bin in the PATH
-export PATH="$PATH:/usr/local/texlive/2021/bin/universal-darwin"
-
-# Add Ruby and RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-# Getting Poetry tool in the PATH
-export PATH="$PATH:$HOME/.poetry/bin"
-
-# Getting Cargo binaries (from Rust) in the PATH
-export PATH="$PATH:$HOME/.cargo/bin"
-
-# Adding fuzzy-finder completion and keymaps
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/opt/homebrew/sbin:$PATH"  # Add the homebrew sbin to PATH.
+export PATH="$PATH:/usr/local/texlive/2021/bin/universal-darwin"  # Add MacTex to PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH" # Add Ruby and RVM to PATH
+export PATH="$PATH:$HOME/.poetry/bin" # Add Poetry to the PATH
+export PATH="$PATH:$HOME/.cargo/bin"  # Add cargo binaries to the PATH
 
 # Using GNUPG encryption
 export GPG_TTY=$(tty)
