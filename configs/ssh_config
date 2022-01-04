@@ -4,6 +4,17 @@ Host cern
     ForwardX11Trusted yes
     StrictHostKeyChecking no
 
+# After 'ssh tunnel' go to System Preferences -> Network -> Advanced -> Proxies -> Tick SOCKS and configure with 127.0.0.1 and port 8090
+Host tunnel
+    Hostname lxtunnel.cern.ch
+    User fesoubel
+    # if your client is configured for Kerberos
+    GSSAPIDelegateCredentials yes
+    GSSAPIAuthentication yes
+    # SOCKS5 proxy for web, see below
+    DynamicForward 8090   
+    ExitOnForwardFailure no
+
 Host machine
     Hostname fesoubel-lxplus
     User root

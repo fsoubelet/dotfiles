@@ -27,7 +27,6 @@ alias fuck='sudo $(fc -ln -1)'
 alias fd='find . -type d -name'  # example: fd 'foldername' -exec rm -rv {} +
 alias ff='find . -type f -name'  # example: ff '*.ini' -delete
 
-alias updatenvs='source activate PHD && pip uninstall pyhdtoolkit --yes && pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl && conda deactivate'
 
 # -------------------------------------------------------------------
 # Global applications aliases
@@ -105,8 +104,8 @@ condexport () {
   _remove_last_lines 2 "$1"_environment.yml
 }
 
-# Useful for re-creating or updating PHD env
-alias makephdenv='conda install -c conda-forge hdf5 --yes && pip install --upgrade click cpymad h5py ipykernel ipython isort jupyterlab-widgets loguru matplotlib numba numpy optics-functions pandas pendulum pip pyarrow pydantic pyhdtoolkit pynaff pytz requests rich scikit-learn scipy sdds seaborn sympy tfs-pandas generic-parser'
+# Useful for re-creating or updating PHD env / NEEDS REWORK
+# alias makephdenv='conda install -c conda-forge hdf5 --yes && pip install --upgrade click cpymad h5py ipykernel ipython isort jupyterlab-widgets loguru matplotlib numba numpy optics-functions pandas pendulum pip pyarrow pydantic pyhdtoolkit pynaff pytz requests rich scikit-learn scipy sdds seaborn sympy tfs-pandas generic-parser'
 
 # -------------------------------------------------------------------
 # Safety first
@@ -125,23 +124,17 @@ _exists() {
 
 # Connecting directly into CERN desktop
 alias desktop='ssh -J cern desktop'
-alias deskjupy='ssh -N -L localhost:8888:localhost:8888 -J cern desktop'
 
 # Connecting directly into CERN technical network
 alias technet='ssh -J cern technet'
-
-# Connecting directly into my CERN OpenStack machine
-alias machine='ssh -J cern machine'
-
-# Launching a jupyter notebook on remote and pipeline games to redirect output on localhost:4000 in local.
-alias jupycern='ssh -L 4000:localhost:3000 cern "jupyter notebook --no-browser --ip=127.0.0.1 --port 3000"'
 
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
 
 # Establish a SOCKS5 proxy through CERN to access GPN restricted resources
-alias cernprox='ssh -D 8090 fesoubel@lxtunnel.cern.ch'
+# Then go to System Preferences -> Network -> Advanced -> Proxies -> Tick SOCKS and configure with 127.0.0.1 and port 8090
+alias cernprox='ssh -D 8090 tunnel'
 
 # -------------------------------------------------------------------
 # Miscellaneous
