@@ -331,7 +331,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>clear</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>

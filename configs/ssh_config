@@ -8,12 +8,9 @@ Host cern
 Host tunnel
     Hostname lxtunnel.cern.ch
     User fesoubel
-    # if your client is configured for Kerberos
-    GSSAPIDelegateCredentials yes
-    GSSAPIAuthentication yes
     # SOCKS5 proxy for web, see below
+    #LocalForward 8090 localhost:8090
     DynamicForward 8090   
-    ExitOnForwardFailure no
 
 Host machine
     Hostname fesoubel-lxplus
