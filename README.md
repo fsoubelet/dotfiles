@@ -18,6 +18,7 @@ Here's some of the core software in my configuration:
 
 * [iTerm2][iterm2] as terminal.
 * The [Z shell][zsh] as shell.
+* [Starship][starship] as prompt.
 * [NeoVim][neovim] as modal editor.
 * [Homebrew][homebrew] as package manager.
 
@@ -34,8 +35,7 @@ After that, run `:PlugInstall` and enjoy a fully ready configuration.
 #### Zsh
 
 I run [Zsh][zsh] as my shell, finding it to be a great middle ground between additional niceties and features while remaining a largely compatible shell scripting target.
-I use [Oh-My-Zsh][oh-my-zsh] as shell configuration manager and [Spaceship][spaceship] as my prompt, both of which are installed automatically.
-If you don't wish to use this prompt, make sure to comment out its line in `oh_my_zsh_settings.sh` and craft your own.
+On top, I use [Oh-My-Zsh][oh-my-zsh] as shell configuration and plugin manager.
 
 ## Install
 
@@ -70,7 +70,7 @@ Some things are left to be done manually, specifically setting personnal informa
 
 ## Note
 
-Currently, running `make` only works on macOS.
+Currently, running `make` only works on macOS, but not every single installation point will be handled an the user might need to install some things manually.
 If on a Linux distribution, have a look at the different targets (`make  help` will be useful) and run them individually.
 Most of them should run without issue.
 
@@ -97,7 +97,7 @@ Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 [neovim]: https://neovim.io/
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh
 [package-sync]: https://atom.io/packages/package-sync
-[spaceship]: https://github.com/denysdovhan/spaceship-prompt
+[starship]: https://github.com/starship/starship
 [vim]: http://www.vim.org/
 [vim-plug]: https://github.com/junegunn/vim-plug
 [zsh]: https://en.wikipedia.org/wiki/Z_shell
