@@ -28,20 +28,18 @@ all: install
 
 install: $(OS)
 
-.PHONY: help anaconda brew defaults link linux macos omz plugins spicetify unlink zsh
+.PHONY: help mambaforge brew defaults link linux macos omz unlink zsh
 
 help:
 	@echo "Dotfiles Makefile. Please use 'make $(R)<target>$(E)' where $(R)<target>$(E) is one of:"
-	@echo "  $(R) $(OS) $(E)        to run the settings installation script."
+	@echo "  $(R) $(OS) $(E)        to run all installation steps."
 	@echo "  $(R) link $(E)         to create symbolic links for configuration files."
 	@echo "  $(R) unlink $(E)       to remove symbolic links created by 'make link'."
-	@echo "  $(R) anaconda $(E)     to install an Anaconda distribution, with Python 3. Currently this installs '2020.02' (Python 3.7)."
 	@echo "  $(R) brew $(E)         to install Homebrew if not present already, and install packages listed in the Brewfile."
 	@echo "  $(R) defaults $(E)     to change macos defaults as specified in 'macos/macos_defaults.sh'."
-	@echo "  $(R) omz $(E)          to install oh-my-zsh if not present already."
-	@echo "  $(R) plugins $(E)      to locally install the required files for oh-my-zsh plugins."
+	@echo "  $(R) mambaforge $(E)   to install the latest Mambaforge distribution."
+	@echo "  $(R) omz $(E)          to install oh-my-zsh and required plugin files if not present already."
 	@echo "  $(R) unlink $(E)       to remove symlink to configuration files."
-	@echo "  $(R) spicetify $(E)    to apply a custom theme to spotify."
 	@echo "  $(R) zsh $(E)          to switch to the Z shell."
 
 linux:
@@ -54,9 +52,7 @@ macos:
 	@make brew
 	@make mambaforge
 	@make zsh
-	@make oh_my_zsh
-	@make plugins
-	@make spicetify
+	@make omz
 	@make link
 
 mambaforge:
