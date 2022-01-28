@@ -52,20 +52,20 @@ macos:
 	@xcode-select --install
 	@softwareupdate -ai
 	@make brew
-	@make anaconda
+	@make mambaforge
 	@make zsh
 	@make oh_my_zsh
 	@make plugins
 	@make spicetify
 	@make link
 
-anaconda:
-	@echo "$(B)Downloading Anaconda distribution.$(E)"
-	@wget https://repo.anaconda.com/archive/Anaconda3-2020.02-MacOSX-x86_64.sh
-	@echo "$(B)Installing Anaconda distribution.$(E)"
-	@bash Anaconda3-2020.02-MacOSX-x86_64.sh -b -p ~/anaconda3
+mambaforge:
+	@echo "$(B)Downloading native Mambaforge distribution.$(E)"
+	@curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+	@echo "$(B)Installing Mambaforge distribution.$(E)"
+	@bash Mambaforge-$(uname)-$(uname -m).sh -b  # batch install mode (no confirm), defaults to ~/mambaforge
 	@echo "$(B)Removing installer from disk.$(E)"
-	@rm -rf Anaconda3-2020.02-MacOSX-x86_64.sh
+	@rm -rf Mambaforge-$(uname)-$(uname -m).sh
 
 brew:
 	@echo "$(B)Checking valid Homebrew installation.$(E)"
