@@ -105,23 +105,8 @@ link:
 omz:
 	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
 	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
-
-plugins: omz
-	@echo "$(B)Cloning 'fast-syntax-highlighting' files to local plugins directory.$(E)"
-	@git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "$ZSH_CUSTOM/plugins/fast-syntax-highlighting"
-	@echo "$(B)Cloning 'you-should-use' files to local plugins directory.$(E)"
-	@git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$ZSH_CUSTOM/plugins/you-should-use"
-	@echo "$(B)Cloning 'zsh-autosuggestions' files to local plugins directory.$(E)"
-	@git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
-	@echo "$(B)Cloning files for Spaceship prompt.$(E)"
-	@git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-	@ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
-spicetify:
-	@echo "$(B)Initializing spicetify and backing up default configuration.$(E)"
-	@spicetify init
-	@spicetify backup
-	@echo "$(B)Modify $(P)$(HOME)/spicetify_data/config.ini$(E)$(B) to set the fields 'current_theme' and 'color_scheme'.$(E)"
+	@echo "$(B)Installing required plugins.$(E)"
+	@bash ${DOTFILES_DIR}/zsh/omz_plugins.sh
 
 unlink:
 	@echo "$(B)Removing symlinks.$(E)"
