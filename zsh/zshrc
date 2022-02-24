@@ -42,6 +42,10 @@ else
     fi
 fi
 unset __conda_setup
+
+if [ -f "/Users/felixsoubelet/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/Users/felixsoubelet/mambaforge/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
 eval "$(starship init zsh)"
