@@ -97,6 +97,9 @@ clean() {
   function_echo "Cleaning up mypy cache."
   find . -type d -name "*.mypy_cache" -exec rm -rf {} +
 
+  function_echo "Cleaning ipython notebook caches"
+  find . -type d -name "*.ipynb_checkpoints" -exec rm -rf {} +
+
   function_echo "Cleaning up coverage reports."
   find . -type f -name '.coverage*' -exec rm -rf {} + -o -type f -name 'coverage.xml' -delete
 
