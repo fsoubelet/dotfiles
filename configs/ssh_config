@@ -12,10 +12,29 @@ Host tunnel
     #LocalForward 8090 localhost:8090
     DynamicForward 8090   
 
-Host machine
-    Hostname fesoubel-lxplus
-    User root
+Host technet1
+    User fesoubel
+    Hostname cs-ccr-dev1.cern.ch
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
+    ForwardX11Trusted yes
+    StrictHostKeyChecking no
+
+Host technet2
+    User fesoubel
+    Hostname cs-ccr-dev2.cern.ch
+    ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
+    ForwardX11Trusted yes
+    StrictHostKeyChecking no
+
+Host optics1
+    User fesoubel
+    Hostname cs-ccr-optics1.cern.ch
+    ProxyCommand ssh -X technet1 -W %h:%p 2> /dev/null
+
+Host optics2
+    User fesoubel
+    Hostname cs-ccr-optics2.cern.ch
+    ProxyCommand ssh -X technet2 -W %h:%p 2> /dev/null
 
 Host desktop
     Hostname pcbe16711.cern.ch
