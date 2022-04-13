@@ -23,11 +23,6 @@ alias sush='sort | uniq -c | sort -nr | head'
 # A bit of cursing around: re-execute previous command as root
 alias fuck='sudo $(fc -ln -1)'
 
-# Useful 'find' shortcuts
-alias fd='find . -type d -name'  # example: fd 'foldername' -exec rm -rv {} +
-alias ff='find . -type f -name'  # example: ff '*.ini' -delete
-
-
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
