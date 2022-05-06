@@ -99,9 +99,6 @@ condexport () {
   _remove_last_lines 2 "$1"_environment.yml
 }
 
-# Useful for re-creating or updating PHD env / NEEDS REWORK
-# alias makephdenv='conda install -c conda-forge hdf5 --yes && pip install --upgrade click cpymad h5py ipykernel ipython isort jupyterlab-widgets loguru matplotlib numba numpy optics-functions pandas pendulum pip pyarrow pydantic pyhdtoolkit pynaff pytz requests rich scikit-learn scipy sdds seaborn sympy tfs-pandas generic-parser'
-
 # -------------------------------------------------------------------
 # Safety first
 # -------------------------------------------------------------------
@@ -120,16 +117,9 @@ _exists() {
 # Connecting directly into CERN desktop
 alias desktop='ssh -J cern desktop'
 
-# Connecting directly into CERN technical network
-alias technet='ssh -J cern technet'
-
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
-
-# Establish a SOCKS5 proxy through CERN to access GPN restricted resources
-# Then go to System Preferences -> Network -> Advanced -> Proxies -> Tick SOCKS and configure with 127.0.0.1 and port 8090
-alias cernprox='ssh -D 8090 tunnel'
 
 # -------------------------------------------------------------------
 # Miscellaneous
@@ -138,11 +128,11 @@ alias cernprox='ssh -D 8090 tunnel'
 # oh-my-zsh
 alias upz='omz update'
 
+# Command to pip install for my dev environment
+alias pipdev='python -m pip install click cpymad dask fastparquet ipython joblib loguru matplotlib matplotview nbconvert notebook numpy optics-functions pandas pendulum pillow pyarrow pydantic requests rich scienceplots scikit-learn scipy seaborn sphinx sphinx-click sphinx-copybutton sphinx-panels sphinx-prompt sphinx-rtd-theme tfs-pandas'
+
 # Setup analysis from cookiecutter
 alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'
-
-# Sourced mkdocs command
-alias pydoc='~/anaconda3/envs/docmc/bin/python -m mkdocs'
 
 # Safety in pip operations
 alias pip='python -m pip'
@@ -165,6 +155,3 @@ alias get="curl -O -L"
 
 # Load modifications to zsh environment
 alias reload!='. ~/.zshrc'
-
-# Download an entire profile's videos
-alias ytdl_user='youtube-dl -f "bestvideo[height>=720]+bestaudio/best" -ciw -o "%(title)s.%(ext)s" -v'
