@@ -83,6 +83,10 @@ fi
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
+# Starting the Kmod app when on technical server
+# Careful that operations will not be accepted until login in (top right of app)
+alias kmod='/acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run pykmodlhc'
+
 # Useful when jumping to the optics server for apps
 alias ssh='ssh -X'
 
