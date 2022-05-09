@@ -117,6 +117,47 @@ _exists() {
 # Connecting directly into CERN desktop
 alias desktop='ssh -J cern desktop'
 
+# -------------------------------------------------------------------
+# CERN LHC Operations aliases
+# -------------------------------------------------------------------
+# Careful that operations will not be accepted until login in (top right of app)
+
+# Open an ssh connection to cs-ccr-dev2 and start BetaBeat GUI from there
+alias betabeatgui='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-beta-beating/PRO/BetaBeating-Control-3t.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start OMC3 GUI from there
+alias omc3gui='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-beta-beating-omc3/PRO/lhc-app-beta-beating-omc3-BetaBeatingOMC3-Control-3t.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start Multiturn from there
+#alias multiturn='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/sps/sps-multiturn/PRO/sps-multiturn-lhc-multiturn-pro.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start TuneViewer Light from there
+alias tuneviewer='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/accsoft/Tuneviewer/PRO/TuneViewerLight-LHC.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start LSA Optics Application from there
+alias lsaoptics='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lsa/lsa-app-optics/PRO/lsa-app-optics.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start BLM Fixed Display from there
+alias blmdisplay='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-blm/PRO/lhc-app-blm-LHC-APP-BLM.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start Accelerator Cockpit from there
+alias accpit='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-accpit/PRO/lhc-app-accpit.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start pykmod from there
+alias pykmod='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run pykmodlhc'
+
+# Open an ssh connection to cs-ccr-dev2 and start pyLossMaps
+#alias pylossmaps='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run pylossmaps'
+
+# Open an ssh connection to cs-ccr-dev2 and start the head-tail viewer
+alias headtailviewer='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run bqht-viewer'
+
+# Open an ssh connection to cs-ccr-dev2 and start the BBQ trigger viewer
+alias instabilitypanel='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run instabilitypanel'
+
+# Open an ssh connection to cs-ccr-dev2 and start LHC Wirescanner app from there
+alias wirescanner='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run ws-lhc-app'
+
 # If need be, for some reason, to get jws again
 # Don't forget to 'ln -s jws.sh /usr/local/bin/jws' afterwards or add the storing directory to PATH
 alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-deploy-jws/PRO/jws.sh'
