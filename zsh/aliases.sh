@@ -22,8 +22,8 @@ alias less='less -S'
 alias fuck='sudo $(fc -ln -1)'
 
 # Useful 'find' shortcuts
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+#alias fd='find . -type d -name'
+#alias ff='find . -type f -name'
 
 # -------------------------------------------------------------------
 # Global applications aliases
@@ -114,6 +114,11 @@ _exists() {
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
+# Because why not
+alias jarjarbinks='bash /home/felix/Repositories/Work/Beta-Beat.src/jarjarbinks'
+
+alias accpyp='pip install --index-url http://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
+
 # Make sure to define a Host for cern in your .ssh/config file
 alias work='cd /afs/cern.ch/work/f/fesoubel/'
 alias lintrack='cd /afs/cern.ch/eng/sl/lintrack/'
@@ -129,8 +134,49 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 
 # Needs to have kinit-ed and aklog-ed, updates lxplus envs with local pyhdtoolkit build
 alias get_omc_accpy='source /afs/cern.ch/eng/sl/lintrack/OMC_Acc_Py/base/2020.11/setup.sh'
+alias omcenv='source /afs/cern.ch/eng/sl/lintrack/omc_python3/bin/activate'
+alias update_omcenv='/afs/cern.ch/eng/sl/lintrack/omc_python3/bin/python -m pip install --upgrade pylhc pylhc_submitter tfs_pandas turn_by_turn omc3 sdds optics_functions generic_parser'
 alias prodenv='source /afs/cern.ch/work/f/fesoubel/public/felix_prodenv/bin/activate'
-alias updatenvs='/home/felix/anaconda3/envs/PHD/bin/python -m pip uninstall pyhdtoolkit --yes && /home/felix/anaconda3/envs/PHD/bin/python -m pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl'
+alias update_prodenv='/home/felix/anaconda3/envs/PHD/bin/python -m pip uninstall pyhdtoolkit --yes && /home/felix/anaconda3/envs/PHD/bin/python -m pip install ~/Repositories/Work/PyhDToolkit/dist/pyhdtoolkit-*-py3-none-any.whl'
+
+# MOST IMPORTANT REMOTE APP - CCM
+alias CCM='ssh technet2 /mcr/bin/ccm LHCOP'
+
+# Open an ssh connection to cs-ccr-dev2 and start BetaBeat GUI from there
+alias betabeatgui='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-beta-beating/PRO/BetaBeating-Control-3t.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start OMC3 GUI from there
+alias omc3gui='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-beta-beating-omc3/PRO/lhc-app-beta-beating-omc3-BetaBeatingOMC3-Control-3t.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start Multiturn from there
+#alias multiturn='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/sps/sps-multiturn/PRO/sps-multiturn-lhc-multiturn-pro.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start TuneViewer Light from there
+alias tuneviewer='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/accsoft/Tuneviewer/PRO/TuneViewerLight-LHC.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start LSA Optics Application from there
+alias lsaoptics='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lsa/lsa-app-optics/PRO/lsa-app-optics.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start BLM Fixed Display from there
+alias blmdisplay='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-blm/PRO/lhc-app-blm-LHC-APP-BLM.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start Accelerator Cockpit from there
+alias accpit='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-accpit/PRO/lhc-app-accpit.jnlp'
+
+# Open an ssh connection to cs-ccr-dev2 and start pykmod from there
+alias pykmod='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run pykmodlhc'
+
+# Open an ssh connection to cs-ccr-dev2 and start pyLossMaps
+#alias pylossmaps='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run pylossmaps'
+
+# Open an ssh connection to cs-ccr-dev2 and start the head-tail viewer
+alias headtailviewer='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run bqht-viewer'
+
+# Open an ssh connection to cs-ccr-dev2 and start the BBQ trigger viewer
+alias instabilitypanel='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run instabilitypanel'
+
+# Open an ssh connection to cs-ccr-dev2 and start LHC Wirescanner app from there
+alias wirescanner='ssh technet2 /acc/local/share/python/acc-py/apps/acc-py-cli/pro/bin/acc-py app run ws-lhc-app'
 
 # -------------------------------------------------------------------
 # Miscellaneous

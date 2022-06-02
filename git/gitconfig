@@ -80,3 +80,19 @@
 
 [gpg]
 	program = gpg2
+[safe]
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/Beta-Beat.src
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/omc3
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/pylhc.github.io
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/tfs
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/PyLHC
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/sdds
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/optics_functions
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/generic_parser
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/submitter
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/MESS
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/Beta-Beat.src
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/turn_by_turn
+	directory = /afs/cern.ch/eng/sl/lintrack/omc_repositories/irnl_rdt_correction
+	directory = /afs/cern.ch/user/f/fesoubel/dotfiles
+	directory = /afs/cern.ch/eng/acc-models/lhc/2022
