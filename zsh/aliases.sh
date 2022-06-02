@@ -65,7 +65,8 @@ alias gfl='git flow'
 alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
 
 # Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
-alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} git -C {} pull"
+alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -P 10 -I {} git -C {} pull"
+alias git-pull-all-verbose="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo {}; git -C {} pull'"
 
 
 # -------------------------------------------------------------------
@@ -117,10 +118,15 @@ _exists() {
 # Connecting directly into CERN desktop
 alias desktop='ssh -J cern desktop'
 
+# This is a python -m pip install looking at the AccPy indexes, useful for a lot of our internal packages. Requires GPN!!!
+alias accpyp='pip install --index-url http://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
+
 # -------------------------------------------------------------------
 # CERN LHC Operations aliases
 # -------------------------------------------------------------------
-# Careful that operations will not be accepted until login in (top right of app)
+
+# THE MOST IMPORTANT OF ALL, should let us start the rest if need be
+alias CCM='ssh technet2 /mcr/bin/ccm LHCOP'
 
 # Open an ssh connection to cs-ccr-dev2 and start BetaBeat GUI from there
 alias betabeatgui='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-beta-beating/PRO/BetaBeating-Control-3t.jnlp'
