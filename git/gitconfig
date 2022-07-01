@@ -29,6 +29,7 @@
   excludesfile = /Users/felixsoubelet/.gitignore_global
   autocrlf = input
   symlinks = false
+  fsmonitor = true
 
 
 [github]
