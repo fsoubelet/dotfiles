@@ -15,20 +15,21 @@ export PATH="/usr/local/sbin:$PATH"
 source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 source "$HOME"/dotfiles/zsh/aliases.sh
 source "$HOME"/dotfiles/zsh/functions.sh
+source "$HOME"/dotfiles/zsh/dockerfunc.sh
 source "$HOME"/dotfiles/zsh/tmux.sh
-
-# Added for miniforge 
-# export PATH="$HOME/mambaforge/bin:$PATH"  # commented out by conda initialize # commented out by conda initialize
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Getting Poetry tool in the PATH and configuring completion
-export PATH="/home/felix/.local/bin:$PATH"
+export PATH="/home/fesoubel/.local/bin:$PATH"
 fpath+=~/.zfunc
 
 # Getting Cargo tool in the PATH
 export PATH="$PATH:$HOME/.cargo/bin"
+
+# Getting my local LaTeX install in the PATH
+export PATH="$PATH:$HOME/.local/bin/texlive/2021/bin/x86_64-linux"
 
 # Adding fuzzy-finder completion and keymaps
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -46,6 +47,7 @@ gpgconf --launch gpg-agent
 
 # For bat to have better scrolling
 export BAT_PAGER="less -RF"
+autoload -U +X bashcompinit && bashcompinit
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -60,5 +62,10 @@ else
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/fesoubel/mambaforge/etc/profile.d/conda.sh" ]; then
+    . "/home/fesoubel/mambaforge/etc/profile.d/conda.sh"
+fi
 # <<< conda initialize <<<
 
+#eval "$(starship init zsh)"
