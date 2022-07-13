@@ -3,8 +3,7 @@
 [user]
   name = Felix Soubelet
   email = felix.soubelet@protonmail.com
-	signingkey = E701664A16046BDE
-
+  signingkey = E701664A16046BDE
 
 [color]
   # turn on default colors for many commands
@@ -14,7 +13,6 @@
   status = auto
   branch = auto
   pager = true
-
 
 [core]
   pager = less
@@ -31,57 +29,66 @@
   symlinks = false
   fsmonitor = true
 
-
 [github]
   user = fsoubelet
-
 
 #[pull]
 #  rebase = rebase 
 
-
 [push]
+  autoSetupRemote = true
   # Refuse to push if upstream branch name is different from local.
-#  default = simple
-
+  #  default = simple
 
 [rerere]
   # git remembers your partial merge choices and replays them next time
   enabled = true
   autoupdate = true
 
-
 [merge]
   # personnal favorite merge visualization tool
   tool = kdiff3
+
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
 [commit]
-	gpgsign = true
+  gpgsign = true
+
 [tag]
   gpgSign = true
+
 [gpg]
-	program = gpg
+  program = gpg
+
 [alias]
   yeet = push
+
 [pull]
   ff = only
+
 [credential]
   helper = osxkeychain
+
 [init]
   defaultBranch = master
+
+[safe]
+  directory = *
