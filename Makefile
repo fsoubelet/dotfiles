@@ -49,6 +49,7 @@ macos:
 	@echo "Installing Xcode command-line tools."
 	@xcode-select --install
 	@softwareupdate -ai
+	@make cargo
 	@make brew
 	@make mambaforge
 	@make zsh
@@ -71,6 +72,12 @@ brew:
 	@cd $(DOTFILES_DIR)/macos; brew bundle; cd $(DOTFILES_DIR)
 	@rm -rf $(DOTFILES_DIR)/macos/Brewfile.lock.json
 	@sudo gem install colorls
+
+cargo:
+	@echo "$(B)Installing Rust and Cargo.$(E)"
+	@curl https://sh.rustup.rs -sSf | sh
+	@echo "$(B)Installing relevant packages from Cargo.$(E)"
+	@cargo install bat exa tealdeer artem difftastic
 
 defaults:
 	@echo "Changing some macos defaults according to configuration file."
