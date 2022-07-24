@@ -78,6 +78,7 @@ alias bg='brew upgrade --all'
 alias bp='brew prune'
 alias bo='brew outdated'
 alias bu='brew update'
+alias bf='rm -rf $(brew --prefix)/var/homebrew/locks'
 alias bubc='brew upgrade && brew cleanup'
 alias bubo='brew update && brew outdated'
 
