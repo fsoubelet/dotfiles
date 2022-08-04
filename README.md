@@ -7,7 +7,7 @@
 </p>
 
 
-This folder contains my dotfiles, used on a mac currently running macOS Catalina (10.15.7).
+This folder contains my dotfiles, used on a mac currently running macOS Monterey (12.4).
 
 ## Package overview
 
