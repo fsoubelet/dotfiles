@@ -120,14 +120,14 @@ _exists() {
 alias desktop='ssh -J cern desktop'
 
 # This is a python -m pip install looking at the AccPy indexes, useful for a lot of our internal packages. Requires GPN!!!
-alias accpyp='pip install --index-url http://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
+alias accpyp='python -m pip install --index-url http://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
 
 # -------------------------------------------------------------------
 # CERN LHC Operations aliases
 # -------------------------------------------------------------------
 
 # THE MOST IMPORTANT OF ALL, should let us start the rest if need be
-alias CCM='ssh technet2 /mcr/bin/ccm LHCOP'
+alias CCM='ssh -X technet2 /mcr/bin/ccm LHCOP'
 
 # Open an ssh connection to cs-ccr-dev2 and start BetaBeat GUI from there
 alias betabeatgui='ssh technet2 /mcr/bin/jws http://bewww.cern.ch/ap/deployments/applications/cern/lhc/lhc-app-beta-beating/PRO/BetaBeating-Control-3t.jnlp'
@@ -184,6 +184,9 @@ alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'
 
 # Safety in pip operations
 alias pip='python -m pip'
+
+# Set up rlwarp for MAD-X to use command history
+alias madx='rlwrap madx'
 
 # Easier notebook alias
 alias jupy='jupylab'
