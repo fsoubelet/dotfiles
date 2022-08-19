@@ -177,7 +177,7 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 alias upz='omz update'
 
 # Command to pip install for my dev environment
-alias pipdev='python -m pip install click cpymad dask fastparquet ipython joblib loguru matplotlib matplotview nbconvert notebook numpy optics-functions pandas pendulum pillow pyarrow pydantic requests rich scienceplots scikit-learn scipy seaborn sphinx sphinx-click sphinx-copybutton sphinx-panels sphinx-prompt sphinx-rtd-theme tfs-pandas'
+alias pipdev='python -m pip install click cpymad dask fastparquet ipython joblib loguru matplotlib matplotview nbconvert notebook numpy optics-functions pandas pendulum pillow pyarrow pydantic requests rich scienceplots scikit-learn scipy seaborn sphinx sphinx-click sphinx-copybutton sphinx-panels sphinx-prompt sphinx-rtd-theme tfs-pandas jupyter_bokeh'
 
 # Setup analysis from cookiecutter
 alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'

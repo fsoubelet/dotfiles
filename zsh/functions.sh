@@ -4,7 +4,7 @@
 
 
 # A convenient way to print some statements
-function_echo () {
+function_echo() {
   local fmt="$1"; shift
   # shellcheck disable=SC2059
   echo "---------------------------------------------------------"
@@ -12,14 +12,14 @@ function_echo () {
   echo "---------------------------------------------------------"
 }
 
-function_info () {
+function_info() {
   local fmt="$1"; shift
   # shellcheck disable=SC2059
   printf "\\n[HOMEBREW] $fmt\\n" "$@"
 }
 
 # Full run of keeping everything Homebrew-related up to date
-brewup () {
+brewup() {
   function_echo "Updating Homebrew."
   brew update
   function_info "Homebrew Updated."
@@ -38,6 +38,7 @@ brewup () {
   printf "[BREWUP] Please read and acknowledge the warnings.\\n"
 }
 
+
 # Unix specific aliases, work on both MacOS and Linux.
 pbcopy() {
 	stdin=$(</dev/stdin);
@@ -48,6 +49,7 @@ pbcopy() {
 		echo "$stdin" | xclip -selection clipboard
 	fi
 }
+
 pbpaste() {
 	pbpaste="$(which pbpaste)";
 	if [[ -n "$pbpaste" ]]; then
@@ -57,8 +59,9 @@ pbpaste() {
 	fi
 }
 
+
 # An easier du utility
-inspect () {
+inspect() {
   if [[ $# -eq 0 ]]
   then
     echo "No arguments were provided, please provided the directory to inspect."
@@ -74,6 +77,7 @@ inspect () {
   fi
 }
 
+
 # Nuclear bomb, but should be ok with 'th'
 wipe() {
   if [[ -n "$BASH" ]]; then read -r -p "This will remove ALL elements in the current directory, are you sure? [y/n] " choice; fi
@@ -84,6 +88,7 @@ wipe() {
     *) echo "This is an invalid choice, aborting.";;
   esac
 }
+
 
 # Clean Python mess anywhere
 clean() {
@@ -106,17 +111,48 @@ clean() {
   function_echo "All cleaned up."
 }
 
+
+# An attempt at a parallel version of the above
+fclean() {
+  function_echo "Cleaning up bytecode files."
+  fd --type f --extension "py[co]" --exec rm -rf
+
+  function_echo "Cleaning up Python cache."
+  fd --glob __pycache__ --exec rm -rf
+
+  function_echo "Cleaning up pytest cache."
+  fd --type d --extension pytest_cache --exec rm -rf
+  fd --type f --extension pytest_cache --exec rm -rf
+
+  function_echo "Cleaning up test artifacts."
+  fd --type f --glob "fc.*" --exec rm -rf
+  fd --type f --glob "fort.*" --exec rm -rf
+
+  function_echo "Cleaning up mypy cache."
+  fd --type d --extension mypy_cache --exec rm -rf
+
+  function_echo "Cleaning up ipython notebook caches."
+  fd --type d --extension ipynb_checkpoints --exec rm -rf
+
+  function_echo "Cleaning up coverage reports."
+  fd --type f --extension "coverage*" --exec rm -rf
+  fd --type f --glob "coverage.xml" --exec rm -rf
+
+  function_echo "All cleaned up."
+}
+
+
 # Turning hidden files on/off in Finder
-hiddenOn () { defaults write com.apple.Finder AppleShowAllFiles YES ; }
-hiddenOff () { defaults write com.apple.Finder AppleShowAllFiles NO ; }
+hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
+hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
 
 
 # Viewing man pages in Preview
-pman () { ps=$(mktemp -t manpageXXXX).ps ; man -t "$@" > "$ps" ; open "$ps" ; }
+pman() { ps=$(mktemp -t manpageXXXX).ps ; man -t "$@" > "$ps" ; open "$ps" ; }
 
 
 # Prompting IP address
-myip () {
+myip() {
   ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
   ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
   ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
@@ -144,43 +180,30 @@ whatsnew () {
 }
 
 # Using streamlink to pull a stream and send it to iina
-getstream () {
+getstream() {
   streamlink --stdout "$1" best | iina --stdin # First and only argument should be url to the stream
 }
 
 
 # Convert every flac file in current directory into mp3 format
-flac_to_mp3 () {
-  for FILE in *.flac; do
-      ffmpeg -i "$FILE" -q:a 0 "${FILE/.flac/.mp3}"
-  done
+flac_to_mp3() {
+  fd --extension flac --exec ffmpeg -i {} -q:a 0 {.}.mp3
 }
 
 
 # Convert every mov file in current directory into mp4 format
-mov_to_mp4 () {
-  for file in *.mov;
-  do
-    ffmpeg -i "$file" -r 25 "${file%.mov.mp4}.mp4"
-    trash "$file"
-  done
+mov_to_mp4() {
+  fd --extension mov --exec ffmpeg -i {} -r 25 {.}.mp4
 }
 
 
 # Convert every mp4 file in current directory into mkv format
-mp4_to_mkv () {
-  for file in *.mp4;
-  do
-    ffmpeg -i "$file" -r 25 "${file%.mov.mp4}.mkv"
-    trash "$file"
-  done
+mp4_to_mkv() {
+  fd --extension mp4 --exec ffmpeg -i {} -r 25 {.}.mkv
 }
 
+
 # Convert every mkv file in current directory into mp4 format
-mkv_to_mp4 () {
-  for file in *.mkv;
-  do
-    ffmpeg -i "$file" -r 25 "$file%.mp4.mkv}.mkv"
-    trash "$file"
-  done
+mkv_to_mp4() {
+  fd --extension mkv --exec ffmpeg -i {} -r 25 {.}.mp4
 }
