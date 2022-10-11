@@ -1,6 +1,13 @@
 Host cern
-    Hostname lxplus.cern.ch
+    Hostname lxplus8.cern.ch
     User fesoubel
+    ForwardX11Trusted yes
+    StrictHostKeyChecking no
+
+# This is the service account for restricted operations in lintrack
+Host lintrack
+    Hostname lxplus8.cern.ch
+    User lintrack
     ForwardX11Trusted yes
     StrictHostKeyChecking no
 
@@ -54,7 +61,7 @@ Host gpus
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
     StrictHostKeyChecking no
 
-Host lxplus.cern.ch
+Host lxplus*.cern.ch
     ForwardX11Trusted yes
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
