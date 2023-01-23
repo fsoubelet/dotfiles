@@ -14,7 +14,7 @@ alias lsd='exa --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias th='trash'
-alias rsync='rsync -avhz'
+alias rsync='rsync -ravzhP'
 alias gtp='gotop'
 alias less='less -S'
 

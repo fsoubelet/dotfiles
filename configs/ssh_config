@@ -43,9 +43,15 @@ Host optics2
     Hostname cs-ccr-optics2.cern.ch
     ProxyCommand ssh -X technet2 -W %h:%p 2> /dev/null
 
-Host desktop
-    Hostname pcbe16711.cern.ch
-    User felix
+Host omc
+    Hostname omc.cern.ch
+    User fesoubel
+    ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
+    StrictHostKeyChecking no
+
+Host omc1
+    Hostname omc1.cern.ch
+    User fesoubel
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
     StrictHostKeyChecking no
 
