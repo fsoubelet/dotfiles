@@ -10,6 +10,7 @@ export EDITOR="vim"
 # All shell customization
 source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 source "$HOME"/dotfiles/zsh/aliases.sh
+source "$HOME"/dotfiles/zsh/pomodoro.sh
 source "$HOME"/dotfiles/zsh/functions.sh
 source "$HOME"/dotfiles/zsh/dockerfunc.sh
 source "$HOME"/dotfiles/zsh/tmux.sh

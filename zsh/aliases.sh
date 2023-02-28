@@ -66,6 +66,7 @@ alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
 
 # Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
 alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -P 10 -I {} git -C {} pull"
+alias gpa='git-pull-all'
 alias git-pull-all-verbose="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo {}; git -C {} pull'"
 
 
