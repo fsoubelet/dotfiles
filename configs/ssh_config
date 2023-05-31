@@ -1,14 +1,14 @@
 Host cern
     Hostname lxplus8.cern.ch
     User fesoubel
-    ForwardX11Trusted yes
+    # ForwardX11Trusted yes
     StrictHostKeyChecking no
 
 # This is the service account for restricted operations in lintrack
 Host lintrack
     Hostname lxplus8.cern.ch
     User lintrack
-    ForwardX11Trusted yes
+    # ForwardX11Trusted yes
     StrictHostKeyChecking no
 
 # After 'ssh tunnel' go to System Preferences -> Network -> Advanced -> Proxies -> Tick SOCKS and configure with 127.0.0.1 and port 8090
@@ -23,14 +23,14 @@ Host technet1
     User fesoubel
     Hostname cs-ccr-dev1.cern.ch
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
-    ForwardX11Trusted yes
+    # ForwardX11Trusted yes
     StrictHostKeyChecking no
 
 Host technet2
     User fesoubel
     Hostname cs-ccr-dev2.cern.ch
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
-    ForwardX11Trusted yes
+    # ForwardX11Trusted yes
     StrictHostKeyChecking no
 
 Host optics1
@@ -76,5 +76,5 @@ Host *
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_rsa
     ForwardAgent yes
-    ForwardX11 yes
+    #ForwardX11 yes
     ForwardX11Timeout 12h
