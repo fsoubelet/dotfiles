@@ -99,8 +99,9 @@ clean() {
   find . -type d -name '*.pytest_cache' -exec rm -rf {} + -o -type f -name '*.pytest_cache' -exec rm -rf {} +
   find . -type f -name 'fc.*' -delete -o -type f -name 'fort.*' -delete
 
-  function_echo "Cleaning up mypy cache."
+  function_echo "Cleaning up mypy and ruff caches."
   find . -type d -name "*.mypy_cache" -exec rm -rf {} +
+  find . -type d -name "*.ruff_cache" -exec rm -rf {} +
 
   function_echo "Cleaning ipython notebook caches"
   find . -type d -name "*.ipynb_checkpoints" -exec rm -rf {} +
@@ -108,28 +109,28 @@ clean() {
   function_echo "Cleaning up coverage reports."
   find . -type f -name '.coverage*' -exec rm -rf {} + -o -type f -name 'coverage.xml' -delete
 
+  function_echo "Cleaning up package builds."
+  find . -type d -name "*dist" -exec rm -rf {} +
+
   function_echo "All cleaned up."
 }
 
 
 # An attempt at a parallel version of the above
 fclean() {
-  function_echo "Cleaning up bytecode files."
+  function_echo "Cleaning up bytecode files and python cache."
   fd --type f --extension "py[co]" --exec rm -rf
-
-  function_echo "Cleaning up Python cache."
   fd --glob __pycache__ --exec rm -rf
 
-  function_echo "Cleaning up pytest cache."
+  function_echo "Cleaning up pytest cache & test artifacts."
   fd --type d --extension pytest_cache --exec rm -rf
   fd --type f --extension pytest_cache --exec rm -rf
-
-  function_echo "Cleaning up test artifacts."
   fd --type f --glob "fc.*" --exec rm -rf
   fd --type f --glob "fort.*" --exec rm -rf
 
-  function_echo "Cleaning up mypy cache."
+  function_echo "Cleaning up mypy and ruff caches."
   fd --type d --extension mypy_cache --exec rm -rf
+  fd --type d --extension ruff_cache --exec rm -rf
 
   function_echo "Cleaning up ipython notebook caches."
   fd --type d --extension ipynb_checkpoints --exec rm -rf
@@ -137,6 +138,9 @@ fclean() {
   function_echo "Cleaning up coverage reports."
   fd --type f --extension "coverage*" --exec rm -rf
   fd --type f --glob "coverage.xml" --exec rm -rf
+
+  function_echo "Cleaning up package builds."
+  fd --glob "*dist"  --exec rm -rf
 
   function_echo "All cleaned up."
 }
