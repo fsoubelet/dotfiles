@@ -61,6 +61,7 @@ alias grr='git remote rm'
 alias gs='git status'
 alias gta='git tag -sm'  # automatically GPG sign and annotate tags
 alias gfl='git flow'
+alias gwp='git commit -a -m wip --no-verify'  # use responsibly
 
 alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
 
