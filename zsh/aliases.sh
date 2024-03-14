@@ -74,6 +74,7 @@ alias git-pull-all-verbose="find . -maxdepth 3 -name .git -type d | rev | cut -c
 # -------------------------------------------------------------------
 # Homebrew
 # -------------------------------------------------------------------
+
 alias bc='brew cleanup'
 alias bd='brew doctor'
 alias bg='brew upgrade --all'
@@ -84,10 +85,31 @@ alias bf='rm -rf $(brew --prefix)/var/homebrew/locks'
 alias bubc='brew upgrade && brew cleanup'
 alias bubo='brew update && brew outdated'
 
+# -------------------------------------------------------------------
+# Python
+# -------------------------------------------------------------------
+
+# Easier notebook aliases
+alias jupy='jupylab'
+alias jupylab='jupyter lab --browser=firefox'
+
+# Safety first in pip operations
+alias pip='python -m pip'
+
+# Command to pip install for my PhD prod environment
+alias piprod='python -m pip install --upgrade click pyhdtoolkit dask pyarrow fastparquet joblib matplotview requests scikit-learn'
+alias uprod='python -m pip install --upgrade click cpymad dask fastparquet ipykernel joblib loguru matplotlib matplotview nbconvert notebook numpy optics-functions pandas pendulum pillow pyarrow pydantic requests rich scikit-learn scipy seaborn tfs-pandas'
+
+# Command to upgrade all xsuite repos in the current environment
+alias xsuite-upgrade='python -m pip install --upgrade xsuite xtrack xpart xobjects xfields xcoll'
+
+# Alias to always start ipython in pylab mode (for non-blocking plot windows)
+alias ipython='ipython --pprint --pylab'
 
 # -------------------------------------------------------------------
-# Conda aliases
+# Conda / Mamba aliases
 # -------------------------------------------------------------------
+
 alias cda='conda deactivate'
 
 _remove_last_lines () {
@@ -103,6 +125,10 @@ condexport () {
   _remove_last_lines 2 "$1"_environment.yml
 }
 
+# Aliases to quickly create / destroy a simple test environment with mamba on latest Python
+alias mtest='mamba create -n test python -y && mamba activate test'
+alias dtest='conda deactivate && mamba remove -n test --all -y'
+
 # -------------------------------------------------------------------
 # Safety first
 # -------------------------------------------------------------------
@@ -111,12 +137,11 @@ _exists() {
   command -v "$1" > /dev/null 2>&1
 }
 
-
 # -------------------------------------------------------------------
 # CERN & LXPLUS aliases
 # -------------------------------------------------------------------
 
-# Make sure to define a Host for cern in your .ssh/config file
+# /!\ Make sure to define a Host for cern in your .ssh/config file /!\
 
 # Connecting directly into CERN desktop
 alias desktop='ssh -J cern desktop'
@@ -178,22 +203,11 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 # oh-my-zsh
 alias upz='omz update'
 
-# Command to pip install for my dev environment
-alias piprod='python -m pip install --upgrade click pyhdtoolkit dask pyarrow fastparquet joblib matplotview requests scienceplots scikit-learn jupyter_bokeh'
-alias uprod='python -m pip install --upgrade click cpymad dask fastparquet ipykernel joblib loguru matplotlib matplotview nbconvert notebook numpy optics-functions pandas pendulum pillow pyarrow pydantic requests rich scienceplots scikit-learn scipy seaborn tfs-pandas'
-
 # Setup analysis from cookiecutter
 alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'
 
-# Safety in pip operations
-alias pip='python -m pip'
-
 # Set up rlwarp for MAD-X to use command history
 alias madx='rlwrap madx'
-
-# Easier notebook alias
-alias jupy='jupylab'
-alias jupylab='jupyter lab --browser=firefox'
 
 # Wifi cli utility alias (options are on and off)
 alias wifi='osx-wifi-cli'
