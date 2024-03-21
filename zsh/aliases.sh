@@ -101,7 +101,7 @@ alias piprod='python -m pip install --upgrade click pyhdtoolkit dask pyarrow fas
 alias uprod='python -m pip install --upgrade click cpymad dask fastparquet ipykernel joblib loguru matplotlib matplotview nbconvert notebook numpy optics-functions pandas pendulum pillow pyarrow pydantic requests rich scikit-learn scipy seaborn tfs-pandas'
 
 # Command to upgrade all xsuite repos in the current environment
-alias xsuite-upgrade='python -m pip install --upgrade xsuite xtrack xpart xobjects xfields xcoll'
+alias xsuite-upgrade='python -m pip install --upgrade xsuite xtrack xpart xobjects xfields xcoll xplt'
 
 # Alias to always start ipython in pylab mode (for non-blocking plot windows)
 alias ipython='ipython --pprint --pylab'

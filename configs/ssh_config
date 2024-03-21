@@ -4,14 +4,14 @@ Host cern
     # ForwardX11Trusted yes
     StrictHostKeyChecking no
 
-# This is the service account for restricted operations in lintrack
+<!-- This is the service account for restricted operations in lintrack -->
 Host lintrack
     Hostname lxplus.cern.ch
     User lintrack
     # ForwardX11Trusted yes
     StrictHostKeyChecking no
 
-# After 'ssh tunnel' go to System Preferences -> Network -> Advanced -> Proxies -> Tick SOCKS and configure with 127.0.0.1 and port 8090
+<!-- After 'ssh tunnel' go to System Preferences -> Network -> Advanced -> Proxies -> Tick SOCKS and configure with 127.0.0.1 and port 8090 -->
 Host tunnel
     Hostname lxtunnel.cern.ch
     User fesoubel
@@ -55,11 +55,11 @@ Host omc1
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
     StrictHostKeyChecking no
 
-Host workstation
+<!-- Host workstation
     Hostname pcbe-abp-hpc002.cern.ch
     User fesoubel
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
-    StrictHostKeyChecking no
+    StrictHostKeyChecking no -->
 
 Host gpus
     Hostname pcbe-abp-gpu001.cern.ch
