@@ -16,7 +16,7 @@ source "$HOME"/dotfiles/zsh/dockerfunc.sh
 source "$HOME"/dotfiles/zsh/tmux.sh
 
 export PATH="/opt/homebrew/sbin:$PATH"  # Add the homebrew sbin to PATH.
-export PATH="$PATH:/usr/local/texlive/2023/bin/universal-darwin"  # Add MacTex to PATH
+export PATH="$PATH:/usr/local/texlive/2024/bin/universal-darwin"  # Add MacTex to PATH
 export PATH="/usr/local/opt/ruby/bin:$PATH" # Add Ruby and RVM to PATH
 export PATH="$PATH:$HOME/.local/bin"        # Add Poetry to the PATH
 export PATH="$PATH:$HOME/.cargo/bin"        # Add cargo binaries to the PATH
