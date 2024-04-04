@@ -59,7 +59,6 @@ Host workstation
     Hostname pcbe-abp-hpc002.cern.ch
     User fesoubel
     ProxyCommand ssh -X cern -W %h:%p 2> /dev/null
-    StrictHostKeyChecking no -->
 
 Host gpus
     Hostname pcbe-abp-gpu001.cern.ch
