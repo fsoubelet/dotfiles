@@ -10,7 +10,7 @@ alias df='df -h'
 alias ls='colorls'
 alias lsg='colorls --git-status . --tree'
 alias lsa='colorls -lA --sf'
-alias lsd='exa --all --long --tree --icons --level=1'
+alias lsd='eza --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias th='trash'
@@ -62,7 +62,7 @@ alias gs='git status'
 alias gta='git tag -sm'  # automatically GPG sign and annotate tags
 alias gfl='git flow'
 alias gwp='git commit -a -m wip --no-verify'  # use responsibly
-
+alias gnvm='git reset --hard origin/main'  # better than rm -rf repo && git clone repo
 alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
 
 # Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
@@ -91,10 +91,11 @@ alias bubo='brew update && brew outdated'
 
 # Easier notebook aliases
 alias jupy='jupylab'
-alias jupylab='jupyter lab --browser=firefox'
+alias jupylab='jupyter lab --browser=firefox --ContentsManager.allow_hidden=True'
 
 # Safety first in pip operations
-alias pip='python -m pip'
+# alias pip='python -m pip'
+alias pip='uv pip'
 
 # Command to pip install for my PhD prod environment
 alias piprod='python -m pip install --upgrade click cpymad pyhdtoolkit pyarrow fastparquet joblib matplotview'
