@@ -68,6 +68,7 @@ Host gpus
 
 Host lxplus*.cern.ch
     ForwardX11Trusted yes
+    User fesoubel
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
 
