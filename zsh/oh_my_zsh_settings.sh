@@ -8,7 +8,7 @@ DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
 ENABLE_CORRECTION="true"
 
-HISTFILE=~/.zsh_history
+HISTFILE=~/.cache/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
 HISTSIZE=5000
 SAVEHIST=5000
