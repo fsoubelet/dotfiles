@@ -1,0 +1,7 @@
+# Plugins file for Antidote - comments begin with "#"
+
+# Fast syntax highlighting
+zdharma-continuum/fast-syntax-highlighting kind:defer
+
+# Zsh autosuggestions
+zsh-users/zsh-autosuggestions
