@@ -1,6 +1,7 @@
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=5
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
 ZSH_THEME=""  # not set and will let Starship handle it
 
