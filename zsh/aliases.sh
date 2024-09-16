@@ -130,6 +130,9 @@ condexport () {
 alias mtest='mamba create -n test python -y && mamba activate test'
 alias dtest='conda deactivate && mamba remove -n test --all -y'
 
+# Alias to remove an environment quickly
+alias mrev='mamba env remove -y -n'  # add your env name 
+
 # -------------------------------------------------------------------
 # Safety first
 # -------------------------------------------------------------------
@@ -207,8 +210,10 @@ alias upz='omz update'
 # Setup analysis from cookiecutter
 alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'
 
-# Set up rlwarp for MAD-X to use command history
+# Set up rlwarp for MAD-X and MAD-NG to use command history
+# I put both of these into /usr/local/bin/
 alias madx='rlwrap madx'
+alias madng='rlwrap madng'
 
 # Wifi cli utility alias (options are on and off)
 alias wifi='osx-wifi-cli'
