@@ -1,15 +1,15 @@
 # ~/.zshrc
 export TERM="xterm-256color"
-export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export EDITOR="vim"
 
 
 # Adding places with executables to PATH
 export PATH="/opt/homebrew/bin:$PATH"                             # Add homebrew bin to the PATH (to get 'brew')
+export PATH="/opt/homebrew/sbin:$PATH"                            # Add homebrew sbin to the PATH (for some recipes)
 export PATH="$PATH:/usr/local/texlive/2024/bin/universal-darwin"  # Add Tex installation to PATH
 export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo binaries to the PATH
-
+export PATH="$PATH:$HOME/.local/bin"                              # Add uv tools location to the PATH
 
 # Shell customization
 source "$HOME"/dotfiles/zsh/aliases.sh     # Plenty of QoL aliases 
@@ -58,3 +58,5 @@ fi
 
 # Start Starship for prompt customization
 eval "$(starship init zsh)"
+
+. "$HOME/.cargo/env"
