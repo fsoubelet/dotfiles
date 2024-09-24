@@ -2,8 +2,6 @@
 # General UNIX
 # -------------------------------------------------------------------
 alias clr='clear'
-alias cclr='clear && archey && ls'
-alias cdlr='cd && clear && archey && ls'
 alias cld='clr && lsd'
 alias cp='cp -iv'
 alias df='df -h'
@@ -15,7 +13,6 @@ alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias th='trash'
 alias rsync='rsync -ravzhP'
-alias gtp='gotop'
 alias less='less -S'
 
 alias sush='sort | uniq -c | sort -nr | head'
@@ -32,7 +29,6 @@ alias vinit='vi ~/.config/nvim/init.vim'
 # NeoVim
 alias vi='vim'
 alias vim='nvim'
-
 
 # -------------------------------------------------------------------
 # Git aliases
