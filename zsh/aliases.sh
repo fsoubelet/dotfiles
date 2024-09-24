@@ -55,7 +55,6 @@ alias grm='git rm'
 alias grr='git remote rm'
 alias gs='git status'
 alias gta='git tag -sm'  # automatically GPG sign and annotate tags
-alias gfl='git flow'
 alias gwp='git commit -a -m wip --no-verify'  # use responsibly
 alias gnvm='git reset --hard origin/main'  # better than rm -rf repo && git clone repo
 alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
@@ -64,7 +63,7 @@ alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
 alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -P 10 -I {} git -C {} pull"
 alias gpa='git-pull-all'
 alias git-pull-all-verbose="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -I {} sh -c 'echo {}; git -C {} pull'"
-
+alias gpav='git-pull-all-verbose'
 
 # -------------------------------------------------------------------
 # Homebrew
@@ -85,19 +84,19 @@ alias bubo='brew update && brew outdated'
 # -------------------------------------------------------------------
 
 # Easier notebook aliases
-alias jupy='jupylab'
 alias jupylab='jupyter lab --browser=firefox --ContentsManager.allow_hidden=True'
+alias jupy='jupylab'
 
 # Safety first in pip operations
 # alias pip='python -m pip'
 alias pip='uv pip'
 
 # Command to pip install for my PhD prod environment
-alias piprod='python -m pip install --upgrade click cpymad pyhdtoolkit pyarrow fastparquet joblib matplotview'
-alias uprod='python -m pip install --upgrade click cpymad fastparquet pyhdtoolkit ipykernel joblib matplotlib matplotview numpy optics-functions pandas pendulum pillow pyarrow pydantic requests rich scikit-learn scipy seaborn tfs-pandas'
+alias piprod='pip install --upgrade cpymad pyhdtoolkit pyarrow fastparquet polars modin joblib matplotview'
+alias uprod='pip install --upgrade cpymad fastparquet pyhdtoolkit ipykernel joblib matplotlib matplotview numpy optics-functions pandas modin pendulum pillow pyarrow pydantic requests rich scikit-learn scipy seaborn tfs-pandas'
 
 # Command to upgrade all xsuite repos in the current environment
-alias xsuite-upgrade='python -m pip install --upgrade xsuite xtrack xpart xobjects xfields xcoll xplt'
+alias xsuite-upgrade='pip install --upgrade xsuite xtrack xpart xobjects xfields xcoll xplt'
 
 # Alias to always start ipython in pylab mode (for non-blocking plot windows)
 alias ipython='ipython --pprint --pylab'
