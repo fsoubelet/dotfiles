@@ -124,6 +124,9 @@ condexport () {
 alias mtest='mamba create -n test python -y && mamba activate test'
 alias dtest='conda deactivate && mamba remove -n test --all -y'
 
+# Alias to list environments quickly
+alias mel='mamba env list'
+
 # Alias to remove an environment quickly
 alias mrev='mamba env remove -y -n'  # add your env name 
 
