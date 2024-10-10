@@ -23,6 +23,8 @@ source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 #source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 #antidote load
 
+# Let uv know to use its own managed Python versions
+export UV_PYTHON_PREFERENCE="only-managed"
 
 # Using GNUPG encryption
 export GPG_TTY=$(tty)
