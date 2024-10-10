@@ -28,7 +28,7 @@ all: install
 
 install: $(OS)
 
-.PHONY: help mambaforge brew defaults link linux macos omz unlink zsh
+.PHONY: help miniforge brew defaults link linux macos unlink zsh
 
 help:
 	@echo "Dotfiles Makefile. Please use 'make $(R)<target>$(E)' where $(R)<target>$(E) is one of:"
@@ -37,8 +37,8 @@ help:
 	@echo "  $(R) unlink $(E)       to remove symbolic links created by 'make link'."
 	@echo "  $(R) brew $(E)         to install Homebrew if not present already, and install packages listed in the Brewfile."
 	@echo "  $(R) defaults $(E)     to change macos defaults as specified in 'macos/macos_defaults.sh'."
-	@echo "  $(R) mambaforge $(E)   to install the latest Mambaforge distribution."
-	@echo "  $(R) omz $(E)          to install oh-my-zsh and required plugin files if not present already."
+	@echo "  $(R) miniforge $(E)    to install the latest miniforge distribution."
+#	@echo "  $(R) omz $(E)          to install oh-my-zsh and required plugin files if not present already."
 	@echo "  $(R) unlink $(E)       to remove symlink to configuration files."
 	@echo "  $(R) zsh $(E)          to switch to the Z shell."
 
@@ -51,18 +51,18 @@ macos:
 	@softwareupdate -ai
 	@make cargo
 	@make brew
-	@make mambaforge
+	@make miniforge
 	@make zsh
-	@make omz
+#	@make omz
 	@make link
 
-mambaforge:
-	@echo "$(B)Downloading native Mambaforge distribution.$(E)"
-	@curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
-	@echo "$(B)Installing Mambaforge distribution.$(E)"
-	@bash Mambaforge-$(uname)-$(uname -m).sh -b  # batch install mode (no confirm), defaults to ~/mambaforge
+miniforge:
+	@echo "$(B)Downloading native miniforge distribution.$(E)"
+	@curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+	@echo "$(B)Installing miniforge distribution.$(E)"
+	@bash bash Miniforge3-$(uname)-$(uname -m).sh -b -p $(HOME)/.miniforge # batch install mode, specify prefix
 	@echo "$(B)Removing installer from disk.$(E)"
-	@rm -rf Mambaforge-$(uname)-$(uname -m).sh
+	@rm -rf bash Miniforge3-$(uname)-$(uname -m).sh
 
 brew:
 	@echo "$(B)Checking valid Homebrew installation.$(E)"
@@ -89,6 +89,8 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/tmux.conf $(HOME)/.tmux.conf
 	@echo "Linking .zshrc to home folder."
 	@ln -nfs ${DOTFILES_DIR}/zsh/zshrc $(HOME)/.zshrc
+	@echo "Linking zsh plugins file to home folder."
+	@ln -nfs ${DOTFILES_DIR}/zsh/plugins.zsh $(HOME)/.zsh_plugins.txt
 	@echo "Linking git configuration files to home folder."
 	@ln -nfs ${DOTFILES_DIR}/git/gitconfig $(HOME)/.gitconfig
 	@ln -nfs ${DOTFILES_DIR}/git/gitignore_global $(HOME)/.gitignore_global
@@ -105,16 +107,17 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
 
-omz:
-	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
-	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
-	@echo "$(B)Installing required plugins.$(E)"
-	@bash ${DOTFILES_DIR}/zsh/omz_plugins.sh
+# omz:
+# 	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
+# 	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
+# 	@echo "$(B)Installing required plugins.$(E)"
+# 	@bash ${DOTFILES_DIR}/zsh/omz_plugins.sh
 
 unlink:
 	@echo "$(B)Removing symlinks.$(E)"
 	@unlink $(HOME)/.tmux.conf
 	@unlink $(HOME)/.zshrc
+	@unlink $(HOME)/.zsh_plugins.txt
 	@unlink $(HOME)/.gitconfig
 	@unlink $(HOME)/.gitignore_global
 	@unlink $(HOME)/.vimrc
