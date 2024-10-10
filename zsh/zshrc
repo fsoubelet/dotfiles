@@ -21,7 +21,7 @@ source "$HOME"/dotfiles/zsh/tmux.sh        # tmux manipulation aliases and funct
 # Load Pluging Manager
 source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 #source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-#antidote load
+#antidote load "$HOME"/dotfiles/zsh/plugins.zsh
 
 # Let uv know to use its own managed Python versions
 export UV_PYTHON_PREFERENCE="only-managed"
