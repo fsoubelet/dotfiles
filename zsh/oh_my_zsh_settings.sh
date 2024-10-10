@@ -19,6 +19,6 @@ setopt HIST_EXPIRE_DUPS_FIRST               # When duplicates are entered, get r
 # Enabled true color support for terminals
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-plugins=(brew colored-man-pages copypath docker github fast-syntax-highlighting zsh-autosuggestions)
+plugins=(colored-man-pages fast-syntax-highlighting zsh-autosuggestions)
 
 source "${ZSH}"/oh-my-zsh.sh
