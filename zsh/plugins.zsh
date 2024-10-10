@@ -10,5 +10,5 @@ zdharma-continuum/fast-syntax-highlighting
 mattmc3/ez-compinit
 
 # Zsh autosuggestions
-# zsh-users/zsh-completions
+zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
