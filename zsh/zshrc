@@ -15,6 +15,7 @@ source "$HOME/dotfiles/zsh/aliases.sh"     # Plenty of QoL aliases
 source "$HOME/dotfiles/zsh/functions.sh"   # user-made functions
 source "$HOME/dotfiles/zsh/dockerfunc.sh"  # docker utility functions
 source "$HOME/dotfiles/zsh/tmux.sh"        # tmux manipulation aliases and functions
+source "$HOME/dotfiles/zsh/condasetup.sh"  # conda setup and prepending miniforge to PATH
 
 # Getting the rustup shell setup
 source "$HOME/.cargo/env"
