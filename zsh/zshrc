@@ -11,10 +11,10 @@ export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo bi
 export PATH="$PATH:$HOME/.local/bin"                              # Add uv tools location to the PATH
 
 # Shell customization
-source "$HOME"/dotfiles/zsh/aliases.sh     # Plenty of QoL aliases 
-source "$HOME"/dotfiles/zsh/functions.sh   # user-made functions
-source "$HOME"/dotfiles/zsh/dockerfunc.sh  # docker utility functions
-source "$HOME"/dotfiles/zsh/tmux.sh        # tmux manipulation aliases and functions
+source "$HOME/dotfiles/zsh/aliases.sh"     # Plenty of QoL aliases 
+source "$HOME/dotfiles/zsh/functions.sh"   # user-made functions
+source "$HOME/dotfiles/zsh/dockerfunc.sh"  # docker utility functions
+source "$HOME/dotfiles/zsh/tmux.sh"        # tmux manipulation aliases and functions
 
 # Getting the rustup shell setup
 source "$HOME/.cargo/env"
