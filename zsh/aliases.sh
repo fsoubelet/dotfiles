@@ -81,12 +81,27 @@ alias bubo='brew update && brew outdated'
 # Let's use the best tool around
 alias pip='uv pip'
 
-# Easier Python virtual environment management, with uv
+# Python virtual environment management, with uv
+# First variable is the Python version to use
+# Second variable is the location of the environment
 penv () {
   # Make a new virtual environment with uv, using provided python version
-  uv venv -p "$1" --relocatable
+  uv venv --python "$1" --relocatable
   # Activating the environment
   source .venv/bin/activate
+}
+
+# Python virtual environment deletion (assumes env made as above and activated)
+# Automatically determines the env location, deactivates then deletes it
+pdel () {
+  # Figure out the virtual environment (we might not be in that place anymore)
+  # this keeps the loc and removes last 2 parts, which are the /bin/python
+  envloc=$(which python | rev | cut -d'/' -f3- | rev)
+  # Deactivate the environment
+  deactivate
+  # Remove the environment
+  echo "Removing environment at $envloc"
+  th "$envloc"
 }
 
 # Easier notebook aliases
