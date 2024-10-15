@@ -15,11 +15,6 @@ alias th='trash'
 alias rsync='rsync -ravzhP'
 alias less='less -S'
 
-alias sush='sort | uniq -c | sort -nr | head'
-
-# A bit of cursing around: re-execute previous command as root
-alias fuck='sudo $(fc -ln -1)'
-
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
@@ -83,22 +78,25 @@ alias bubo='brew update && brew outdated'
 # Python
 # -------------------------------------------------------------------
 
+# Let's use the best tool around
+alias pip='uv pip'
+
+# Easier Python virtual environment management, with uv
+penv () {
+  # Make a new virtual environment with uv, using provided python version
+  uv venv -p "$1" --relocatable
+  # Activating the environment
+  source .venv/bin/activate
+}
+
 # Easier notebook aliases
 alias jupylab='jupyter lab --browser=firefox --ContentsManager.allow_hidden=True'
 alias jupy='jupylab'
 
-# Safety first in pip operations
-# alias pip='python -m pip'
-alias pip='uv pip'
-
-# Command to pip install for my PhD prod environment
-alias piprod='pip install --upgrade cpymad pyhdtoolkit pyarrow fastparquet polars modin joblib matplotview'
-alias uprod='pip install --upgrade cpymad fastparquet pyhdtoolkit ipykernel joblib matplotlib matplotview numpy optics-functions pandas modin pendulum pillow pyarrow pydantic requests rich scikit-learn scipy seaborn tfs-pandas'
-
 # Command to upgrade all xsuite repos in the current environment
 alias xsuite-upgrade='pip install --upgrade xsuite xtrack xpart xobjects xfields xcoll xplt'
 
-# Alias to always start ipython in pylab mode (for non-blocking plot windows)
+# Alias to always start ipython in pylab mode (for non-blocking plot windows, mostly)
 alias ipython='ipython --pprint --pylab'
 
 # -------------------------------------------------------------------
@@ -204,25 +202,13 @@ alias get_jws='curl -o jws.sh http://www.cern.ch/ap/dist/devops/deploy/devops-de
 # oh-my-zsh
 alias upz='omz update'
 
-# Setup analysis from cookiecutter
-alias analyze='cookiecutter gh:fsoubelet/cookiecutter-analysis'
-
 # Set up rlwarp for MAD-X and MAD-NG to use command history
 # I put both of these into /usr/local/bin/
 alias madx='rlwrap madx'
 alias madng='rlwrap madng'
 
-# Wifi cli utility alias (options are on and off)
-alias wifi='osx-wifi-cli'
-
 # Cleaner PATH output command
 alias path='echo -e ${PATH//:/\\n}'
-
-# Download web page with all assets
-alias getpage='wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories'
-
-# Download file with original filename
-alias get="curl -O -L"
 
 # Load modifications to zsh environment
 alias reload!='. ~/.zshrc'
