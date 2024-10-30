@@ -32,35 +32,17 @@ brewup() {
   brew cleanup
   function_info "Cleaned up."
 
+  function_echo "Removing formulae no longer needed."
+  brew autoremove
+  function_info "Unneeded formulae removed."
+
   function_echo "Checking installation."
   brew doctor
   function_info "Set and ready to go!"
   printf "[BREWUP] Please read and acknowledge the warnings.\\n"
 }
 
-
-# Unix specific aliases, work on both MacOS and Linux.
-pbcopy() {
-	stdin=$(</dev/stdin);
-	pbcopy="$(which pbcopy)";
-	if [[ -n "$pbcopy" ]]; then
-		echo "$stdin" | "$pbcopy"
-	else
-		echo "$stdin" | xclip -selection clipboard
-	fi
-}
-
-pbpaste() {
-	pbpaste="$(which pbpaste)";
-	if [[ -n "$pbpaste" ]]; then
-		"$pbpaste"
-	else
-		xclip -selection clipboard
-	fi
-}
-
-
-# An easier du utility
+# An easier 'du' utility
 inspect() {
   if [[ $# -eq 0 ]]
   then
@@ -169,7 +151,7 @@ myip() {
 whatsnew () {
   echo "Checking homebrew packages..."
   brew update > /dev/null;
-  new_packages=$(brew outdated --quiet; brew cask outdated --quiet)
+  new_packages=$(brew outdated --quiet; brew outdated --cask --quiet)
   num_packages=$(echo "$new_packages" | wc -w)
   if [[ "$num_packages" -gt 0 ]]; then
       echo "New package updates available:"

@@ -43,3 +43,4 @@ complete -o nospace -C /usr/local/bin/bit bit
 
 # Start Starship for prompt customization
 eval "$(starship init zsh)"
+
