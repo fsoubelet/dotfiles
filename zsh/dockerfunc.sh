@@ -2,10 +2,9 @@
 # Docker related aliases
 # -------------------------------------------------------------------
 alias docklean='docker rm $(docker ps -a -q -f status=exited)'                           # Delete all CONTAINERS that have a status of exited.
-alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'     # Forcefully remove  DANGLING IMAGES.
+alias dock='docker rmi $(docker images --filter "dangling=true" --quiet --no-trunc)'     # Forcefully remove DANGLING IMAGES.
 alias dockrmi='docker rmi $(docker images -q) -f'                                        # Forcefully remove ALL IMAGES.
 alias dockapocalypse='docker system prune -a'                                            # DANGEROUS. Will delete everything from docker
-alias lzd='lazydocker'
 
 
 # -------------------------------------------------------------------
