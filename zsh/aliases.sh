@@ -33,6 +33,7 @@ alias gaa='git add --all -v'
 alias gb='git branch'
 alias gcl='git clone --depth=1'
 alias gcm='git commit -S'  # automatically GPG sign the commits
+alias gcmf='gcm -m "formatting"'  # for simple formatting commits
 alias gco='git checkout'
 alias gdf='git diff --word-diff --color-words'
 alias gf='git fetch'
@@ -64,6 +65,9 @@ alias gpav='git-pull-all-verbose'
 # Let's use the best tool around
 alias pip='uv pip'
 
+# Regularly need to make sure of this
+alias wp='which python'
+
 # Python virtual environment management, with uv
 # First variable is the Python version to use
 # Second variable is the location of the environment
@@ -82,10 +86,20 @@ pdel () {
   envloc=$(which python | rev | cut -d'/' -f3- | rev)
   # Deactivate the environment
   deactivate
+  # We check that it is not a conda environment
+  if [[ $envloc =~ "$HOME/.miniforge" ]]; then  # regex check for presence in env path
+    echo "Not touching conda envs with this command."
+    return
+  fi
   # Remove the environment
   echo "Removing environment at $envloc"
   th "$envloc"
 }
+
+# Quick aliases for the uv tools
+alias uta='uv tool upgrade --all'
+alias uvi='uvx isort'
+alias uvb='uvx black'
 
 # Easier notebook aliases
 alias jupylab='jupyter lab --browser=firefox --ContentsManager.allow_hidden=True'
