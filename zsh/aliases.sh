@@ -98,6 +98,7 @@ pdel () {
 
 # Quick aliases for the uv tools
 alias uta='uv tool upgrade --all'
+alias upi='uv python install --reinstall'
 alias uvi='uvx isort'
 alias uvb='uvx black'
 
