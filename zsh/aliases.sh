@@ -67,6 +67,7 @@ alias pip='uv pip'
 
 # Regularly need to make sure of this
 alias wp='which python'
+alias pv='python --version'
 
 # Python virtual environment management, with uv
 # First variable is the Python version to use
