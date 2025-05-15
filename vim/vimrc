@@ -33,7 +33,7 @@ Plug 'kien/ctrlp.vim'                                                          "
 Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
 Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
 Plug 'janko/vim-test'                                                          " Easily launch tests from Vim.
-Plug 'neoclide/coc.nvim'                                                       " Conquer of Completion is amazing.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}                                " Conquer of Completion is amazing.
 
 "----------------------------- Python tools ------------------------------
 
