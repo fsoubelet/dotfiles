@@ -6,8 +6,6 @@ alias cld='clr && lsd'
 alias cp='cp -iv'
 alias df='df -h'
 alias ls='colorls'
-# alias lsg='colorls --git-status . --tree'
-# alias lsa='colorls -lA --sf'
 alias lsd='eza --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
@@ -70,13 +68,10 @@ alias wp='which python'
 alias pv='python --version'
 
 # Python virtual environment management, with uv
-# First variable is the Python version to use
-# Second variable is the location of the environment
+# Expects the Python version to use as variable
 penv () {
-  # Make a new virtual environment with uv, using provided python version
-  uv venv --python "$1" --relocatable
-  # Activating the environment
-  source .venv/bin/activate
+  uv venv --python "$1" --relocatable # make new uv virtual environment
+  source .venv/bin/activate # activate the environment
 }
 
 # Python virtual environment deletion (assumes env made as above and activated)
@@ -85,13 +80,13 @@ pdel () {
   # Figure out the virtual environment (we might not be in that place anymore)
   # this keeps the loc and removes last 2 parts, which are the /bin/python
   envloc=$(which python | rev | cut -d'/' -f3- | rev)
-  # Deactivate the environment
-  deactivate
   # We check that it is not a conda environment
   if [[ $envloc =~ "$HOME/.miniforge" ]]; then  # regex check for presence in env path
     echo "Not touching conda envs with this command."
     return
   fi
+  # Deactivate the environment
+  deactivate
   # Remove the environment
   echo "Removing environment at $envloc"
   th "$envloc"
@@ -135,7 +130,7 @@ condexport () {
 
 # Aliases to quickly create / destroy a simple test environment with mamba on latest Python
 alias mtest='mamba create -n test python -y && mamba activate test'
-alias dtest='conda deactivate && mamba remove -n test --all -y'
+alias dtest='conda deactivate && mamba env remove -n test -y'
 
 # Aliases to manage miniforge environments quickly
 alias mel='mamba env list'
