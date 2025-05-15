@@ -6,7 +6,6 @@
   </a>
 </p>
 
-
 This folder contains my dotfiles, used on a mac currently running macOS Monterey (12.4).
 
 ## Package overview
@@ -24,7 +23,7 @@ Here's some of the core software in my configuration:
 
 These will be installed automatically if not already present.
 
-#### NeoVim
+### NeoVim
 
 A modern modal editor, NeoVim is simply excellent.
 I use [Vim-Plug][vim-plug] to manage plugins.
@@ -32,7 +31,7 @@ The plugins section is at the top of my `init.vim` file.
 Vim-Plug should be auto-installed on the first NeoVim launch if it isn't already, as long as your `init.vim` is symlinked to the one in this repository.
 After that, run `:PlugInstall` and enjoy a fully ready configuration.
 
-#### Zsh
+### Zsh
 
 I run [Zsh][zsh] as my shell, finding it to be a great middle ground between additional niceties and features while remaining a largely compatible shell scripting target.
 On top, I use [Oh-My-Zsh][oh-my-zsh] as shell configuration and plugin manager.
@@ -43,7 +42,7 @@ If git is already installed on your machine, you can clone this repository to yo
 Otherwise, you can simply download and unzip it from github.
 Everything will be handled by the `Makefile` commands, so in the case of a git install simply run:
 
-```
+```bash
 git clone https://github.com/fsoubelet/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 make install
@@ -82,22 +81,14 @@ Many thanks to the [dotfiles community][dotcomu] and the [awesome dotfiles][awes
 
 Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 
-[anaconda]: https://www.anaconda.com/
-[anacondadownload]: https://www.anaconda.com/download/#macos
-[atom]: https://atom.io/
 [awesomedots]: https://github.com/webpro/awesome-dotfiles
-[brew-bundle]: https://github.com/Homebrew/homebrew-bundle
-[checkhealth]: https://neovim.io/doc/user/pi_health.html#:checkhealth
 [dotcomu]: https://dotfiles.github.io/
-[git]: https://git-scm.com/
 [homebrew]: http://brew.sh
 [iterm2]: https://www.iterm2.com/
 [license]: https://github.com/fsoubelet/dotfiles/blob/master/LICENSE
 [macos-defaults]: https://mths.be/macos
 [neovim]: https://neovim.io/
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh
-[package-sync]: https://atom.io/packages/package-sync
 [starship]: https://github.com/starship/starship
-[vim]: http://www.vim.org/
 [vim-plug]: https://github.com/junegunn/vim-plug
 [zsh]: https://en.wikipedia.org/wiki/Z_shell
