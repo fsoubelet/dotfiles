@@ -20,46 +20,39 @@ Plug 'itchyny/lightline.vim'                                                   "
 Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images.
 Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I love.
 Plug 'joshdick/onedark.vim'                                                    " Colorscheme I like.
-Plug 'pacokwon/onedarkhc.vim'                                                  " Like One Dark but high contrast
-"Plug 'chuling/ci_dark'                                                         " Colorscheme I like.
+Plug 'glepnir/oceanic-material'                                                " The great oceanic material
 
 "------------------------------ Vim as IDE -------------------------------
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}                                " Conquer of Completion.
 Plug 'scrooloose/nerdtree'                                                     " NERDTree.
 Plug 'Xuyuanp/nerdtree-git-plugin'                                             " NERDTree git integration.
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                                 " NERDTree syntax highlighting.
 Plug 'ryanoasis/vim-devicons'                                                  " NERDTree icons.
 Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy.
 Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }       " Testing python IDE for now.
-Plug 'liuchengxu/vim-clap'                                                     " Interactive finder / dispatcher.
 Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
 Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
 Plug 'janko/vim-test'                                                          " Easily launch tests from Vim.
+Plug 'neoclide/coc.nvim'                                                       " Conquer of Completion is amazing.
 
 "----------------------------- Python tools ------------------------------
 
-Plug 'davidhalter/jedi-vim'                                                    " Jedi-based completion.
-Plug 'nvie/vim-flake8'                                                         " Python linting.  
-"Plug 'python/black'                                                            " PEP8 formatting.
+Plug 'nvie/vim-flake8'                                                         " Python linting.
+Plug 'python/black'                                                            " PEP8 formatting.
 Plug 'scrooloose/syntastic'                                                    " Python syntax checking.
-Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
+"Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
 
 "---------------------------- Other Languages ----------------------------
 
-Plug 'alaviss/nim.nvim'                                                        " Nim language support
+"Plug 'alaviss/nim.nvim'                                                        " Nim language support
 Plug 'plasticboy/vim-markdown'                                                 " Markdown syntax.
 Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
-Plug 'ervandew/supertab'                                                       " Make completion on <tab> command.
 Plug 'tmhedberg/SimpylFold'                                                    " Colde folding.
 
 "---------------------------- Miscellaneous ------------------------------
 
 Plug 'elzr/vim-json'                                                           " JSON highlighting.
 Plug 'cespare/vim-toml'                                                        " Toml highlighting.
-Plug 'junegunn/goyo.vim'                                                       " Distraction-free writing. 
-Plug 'tommcdo/vim-lion'                                                        " Text aligner.
 Plug 'tpope/vim-surround'                                                      " Surroundings mappings.
 Plug 'yuttie/comfortable-motion.vim'                                           " Physics-based smooth scrolling.
 
