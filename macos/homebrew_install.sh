@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Checking if Homebrew installation exists (executable is here)
-if [[ -f "/usr/local/bin/brew" ]]
+if [[ -f "/opt/homebrew/bin/brew" ]]
 then
     echo "Homebrew is already installed."
 else
