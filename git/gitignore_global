@@ -12,7 +12,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-
 # For vim #
 ###########
 *.swp
@@ -23,12 +22,10 @@ Session.vim
 .vimrc.local
 vim/bundle
 
-
 # Logs and databases #
 ######################
 *.log
 *.cache
-
 
 # OS generated files #
 ######################
@@ -47,12 +44,10 @@ Icon?
 .sock
 ._*
 
-
 # Files that might appear on external disks #
 #############################################
 .Spotlight-V100
 .Trashes
-
 
 # Code stuffs #
 ###############
@@ -70,7 +65,6 @@ venv
 .codekit-cache
 config.codekit
 .ipynb_checkpoints
-
 
 # Compiled thangs #
 ###################
@@ -100,7 +94,6 @@ var/
 *.out
 *.ogg
 *.mp3
-
 
 # Packages # 
 ############
