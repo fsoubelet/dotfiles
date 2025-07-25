@@ -6,7 +6,7 @@ alias cld='clr && lsd'
 alias cp='cp -iv'
 alias df='df -h'
 alias ls='colorls'
-alias lsd='eza --all --long --tree --icons --level=1'
+alias lsd='eza --all --long --tree --icons --level=0'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias th='trash'
@@ -67,6 +67,9 @@ alias pip='uv pip'
 alias wp='which python'
 alias pv='python --version'
 
+# Activating everywhere
+alias senv='source .venv/bin/activate'
+
 # Python virtual environment management, with uv
 # Expects the Python version to use as variable
 penv () {
@@ -102,6 +105,9 @@ alias uvb='uvx black'
 alias jupylab='jupyter lab --browser=firefox --ContentsManager.allow_hidden=True'
 alias jupy='jupylab'
 
+# To run marimo notebooks through uv tool
+alias marimo='uvx marimo'
+
 # Command to upgrade all xsuite repos in the current environment: x(suite-up)grade
 alias xgrade='pip install --upgrade xsuite xtrack xpart xobjects xfields xcoll xplt'
 
@@ -117,7 +123,7 @@ alias cda='conda deactivate'
 
 _remove_last_lines () {
   # First argument is number of lines to remove, second is file name
-  # Very fast because it reads from the end, does not read the whole file and doesn't rewrite un-necessary stuff 
+  # Very fast because it reads from the end, does not read the whole file and doesn't rewrite un-necessary stuff
   tail -n "$1" "$2" | wc -c | xargs -I {} truncate "$2" -s -{}
 }
 
@@ -134,7 +140,7 @@ alias dtest='conda deactivate && mamba env remove -n test -y'
 
 # Aliases to manage miniforge environments quickly
 alias mel='mamba env list'
-alias mrev='mamba env remove -y -n'  # add your env name 
+alias mrev='mamba env remove -y -n'  # add your env name
 
 # -------------------------------------------------------------------
 # Safety first
