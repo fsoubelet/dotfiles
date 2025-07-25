@@ -76,6 +76,7 @@ wipe() {
 clean() {
   function_echo "Cleaning up bytecode files and python cache."
   find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
+  find . -type d -name __marimo__ -delete
 
   function_echo "Cleaning up pytest cache & test artifacts."
   find . -type d -name '*.pytest_cache' -exec rm -rf {} + -o -type f -name '*.pytest_cache' -exec rm -rf {} +
