@@ -109,11 +109,11 @@ alias jupy='jupylab'
 alias marimo='uvx marimo'
 
 # Command to upgrade all xsuite repos in the current environment: x(suite-up)grade
-alias xgrade='pip install --upgrade xsuite xtrack xpart xobjects xfields xcoll xplt'
+alias xgrade='pip install --upgrade setuptools xsuite xtrack xpart xobjects xfields xcoll xplt pint'
 
 # Alias to always start ipython in pylab mode (for non-blocking plot windows, mostly)
 # alias ipython='ipython --pprint --pylab'
-alias ipython='ipython --pprint'
+# alias ipython='ipython --pprint'
 
 # -------------------------------------------------------------------
 # Conda / Mamba aliases
