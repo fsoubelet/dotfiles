@@ -6,7 +6,7 @@ alias cld='clr && lsd'
 alias cp='cp -iv'
 alias df='df -h'
 alias ls='colorls'
-alias lsd='eza --all --long --tree --icons --level=0'
+alias lsd='eza --all --long --tree --icons'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
 alias th='trash'
@@ -100,6 +100,7 @@ alias uta='uv tool upgrade --all'
 alias upi='uv python install --reinstall'
 alias uvi='uvx isort'
 alias uvb='uvx black'
+alias uvr='uvx ruff'
 
 # Easier notebook aliases
 alias jupylab='jupyter lab --browser=firefox --ContentsManager.allow_hidden=True'
@@ -155,7 +156,7 @@ _exists() {
 # -------------------------------------------------------------------
 
 # This is a python -m pip install looking at the AccPy indexes, useful for a lot of our internal packages. Requires GPN!!!
-alias accpyp='python -m pip install --index-url https://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
+alias accpip='python -m pip install --index-url https://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
 
 # -------------------------------------------------------------------
 # Miscellaneous
