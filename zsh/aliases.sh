@@ -113,8 +113,7 @@ alias marimo='uvx marimo'
 alias xgrade='pip install --upgrade --compile-bytecode setuptools xsuite xtrack xpart xobjects xfields xcoll xplt pint'
 
 # Alias to always start ipython in pylab mode (for non-blocking plot windows, mostly)
-# alias ipython='ipython --pprint --pylab'
-# alias ipython='ipython --pprint'
+alias ipython='ipython --pylab'
 
 # -------------------------------------------------------------------
 # Conda / Mamba aliases
