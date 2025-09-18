@@ -96,6 +96,7 @@ pdel () {
 }
 
 # Quick aliases for the uv tools
+alias usu='uv self update'
 alias uta='uv tool upgrade --all'
 alias upi='uv python install --reinstall'
 alias uvi='uvx isort'
