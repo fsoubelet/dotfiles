@@ -10,7 +10,7 @@ export PATH="$PATH:/usr/local/texlive/2025/bin/universal-darwin"  # Add LaTeX in
 export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo binaries to the PATH
 
 # Shell customization
-source "$HOME/dotfiles/zsh/aliases.sh"     # Plenty of QoL aliases 
+source "$HOME/dotfiles/zsh/aliases.sh"     # Plenty of QoL aliases
 source "$HOME/dotfiles/zsh/functions.sh"   # user-made functions
 source "$HOME/dotfiles/zsh/dockerfunc.sh"  # docker utility functions
 source "$HOME/dotfiles/zsh/tmux.sh"        # tmux manipulation aliases and functions
@@ -19,11 +19,14 @@ source "$HOME/dotfiles/zsh/mambasetup.sh"  # conda setup and prepending miniforg
 # Getting the rustup shell setup
 source "$HOME/.cargo/env"
 
-# Tell conda/mamba explicitely where I put the config
-export CONDARC="$HOME/.config/conda/condarc"
-
-# Load Pluging Manager and let it handle the plugins
-source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
+# Explicitely give locations for these program configs
+export CONDARC="$HOME/.config/conda/condarc"          # avoids having ~/.condarc
+export IPYTHONDIR="$HOME/.config/ipython"             # avoids having ~/.ipython
+export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"     # avoids having ~/.jupyter
+export LESSHISTFILE="$HOME/.config/lesshst"           # avoids having ~/.lesshst
+export MPLCONFIGDIR="$HOME/.config/matplotlib"        # avoids having ~/.matplotlib
+export npm_config_cache="$HOME/.cache/npm"            # avoids having ~/.npm
+export PYTHON_HISTORY="$HOME/.config/python/history"  # avoids having ~/.python_history
 
 # Let uv know to use its own managed Python versions
 # then getting the completions for zsh in (fast eval)
@@ -37,9 +40,13 @@ gpgconf --launch gpg-agent
 # For bat to allow mouse scrolling
 export BAT_PAGER="less -RF"
 
-# Activate ZSH Completions
+# Activate ZSH Completions, and make them go to .cache/zsh
+ZSH_COMPDUMP_DIR="$HOME/.cache/zsh"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
+
+# Load Pluging Manager and let it handle the plugins
+source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 
 # Start Starship for prompt customization
 eval "$(starship init zsh)"
