@@ -8,7 +8,6 @@ export PATH="/opt/homebrew/bin:$PATH"                             # Add homebrew
 export PATH="/opt/homebrew/sbin:$PATH"                            # Add homebrew sbin to the PATH (for some recipes)
 export PATH="$PATH:/usr/local/texlive/2025/bin/universal-darwin"  # Add LaTeX installation to PATH (update when updating texlive!)
 export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo binaries to the PATH
-# export PATH="$PATH:$HOME/.local/bin"                              # Add uv tools location to the PATH
 
 # Shell customization
 source "$HOME/dotfiles/zsh/aliases.sh"     # Plenty of QoL aliases 
@@ -20,6 +19,9 @@ source "$HOME/dotfiles/zsh/mambasetup.sh"  # conda setup and prepending miniforg
 # Getting the rustup shell setup
 source "$HOME/.cargo/env"
 
+# Tell conda/mamba explicitely where I put the config
+export CONDARC="$HOME/.config/conda/condarc"
+
 # Load Pluging Manager and let it handle the plugins
 source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 
@@ -27,10 +29,6 @@ source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 # then getting the completions for zsh in (fast eval)
 export UV_PYTHON_PREFERENCE="only-managed"
 eval "$(uv generate-shell-completion zsh)"
-
-# Force go to use a more reasonable (hidden)
-# location for the downloaded packages
-export GOPATH="$HOME/.go"
 
 # Using GNUPG encryption
 export GPG_TTY=$(tty)
