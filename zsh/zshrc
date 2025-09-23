@@ -51,5 +51,8 @@ source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 # Start Starship for prompt customization
 eval "$(starship init zsh)"
 
+# Load zoxide
+eval "$(zoxide init zsh)"
+
 # This keeps showing up when it is also in ~/.cache/zsh
 rm "$HOME/.zcompdump"
