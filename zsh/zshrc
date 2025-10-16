@@ -56,4 +56,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # This keeps showing up when it is also in ~/.cache/zsh
-rm "$HOME/.zcompdump"
+if [ -f "$HOME/.zcompdump" ]; then
+    rm "$HOME/.zcompdump"
+fi
