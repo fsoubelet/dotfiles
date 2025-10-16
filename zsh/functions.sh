@@ -2,7 +2,7 @@
 # PERSONNAL FUNCTIONS #
 #######################
 
-# A convenient way to print some statements
+# A header print for homebrew update steps
 brew_echo() {
   local fmt="$1"; shift
 
@@ -11,9 +11,9 @@ brew_echo() {
   local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
 
   # shellcheck disable=SC2059
-  echo "---------------------------------------------------------"
-  printf "%sStatus:%s %s\n" "$purple" "$reset" "$fmt"
-  echo "---------------------------------------------------------"
+  echo "---------------------------------------------------------" >&2
+  printf "%sStatus:%s %s\n" "$purple" "$reset" "$fmt" >&2
+  echo "---------------------------------------------------------" >&2
 }
 
 brew_info() {
