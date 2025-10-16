@@ -3,7 +3,7 @@
 #######################
 
 # A header print for homebrew update steps
-brew_echo() {
+brew_header() {
   local fmt="$1"; shift
 
   # Color codes: try tput, fallback to ANSI
@@ -28,23 +28,23 @@ brew_info() {
 
 # Full run of keeping everything Homebrew-related up to date
 brewup() {
-  brew_echo "Updating Homebrew."
+  brew_header "Updating Homebrew."
   brew update
   brew_info "Homebrew Updated."
 
-  brew_echo "Upgrading formulae and casks."
+  brew_header "Upgrading formulae and casks."
   brew upgrade
   brew_info "Formulae Upgraded."
 
-  brew_echo "Cleaning up old kegs and checking symlinks."
+  brew_header "Cleaning up old kegs and checking symlinks."
   brew cleanup
   brew_info "Cleaned up."
 
-  brew_echo "Removing formulae no longer needed."
+  brew_header "Removing formulae no longer needed."
   brew autoremove
   brew_info "Unneeded formulae removed."
 
-  brew_echo "Checking installation."
+  brew_header "Checking installation."
   brew doctor
   brew_info "Set and ready to go!"
   printf "[BREWUP] Please read and acknowledge the warnings.\\n"
