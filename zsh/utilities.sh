@@ -2,6 +2,12 @@
 # SMALL UTILITY FUNCTIONS #
 # ----------------------- #
 
+# A simple utility to check if a command exists
+_exists() {
+  command -v "$1" > /dev/null 2>&1
+}
+
+
 # An easier 'du' utility
 inspect() {
   # Color codes (use tput if available, fallback to ANSI)
