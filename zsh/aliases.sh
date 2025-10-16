@@ -70,31 +70,6 @@ alias pv='python --version'
 # Activating everywhere
 alias senv='source .venv/bin/activate'
 
-# Python virtual environment management, with uv
-# Expects the Python version to use as variable
-penv () {
-  uv venv --python "$1" --relocatable # make new uv virtual environment
-  source .venv/bin/activate # activate the environment
-}
-
-# Python virtual environment deletion (assumes env made as above and activated)
-# Automatically determines the env location, deactivates then deletes it
-pdel () {
-  # Figure out the virtual environment (we might not be in that place anymore)
-  # this keeps the loc and removes last 2 parts, which are the /bin/python
-  envloc=$(which python | rev | cut -d'/' -f3- | rev)
-  # We check that it is not a conda environment
-  if [[ $envloc =~ "$HOME/.miniforge" ]]; then  # regex check for presence in env path
-    echo "Not touching conda envs with this command."
-    return
-  fi
-  # Deactivate the environment
-  deactivate
-  # Remove the environment
-  echo "Removing environment at $envloc"
-  th "$envloc"
-}
-
 # Quick aliases for the uv tools
 alias usu='uv self update'
 alias uta='uv tool upgrade --all'
@@ -147,14 +122,6 @@ alias dtest='conda deactivate && mamba env remove -n test -y'
 # Aliases to manage miniforge environments quickly
 alias mel='mamba env list'
 alias mrev='mamba env remove -y -n'  # add your env name
-
-# -------------------------------------------------------------------
-# Safety first
-# -------------------------------------------------------------------
-
-_exists() {
-  command -v "$1" > /dev/null 2>&1
-}
 
 # -------------------------------------------------------------------
 # CERN & LXPLUS aliases
