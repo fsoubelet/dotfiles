@@ -3,7 +3,8 @@
 #######################
 
 # A header print for homebrew update steps
-brew_header() {
+func_header() {
+  local tag="$1"; shift
   local fmt="$1"; shift
 
   # Color codes: try tput, fallback to ANSI
@@ -12,42 +13,50 @@ brew_header() {
 
   # shellcheck disable=SC2059
   echo "---------------------------------------------------------" >&2
-  printf "%sStatus:%s %s\n" "$purple" "$reset" "$fmt" >&2
+  printf "%s%s:%s %s\n" "$purple" "$tag" "$reset" "$fmt" >&2
   echo "---------------------------------------------------------" >&2
 }
 
-brew_info() {
+# A simple display with HOMEBREW tag
+func_info() {
+  local tag="$1"; shift
   local fmt="$1"; shift
 
   # Color codes: try tput, fallback to ANSI
   local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
   local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
 
-  printf "\n%s[HOMEBREW]%s %s\n" "$yellow" "$reset" "$fmt" "$@" >&2
+  # Print with yellow tag in [] and then the rest of the message
+  printf "\n%s[%s]%s %s\n" "$yellow" "$tag" "$reset" "$fmt" "$@" >&2
 }
 
 # Full run of keeping everything Homebrew-related up to date
 brewup() {
-  brew_header "Updating Homebrew."
+  func_
+header "Status" "Updating Homebrew."
   brew update
-  brew_info "Homebrew Updated."
+  func_info "HOMEBREW" "Homebrew Updated."
 
-  brew_header "Upgrading formulae and casks."
+  func_
+header "Status" "Upgrading formulae and casks."
   brew upgrade
-  brew_info "Formulae Upgraded."
+  func_info "HOMEBREW" "Formulae Upgraded."
 
-  brew_header "Cleaning up old kegs and checking symlinks."
+  func_
+header "Status" "Cleaning up old kegs and checking symlinks."
   brew cleanup
-  brew_info "Cleaned up."
+  func_info "HOMEBREW" "Cleaned up."
 
-  brew_header "Removing formulae no longer needed."
+  func_
+header "Status" "Removing formulae no longer needed."
   brew autoremove
-  brew_info "Unneeded formulae removed."
+  func_info "HOMEBREW" "Unneeded formulae removed."
 
-  brew_header "Checking installation."
+  func_
+header "Status" "Checking installation."
   brew doctor
-  brew_info "Set and ready to go!"
-  printf "[BREWUP] Please read and acknowledge the warnings.\\n"
+  func_info "HOMEBREW" "Set and ready to go!"
+  func_info "BREWUP" "Please read and acknowledge the warnings."
 }
 
 # Getting a status updates on new packages versions and software updates
