@@ -17,6 +17,7 @@ func_header() {
   echo "---------------------------------------------------------" >&2
 }
 
+
 # A simple display with HOMEBREW tag
 func_info() {
   local tag="$1"; shift
@@ -30,34 +31,31 @@ func_info() {
   printf "\n%s[%s]%s %s\n" "$yellow" "$tag" "$reset" "$fmt" "$@" >&2
 }
 
+
 # Full run of keeping everything Homebrew-related up to date
 brewup() {
-  func_
-header "Status" "Updating Homebrew."
+  func_header "Status" "Updating Homebrew."
   brew update
   func_info "HOMEBREW" "Homebrew Updated."
 
-  func_
-header "Status" "Upgrading formulae and casks."
+  func_header "Status" "Upgrading formulae and casks."
   brew upgrade
   func_info "HOMEBREW" "Formulae Upgraded."
 
-  func_
-header "Status" "Cleaning up old kegs and checking symlinks."
+  func_header "Status" "Cleaning up old kegs and checking symlinks."
   brew cleanup
   func_info "HOMEBREW" "Cleaned up."
 
-  func_
-header "Status" "Removing formulae no longer needed."
+  func_header "Status" "Removing formulae no longer needed."
   brew autoremove
   func_info "HOMEBREW" "Unneeded formulae removed."
 
-  func_
-header "Status" "Checking installation."
+  func_header "Status" "Checking installation."
   brew doctor
   func_info "HOMEBREW" "Set and ready to go!"
   func_info "BREWUP" "Please read and acknowledge the warnings."
 }
+
 
 # Getting a status updates on new packages versions and software updates
 whatsnew () {
