@@ -11,14 +11,13 @@ func_header() {
   local purple=$(tput setaf 5 2>/dev/null || echo -e "\033[35m")
   local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
 
-  # shellcheck disable=SC2059
   echo "---------------------------------------------------------" >&2
   printf "%s%s:%s %s\n" "$purple" "$tag" "$reset" "$fmt" >&2
   echo "---------------------------------------------------------" >&2
 }
 
 
-# A simple display with HOMEBREW tag
+# A simple display with [tag] first
 func_info() {
   local tag="$1"; shift
   local fmt="$1"; shift
