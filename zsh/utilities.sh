@@ -165,18 +165,21 @@ flac_to_mp3() {
 
 
 # Convert every mov file in current directory into mp4 format
+# The stream is copied, which preserves arbitrary frame rate
 mov_to_mp4() {
-  fd --extension mov --exec ffmpeg -i {} -r 25 {.}.mp4
+  fd --extension mov -x ffmpeg -y -hide_banner -loglevel error -i {} -c copy {.}.mp4
 }
 
 
 # Convert every mp4 file in current directory into mkv format
+# The stream is copied, which preserves arbitrary frame rate
 mp4_to_mkv() {
-  fd --extension mp4 --exec ffmpeg -i {} -r 25 {.}.mkv
+  fd --extension mp4 -x ffmpeg -y -hide_banner -loglevel error -i {} -c copy {.}.mkv
 }
 
 
 # Convert every mkv file in current directory into mp4 format
+# The stream is copied, which preserves arbitrary frame rate
 mkv_to_mp4() {
-  fd --extension mkv --exec ffmpeg -i {} -r 25 {.}.mp4
+  fd --extension mkv -x ffmpeg -y -hide_banner -loglevel error -i {} -c copy {.}.mp4
 }
