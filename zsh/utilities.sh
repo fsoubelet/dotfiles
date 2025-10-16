@@ -65,19 +65,23 @@ clean() {
   func_info "Cleanup" "Removing Python bytecode, test artifacts and coverage files..."
   for file in "${files[@]}"; do
     if $dry_run; then
-      find . -type f -name "$file" -print
+      fd --type f --glob --hidden "$file"
+      # find . -type f -name "$file" -print
     else
-      find . -type f -name "$file" -delete
+      fd --type f --glob --hidden "$file" --exec rm -f {}
+      # find . -type f -name "$file" -delete
     fi
   done
 
   # We clean up the directories (or display if dry run)
   func_info "Cleanup" "Removing Python caches, test artifacts and coverage directories..."
-  for file in "${files[@]}"; do
+  for dir in "${dirs[@]}"; do
     if $dry_run; then
-      find . -type f -name "$file" -print
+      fd --type d --glob --hidden "$dir"
+      # find . -type f -name "$file" -print
     else
-      find . -type f -name "$file" -delete
+      fd --type d --glob --hidden "$dir" --exec rm -rf {}
+      # find . -type f -name "$file" -delete
     fi
   done
 
