@@ -4,7 +4,7 @@
 
 
 # A convenient way to print some statements
-function_echo() {
+fecho() {
   local fmt="$1"; shift
   # shellcheck disable=SC2059
   echo "---------------------------------------------------------"
@@ -12,7 +12,7 @@ function_echo() {
   echo "---------------------------------------------------------"
 }
 
-function_info() {
+finfo() {
   local fmt="$1"; shift
   # shellcheck disable=SC2059
   printf "\\n[HOMEBREW] $fmt\\n" "$@"
@@ -20,25 +20,25 @@ function_info() {
 
 # Full run of keeping everything Homebrew-related up to date
 brewup() {
-  function_echo "Updating Homebrew."
+  fecho "Updating Homebrew."
   brew update
-  function_info "Homebrew Updated."
+  finfo "Homebrew Updated."
 
-  function_echo "Upgrading formulae and casks."
+  fecho "Upgrading formulae and casks."
   brew upgrade
-  function_info "Formulae Upgraded."
+  finfo "Formulae Upgraded."
 
-  function_echo "Cleaning up old kegs and checking symlinks."
+  fecho "Cleaning up old kegs and checking symlinks."
   brew cleanup
-  function_info "Cleaned up."
+  finfo "Cleaned up."
 
-  function_echo "Removing formulae no longer needed."
+  fecho "Removing formulae no longer needed."
   brew autoremove
-  function_info "Unneeded formulae removed."
+  finfo "Unneeded formulae removed."
 
-  function_echo "Checking installation."
+  fecho "Checking installation."
   brew doctor
-  function_info "Set and ready to go!"
+  finfo "Set and ready to go!"
   printf "[BREWUP] Please read and acknowledge the warnings.\\n"
 }
 
@@ -103,58 +103,58 @@ wipe() {
 
 # Clean Python mess anywhere
 clean() {
-  function_echo "Cleaning up bytecode files and python cache."
+  fecho "Cleaning up bytecode files and python cache."
   find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
   find . -type d -name __marimo__ -delete
 
-  function_echo "Cleaning up pytest cache & test artifacts."
+  fecho "Cleaning up pytest cache & test artifacts."
   find . -type d -name '*.pytest_cache' -exec rm -rf {} + -o -type f -name '*.pytest_cache' -exec rm -rf {} +
   find . -type f -name 'fc.*' -delete -o -type f -name 'fort.*' -delete
 
-  function_echo "Cleaning up mypy and ruff caches."
+  fecho "Cleaning up mypy and ruff caches."
   find . -type d -name "*.mypy_cache" -exec rm -rf {} +
   find . -type d -name "*.ruff_cache" -exec rm -rf {} +
 
-  function_echo "Cleaning ipython notebook caches"
+  fecho "Cleaning ipython notebook caches"
   find . -type d -name "*.ipynb_checkpoints" -exec rm -rf {} +
 
-  function_echo "Cleaning up coverage reports."
+  fecho "Cleaning up coverage reports."
   find . -type f -name '.coverage*' -exec rm -rf {} + -o -type f -name 'coverage.xml' -delete
 
-  function_echo "Cleaning up package builds."
+  fecho "Cleaning up package builds."
   find . -type d -name "*dist" -exec rm -rf {} +
 
-  function_echo "All cleaned up."
+  fecho "All cleaned up."
 }
 
 
 # An attempt at a parallel version of the above
 fclean() {
-  function_echo "Cleaning up bytecode files and python cache."
+  fecho "Cleaning up bytecode files and python cache."
   fd --type f --extension "py[co]" --exec rm -rf
   fd --glob __pycache__ --exec rm -rf
 
-  function_echo "Cleaning up pytest cache & test artifacts."
+  fecho "Cleaning up pytest cache & test artifacts."
   fd --type d --extension pytest_cache --exec rm -rf
   fd --type f --extension pytest_cache --exec rm -rf
   fd --type f --glob "fc.*" --exec rm -rf
   fd --type f --glob "fort.*" --exec rm -rf
 
-  function_echo "Cleaning up mypy and ruff caches."
+  fecho "Cleaning up mypy and ruff caches."
   fd --type d --extension mypy_cache --exec rm -rf
   fd --type d --extension ruff_cache --exec rm -rf
 
-  function_echo "Cleaning up ipython notebook caches."
+  fecho "Cleaning up ipython notebook caches."
   fd --type d --extension ipynb_checkpoints --exec rm -rf
 
-  function_echo "Cleaning up coverage reports."
+  fecho "Cleaning up coverage reports."
   fd --type f --extension "coverage*" --exec rm -rf
   fd --type f --glob "coverage.xml" --exec rm -rf
 
-  function_echo "Cleaning up package builds."
+  fecho "Cleaning up package builds."
   fd --glob "*dist"  --exec rm -rf
 
-  function_echo "All cleaned up."
+  fecho "All cleaned up."
 }
 
 
