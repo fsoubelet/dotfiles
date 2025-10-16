@@ -3,7 +3,7 @@
 #######################
 
 # A convenient way to print some statements
-fecho() {
+brew_echo() {
   local fmt="$1"; shift
 
   # Color codes: try tput, fallback to ANSI
@@ -16,7 +16,7 @@ fecho() {
   echo "---------------------------------------------------------"
 }
 
-finfo() {
+brew_info() {
   local fmt="$1"; shift
   # shellcheck disable=SC2059
   printf "\\n[HOMEBREW] $fmt\\n" "$@"
@@ -24,25 +24,25 @@ finfo() {
 
 # Full run of keeping everything Homebrew-related up to date
 brewup() {
-  fecho "Updating Homebrew."
+  brew_echo "Updating Homebrew."
   brew update
-  finfo "Homebrew Updated."
+  brew_info "Homebrew Updated."
 
-  fecho "Upgrading formulae and casks."
+  brew_echo "Upgrading formulae and casks."
   brew upgrade
-  finfo "Formulae Upgraded."
+  brew_info "Formulae Upgraded."
 
-  fecho "Cleaning up old kegs and checking symlinks."
+  brew_echo "Cleaning up old kegs and checking symlinks."
   brew cleanup
-  finfo "Cleaned up."
+  brew_info "Cleaned up."
 
-  fecho "Removing formulae no longer needed."
+  brew_echo "Removing formulae no longer needed."
   brew autoremove
-  finfo "Unneeded formulae removed."
+  brew_info "Unneeded formulae removed."
 
-  fecho "Checking installation."
+  brew_echo "Checking installation."
   brew doctor
-  finfo "Set and ready to go!"
+  brew_info "Set and ready to go!"
   printf "[BREWUP] Please read and acknowledge the warnings.\\n"
 }
 
