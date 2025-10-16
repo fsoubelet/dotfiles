@@ -89,42 +89,29 @@ clean() {
 }
 
 
-# An attempt at a parallel version of the above
-fclean() {
-  func_info "Cleanup" "Cleaning up bytecode files and python cache."
-  fd --type f --extension "py[co]" --exec rm -rf
-  fd --glob __pycache__ --exec rm -rf
-
-  func_info "Cleanup" "Cleaning up pytest cache & test artifacts."
-  fd --type d --extension pytest_cache --exec rm -rf
-  fd --type f --extension pytest_cache --exec rm -rf
-  fd --type f --glob "fc.*" --exec rm -rf
-  fd --type f --glob "fort.*" --exec rm -rf
-
-  func_info "Cleanup" "Cleaning up mypy and ruff caches."
-  fd --type d --extension mypy_cache --exec rm -rf
-  fd --type d --extension ruff_cache --exec rm -rf
-
-  func_info "Cleanup" "Cleaning up ipython notebook caches."
-  fd --type d --extension ipynb_checkpoints --exec rm -rf
-
-  func_info "Cleanup" "Cleaning up coverage reports."
-  fd --type f --extension "coverage*" --exec rm -rf
-  fd --type f --glob "coverage.xml" --exec rm -rf
-
-  func_info "Cleanup" "Cleaning up package builds."
-  fd --glob "*dist"  --exec rm -rf
-
-  func_info "Cleanup" "All cleaned up!"
-}
-
 # Turning hidden files on/off in Finder
 hiddenOn() { defaults write com.apple.Finder AppleShowAllFiles YES ; }
 hiddenOff() { defaults write com.apple.Finder AppleShowAllFiles NO ; }
 
 
 # Viewing man pages in Preview
-pman() { ps=$(mktemp -t manpageXXXX).ps ; man -t "$@" > "$ps" ; open "$ps" ; }
+pman() {
+    local ps
+    ps=$(mktemp -t manpageXXXX).ps
+
+    if man -t "$@" > "$ps"; then
+        open "$ps"
+    else
+        echo "Man page not found: $*" >&2
+        rm -f "$ps"
+        return 1
+    fi
+
+    # Optional: clean up after opening (may delete too early if Preview keeps it open)
+    # trap 'rm -f "$ps"' EXIT
+}
+
+
 
 # Prompting IP address
 myip() {
@@ -134,6 +121,7 @@ myip() {
   ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
   ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 }
+
 
 # Using streamlink to pull a stream and send it to iina
 getstream() {
