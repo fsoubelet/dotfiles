@@ -44,6 +44,11 @@ brewup() {
 
 # An easier 'du' utility
 inspect() {
+
+  # Color codes (use tput if available, fallback to ANSI)
+  local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
+  local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
+
   # Check argument presence
   if [[ $# -eq 0 ]]; then
     echo "No arguments were provided, provide a directory to inspect."
@@ -55,22 +60,23 @@ inspect() {
     return 1
   fi
 
-  # We get the arg and check it’s a valid directory
   local dir=$1
+
+  # Check provided argument is a directory
   if [[ ! -d "$dir" ]]; then
-    echo "Error: '$dir' is not a directory."
+    echo "${yellow}Error:${reset} '$dir' is not a directory."
     return 1
   fi
 
-  # Use a nullglob-like behavior for bash compatibility (zsh does this by
-  # (default and 2>/dev/null || true prevents errors if shopt isn’t available.)
+  # Use a nullglob-like behavior for bash compatibility
+  # (zsh does this by default, and 2>/dev/null || true
+  # prevents errors if shopt isn’t available).
   shopt -s nullglob 2>/dev/null || true
-
   local items=("$dir"/*)
 
   # Handle empty directories gracefully
   if [[ ${#items[@]} -eq 0 ]]; then
-    echo "Directory '$dir' is empty."
+    echo "${yellow}Directory '$dir' is empty.${reset}"
     return 0
   fi
 
