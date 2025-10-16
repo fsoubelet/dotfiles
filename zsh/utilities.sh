@@ -50,27 +50,36 @@ inspect() {
 
 # Clean Python mess anywhere
 clean() {
-  func_info "Cleanup" "Cleaning Python bytecode and cache files..."
-  find . -type f -name '*.py[co]' -delete
-  find . -type d -name '__pycache__' -exec rm -rf {} +
-  find . -type d -name '__marimo__' -exec rm -rf {} +
+    # Gives us the option to dry run if desired
+    local dry_run=false
+    if [[ "$1" == "--dry-run" ]]; then
+        dry_run=true
+        shift
+    fi
 
-  func_info "Cleanup" "Cleaning up pytest cache & test artifacts."
-  find . -type d -name '*.pytest_cache' -exec rm -rf {} +
-  find . -type f -name 'fc.*' -delete -o -type f -name 'fort.*' -delete
+  # Define directory and file patterns to remove
+  local files=( '*.py[co]' 'fc.*' 'fort.*' '.coverage*' 'coverage.xml' )
+  local dirs=( '__pycache__' '__marimo__' '*.pytest_cache' '*.mypy_cache' '*.ruff_cache' '*.ipynb_checkpoints' '*dist' )
 
-  func_info "Cleanup" "Cleaning up mypy and ruff caches."
-  find . -type d -name "*.mypy_cache" -exec rm -rf {} +
-  find . -type d -name "*.ruff_cache" -exec rm -rf {} +
+  # We clean up the files (or display if dry run)
+  func_info "Cleanup" "Removing Python bytecode, test artifacts and coverage files..."
+  for file in "${files[@]}"; do
+    if $dry_run; then
+      find . -type f -name "$file" -print
+    else
+      find . -type f -name "$file" -delete
+    fi
+  done
 
-  func_info "Cleanup" "Cleaning ipython notebook caches"
-  find . -type d -name "*.ipynb_checkpoints" -exec rm -rf {} +
-
-  func_info "Cleanup" "Cleaning up coverage reports."
-  find . -type f \( -name '.coverage*' -o -name 'coverage.xml' \) -delete
-
-  func_info "Cleanup" "Cleaning up package builds."
-  find . -type d -name "*dist" -exec rm -rf {} +
+  # We clean up the directories (or display if dry run)
+  func_info "Cleanup" "Removing Python caches, test artifacts and coverage directories..."
+  for file in "${files[@]}"; do
+    if $dry_run; then
+      find . -type f -name "$file" -print
+    else
+      find . -type f -name "$file" -delete
+    fi
+  done
 
   func_info "Cleanup" "All cleaned up!"
 }
