@@ -48,18 +48,6 @@ inspect() {
 }
 
 
-# Nuclear bomb, but should be ok with 'th'
-wipe() {
-  if [[ -n "$BASH" ]]; then read -r -p "This will remove ALL elements in the current directory, are you sure? [y/n] " choice; fi
-  if [[ -n "$ZSH_NAME" ]]; then "choice?This will remove ALL elements in the current directory, are you sure? [y/n] "; fi
-  case "$choice" in
-    y|Y|yes|YES) for element in *; do th "$element"; done;;
-    n|N|no|NO) echo "Aborting.";;
-    *) echo "This is an invalid choice, aborting.";;
-  esac
-}
-
-
 # Clean Python mess anywhere
 clean() {
   fecho "Cleaning up bytecode files and python cache."
