@@ -78,31 +78,31 @@ clean() {
 
 # An attempt at a parallel version of the above
 fclean() {
-  fecho "Cleaning up bytecode files and python cache."
+  func_info "Cleanup" "Cleaning up bytecode files and python cache."
   fd --type f --extension "py[co]" --exec rm -rf
   fd --glob __pycache__ --exec rm -rf
 
-  fecho "Cleaning up pytest cache & test artifacts."
+  func_info "Cleanup" "Cleaning up pytest cache & test artifacts."
   fd --type d --extension pytest_cache --exec rm -rf
   fd --type f --extension pytest_cache --exec rm -rf
   fd --type f --glob "fc.*" --exec rm -rf
   fd --type f --glob "fort.*" --exec rm -rf
 
-  fecho "Cleaning up mypy and ruff caches."
+  func_info "Cleanup" "Cleaning up mypy and ruff caches."
   fd --type d --extension mypy_cache --exec rm -rf
   fd --type d --extension ruff_cache --exec rm -rf
 
-  fecho "Cleaning up ipython notebook caches."
+  func_info "Cleanup" "Cleaning up ipython notebook caches."
   fd --type d --extension ipynb_checkpoints --exec rm -rf
 
-  fecho "Cleaning up coverage reports."
+  func_info "Cleanup" "Cleaning up coverage reports."
   fd --type f --extension "coverage*" --exec rm -rf
   fd --type f --glob "coverage.xml" --exec rm -rf
 
-  fecho "Cleaning up package builds."
+  func_info "Cleanup" "Cleaning up package builds."
   fd --glob "*dist"  --exec rm -rf
 
-  fecho "All cleaned up."
+  func_info "Cleanup" "All cleaned up!"
 }
 
 # Turning hidden files on/off in Finder
