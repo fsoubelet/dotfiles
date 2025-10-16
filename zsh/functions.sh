@@ -2,13 +2,17 @@
 # PERSONNAL FUNCTIONS #
 #######################
 
-
 # A convenient way to print some statements
 fecho() {
   local fmt="$1"; shift
+
+  # Color codes: try tput, fallback to ANSI
+  local purple=$(tput setaf 5 2>/dev/null || echo -e "\033[35m")
+  local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
+
   # shellcheck disable=SC2059
   echo "---------------------------------------------------------"
-  echo "$(tput setaf 5) Status: $fmt $(tput sgr 0)" "$@"
+  printf "%sStatus:%s %s\n" "$purple" "$reset" "$fmt"
   echo "---------------------------------------------------------"
 }
 
