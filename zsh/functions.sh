@@ -18,8 +18,12 @@ brew_echo() {
 
 brew_info() {
   local fmt="$1"; shift
-  # shellcheck disable=SC2059
-  printf "\\n[HOMEBREW] $fmt\\n" "$@"
+
+  # Color codes: try tput, fallback to ANSI
+  local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
+  local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
+
+  printf "\n%s[HOMEBREW]%s %s\n" "$yellow" "$reset" "$fmt" "$@" >&2
 }
 
 # Full run of keeping everything Homebrew-related up to date
