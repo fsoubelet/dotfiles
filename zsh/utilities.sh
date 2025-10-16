@@ -112,14 +112,43 @@ pman() {
 }
 
 
-
-# Prompting IP address
+# Prompting IP addresses of all active network interfaces
 myip() {
-  ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
-  ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-  ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-  ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-  ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
+  # Color codes (use tput if available, fallback to ANSI)
+  local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
+  local cyan=$(tput setaf 6 2>/dev/null || echo -e "\033[36m")
+  local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
+  local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
+
+  # Loop over all active interfaces
+  for interface in $(ifconfig -l); do
+    # Skip empty or non-existent interfaces
+    if ! ifconfig "$interface" &>/dev/null; then
+      continue
+    fi
+
+    # Extract IPv4 addresses
+    while read -r line; do
+      addr=$(awk '{print $2}' <<< "$line")
+      printf "%-8s (IPv4): %s%s%s\n" "$interface" "$yellow" "$addr" "$reset"
+    done < <(ifconfig "$interface" | awk '$1=="inet" && $2!="127.0.0.1"')
+
+    # Extract IPv6 addresses
+    while read -r line; do
+      addr=$(awk '{print $2}' <<< "$line")
+      printf "%-8s (IPv6): %s%s%s\n" "$interface" "$cyan" "$addr" "$reset"
+    done < <(ifconfig "$interface" | awk '$1=="inet6" && $2!="::1"')
+  done
+
+  # Show a small separator line
+  printf "\n"
+
+  # Get and display public IP address
+  local public_ip
+  public_ip=$(curl -s ifconfig.me || echo "Unavailable")
+  if [[ -n "$public_ip" ]]; then
+    printf "%-8s (Public): %s%s%s\n" "WAN" "$green" "$public_ip" "$reset"
+  fi
 }
 
 
