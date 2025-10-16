@@ -50,28 +50,30 @@ inspect() {
 
 # Clean Python mess anywhere
 clean() {
-  fecho "Cleaning up bytecode files and python cache."
-  find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
-  find . -type d -name __marimo__ -delete
+  func_info "Cleanup" "Cleaning Python bytecode and cache files..."
+  find . -type f -name '*.py[co]' -delete
+  find . -type d -name '__pycache__' -exec rm -rf {} +
+  find . -type d -name __marimo__ -exec rm -rf {} +
 
-  fecho "Cleaning up pytest cache & test artifacts."
-  find . -type d -name '*.pytest_cache' -exec rm -rf {} + -o -type f -name '*.pytest_cache' -exec rm -rf {} +
+  func_info "Cleanup" "Cleaning up pytest cache & test artifacts."
+  find . -type d -name '*.pytest_cache' -exec rm -rf {} +
   find . -type f -name 'fc.*' -delete -o -type f -name 'fort.*' -delete
 
-  fecho "Cleaning up mypy and ruff caches."
+  func_info "Cleanup" "Cleaning up mypy and ruff caches."
   find . -type d -name "*.mypy_cache" -exec rm -rf {} +
   find . -type d -name "*.ruff_cache" -exec rm -rf {} +
 
-  fecho "Cleaning ipython notebook caches"
+  func_info "Cleanup" "Cleaning ipython notebook caches"
   find . -type d -name "*.ipynb_checkpoints" -exec rm -rf {} +
 
-  fecho "Cleaning up coverage reports."
-  find . -type f -name '.coverage*' -exec rm -rf {} + -o -type f -name 'coverage.xml' -delete
+  func_info "Cleanup" "Cleaning up coverage reports."
+  find . -type f -name '.coverage*' -delete
+  find . -type f -name 'coverage.xml' -delete
 
-  fecho "Cleaning up package builds."
+  func_info "Cleanup" "Cleaning up package builds."
   find . -type d -name "*dist" -exec rm -rf {} +
 
-  fecho "All cleaned up."
+  func_info "Cleanup" "All cleaned up!"
 }
 
 
