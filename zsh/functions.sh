@@ -44,19 +44,40 @@ brewup() {
 
 # An easier 'du' utility
 inspect() {
-  if [[ $# -eq 0 ]]
-  then
-    echo "No arguments were provided, please provided the directory to inspect."
+  # Check argument presence
+  if [[ $# -eq 0 ]]; then
+    echo "No arguments were provided, provide a directory to inspect."
+    echo "Usage: inspect <directory>"
     echo "Examples:"
-    echo "          inspect <dir_name>"
-    echo "          inspect ."
-    echo "          inspect ~/"
-  elif [[ ! -d "$1" ]]
-  then
-    echo "There is no such directory."
-  else
-    for folder in "$1"/*; do du -sh "$folder"; done
+    echo "  inspect <dir_name>"
+    echo "  inspect ."
+    echo "  inspect ~/"
+    return 1
   fi
+
+  # We get the arg and check it’s a valid directory
+  local dir=$1
+  if [[ ! -d "$dir" ]]; then
+    echo "Error: '$dir' is not a directory."
+    return 1
+  fi
+
+  # Use a nullglob-like behavior for bash compatibility (zsh does this by
+  # (default and 2>/dev/null || true prevents errors if shopt isn’t available.)
+  shopt -s nullglob 2>/dev/null || true
+
+  local items=("$dir"/*)
+
+  # Handle empty directories gracefully
+  if [[ ${#items[@]} -eq 0 ]]; then
+    echo "Directory '$dir' is empty."
+    return 0
+  fi
+
+  # We can now loop through the items for their sizes
+  for item in "${items[@]}"; do
+    du -sh "$item" 2>/dev/null
+  done
 }
 
 
