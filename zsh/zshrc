@@ -11,7 +11,8 @@ export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo bi
 
 # Shell customization
 source "$HOME/dotfiles/zsh/aliases.sh"     # Plenty of QoL aliases
-source "$HOME/dotfiles/zsh/functions.sh"   # user-made functions
+source "$HOME/dotfiles/zsh/functions.sh"   # homebrew and updates functions
+source "$HOME/dotfiles/zsh/utilities.sh"   # miscellaneous utility functions
 source "$HOME/dotfiles/zsh/dockerfunc.sh"  # docker utility functions
 source "$HOME/dotfiles/zsh/tmux.sh"        # tmux manipulation aliases and functions
 source "$HOME/dotfiles/zsh/mambasetup.sh"  # conda setup and prepending miniforge to PATH
