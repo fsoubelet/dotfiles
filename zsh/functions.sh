@@ -80,10 +80,12 @@ inspect() {
     return 0
   fi
 
-  # We can now loop through the items for their sizes
-  for item in "${items[@]}"; do
-    du -sh "$item" 2>/dev/null
-  done
+  # We can now loop through the items in that dir for their sizes
+  # The first line requires GNU parallel (otherwise use the for loop)
+  printf '%s\n' "${items[@]}" | parallel -j "$(sysctl -n hw.ncpu)" --keep-order du -sh {} 2>/dev/null
+  # for item in "${items[@]}"; do
+  #   du -sh "$item" 2>/dev/null
+  # done
 }
 
 
