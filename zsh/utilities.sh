@@ -160,7 +160,7 @@ getstream() {
 
 # Convert every flac file in current directory into mp3 format
 flac_to_mp3() {
-  fd --extension flac --exec ffmpeg -i {} -q:a 0 {.}.mp3
+  fd --extension flac -x ffmpeg -n -i {} -q:a 0 {.}.mp3
 }
 
 
