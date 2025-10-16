@@ -1,6 +1,6 @@
-#######################
-# PERSONNAL FUNCTIONS #
-#######################
+# -------------------------------- #
+# Brew and System Update Functions #
+# -------------------------------- #
 
 # A header print for homebrew update steps
 func_header() {
