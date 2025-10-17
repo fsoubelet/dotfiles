@@ -80,3 +80,32 @@ pdel () {
 
     echo "${green}Success:${reset} Environment removed."
 }
+
+
+_remove_last_lines () {
+    # argument $1 = number of lines to remove, argument $2 = filename
+    local lines_to_keep
+
+    # Compute total lines - lines to remove
+    lines_to_keep=$(( $(wc -l < "$2") - $1 ))
+
+    # Guard against negative values, you never know
+    if [ "$lines_to_keep" -lt 0 ]; then
+        lines_to_keep=0
+    fi
+
+    # Use head (portable, not like truncate) to keep only the wanted lines
+    # First go through a temp file just in case then move (force) piping to devnul
+    head -n "$lines_to_keep" "$2" > "$2.tmp" && mv -f "$2.tmp" "$2" > /dev/null 2>&1
+}
+
+
+# Conda environment export without build info
+# Usage: condexport <env_name>
+condexport () {
+    # Export without build dir for provided name as argument under <name>_environment.yml
+    conda env export --name "$1" --no-builds --verbose > "$1"_environment.yml
+
+    # Get rid of the last line (platform-specific prefix)
+    _remove_last_lines 1 "$1"_environment.yml
+}
