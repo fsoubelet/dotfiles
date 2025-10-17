@@ -10,6 +10,7 @@ alias dockapocalypse='docker system prune -a -f'   # DANGEROUS. Will delete ever
 # -------------------------------------------------------------------
 # Docker related functions
 # -------------------------------------------------------------------
+# Remove a container if it has stopped running
 del_stopped() {
 	# Get container name
 	local name=$1
@@ -37,14 +38,27 @@ del_stopped() {
 	fi
 }
 
-relies_on() {
-	for container in "$@"; do
-		local state
-		state=$(docker inspect --format "{{.State.Running}}" "$container" 2>/dev/null)
 
-		if [[ "$state" == "false" ]] || [[ "$state" == "" ]]; then
-			echo "$container is not running, starting it for you."
-			${container}
+# A quick starter for containers I will rely on
+relies_on() {
+	# Loop over all provided container names
+	for container in "$@"; do
+		# Check if container exists
+		if ! docker inspect "$container" &>/dev/null; then
+			echo "Container '$container' does not exist." >&2
+			continue
+		fi
+
+		# Check if container is running
+		local running
+		running=$(docker inspect --format "{{.State.Running}}" "$container")
+
+		# Start container if not running, otherwise inform user
+		if [[ "$running" == "false" ]]; then
+			echo "$container is not running — starting it..."
+			docker start "$container"
+		else
+			echo "$container is already running."
 		fi
 	done
 }
