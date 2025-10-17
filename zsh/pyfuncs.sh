@@ -48,20 +48,35 @@ penv () {
 # Python virtual environment deletion (assumes env made as above and activated)
 # Automatically determines the env location, deactivates then deletes it
 pdel () {
-  # Figure out the virtual environment (we might not be in that place anymore)
-  # this keeps the loc and removes last 2 parts, which are the /bin/python
-  envloc=$(which python | rev | cut -d'/' -f3- | rev)
+    # Color codes (use tput if available, fallback to ANSI)
+    local red=$(tput setaf 1 2>/dev/null || echo -e "\033[31m")
+    local blue=$(tput setaf 4 2>/dev/null || echo -e "\033[34m")
+    local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
+    local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
+    local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
 
-  # We check that it is not a conda environment
-  if [[ $envloc =~ "$HOME/.miniforge" ]]; then  # regex check for presence in env path
-    echo "Not touching conda envs with this command."
-    return
-  fi
+    # Figure out the virtual environment (we might not be in that place anymore)
+    # this keeps the loc and removes last 2 parts, which are the /bin/python
+    local pybin envloc
+    pybin=$(command -v python 2>/dev/null) || {
+        echo "${red}Error:${reset} Python executable not found." >&2
+        return 1
+    }
+    envloc=$(dirname "$(dirname "$pybin")")
 
-  # Deactivate the environment
-  deactivate
+    # We check first that it's not a conda environment
+    if [[ $envloc == $HOME/.miniforge* ]]; then  # regex check for presence in env path
+        echo "${yellow}Abort:${reset} Not touching conda environments with this command." >&2
+        return 0
+    fi
 
-  # Remove the environment
-  echo "Removing environment at $envloc"
-  th "$envloc"
+    # Remove the environment (use th if available)
+    echo "Removing environment at ${blue}${envloc}${reset}"
+    if command -v th >/dev/null 2>&1; then
+        th "$envloc"
+    else
+        rm -rf "$envloc"
+    fi
+
+    echo "${green}Success:${reset} Environment removed."
 }
