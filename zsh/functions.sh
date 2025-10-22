@@ -37,7 +37,6 @@ brewup() {
     set -euo pipefail  # exit on any failure
 
     # Color codes: try tput, fallback to ANSI
-    local purple=$(tput setaf 5 2>/dev/null || echo -e "\033[35m")
     local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
     local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
 
