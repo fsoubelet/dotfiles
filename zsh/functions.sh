@@ -18,41 +18,49 @@ func_header() {
 
 
 # A simple display with [tag] first
+# Optional color can be passed as first arg
 func_info() {
+    local color="${1:-}"; shift
     local tag="$1"; shift
     local fmt="$1"; shift
 
     # Color codes: try tput, fallback to ANSI
-    local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
     local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
 
     # Print with yellow tag in [] and then the rest of the message
-    printf "%s[%s]%s %s\n" "$yellow" "$tag" "$reset" "$fmt" "$@" >&2
+    printf "%s[%s]%s %s\n" "$color" "$tag" "$reset" "$fmt" "$@" >&2
 }
 
 
 # Full run of keeping everything Homebrew-related up to date
 brewup() {
+    set -euo pipefail  # exit on any failure
+
+    # Color codes: try tput, fallback to ANSI
+    local purple=$(tput setaf 5 2>/dev/null || echo -e "\033[35m")
+    local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
+    local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
+
     func_header "Status" "Updating Homebrew."
     brew update
-    func_info "Homebrew" "Homebrew Updated."
+    func_info "$yellow" "Homebrew" "Homebrew Updated."
 
     func_header "Status" "Upgrading formulae and casks."
     brew upgrade
-    func_info "Homebrew" "Formulae Upgraded."
+    func_info "$yellow" "Homebrew" "Formulae Upgraded."
 
     func_header "Status" "Cleaning up old kegs and checking symlinks."
     brew cleanup
-    func_info "Homebrew" "Cleaned up."
+    func_info "$yellow" "Homebrew" "Cleaned up."
 
     func_header "Status" "Removing formulae no longer needed."
     brew autoremove
-    func_info "Homebrew" "Unneeded formulae removed."
+    func_info "$yellow" "Homebrew" "Unneeded formulae removed."
 
     func_header "Status" "Checking installation."
     brew doctor
-    func_info "Homebrew" "Set and ready to go!"
-    func_info "Brewup" "Please read and acknowledge the warnings."
+    func_info "$green" "Homebrew" "Set and ready to go!"
+    func_info "$yellow" "Brewup" "Please read and acknowledge the warnings."
 }
 
 
