@@ -63,12 +63,16 @@ clean() {
         shift
     fi
 
+    # Color codes: try tput, fallback to ANSI
+    local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
+    local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
+
     # Define directory and file patterns to remove
     local files=( '*.py[co]' 'fc.*' 'fort.*' '.coverage*' 'coverage.xml' )
     local dirs=( '__pycache__' '__marimo__' '*.pytest_cache' '*.mypy_cache' '*.ruff_cache' '*.ipynb_checkpoints' '*dist' )
 
     # We clean up the files (or display if dry run)
-    func_info "Cleanup" "Removing Python bytecode, test artifacts and coverage files..."
+    func_info "$yellow" "Cleanup" "Removing Python bytecode, test artifacts and coverage files..."
     for file in "${files[@]}"; do
       if $dry_run; then
         # fd --type f --glob --hidden "$file"
@@ -80,7 +84,7 @@ clean() {
     done
 
     # We clean up the directories (or display if dry run)
-    func_info "Cleanup" "Removing Python caches, test artifacts and coverage directories..."
+    func_info "$yellow" "Cleanup" "Removing Python caches, test artifacts and coverage directories..."
     for dir in "${dirs[@]}"; do
       if $dry_run; then
         # fd --type d --glob --hidden "$dir"
@@ -91,7 +95,7 @@ clean() {
       fi
     done
 
-    func_info "Cleanup" "All cleaned up!"
+    func_info "$green" "Cleanup" "All cleaned up!"
 }
 
 
