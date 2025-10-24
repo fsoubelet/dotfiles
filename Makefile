@@ -55,8 +55,8 @@ macos:
 	@make link
 
 brew:
-	@echo "$(B)Checking valid Homebrew installation.$(E)"
-	@bash ${DOTFILES_DIR}/macos/homebrew_install.sh
+	@source ${DOTFILES_DIR}/zsh/printfuncs.sh
+	@source ${DOTFILES_DIR}/macos/homebrew_install.sh
 	@brew analytics off
 	@echo "$(B)Installing Homebrew packages from Brewfile.$(E)"
 	@cd $(DOTFILES_DIR)/macos; brew bundle; cd $(DOTFILES_DIR)
@@ -105,7 +105,6 @@ miniforge:
 
 omz:
 	@source ${DOTFILES_DIR}/zsh/printfuncs.sh
-	@echo "$(B)Installing oh-my-zsh installation and plugins.$(E)"
 	@source ${DOTFILES_DIR}/zsh/omz_install.sh
 
 unlink:
