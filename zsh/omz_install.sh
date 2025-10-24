@@ -56,3 +56,8 @@ install_omz_plugins() {
     # Happy success message :)
     func_info "$green" "Plugins" "Oh-My-Zsh plugins installation complete."
 }
+
+
+# Run the installation functions if script is called
+install_oh_my_zsh
+install_omz_plugins
