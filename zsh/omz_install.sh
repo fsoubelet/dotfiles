@@ -51,6 +51,7 @@ install_omz_plugins() {
             func_info "$yellow" "Plugins" "Installing $basename plugin."
             git clone --depth=1 "$repo" "$dir" >/dev/null 2>&1  # silence git output
         fi
+    done
 
     # Happy success message :)
     func_info "$green" "Plugins" "Oh-My-Zsh plugins installation complete."
