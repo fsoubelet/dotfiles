@@ -12,7 +12,7 @@ export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo bi
 # Shell customization
 source "$HOME/dotfiles/zsh/aliases.sh"     # Plenty of QoL aliases
 source "$HOME/dotfiles/zsh/printfuncs.sh"  # display functions for status updates
-source "$HOME/dotfiles/zsh/functions.sh"   # homebrew and updates functions
+source "$HOME/dotfiles/zsh/updates.sh"     # homebrew and system update functions
 source "$HOME/dotfiles/zsh/utilities.sh"   # miscellaneous utility functions
 source "$HOME/dotfiles/zsh/pyfuncs.sh"     # Python virtual environment functions
 source "$HOME/dotfiles/zsh/dockerfunc.sh"  # docker utility functions
