@@ -77,7 +77,7 @@ cargo:
 	@echo "$(B)Installing Rust and Cargo.$(E)"
 	@curl https://sh.rustup.rs -sSf | sh
 	@echo "$(B)Installing relevant packages from Cargo.$(E)"
-	@cargo install bat eza tealdeer difftastic
+	@cargo install bat bottom difftastic dysk eza hyperfine ripgrep tealdeer uv
 
 defaults:
 	@echo "Changing some macos defaults according to configuration file."
