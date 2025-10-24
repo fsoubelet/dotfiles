@@ -40,7 +40,6 @@ help:
 	@echo "  $(R) miniforge $(E)    to install the latest miniforge distribution."
 	@echo "  $(R) omz $(E)          to install oh-my-zsh and required plugin files if not present already."
 	@echo "  $(R) unlink $(E)       to remove symlink to configuration files."
-	@echo "  $(R) zsh $(E)          to switch to the Z shell."
 
 linux:
 	@echo "This is not yet implemented."
@@ -52,7 +51,6 @@ macos:
 	@make cargo
 	@make brew
 	@make miniforge
-	@make zsh
 	@make omz
 	@make link
 
@@ -77,7 +75,7 @@ cargo:
 	@echo "$(B)Installing Rust and Cargo.$(E)"
 	@curl https://sh.rustup.rs -sSf | sh
 	@echo "$(B)Installing relevant packages from Cargo.$(E)"
-	@cargo install bat bottom difftastic dysk eza hyperfine ripgrep tealdeer uv
+	@cargo install bat bottom difftastic dysk eza hyperfine ripgrep tealdeer uv zoxide
 
 defaults:
 	@echo "Changing some macos defaults according to configuration file."
@@ -106,8 +104,9 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
 
 omz:
+	@source ${DOTFILES_DIR}/zsh/printfuncs.sh
 	@echo "$(B)Installing oh-my-zsh installation and plugins.$(E)"
-	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
+	@source ${DOTFILES_DIR}/zsh/omz_install.sh
 
 unlink:
 	@echo "$(B)Removing symlinks.$(E)"
@@ -118,8 +117,3 @@ unlink:
 	@unlink $(HOME)/.Brewfile
 	@unlink $(HOME)/.ssh/config
 	@unlink $(HOME)/.config/bat/config
-
-zsh:
-	@echo "$(B)Switching to the Z shell.$(E)"
-	@sudo sh -c "echo $(which zsh) >> /etc/shells"
-	@chsh -s $(which zsh)
