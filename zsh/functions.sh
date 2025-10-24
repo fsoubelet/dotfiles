@@ -56,8 +56,8 @@ brewup() {
 
     func_header "Status" "Checking installation."
     brew doctor
-    func_info "$green" "Homebrew" "Set and ready to go!"
     func_info "$yellow" "Brewup" "Please read and acknowledge the warnings."
+    func_info "$green" "Homebrew" "Set and ready to go!"
 }
 
 
