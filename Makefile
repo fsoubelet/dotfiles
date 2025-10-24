@@ -66,13 +66,13 @@ brew:
 cargo:
 	@echo "$(B)Installing Rust and Cargo.$(E)"
 	@curl https://sh.rustup.rs -sSf | sh
-	@echo "$(B)Installing relevant packages from Cargo.$(E)"
+	@echo "$(B)Installing desired packages through Cargo.$(E)"
 	@cargo install bat bottom difftastic dysk eza hyperfine ripgrep tealdeer uv zoxide
 
 defaults:
 	@echo "Changing some macos defaults according to configuration file."
 	@echo "Make sure you customize this file to your needs.$(E)."
-	@bash $(DOTFILES_DIR)/macos/defaults.sh
+	@bash $(DOTFILES_DIR)/macos/macos_defaults.sh
 
 link:
 	@echo "Linking .zshrc to home folder."
