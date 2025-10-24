@@ -109,6 +109,5 @@ unlink:
 	@unlink $(HOME)/.gitconfig
 	@unlink $(HOME)/.gitignore_global
 	@unlink $(HOME)/.vimrc
-	@unlink $(HOME)/.Brewfile
 	@unlink $(HOME)/.ssh/config
 	@unlink $(HOME)/.config/bat/config
