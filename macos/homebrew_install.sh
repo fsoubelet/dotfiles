@@ -1,10 +1,26 @@
-#! /bin/bash
+# ---------------- #
+# Install Homebrew #
+# ---------------- #
 
-# Checking if Homebrew installation exists (executable is here)
-if [[ -f "/opt/homebrew/bin/brew" ]]
-then
-    echo "Homebrew is already installed."
-else
-    echo "No installation found. Downloading and installing Homebrew."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
+# Check for homebrew and install if absent
+install_homebrew() {
+    # Color codes: try tput, fallback to ANSI
+    local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
+    local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
+
+    func_header "Status" "Installing Homebrew."
+
+    # Checking installation first
+    if [[ -f "/opt/homebrew/bin/brew" ]]; then
+        func_info "$yellow" "Homebrew" "Homebrew is already installed."
+    else
+        func_info "Homebrew" "No installation found. Downloading and installing Homebrew."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+
+    # Happy success message :)
+    func_info "$green" "Homebrew" "Homebrew installation operational."
+}
+
+# Run the installation functions if script is called
+install_homebrew

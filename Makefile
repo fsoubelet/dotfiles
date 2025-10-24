@@ -28,7 +28,7 @@ all: install
 
 install: $(OS)
 
-.PHONY: help miniforge brew defaults link linux macos unlink zsh
+.PHONY: help brew cargo defaults link linux macos miniforge omz unlink
 
 help:
 	@echo "Dotfiles Makefile. Please use 'make $(R)<target>$(E)' where $(R)<target>$(E) is one of:"
@@ -53,14 +53,6 @@ macos:
 	@make miniforge
 	@make omz
 	@make link
-
-miniforge:
-	@echo "$(B)Downloading native miniforge distribution.$(E)"
-	@curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-	@echo "$(B)Installing miniforge distribution.$(E)"
-	@bash Miniforge3-$(uname)-$(uname -m).sh -b -p $(HOME)/.miniforge # batch install mode, specify prefix
-	@echo "$(B)Removing installer from disk.$(E)"
-	@rm -rf bash Miniforge3-$(uname)-$(uname -m).sh
 
 brew:
 	@echo "$(B)Checking valid Homebrew installation.$(E)"
@@ -102,6 +94,14 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
+
+miniforge:
+	@echo "$(B)Downloading native miniforge distribution.$(E)"
+	@curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+	@echo "$(B)Installing miniforge distribution.$(E)"
+	@bash Miniforge3-$(uname)-$(uname -m).sh -b -p $(HOME)/.miniforge # batch install mode, specify prefix
+	@echo "$(B)Removing installer from disk.$(E)"
+	@rm -rf bash Miniforge3-$(uname)-$(uname -m).sh
 
 omz:
 	@source ${DOTFILES_DIR}/zsh/printfuncs.sh
