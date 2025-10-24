@@ -115,9 +115,7 @@ link:
 
 unlink:
 	@echo "$(B)Removing symlinks.$(E)"
-	@unlink $(HOME)/.tmux.conf
 	@unlink $(HOME)/.zshrc
-	@unlink $(HOME)/.zsh_plugins.txt
 	@unlink $(HOME)/.gitconfig
 	@unlink $(HOME)/.gitignore_global
 	@unlink $(HOME)/.vimrc
