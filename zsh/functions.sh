@@ -34,8 +34,6 @@ func_info() {
 
 # Full run of keeping everything Homebrew-related up to date
 brewup() {
-    set -euo pipefail  # exit on any failure
-
     # Color codes: try tput, fallback to ANSI
     local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
     local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
