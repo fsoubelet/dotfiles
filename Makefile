@@ -60,7 +60,7 @@ miniforge:
 	@echo "$(B)Downloading native miniforge distribution.$(E)"
 	@curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 	@echo "$(B)Installing miniforge distribution.$(E)"
-	@bash bash Miniforge3-$(uname)-$(uname -m).sh -b -p $(HOME)/.miniforge # batch install mode, specify prefix
+	@bash Miniforge3-$(uname)-$(uname -m).sh -b -p $(HOME)/.miniforge # batch install mode, specify prefix
 	@echo "$(B)Removing installer from disk.$(E)"
 	@rm -rf bash Miniforge3-$(uname)-$(uname -m).sh
 
@@ -77,7 +77,7 @@ cargo:
 	@echo "$(B)Installing Rust and Cargo.$(E)"
 	@curl https://sh.rustup.rs -sSf | sh
 	@echo "$(B)Installing relevant packages from Cargo.$(E)"
-	@cargo install bat exa tealdeer artem difftastic
+	@cargo install bat eza tealdeer difftastic
 
 defaults:
 	@echo "Changing some macos defaults according to configuration file."
@@ -85,8 +85,6 @@ defaults:
 	@bash $(DOTFILES_DIR)/macos/defaults.sh
 
 link:
-	@echo "Linking tmux configuration file to home folder."
-	@ln -nfs ${DOTFILES_DIR}/tmux.conf $(HOME)/.tmux.conf
 	@echo "Linking .zshrc to home folder."
 	@ln -nfs ${DOTFILES_DIR}/zsh/zshrc $(HOME)/.zshrc
 	@echo "Linking zsh plugins file to home folder."
