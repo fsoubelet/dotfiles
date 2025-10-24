@@ -2,9 +2,6 @@
 # Brew and System Update Functions #
 # -------------------------------- #
 
-
-
-
 # Full run of keeping everything Homebrew-related up to date
 brewup() {
     # Color codes: try tput, fallback to ANSI
