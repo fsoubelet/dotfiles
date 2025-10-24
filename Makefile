@@ -38,7 +38,7 @@ help:
 	@echo "  $(R) brew $(E)         to install Homebrew if not present already, and install packages listed in the Brewfile."
 	@echo "  $(R) defaults $(E)     to change macos defaults as specified in 'macos/macos_defaults.sh'."
 	@echo "  $(R) miniforge $(E)    to install the latest miniforge distribution."
-#	@echo "  $(R) omz $(E)          to install oh-my-zsh and required plugin files if not present already."
+	@echo "  $(R) omz $(E)          to install oh-my-zsh and required plugin files if not present already."
 	@echo "  $(R) unlink $(E)       to remove symlink to configuration files."
 	@echo "  $(R) zsh $(E)          to switch to the Z shell."
 
@@ -53,7 +53,7 @@ macos:
 	@make brew
 	@make miniforge
 	@make zsh
-#	@make omz
+	@make omz
 	@make link
 
 miniforge:
@@ -105,9 +105,9 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
 
-# omz:
-# 	@echo "$(B)Installing oh-my-zsh installation and plugins.$(E)"
-# 	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
+omz:
+	@echo "$(B)Installing oh-my-zsh installation and plugins.$(E)"
+	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
 
 unlink:
 	@echo "$(B)Removing symlinks.$(E)"
