@@ -77,8 +77,6 @@ defaults:
 link:
 	@echo "Linking .zshrc to home folder."
 	@ln -nfs ${DOTFILES_DIR}/zsh/zshrc $(HOME)/.zshrc
-	@echo "Linking zsh plugins file to home folder."
-	@ln -nfs ${DOTFILES_DIR}/zsh/plugins.zsh $(HOME)/.zsh_plugins.txt
 	@echo "Linking git configuration files to home folder."
 	@ln -nfs ${DOTFILES_DIR}/git/gitconfig $(HOME)/.gitconfig
 	@ln -nfs ${DOTFILES_DIR}/git/gitignore_global $(HOME)/.gitignore_global
@@ -86,8 +84,6 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/vim/vimrc $(HOME)/.vimrc
 	@mkdir -p $(HOME)/.config/nvim
 	@ln -nfs ${DOTFILES_DIR}/vim/init.vim $(HOME)/.config/nvim/init.vim
-	@echo "Linking Brewfile to home folder."
-	@ln -nfs ${DOTFILES_DIR}/macos/Brewfile $(HOME)/.Brewfile
 	@echo "Linking SSH config file."
 	@ln -nfs ${DOTFILES_DIR}/configs/ssh_config $(HOME)/.ssh/config
 	@echo "Linking configuration files."
