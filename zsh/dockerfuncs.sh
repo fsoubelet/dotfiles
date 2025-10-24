@@ -10,6 +10,7 @@ alias dockapocalypse='docker system prune -a -f'   # DANGEROUS. Will delete ever
 # -------------------------------------------------------------------
 # Docker related functions
 # -------------------------------------------------------------------
+
 # Remove a container if it has stopped running
 del_stopped() {
 	# Get container name
