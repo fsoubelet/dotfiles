@@ -108,10 +108,8 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
 
 # omz:
-# 	@echo "$(B)Checking valid oh-my-zsh installation.$(E)"
+# 	@echo "$(B)Installing oh-my-zsh installation and plugins.$(E)"
 # 	@bash ${DOTFILES_DIR}/zsh/omz_install.sh
-# 	@echo "$(B)Installing required plugins.$(E)"
-# 	@bash ${DOTFILES_DIR}/zsh/omz_plugins.sh
 
 unlink:
 	@echo "$(B)Removing symlinks.$(E)"
