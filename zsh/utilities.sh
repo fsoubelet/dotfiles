@@ -88,10 +88,10 @@ clean() {
     for dir in "${dirs[@]}"; do
       if $dry_run; then
         # fd --type d --glob --hidden "$dir"
-        find . -type f -name "$file" -print
+        find . -type d -name "$file" -print
       else
         # fd --type d --glob --hidden "$dir" --exec rm -rf {}
-        find . -type f -name "$file" -delete
+        find . -type d -name "$file" -delete
       fi
     done
 
