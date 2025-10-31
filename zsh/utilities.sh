@@ -87,11 +87,11 @@ clean() {
     func_info "$yellow" "Cleanup" "Removing Python caches, test artifacts and coverage directories..."
     for dir in "${dirs[@]}"; do
       if $dry_run; then
-        # fd --type d --glob --hidden "$dir"
-        find . -type d -name "$file" -print
+        # fd --type d --hidden --glob "$dir"
+        find . -type d -name "$dir" -print
       else
-        # fd --type d --glob --hidden "$dir" --exec rm -rf {}
-        find . -type d -name "$file" -delete
+        # fd --type d --hidden --glob "$dir" --exec rm -rf {}
+        find . -type d -name "$dir" -exec rm -rf {} +  # will delete empty dirs too
       fi
     done
 
