@@ -3,7 +3,7 @@
 [user]
   name = Felix Soubelet
   email = felix.soubelet@protonmail.com
-  signingkey = E701664A16046BDE
+  #signingkey = E701664A16046BDE
 
 [color]
   # turn on default colors for many commands
@@ -24,7 +24,7 @@
   # lets you tweak the default pager, see 'man less' for the meaning of these flags
   pager = 'less -FRSX'
   pager = /usr/bin/less
-  excludesfile = /Users/felixsoubelet/.gitignore_global
+  excludesfile = /home/felix/.gitignore_global
   autocrlf = input
   symlinks = false
   fsmonitor = true
@@ -70,10 +70,10 @@
   required = true
 
 [commit]
-  gpgsign = true
+  #gpgsign = true
 
 [tag]
-  gpgSign = true
+  #gpgSign = true
 
 [gpg]
   program = gpg
@@ -85,7 +85,7 @@
   ff = only
 
 [credential]
-  helper = osxkeychain
+  #helper = osxkeychain
 
 [init]
   defaultBranch = master
