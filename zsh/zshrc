@@ -4,9 +4,6 @@ export TERM="xterm-256color"
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Adding locations with important executables to PATH
-export PATH="/opt/homebrew/bin:$PATH"                             # Add homebrew bin to the PATH (to get 'brew')
-export PATH="/opt/homebrew/sbin:$PATH"                            # Add homebrew sbin to the PATH (for some recipes)
-export PATH="$PATH:/usr/local/texlive/2025/bin/universal-darwin"  # Add LaTeX installation to PATH (update when updating texlive!)
 export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo binaries to the PATH
 
 # Shell customization
@@ -36,8 +33,8 @@ export UV_PYTHON_PREFERENCE="only-managed"
 eval "$(uv generate-shell-completion zsh)"
 
 # Using GNUPG encryption
-export GPG_TTY=$(tty)
-gpgconf --launch gpg-agent
+#export GPG_TTY=$(tty)
+#gpgconf --launch gpg-agent
 
 # For bat to allow mouse scrolling
 export BAT_PAGER="less -RF"
