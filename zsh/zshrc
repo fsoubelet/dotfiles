@@ -28,11 +28,6 @@ export MPLCONFIGDIR="$HOME/.config/matplotlib"        # avoids having ~/.matplot
 export npm_config_cache="$HOME/.cache/npm"            # avoids having ~/.npm
 export PYTHON_HISTORY="$HOME/.config/python/history"  # avoids having ~/.python_history
 
-# Let uv know to use its own managed Python versions
-# then getting the completions for zsh in (fast eval)
-export UV_PYTHON_PREFERENCE="only-managed"
-eval "$(uv generate-shell-completion zsh)"
-
 # Using GNUPG encryption
 export GPG_TTY=$(tty)
 #gpgconf --launch gpg-agent
@@ -42,8 +37,14 @@ export BAT_PAGER="less -RF"
 
 # Activate ZSH Completions, and make them go to .cache/zsh
 ZSH_COMPDUMP_DIR="$HOME/.cache/zsh"
-autoload -U +X bashcompinit && bashcompinit
+autoload -U compinit && compinit  # Zsh completions
+autoload -U +X bashcompinit && bashcompinit  # Bash like completions
 complete -o nospace -C /usr/local/bin/bit bit
+
+# Let uv know to use its own managed Python versions
+# then getting the completions for zsh in (fast eval)
+export UV_PYTHON_PREFERENCE="only-managed"
+eval "$(uv generate-shell-completion zsh)"
 
 # Load Pluging Manager and let it handle the plugins
 source "$HOME"/.dotfiles/zsh/oh_my_zsh_settings.sh
