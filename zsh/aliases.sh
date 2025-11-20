@@ -5,11 +5,11 @@ alias clr='clear'
 alias cld='clr && lsd'
 alias cp='cp -iv'
 alias df='df -h'
-alias ls='colorls'
-alias lsd='eza --all --long --tree --icons --level=0'
+#alias ls='colorls'
+alias lsd='eza --all --long --tree --icons --level=1'
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
-alias th='trash'
+#alias th='trash'
 alias rsync='rsync -ravzhP'
 alias less='less -S'
 
@@ -17,7 +17,7 @@ alias less='less -S'
 # Global applications aliases
 # -------------------------------------------------------------------
 alias zshconfig='vi ~/.zshrc'
-alias vinit='vi ~/.config/nvim/init.vim'
+#alias vinit='vi ~/.config/nvim/init.vim'
 
 # NeoVim
 alias vi='vim'
@@ -107,7 +107,7 @@ alias mrev='mamba env remove -y -n'  # add your env name
 # -------------------------------------------------------------------
 
 # This is a python -m pip install looking at the AccPy indexes, useful for a lot of our internal packages. Requires GPN!!!
-alias accpip='python -m pip install --index-url https://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
+#alias accpip='python -m pip install --index-url https://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
 
 # -------------------------------------------------------------------
 # Miscellaneous
