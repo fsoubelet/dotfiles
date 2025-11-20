@@ -5,15 +5,16 @@ export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 
 # Adding locations with important executables to PATH
 export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo binaries to the PATH
+export PATH="$PATH:$HOME/.local/bin"                              # Local exec directory (with uv)
 
 # Shell customization
-source "$HOME/dotfiles/zsh/printfuncs.sh"   # display functions for status updates
-source "$HOME/dotfiles/zsh/utilities.sh"    # miscellaneous utility functions
-source "$HOME/dotfiles/zsh/updates.sh"      # homebrew and system update functions
-source "$HOME/dotfiles/zsh/aliases.sh"      # Plenty of QoL aliases
-source "$HOME/dotfiles/zsh/pyfuncs.sh"      # Python virtual environment functions
-source "$HOME/dotfiles/zsh/dockerfuncs.sh"  # docker utility functions
-source "$HOME/dotfiles/zsh/mambasetup.sh"   # conda setup and prepending miniforge to PATH
+source "$HOME/.dotfiles/zsh/printfuncs.sh"   # display functions for status updates
+source "$HOME/.dotfiles/zsh/utilities.sh"    # miscellaneous utility functions
+source "$HOME/.dotfiles/zsh/updates.sh"      # homebrew and system update functions
+source "$HOME/.dotfiles/zsh/aliases.sh"      # Plenty of QoL aliases
+source "$HOME/.dotfiles/zsh/pyfuncs.sh"      # Python virtual environment functions
+source "$HOME/.dotfiles/zsh/dockerfuncs.sh"  # docker utility functions
+source "$HOME/.dotfiles/zsh/mambasetup.sh"   # conda setup and prepending miniforge to PATH
 
 # Getting the rustup shell setup
 source "$HOME/.cargo/env"
@@ -33,7 +34,7 @@ export UV_PYTHON_PREFERENCE="only-managed"
 eval "$(uv generate-shell-completion zsh)"
 
 # Using GNUPG encryption
-#export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)
 #gpgconf --launch gpg-agent
 
 # For bat to allow mouse scrolling
@@ -45,7 +46,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
 
 # Load Pluging Manager and let it handle the plugins
-source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
+source "$HOME"/.dotfiles/zsh/oh_my_zsh_settings.sh
 
 # Start Starship for prompt customization
 eval "$(starship init zsh)"
