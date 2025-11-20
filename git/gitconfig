@@ -2,8 +2,8 @@
 
 [user]
   name = Felix Soubelet
-  email = felix.soubelet@protonmail.com
-  #signingkey = E701664A16046BDE
+  email = 19598248+fsoubelet@users.noreply.github.com
+	signingkey = 829A05736D975B02
 
 [color]
   # turn on default colors for many commands
@@ -70,10 +70,10 @@
   required = true
 
 [commit]
-  #gpgsign = true
+	gpgsign = true
 
 [tag]
-  #gpgSign = true
+	gpgSign = true
 
 [gpg]
   program = gpg
@@ -84,7 +84,7 @@
 [pull]
   ff = only
 
-[credential]
+#[credential]
   #helper = osxkeychain
 
 [init]
