@@ -19,50 +19,50 @@ call plug#begin('~/.vim/plugged')
 
 "------------------------------ Theming Vim ------------------------------
 
-Plug 'mhinz/vim-startify'                                                      " Vim startup page.
-Plug 'itchyny/lightline.vim'                                                   " Minimalist status line.
-Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images.
-Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I love.
-Plug 'joshdick/onedark.vim'                                                    " Colorscheme I like.
+"Plug 'mhinz/vim-startify'                                                      " Vim startup page.
+"Plug 'itchyny/lightline.vim'                                                   " Minimalist status line.
+"Plug 'kristijanhusak/vim-carbon-now-sh'                                        " Pretty code images.
+"Plug 'drewtempelmeyer/palenight.vim'                                           " Colorscheme I love.
+"Plug 'joshdick/onedark.vim'                                                    " Colorscheme I like.
 "Plug 'ayu-theme/ayu-vim'                                                       " Colorscheme I like.
 "Plug 'arcticicestudio/nord-vim'                                                " Colorscheme I like.
 "Plug 'rakr/vim-two-firewatch'                                                  " Colorscheme I like.
 "Plug 'ryuta69/elly.vim'                                                        " Colorscheme I like.
-Plug 'glepnir/oceanic-material'                                                " The great oceanic material
+"Plug 'glepnir/oceanic-material'                                                " The great oceanic material
 
 "------------------------------ Vim as IDE -------------------------------
 
-Plug 'scrooloose/nerdtree'                                                     " NERDTree.
-Plug 'Xuyuanp/nerdtree-git-plugin'                                             " NERDTree git integration.
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                                 " NERDTree syntax highlighting.
-Plug 'ryanoasis/vim-devicons'                                                  " NERDTree icons.
-Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy.
-Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
-Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
-Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
-Plug 'janko/vim-test'                                                          " Easily launch tests from Vim.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}                                " Conquer of Completion is amazing.
+"Plug 'scrooloose/nerdtree'                                                     " NERDTree.
+"Plug 'Xuyuanp/nerdtree-git-plugin'                                             " NERDTree git integration.
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                                 " NERDTree syntax highlighting.
+"Plug 'ryanoasis/vim-devicons'                                                  " NERDTree icons.
+"Plug 'scrooloose/nerdcommenter'                                                " Commenting lines made easy.
+"Plug 'kien/ctrlp.vim'                                                          " Fuzzy file, buffer, mru, etc finder.
+"Plug 'airblade/vim-gitgutter'                                                  " Git diff in the gutter.
+"Plug 'tpope/vim-fugitive'                                                      " A git tools wrapper inside Vim.
+"Plug 'janko/vim-test'                                                          " Easily launch tests from Vim.
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}                                " Conquer of Completion is amazing.
 
 "----------------------------- Python tools ------------------------------
 
-Plug 'nvie/vim-flake8'                                                         " Python linting.
-Plug 'python/black'                                                            " PEP8 formatting.
-Plug 'scrooloose/syntastic'                                                    " Python syntax checking.
+"Plug 'nvie/vim-flake8'                                                         " Python linting.
+"Plug 'python/black'                                                            " PEP8 formatting.
+"Plug 'scrooloose/syntastic'                                                    " Python syntax checking.
 "Plug 'cjrh/vim-conda'                                                          " Conda environments integration (jedi & commands).
 
 "---------------------------- Other Languages ----------------------------
 
 "Plug 'alaviss/nim.nvim'                                                        " Nim language support
-Plug 'plasticboy/vim-markdown'                                                 " Markdown syntax.
-Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
-Plug 'tmhedberg/SimpylFold'                                                    " Colde folding.
+"Plug 'plasticboy/vim-markdown'                                                 " Markdown syntax.
+"Plug 'lervag/vimtex'                                                           " Making LaTeX easy.
+"Plug 'tmhedberg/SimpylFold'                                                    " Colde folding.
 
 "---------------------------- Miscellaneous ------------------------------
 
-Plug 'elzr/vim-json'                                                           " JSON highlighting.
-Plug 'cespare/vim-toml'                                                        " Toml highlighting.
-Plug 'tpope/vim-surround'                                                      " Surroundings mappings.
-Plug 'yuttie/comfortable-motion.vim'                                           " Physics-based smooth scrolling.
+"Plug 'elzr/vim-json'                                                           " JSON highlighting.
+"Plug 'cespare/vim-toml'                                                        " Toml highlighting.
+"Plug 'tpope/vim-surround'                                                      " Surroundings mappings.
+"Plug 'yuttie/comfortable-motion.vim'                                           " Physics-based smooth scrolling.
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -166,7 +166,7 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-colorscheme palenight
+"colorscheme palenight
 "colorscheme onedark
 "colorscheme oceanic_material
 
@@ -206,8 +206,8 @@ au BufNewFile,BufRead *.py:
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Set line length for Black formatting
-let g:black_linelength = 100
+"let g:black_linelength = 100
 
 " Let NeoVim know we don't want Python 2 and which env to source pynvim from
-let g:loaded_python_provider = 0
-let g:python3_host_prog = '/Users/felixsoubelet/anaconda3/envs/neovim/bin/python'
+"let g:loaded_python_provider = 0
+"let g:python3_host_prog = '/Users/felixsoubelet/anaconda3/envs/neovim/bin/python'
