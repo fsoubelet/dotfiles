@@ -33,6 +33,10 @@ brewup() {
 
 # Getting a status updates on new packages versions and software updates
 whatsnew () {
+    # Color codes: try tput, fallback to ANSI
+    local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
+    local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
+
     # Start with a display and silently update homebrew
     func_header "Status" "Checking Homebrew packages..."
     brew update >/dev/null 2>&1
@@ -43,12 +47,12 @@ whatsnew () {
 
     # If there are some new ones, display them
     if [[ "$num_packages" -gt 0 ]]; then
-        func_info "Homebrew" "New package updates available:"
+        func_info "$yellow" "Homebrew" "New package updates available:"
         while IFS= read -r package; do
             printf "   * %s\n" "$package" >&2
         done <<< "$new_packages"
     else
-        func_info "Homebrew" "No new package updates available."
+        func_info "$yellow" "Homebrew" "No new package updates available."
     fi
 
     # Add an empty line before macOS section
@@ -60,11 +64,11 @@ whatsnew () {
 
     # If there are some new ones, display them
     if [[ -n "$mac_updates" ]]; then
-        func_info "macOS" "Updates available:"
+        func_info "$yellow" "macOS" "Updates available:"
         echo "$mac_updates" | while IFS= read -r line; do
             printf "   * %s\n" "$line" >&2
         done
     else
-        func_info "macOS" "No macOS updates available."
+        func_info "$yellow" "macOS" "No macOS updates available."
     fi
 }
