@@ -33,7 +33,7 @@ export PYTHON_HISTORY="$HOME/.config/python/history"  # avoids having ~/.python_
 # Let uv know to use its own managed Python versions
 # then getting the completions for zsh in (fast eval)
 export UV_PYTHON_PREFERENCE="only-managed"
-eval "$(uv generate-shell-completion zsh)"
+# eval "$(uv generate-shell-completion zsh)"
 
 # Using GNUPG encryption
 export GPG_TTY=$(tty)
