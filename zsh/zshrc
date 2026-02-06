@@ -31,9 +31,9 @@ export npm_config_cache="$HOME/.cache/npm"            # avoids having ~/.npm
 export PYTHON_HISTORY="$HOME/.config/python/history"  # avoids having ~/.python_history
 
 # Let uv know to use its own managed Python versions
-# then getting the completions for zsh in (fast eval)
+# and to always compile bytecode when installing
 export UV_PYTHON_PREFERENCE="only-managed"
-# eval "$(uv generate-shell-completion zsh)"
+export UV_COMPILE_BYTECODE=1
 
 # Using GNUPG encryption
 export GPG_TTY=$(tty)
