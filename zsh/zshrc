@@ -8,6 +8,7 @@ export PATH="/opt/homebrew/bin:$PATH"                             # Add homebrew
 export PATH="/opt/homebrew/sbin:$PATH"                            # Add homebrew sbin to the PATH (for some recipes)
 export PATH="$PATH:/usr/local/texlive/2025/bin/universal-darwin"  # Add LaTeX installation to PATH (update when updating texlive!)
 export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo binaries to the PATH
+export PATH="$PATH:$HOME/.juliaup/bin"                            # Add juliaup managed installs to the PATH
 
 # Shell customization
 source "$HOME/dotfiles/zsh/printfuncs.sh"   # display functions for status updates
@@ -56,4 +57,9 @@ eval "$(starship init zsh)"
 # This keeps showing up when it is also in ~/.cache/zsh
 if [ -f "$HOME/.zcompdump" ]; then
     rm "$HOME/.zcompdump"
+fi
+
+# This keeps showing up when I never want it
+if [ -f "$HOME/.viminfo" ]; then
+    rm "$HOME/.viminfo"
 fi
