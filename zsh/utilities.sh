@@ -68,8 +68,8 @@ clean() {
     local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
 
     # Define directory and file patterns to remove
-    local files=( '*.py[co]' 'fc.*' 'fort.*' '.coverage*' 'coverage.xml' )
-    local dirs=( '__pycache__' '__marimo__' '*.pytest_cache' '*.mypy_cache' '*.ruff_cache' '*.ipynb_checkpoints' '*dist' )
+    local files=( '*.py[co]' 'fc.*' 'fort.*' '*.coverage*' 'coverage.xml' )
+    local dirs=( '__pycache__' '__marimo__' '*.egg-info' '.eggs' '*.pytest_cache' '*.mypy_cache' '*.ruff_cache' '*.ipynb_checkpoints' '*dist' )
 
     # We clean up the files (or display if dry run)
     func_info "$yellow" "Cleanup" "Removing Python bytecode, test artifacts and coverage files..."
