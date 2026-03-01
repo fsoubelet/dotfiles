@@ -7,6 +7,7 @@ export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 export PATH="/opt/homebrew/bin:$PATH"                             # Add homebrew bin to the PATH (to get 'brew')
 export PATH="/opt/homebrew/sbin:$PATH"                            # Add homebrew sbin to the PATH (for some recipes)
 export PATH="$PATH:/usr/local/texlive/2025/bin/universal-darwin"  # Add LaTeX installation to PATH (update when updating texlive!)
+export PATH="$PATH:$HOME/.local/bin"                              # Add local tools (incl. claude etc) to the PATH
 export PATH="$PATH:$HOME/.cargo/bin"                              # Add cargo binaries to the PATH
 export PATH="$PATH:$HOME/.juliaup/bin"                            # Add juliaup managed installs to the PATH
 
