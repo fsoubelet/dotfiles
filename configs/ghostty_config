@@ -1,0 +1,7 @@
+
+# You can preview the config here
+ 
+link-previews = false
+quit-after-last-window-closed = true
+copy-on-select = true
+window-inherit-working-directory = false
