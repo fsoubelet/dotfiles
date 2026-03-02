@@ -90,6 +90,9 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
+	@ln -nfs ${DOTFILES_DIR}/configs/condarc $(HOME)/.config/conda/condarc
+	@ln -nfs ${DOTFILES_DIR}/configs/ghostty_config $(HOME)/.config/ghostty/config
+	@ln -nfs ${DOTFILES_DIR}/configs/marimo.toml $(HOME)/.config/marimo/marimo.toml
 
 miniforge:
 	@echo "$(B)Downloading native miniforge distribution.$(E)"
