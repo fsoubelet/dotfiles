@@ -30,8 +30,8 @@ alias ga='git add'
 alias gaa='git add --all -v'
 alias gb='git branch'
 alias gcl='git clone --depth=1'
-alias gcm='git commit -S'  # automatically GPG sign the commits
-alias gcmf='gcm -m "formatting"'  # for simple formatting commits
+alias gcm='git commit -S'        # automatically GPG sign the commits
+alias gcmf='gcm -m "formatting"' # for simple formatting commits
 alias gco='git checkout'
 alias gdf='git diff --word-diff --color-words'
 alias gf='git fetch'
@@ -45,9 +45,9 @@ alias gra='git remote add'
 alias grm='git rm'
 alias grr='git remote rm'
 alias gs='git status'
-alias gta='git tag -sm'  # automatically GPG sign and annotate tags
-alias gwp='git commit -a -m wip --no-verify'  # use responsibly
-alias gnvm='git reset --hard origin/main'  # better than rm -rf repo && git clone repo
+alias gta='git tag -sm'                      # automatically GPG sign and annotate tags
+alias gwp='git commit -a -m wip --no-verify' # use responsibly
+alias gnvm='git reset --hard origin/main'    # better than rm -rf repo && git clone repo
 alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
 
 # Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
@@ -73,16 +73,15 @@ alias senv='source .venv/bin/activate'
 # Quick aliases for the uv tools
 alias usu='uv self update'
 alias uta='uv tool upgrade --all'
+alias uvt='uv tool'
 alias upi='uv python install --reinstall --compile-bytecode'
-alias uvi='uvx isort'
-alias uvb='uvx black'
-alias uvr='uvx ruff'
 
 # Easier notebook aliases
 alias jupylab='jupyter lab --browser=firefox --ContentsManager.allow_hidden=True'
 alias jupy='jupylab'
 
-# To run marimo notebooks through uv tool
+# To run marimo notebooks through uv tool - just make sure to
+# include extras and other packages when adding the marimo tool
 alias marimo='uvx marimo'
 
 # Command to upgrade all xsuite repos in the current environment: x(suite-up)grade
@@ -100,7 +99,7 @@ alias dtest='conda deactivate && mamba env remove -n test -y'
 
 # Aliases to manage miniforge environments quickly
 alias mel='mamba env list'
-alias mrev='mamba env remove -y -n'  # add your env name
+alias mrev='mamba env remove -y -n' # add your env name
 
 # -------------------------------------------------------------------
 # CERN & LXPLUS aliases
