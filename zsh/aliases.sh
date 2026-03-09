@@ -82,7 +82,7 @@ alias jupy='jupylab'
 
 # To run marimo notebooks through uv tool - just make sure to
 # include extras and other packages when adding the marimo tool
-alias marimo='uvx marimo'
+# alias marimo='uvx marimo'
 
 # Command to upgrade all xsuite repos in the current environment: x(suite-up)grade
 alias xgrade='pip install --upgrade --compile-bytecode setuptools xsuite xtrack xpart xobjects xfields xcoll xplt pint'
