@@ -16,8 +16,6 @@ alias less='less -S'
 # -------------------------------------------------------------------
 # Global applications aliases
 # -------------------------------------------------------------------
-alias zshconfig='vi ~/.zshrc'
-alias vinit='vi ~/.config/nvim/init.vim'
 
 # NeoVim
 alias vi='vim'
