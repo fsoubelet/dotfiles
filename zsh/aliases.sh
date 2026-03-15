@@ -28,7 +28,8 @@ alias ga='git add'
 alias gaa='git add --all -v'
 alias gb='git branch'
 alias gcl='git clone --depth=1'
-alias gcm='git commit -S' # automatically GPG sign the commits
+alias gcm='git commit -S'         # automatically GPG sign the commits
+alias gca='git commit -S --amend' # automatically GPG sign amends
 alias gco='git checkout'
 alias gdf='git diff --word-diff --color-words'
 alias gf='git fetch'
