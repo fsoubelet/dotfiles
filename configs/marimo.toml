@@ -1,94 +1,94 @@
-[package_management]
-manager = "uv"
-
 [keymap]
 preset = "default"
 destructive_delete = true
 
 [keymap.overrides]
 
-[save]
-autosave_delay = 1000
-autosave = "after_delay"
-format_on_save = true
+[mcp]
+presets = ["marimo"]
 
-[snippets]
-include_default_snippets = true
-custom_paths = []
+[mcp.mcpServers]
 
-[runtime]
-auto_reload = "off"
-watcher_on_save = "lazy"
-default_auto_download = []
-default_csv_encoding = "utf-8"
-reactive_tests = false
-on_cell_change = "autorun"
-auto_instantiate = false
-default_sql_output = "auto"
-output_max_bytes = 8000000
-std_stream_max_bytes = 1000000
+[package_management]
+manager = "uv"
 
 [ai]
 rules = "Always use type hints and provide docstrings. Prefer the numpy docstring style. Prefer polars over pandas."
 mode = "manual"
-
-[ai.custom_providers]
-
-[ai.anthropic]
-
-[ai.google]
 
 [ai.open_ai]
 
 [ai.bedrock]
 
 [ai.models]
-custom_models = []
-chat_model = ""
-displayed_models = []
 edit_model = ""
 autocomplete_model = ""
+displayed_models = []
+chat_model = ""
+custom_models = []
 
-[display]
-default_table_max_columns = 50
-cell_output = "below"
-default_width = "medium"
-theme = "light"
-reference_highlighting = true
-dataframes = "rich"
-code_editor_font_size = 14
-default_table_page_size = 10
+[ai.google]
 
-[completion]
-activate_on_typing = true
-signature_hint_on_typing = true
-copilot = "custom"
+[ai.anthropic]
+
+[ai.custom_providers]
+
+[runtime]
+default_csv_encoding = "utf-8"
+watcher_on_save = "lazy"
+default_sql_output = "auto"
+default_auto_download = []
+std_stream_max_bytes = 1000000
+auto_instantiate = false
+on_cell_change = "autorun"
+reactive_tests = false
+output_max_bytes = 8000000
+auto_reload = "off"
+
+[language_servers.pylsp]
+enable_mypy = true
+enable_flake8 = false
+enable_pydocstyle = false
+enable_pylint = false
+enable_ruff = true
+enable_pyflakes = false
+enabled = false
+
+[language_servers.ty]
+enabled = true
+
+[formatting]
+line_length = 110
 
 [diagnostics]
 sql_linter = true
 
-[language_servers.pylsp]
-enable_pydocstyle = false
-enable_pyflakes = false
-enable_pylint = false
-enable_ruff = true
-enabled = false
-enable_flake8 = false
-enable_mypy = true
+[completion]
+signature_hint_on_typing = true
+copilot = "custom"
+activate_on_typing = true
 
-[language_servers.ty]
-enabled = true
+[display]
+reference_highlighting = true
+default_width = "medium"
+code_editor_font_size = 14
+theme = "light"
+default_table_page_size = 10
+cell_output = "below"
+default_table_max_columns = 50
+dataframes = "rich"
+
+[snippets]
+include_default_snippets = true
+custom_paths = []
+
+[save]
+autosave = "after_delay"
+format_on_save = true
+autosave_delay = 1000
 
 [server]
 browser = "default"
 follow_symlink = false
 
 [experimental]
-
-[formatting]
-line_length = 110
-
-[mcp]
-presets = ["marimo"]
-
-[mcp.mcpServers]
