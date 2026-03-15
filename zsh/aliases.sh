@@ -62,25 +62,20 @@ alias pip='uv pip'
 alias wp='which python'
 alias pv='python --version'
 
-# Activating everywhere
+# Activating assuming default venv
 alias senv='source .venv/bin/activate'
 
 # Quick aliases for the uv tools
 alias usu='uv self update'
 alias uta='uv tool upgrade --all'
-alias uvt='uv tool'
 alias upi='uv python install --reinstall --compile-bytecode'
 
 # Easier notebook aliases
 alias jupylab='jupyter lab --browser=firefox --ContentsManager.allow_hidden=True'
 alias jupy='jupylab'
 
-# To run marimo notebooks through uv tool - just make sure to
-# include extras and other packages when adding the marimo tool
-# alias marimo='uvx marimo'
-
 # Command to upgrade all xsuite repos in the current environment: x(suite-up)grade
-alias xgrade='pip install --upgrade --compile-bytecode setuptools xsuite xtrack xpart xobjects xfields xcoll xplt pint'
+alias xgrade='pip install --upgrade setuptools xsuite xtrack xpart xobjects xfields xcoll xplt pint'
 
 # -------------------------------------------------------------------
 # Conda / Mamba aliases
