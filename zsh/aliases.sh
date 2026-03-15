@@ -30,8 +30,7 @@ alias ga='git add'
 alias gaa='git add --all -v'
 alias gb='git branch'
 alias gcl='git clone --depth=1'
-alias gcm='git commit -S'        # automatically GPG sign the commits
-alias gcmf='gcm -m "formatting"' # for simple formatting commits
+alias gcm='git commit -S' # automatically GPG sign the commits
 alias gco='git checkout'
 alias gdf='git diff --word-diff --color-words'
 alias gf='git fetch'
@@ -42,13 +41,10 @@ alias gm='git merge'
 alias gpl='git pull'
 alias gps='git push'
 alias gra='git remote add'
-alias grm='git rm'
-alias grr='git remote rm'
 alias gs='git status'
-alias gta='git tag -sm'                      # automatically GPG sign and annotate tags
-alias gwp='git commit -a -m wip --no-verify' # use responsibly
-alias gnvm='git reset --hard origin/main'    # better than rm -rf repo && git clone repo
-alias gitout='gaa && gcm -m "fire!" && gps'  # emergency style
+alias gta='git tag -sm'                     # automatically GPG sign and annotate tags
+alias gnvm='git reset --hard origin/main'   # better than rm -rf repo && git clone repo
+alias gitout='gaa && gcm -m "fire!" && gps' # emergency style
 
 # Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
 alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -P 10 -I {} git -C {} pull"
