@@ -5,6 +5,7 @@
 # Check for homebrew and install if absent
 install_homebrew() {
     # Color codes: try tput, fallback to ANSI
+    local blue=$(tput setaf 4 2>/dev/null || echo -e "\033[34m")
     local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
     local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
 
@@ -14,7 +15,7 @@ install_homebrew() {
     if [[ -f "/opt/homebrew/bin/brew" ]]; then
         func_info "$yellow" "Homebrew" "Homebrew is already installed."
     else
-        func_info "Homebrew" "No installation found. Downloading and installing Homebrew."
+        func_info "$blue" "Homebrew" "No installation found. Downloading and installing Homebrew."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 

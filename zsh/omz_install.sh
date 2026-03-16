@@ -5,6 +5,7 @@
 # Check for oh-my-zsh and install if absent
 install_oh_my_zsh() {
     # Color codes: try tput, fallback to ANSI
+    local blue=$(tput setaf 4 2>/dev/null || echo -e "\033[34m")
     local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
     local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
 
@@ -14,7 +15,7 @@ install_oh_my_zsh() {
     if [[ -d "$HOME/.oh-my-zsh" ]]; then
         func_info "$yellow" "Oh-My-Zsh" "Oh-My-Zsh is already installed."
     else
-        func_info "Oh-My-Zsh" "No installation found. Downloading and installing oh-my-zsh."
+        func_info "$blue" "Oh-My-Zsh" "No installation found. Downloading and installing oh-my-zsh."
         RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
