@@ -58,9 +58,9 @@ Some things are left to be done manually, specifically setting personnal informa
 
 ### Setting up iTerm2 profile (valid as of iTerm2 v3.3.0)
 
-1. OPEN `iTerm2` > `Preferences`, or `cmd + ,`.
+1. Open `iTerm2` > `Preferences`.
 2. Under the `General` tab, `Preferences` section, check the box labeled `Load preferences from a custom folder or URL:`
-3. Press "Browse" and point it to the `iterm2/com.googlecode.iterm2.plist` file located in this repository's `iterm` folder.
+3. Press "Browse" and point it to the `iterm2/com.googlecode.iterm2.plist` file located in this repository's `iterm` folder, or whatever location you want to copy/symlink it to.
 4. Restart iTerm2.
 
 ### Setting up GPG Signing
