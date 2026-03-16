@@ -80,9 +80,6 @@ link:
 	@echo "Linking SSH config file."
 	@ln -nfs ${DOTFILES_DIR}/configs/ssh_config $(HOME)/.ssh/config
 	@echo "Linking git configuration files."
-	@ln -nfs ${DOTFILES_DIR}/git/gitconfig $(HOME)/.gitconfig
-	@ln -nfs ${DOTFILES_DIR}/git/gitignore_global $(HOME)/.gitignore_global
-	@echo "CORRECT ONE - Linking git configuration files."
 	@mkdir -p $(HOME)/.config/git  # the -p is idempotent
 	@ln -nfs $(DOTFILES_DIR)/configs/gitconfig $(HOME)/.config/git/config
 	@ln -nfs $(DOTFILES_DIR)/configs/gitignore_global $(HOME)/.config/git/ignore
