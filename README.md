@@ -26,10 +26,7 @@ These will be installed automatically if not already present.
 ### NeoVim
 
 A modern modal editor, NeoVim is simply excellent.
-I use [Vim-Plug][vim-plug] to manage plugins.
-The plugins section is at the top of my `init.vim` file.
-Vim-Plug should be auto-installed on the first NeoVim launch if it isn't already, as long as your `init.vim` is symlinked to the one in this repository.
-After that, run `:PlugInstall` and enjoy a fully ready configuration.
+I use [LazyVim][lazyvim] as a configuration and plugins manager.
 
 ### Zsh
 
@@ -85,10 +82,10 @@ Copyright &copy; 2018 Felix Soubelet. [MIT License][license]
 [dotcomu]: https://dotfiles.github.io/
 [homebrew]: http://brew.sh
 [iterm2]: https://www.iterm2.com/
+[lazyvim]: https://github.com/lazyvim/lazyvim
 [license]: https://github.com/fsoubelet/dotfiles/blob/master/LICENSE
 [macos-defaults]: https://mths.be/macos
 [neovim]: https://neovim.io/
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh
 [starship]: https://github.com/starship/starship
-[vim-plug]: https://github.com/junegunn/vim-plug
 [zsh]: https://en.wikipedia.org/wiki/Z_shell
