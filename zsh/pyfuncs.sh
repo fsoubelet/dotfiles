@@ -71,8 +71,8 @@ pdel () {
 
     # Remove the environment (use th if available)
     echo "Removing environment at ${blue}${envloc}${reset}"
-    if command -v th >/dev/null 2>&1; then
-        th "$envloc"
+    if command -v trash >/dev/null 2>&1; then
+        trash "$envloc"
     else
         rm -rf "$envloc"
     fi
