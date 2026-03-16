@@ -46,8 +46,6 @@ export BAT_PAGER="less -RF"
 
 # Activate ZSH Completions, and make them go to .cache/zsh
 ZSH_COMPDUMP_DIR="$HOME/.cache/zsh"
-# autoload -U +X bashcompinit && bashcompinit
-# complete -o nospace -C /usr/local/bin/bit bit
 
 # Load Pluging Manager and let it handle the plugins
 source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
