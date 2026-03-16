@@ -44,7 +44,7 @@ linux:
 	@echo "This is not yet implemented."
 
 macos:
-	@echo "Installing Xcode command-line tools."
+	@echo "Ensuring Xcode command-line tools."
 	@xcode-select -p &>/dev/null || (echo "Installing Xcode command-line tools." && xcode-select --install)
 	@softwareupdate -ai
 	@make cargo
