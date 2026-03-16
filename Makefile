@@ -77,12 +77,12 @@ defaults:
 link:
 	@echo "Linking .zshrc to home folder."
 	@ln -nfs ${DOTFILES_DIR}/zsh/zshrc $(HOME)/.zshrc
-	@echo "Linking git configuration files to home folder."
+	@echo "Linking git configuration files."
 	@ln -nfs ${DOTFILES_DIR}/git/gitconfig $(HOME)/.gitconfig
 	@ln -nfs ${DOTFILES_DIR}/git/gitignore_global $(HOME)/.gitignore_global
 	@echo "Linking SSH config file."
 	@ln -nfs ${DOTFILES_DIR}/configs/ssh_config $(HOME)/.ssh/config
-	@echo "Linking configuration files."
+	@echo "Linking other configuration files."
 	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
