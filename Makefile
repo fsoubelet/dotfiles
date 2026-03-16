@@ -110,8 +110,12 @@ omz:
 unlink:
 	@echo "$(B)Removing symlinks.$(E)"
 	@unlink $(HOME)/.zshrc
-	@unlink $(HOME)/.gitconfig
-	@unlink $(HOME)/.gitignore_global
-	@unlink $(HOME)/.vimrc
 	@unlink $(HOME)/.ssh/config
+	@unlink $(HOME)/.config/git/config
+	@unlink $(HOME)/.config/git/ignore
 	@unlink $(HOME)/.config/bat/config
+	@unlink $(HOME)/.config/htop/htoprc
+	@unlink $(HOME)/.config/starship.toml
+	@unlink $(HOME)/.config/conda/condarc
+	@unlink $(HOME)/.config/ghostty/config
+	@unlink $(HOME)/.config/marimo/marimo.toml
