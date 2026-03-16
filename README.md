@@ -63,6 +63,10 @@ Some things are left to be done manually, specifically setting personnal informa
 3. Press "Browse" and point it to the `iterm2/com.googlecode.iterm2.plist` file located in this repository's `iterm` folder.
 4. Restart iTerm2.
 
+### Setting up GPG Signing
+
+This was a hassle, to be written!
+
 ## Note
 
 Currently, running `make` only works on macOS, but not every single installation point will be handled an the user might need to install some things manually.
