@@ -80,8 +80,6 @@ link:
 	@echo "Linking git configuration files to home folder."
 	@ln -nfs ${DOTFILES_DIR}/git/gitconfig $(HOME)/.gitconfig
 	@ln -nfs ${DOTFILES_DIR}/git/gitignore_global $(HOME)/.gitignore_global
-	@echo "Linking .vimrc to home folder."
-	@ln -nfs ${DOTFILES_DIR}/vim/vimrc $(HOME)/.vimrc
 	@mkdir -p $(HOME)/.config/nvim
 	@ln -nfs ${DOTFILES_DIR}/vim/init.vim $(HOME)/.config/nvim/init.vim
 	@echo "Linking SSH config file."
