@@ -6,7 +6,7 @@
   </a>
 </p>
 
-This folder contains my dotfiles, used on a mac currently running macOS Monterey (12.4).
+This folder contains my dotfiles, used on a mac currently running macOS Tahoe (26.3).
 
 ## Package overview
 
