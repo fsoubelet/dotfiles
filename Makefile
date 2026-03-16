@@ -83,9 +83,9 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/git/gitconfig $(HOME)/.gitconfig
 	@ln -nfs ${DOTFILES_DIR}/git/gitignore_global $(HOME)/.gitignore_global
 	@echo "CORRECT ONE - Linking git configuration files."
-	@mkdir -p $(HOME)/.config/git  # the -p is idempotent (only act if dir absent)
-	@ln -nfs $(DOTFILES_DIR)/git/gitconfig $(HOME)/.config/git/config
-	@ln -nfs $(DOTFILES_DIR)/git/gitignore_global $(HOME)/.config/git/ignore
+	@mkdir -p $(HOME)/.config/git  # the -p is idempotent
+	@ln -nfs $(DOTFILES_DIR)/configs/gitconfig $(HOME)/.config/git/config
+	@ln -nfs $(DOTFILES_DIR)/configs/gitignore_global $(HOME)/.config/git/ignore
 	@echo "Linking other configuration files."
 	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
