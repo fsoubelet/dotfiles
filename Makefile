@@ -100,7 +100,7 @@ miniforge:
 	@echo "$(B)Installing miniforge distribution.$(E)"
 	@bash Miniforge3-$(UNAME)-$(shell uname -m).sh -b -p $(HOME)/.miniforge # batch install mode, specify prefix
 	@echo "$(B)Removing installer from disk.$(E)"
-	@rm -rf Miniforge3-$(uname)-$(uname -m).sh
+	@rm -f Miniforge3-$(UNAME)-$(shell uname -m).sh
 
 omz:
 	@source ${DOTFILES_DIR}/zsh/printfuncs.sh
