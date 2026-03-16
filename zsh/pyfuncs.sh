@@ -52,6 +52,7 @@ pdel () {
     local blue=$(tput setaf 4 2>/dev/null || echo -e "\033[34m")
     local yellow=$(tput setaf 3 2>/dev/null || echo -e "\033[33m")
     local green=$(tput setaf 2 2>/dev/null || echo -e "\033[32m")
+    local reset=$(tput sgr0 2>/dev/null || echo -e "\033[0m")
 
     # Figure out the virtual environment (we might not be in that place anymore)
     # this keeps the loc and removes last 2 parts, which are the /bin/python
