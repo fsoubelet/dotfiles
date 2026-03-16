@@ -85,10 +85,14 @@ link:
 	@ln -nfs $(DOTFILES_DIR)/configs/gitignore_global $(HOME)/.config/git/ignore
 	@echo "Linking other configuration files."
 	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
+	@mkdir -p $(HOME)/.config/htop
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
+	@mkdir -p $(HOME)/.config/conda
 	@ln -nfs ${DOTFILES_DIR}/configs/condarc $(HOME)/.config/conda/condarc
+	@mkdir -p $(HOME)/.config/ghostty/
 	@ln -nfs ${DOTFILES_DIR}/configs/ghostty_config $(HOME)/.config/ghostty/config
+	@mkdir -p $(HOME)/.config/marimo
 	@ln -nfs ${DOTFILES_DIR}/configs/marimo.toml $(HOME)/.config/marimo/marimo.toml
 
 miniforge:
