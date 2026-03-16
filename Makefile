@@ -39,7 +39,6 @@ help:
 	@echo "  $(R) defaults $(E)     to change macos defaults as specified in 'macos/macos_defaults.sh'."
 	@echo "  $(R) miniforge $(E)    to install the latest miniforge distribution."
 	@echo "  $(R) omz $(E)          to install oh-my-zsh and required plugin files if not present already."
-	@echo "  $(R) unlink $(E)       to remove symlink to configuration files."
 
 linux:
 	@echo "This is not yet implemented."
