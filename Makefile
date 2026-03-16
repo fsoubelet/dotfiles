@@ -45,7 +45,7 @@ linux:
 
 macos:
 	@echo "Installing Xcode command-line tools."
-	@xcode-select --install
+	@xcode-select -p &>/dev/null || (echo "Installing Xcode command-line tools." && xcode-select --install)
 	@softwareupdate -ai
 	@make cargo
 	@make brew
