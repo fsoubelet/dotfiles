@@ -87,8 +87,6 @@ link:
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
 	@mkdir -p $(HOME)/.config/conda
 	@ln -nfs ${DOTFILES_DIR}/configs/condarc $(HOME)/.config/conda/condarc
-	@mkdir -p $(HOME)/.config/ghostty/
-	@ln -nfs ${DOTFILES_DIR}/configs/ghostty_config $(HOME)/.config/ghostty/config
 	@mkdir -p $(HOME)/.config/marimo
 	@ln -nfs ${DOTFILES_DIR}/configs/marimo.toml $(HOME)/.config/marimo/marimo.toml
 
@@ -114,5 +112,4 @@ unlink:
 	@unlink $(HOME)/.config/htop/htoprc
 	@unlink $(HOME)/.config/starship.toml
 	@unlink $(HOME)/.config/conda/condarc
-	@unlink $(HOME)/.config/ghostty/config
 	@unlink $(HOME)/.config/marimo/marimo.toml
