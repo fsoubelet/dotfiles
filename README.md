@@ -52,6 +52,7 @@ When in doubt, run `make help`.
 Some things are left to be done manually, specifically setting personnal information, installing profiles and changing some defaults.
 
 * Set up `iTerm2` profile (see below).
+* Adapt the `~/.config/git/config` file for your own personal details.
 * Add a personnal touch to `~/.zshrc`  or other shell configuration files present in the `zsh` folder.
 * If you wish to act on [macOS defaults][macos-defaults], customize the `macos_defaults.sh` file and run `make defaults`. This command is not ran by default.
 
