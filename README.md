@@ -31,12 +31,12 @@ I use [LazyVim][lazyvim] as a configuration and plugins manager.
 ### Zsh
 
 I run [Zsh][zsh] as my shell, finding it to be a great middle ground between additional niceties and features while remaining a largely compatible shell scripting target.
-On top, I use [Oh-My-Zsh][oh-my-zsh] as shell configuration and plugin manager.
+On top, I use a very lightweight [Oh-My-Zsh][oh-my-zsh] configuration as shell configuration and plugin manager.
 
 ## Install
 
 If git is already installed on your machine, you can clone this repository to your home folder.
-Otherwise, you can simply download and unzip it from github.
+Otherwise, simply download and unzip it from github.
 Everything will be handled by the `Makefile` commands, so in the case of a git install simply run:
 
 ```bash
@@ -45,17 +45,15 @@ cd ~/dotfiles
 make install
 ```
 
-When in doubt you can run `make help`.
+When in doubt, run `make help`.
 
 ## Post-install
 
 Some things are left to be done manually, specifically setting personnal information, installing profiles and changing some defaults.
 
-* Set up iTerm2 profile (see below).
-* Create a `~/.gitconfig.local` in which you can put personal data.
+* Set up `iTerm2` profile (see below).
 * Add a personnal touch to `~/.zshrc`  or other shell configuration files present in the `zsh` folder.
 * If you wish to act on [macOS defaults][macos-defaults], customize the `macos_defaults.sh` file and run `make defaults`. This command is not ran by default.
-* Choose a `spicetify` theme if you wish.
 
 ### Setting up iTerm2 profile (valid as of iTerm2 v3.3.0)
 
