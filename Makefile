@@ -96,11 +96,11 @@ link:
 
 miniforge:
 	@echo "$(B)Downloading native miniforge distribution.$(E)"
-	@curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+	@curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(UNAME)-$(shell uname -m).sh"
 	@echo "$(B)Installing miniforge distribution.$(E)"
-	@bash Miniforge3-$(uname)-$(uname -m).sh -b -p $(HOME)/.miniforge # batch install mode, specify prefix
+	@bash Miniforge3-$(UNAME)-$(shell uname -m).sh -b -p $(HOME)/.miniforge # batch install mode, specify prefix
 	@echo "$(B)Removing installer from disk.$(E)"
-	@rm -rf bash Miniforge3-$(uname)-$(uname -m).sh
+	@rm -rf Miniforge3-$(uname)-$(uname -m).sh
 
 omz:
 	@source ${DOTFILES_DIR}/zsh/printfuncs.sh
