@@ -148,8 +148,6 @@ cargo "hyperfine"
 cargo "prek"
 cargo "ripgrep"
 cargo "tealdeer"
-cargo "tree-sitter-cli"
-cargo "typst-cli"
 uv "codespell"
 uv "marimo", with: ["altair", "nbformat", "python-lsp-server", "ruff", "ty"]
 uv "pyrefly"
