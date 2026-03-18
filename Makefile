@@ -57,7 +57,7 @@ brew:
 	@source ${DOTFILES_DIR}/zsh/printfuncs.sh && source ${DOTFILES_DIR}/macos/homebrew_install.sh
 	@brew analytics off
 	@echo "$(B)Installing Homebrew packages from Brewfile.$(E)"
-	@cd $(DOTFILES_DIR)/macos; brew bundle; cd $(DOTFILES_DIR)
+	@cd $(DOTFILES_DIR)/macos; PATH="$$HOME/.cargo/bin:$$PATH"; brew bundle; cd $(DOTFILES_DIR)
 	@rm -rf $(DOTFILES_DIR)/macos/Brewfile.lock.json
 
 cargo:
