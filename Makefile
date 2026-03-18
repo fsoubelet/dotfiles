@@ -54,8 +54,8 @@ macos:
 	@make link
 
 brew:
-	@source ${DOTFILES_DIR}/zsh/printfuncs.sh
-	@source ${DOTFILES_DIR}/macos/homebrew_install.sh
+	# Each command target is its own shell so to have printfuncs persist we chain
+	@source ${DOTFILES_DIR}/zsh/printfuncs.sh && source ${DOTFILES_DIR}/macos/homebrew_install.sh
 	@brew analytics off
 	@echo "$(B)Installing Homebrew packages from Brewfile.$(E)"
 	@cd $(DOTFILES_DIR)/macos; brew bundle; cd $(DOTFILES_DIR)
@@ -100,8 +100,8 @@ miniforge:
 	@rm -f Miniforge3-$(UNAME)-$(shell uname -m).sh
 
 omz:
-	@source ${DOTFILES_DIR}/zsh/printfuncs.sh
-	@source ${DOTFILES_DIR}/zsh/omz_install.sh
+	# Each command target is its own shell so to have printfuncs persist we chain
+	@source ${DOTFILES_DIR}/zsh/printfuncs.sh && source ${DOTFILES_DIR}/zsh/omz_install.sh
 
 unlink:
 	@echo "$(B)Removing symlinks.$(E)"
