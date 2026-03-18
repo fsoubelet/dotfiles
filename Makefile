@@ -80,6 +80,7 @@ link:
 	@ln -nfs $(DOTFILES_DIR)/configs/gitconfig $(HOME)/.config/git/config
 	@ln -nfs $(DOTFILES_DIR)/configs/gitignore_global $(HOME)/.config/git/ignore
 	@echo "Linking other configuration files."
+	@mkdir -p ~/.config/bat/
 	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
 	@mkdir -p $(HOME)/.config/htop
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
