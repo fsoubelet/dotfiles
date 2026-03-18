@@ -12,7 +12,6 @@ E = \033[0m
 P = \033[95m
 R = \033[31m
 
-BAT_CONFIG := $(shell bat --config-file)
 DOTFILES_DIR := $(shell pwd)
 UNAME := $(shell uname -s)
 
