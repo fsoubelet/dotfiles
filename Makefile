@@ -70,13 +70,14 @@ defaults:
 	@echo "Make sure you customize this file to your needs.$(E)."
 	@bash $(DOTFILES_DIR)/macos/macos_defaults.sh
 
-link:
+link:  # the -p in mkdir commands is idempotent
 	@echo "Linking .zshrc to home folder."
 	@ln -nfs ${DOTFILES_DIR}/zsh/zshrc $(HOME)/.zshrc
 	@echo "Linking SSH config file."
+	@mkdir -p ~/.ssh/
 	@ln -nfs ${DOTFILES_DIR}/configs/ssh_config $(HOME)/.ssh/config
 	@echo "Linking git configuration files."
-	@mkdir -p $(HOME)/.config/git  # the -p is idempotent
+	@mkdir -p $(HOME)/.config/git
 	@ln -nfs $(DOTFILES_DIR)/configs/gitconfig $(HOME)/.config/git/config
 	@ln -nfs $(DOTFILES_DIR)/configs/gitignore_global $(HOME)/.config/git/ignore
 	@echo "Linking other configuration files."
