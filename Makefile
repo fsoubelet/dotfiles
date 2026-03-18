@@ -60,7 +60,6 @@ brew:
 	@echo "$(B)Installing Homebrew packages from Brewfile.$(E)"
 	@cd $(DOTFILES_DIR)/macos; brew bundle; cd $(DOTFILES_DIR)
 	@rm -rf $(DOTFILES_DIR)/macos/Brewfile.lock.json
-	@sudo gem install colorls
 
 cargo:
 	@echo "$(B)Installing Rust and Cargo.$(E)"
