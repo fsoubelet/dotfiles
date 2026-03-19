@@ -30,7 +30,8 @@ alias gb='git branch'
 alias gcl='git clone --depth=1'
 alias gcm='git commit -S'         # automatically GPG sign the commits
 alias gca='git commit -S --amend' # automatically GPG sign amends
-alias gco='git checkout'
+alias gco='git checkout'          # Note: one should use git switch
+alias gsc='git switch'            # This is priviledge now, use git switch -c 'branch_name' instead of git checkout -b
 alias gdf='git diff --word-diff --color-words'
 alias gf='git fetch'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
