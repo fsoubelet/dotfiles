@@ -117,3 +117,5 @@ var/
 tmp/
 *.local
 *~
+
+**/.claude/settings.local.json
