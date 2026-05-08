@@ -95,7 +95,7 @@ var/
 *.ogg
 *.mp3
 
-# Packages # 
+# Packages #
 ############
 # it's better to unpack these files and commit the raw source
 # git has tis owm built-in compression methods
@@ -118,4 +118,5 @@ tmp/
 *.local
 *~
 
+.claude
 **/.claude/settings.local.json
