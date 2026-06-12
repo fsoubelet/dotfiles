@@ -12,18 +12,22 @@ brewup() {
     brew update
     func_info "$yellow" "Homebrew" "Homebrew Updated."
 
+    echo ""  # some space between major command steps
     func_header "Status" "Upgrading formulae and casks."
     brew upgrade
     func_info "$yellow" "Homebrew" "Formulae Upgraded."
 
+    echo ""  # some space between major command steps
     func_header "Status" "Cleaning up old kegs and checking symlinks."
     brew cleanup
     func_info "$yellow" "Homebrew" "Cleaned up."
 
+    echo ""  # some space between major command steps
     func_header "Status" "Removing formulae no longer needed."
     brew autoremove
     func_info "$yellow" "Homebrew" "Unneeded formulae removed."
 
+    echo ""  # some space between major command steps
     func_header "Status" "Checking installation."
     brew doctor
     func_info "$yellow" "Brewup" "Please read and acknowledge the warnings."
