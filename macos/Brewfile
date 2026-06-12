@@ -1,125 +1,231 @@
-tap "anomalyco/tap"
-tap "felixkratz/formulae"
-tap "fortran-lang/fortran"
-tap "github/gh"
+tap "anomalyco/tap", trusted: true
+tap "fortran-lang/fortran", trusted: true
+tap "github/gh", trusted: true
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "koekeishiya/formulae"
-tap "nikitabobko/tap"
-brew "xz"
-brew "little-cms2"
+# C string library for manipulating Unicode strings
 brew "libunistring"
+# GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
+# Library for command-line editing
 brew "readline"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Programmable completion for Bash 3.2
 brew "bash-completion"
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Software library to render fonts
 brew "freetype"
+# Perl compatible regular expressions library with a new API
 brew "pcre2"
+# Low-level library for pixel manipulation
 brew "pixman"
+# Vector graphics library with cross-device output support
 brew "cairo"
+# Console Bonsai is a bonsai tree generator, written in C using ncurses
 brew "cbonsai"
+# Encrypt and decrypt files and streams
 brew "ccrypt"
+# Cross-platform make
 brew "cmake"
+# GNU multiple precision arithmetic library
 brew "gmp"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Static analysis of C and C++ code
 brew "cppcheck"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Color management engine supporting ICC profiles
+brew "little-cms2"
+# Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+# Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# High quality MPEG Audio Layer III (MP3) encoder
 brew "lame"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Fully featured Firefox Send client
 brew "ffsend"
+# Free lossless audio codec
 brew "flac"
+# GNU compiler collection
 brew "gcc"
+# Package manager and build system for Fortran
 brew "fpm"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU awk utility
 brew "gawk"
+# Graphics library to dynamically manipulate images
 brew "gd"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Render markdown on the CLI
 brew "glow"
+# Low-level cryptographic library
 brew "nettle"
+# GNU Transport Layer Security (TLS) Library
 brew "gnutls"
+# Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# GNU grep, egrep and fgrep
 brew "grep"
+# Package compiler and linker metadata toolkit
 brew "pkgconf"
+# File format designed to store large amounts of data
 brew "hdf5"
+# Post-modern modal text editor
 brew "helix"
+# Improved top (interactive process viewer)
 brew "htop"
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Handy way to save and run project-specific commands
 brew "just"
+# User-friendly front-end to ssh-agent(1)
 brew "keychain"
+# DNS library written in C
 brew "ldns"
+# C library of Git core methods that is re-entrant and linkable
 brew "libgit2@1.8"
+# LLVM's OpenMP runtime library
 brew "libomp", link: true
+# Next-gen compiler infrastructure
 brew "llvm"
+# Curses-based tool for viewing and analyzing log files
 brew "lnav"
+# Mac App Store command-line interface
 brew "mas"
+# NCurses Disk Usage
 brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Optimized BLAS library
 brew "openblas"
+# OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# PNG file optimizer
 brew "optipng"
+# Shell command parallelization utility
 brew "parallel"
+# Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Package management made easy
 brew "pixi"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Universal conda package builder
 brew "rattler-build"
+# Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
+# Utility that provides fast incremental file transfer
 brew "rsync"
-brew "ruby"
+# Powerful, clean, object-oriented scripting language
+brew "ruby", link: false
+# Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id", link: true
+# Cross-shell prompt for astronauts
 brew "starship"
+# CLI for extracting streams from various websites to a video player
 brew "streamlink"
+# Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
+# Program that allows you to count code, quickly
 brew "tokei"
+# CLI tool that moves files or folder to the trash
 brew "trash", link: true
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Markup-based typesetting system
 brew "typst"
+# Vi 'workalike' with many additional features
 brew "vim"
+# Internet file retriever
 brew "wget"
+# Check your $HOME for unwanted files and directories
 brew "xdg-ninja"
+# High-performance, high-quality MPEG-4 video library
 brew "xvid"
+# Feature-rich command-line audio/video downloader
 brew "yt-dlp"
+# UNIX shell (command interpreter)
 brew "zsh"
+# Additional completion definitions for zsh
 brew "zsh-completions"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode"
+# Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
-cask "blender"
+# Cloud storage for CERN users
 cask "cernbox"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# Per-application volume mixer, equalizer, and audio router
 cask "finetune"
+# Web browser
 cask "firefox"
+# Screen colour temperature controller
 cask "flux-app"
 cask "font-computer-modern"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
+# Tools to protect your emails and files
 cask "gpg-suite"
+# Free and open-source media player
 cask "iina"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Full TeX Live distribution without GUI applications
 cask "mactex-no-gui"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
+# Open-source software for live streaming and screen recording
 cask "obs"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Music streaming service
 cask "spotify"
+# Video game digital distribution service
 cask "steam"
+# Messaging app with a focus on speed and security
 cask "telegram"
+# Open-source BitTorrent client
 cask "transmission"
+# Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Open-source version of the X.Org X Window System
 cask "xquartz"
+# Video communication and virtual meeting platform
 cask "zoom"
+# Collect, organise, cite, and share research sources
 cask "zotero"
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
 mas "Agenda", id: 1287445660
 mas "Keka", id: 470158793
-mas "Keynote", id: 409183694
-mas "Pages", id: 409201541
 mas "Spark", id: 1176895641
+vscode "anthropic.claude-code"
 vscode "astral-sh.ty"
 vscode "charliermarsh.ruff"
 vscode "davidanson.vscode-markdownlint"
@@ -148,6 +254,8 @@ cargo "hyperfine"
 cargo "prek"
 cargo "ripgrep"
 cargo "tealdeer"
+cargo "tree-sitter-cli"
+cargo "typst-cli"
 uv "codespell"
 uv "marimo", with: ["altair", "nbformat", "python-lsp-server", "ruff", "ty"]
 uv "pyrefly"
@@ -158,3 +266,4 @@ uv "twine"
 uv "ty"
 uv "zensical"
 uv "zuban"
+npm "bibtex-tidy"
