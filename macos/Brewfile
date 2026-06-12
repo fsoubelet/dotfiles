@@ -27,8 +27,6 @@ brew "pcre2"
 brew "pixman"
 # Vector graphics library with cross-device output support
 brew "cairo"
-# Console Bonsai is a bonsai tree generator, written in C using ncurses
-brew "cbonsai"
 # Encrypt and decrypt files and streams
 brew "ccrypt"
 # Cross-platform make
@@ -37,14 +35,10 @@ brew "cmake"
 brew "gmp"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Static analysis of C and C++ code
-brew "cppcheck"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Color management engine supporting ICC profiles
 brew "little-cms2"
-# Perl lib for reading and writing EXIF metadata
-brew "exiftool"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -89,14 +83,10 @@ brew "grep"
 brew "pkgconf"
 # File format designed to store large amounts of data
 brew "hdf5"
-# Post-modern modal text editor
-brew "helix"
 # Improved top (interactive process viewer)
 brew "htop"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
-# Handy way to save and run project-specific commands
-brew "just"
 # User-friendly front-end to ssh-agent(1)
 brew "keychain"
 # DNS library written in C
@@ -121,18 +111,12 @@ brew "node"
 brew "openblas"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
-# PNG file optimizer
-brew "optipng"
-# Shell command parallelization utility
-brew "parallel"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Package management made easy
 brew "pixi"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Universal conda package builder
-brew "rattler-build"
 # Readline wrapper: adds readline support to tools that lack it
 brew "rlwrap"
 # Utility that provides fast incremental file transfer
@@ -159,8 +143,6 @@ brew "typst"
 brew "vim"
 # Internet file retriever
 brew "wget"
-# Check your $HOME for unwanted files and directories
-brew "xdg-ninja"
 # High-performance, high-quality MPEG-4 video library
 brew "xvid"
 # Feature-rich command-line audio/video downloader
