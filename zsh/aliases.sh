@@ -42,9 +42,10 @@ alias gpl='git pull'
 alias gps='git push'
 alias gra='git remote add'
 alias gs='git status'
-alias gta='git tag -sm'                     # automatically GPG sign and annotate tags
-alias gnvm='git reset --hard origin/main'   # better than rm -rf repo && git clone repo
-alias gitout='gaa && gcm -m "fire!" && gps' # emergency style
+alias gta='git tag -sm'                                       # automatically GPG sign and annotate tags
+alias gnvm='git reset --hard origin/main'                     # better than rm -rf repo && git clone repo
+alias gitout='gaa && gcm -m "fire!" && gps'                   # emergency style
+alias gitrigger='git commit --allow-empty -m "trigger build"' # for when you need CI to go again
 
 # Find all git repositories in current folder with max depth of 3 and do a 'git pull' in the current branch for each of them
 alias git-pull-all="find . -maxdepth 3 -name .git -type d | rev | cut -c 6- | rev | xargs -P 10 -I {} git -C {} pull"
