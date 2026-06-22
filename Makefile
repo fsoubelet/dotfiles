@@ -61,7 +61,7 @@ brew:
 
 cargo:
 	@echo "$(B)Installing Rust and Cargo.$(E)"
-	@curl https://sh.rustup.rs -sSf | sh
+	@curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 defaults:
 	@echo "Changing some macos defaults according to configuration file."
