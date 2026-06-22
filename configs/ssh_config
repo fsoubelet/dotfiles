@@ -24,7 +24,7 @@ Host tunnel
     User fesoubel
     # SOCKS5 proxy for web, see below
     #LocalForward 8090 localhost:8090
-    DynamicForward 8090   
+    DynamicForward 8090
 
 Host technet1
     User fesoubel
