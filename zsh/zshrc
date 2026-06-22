@@ -46,10 +46,7 @@ gpgconf --launch gpg-agent
 # For bat to allow mouse scrolling
 export BAT_PAGER="less -RF"
 
-# Activate ZSH Completions, and make them go to .cache/zsh
-ZSH_COMPDUMP_DIR="$HOME/.cache/zsh"
-
-# Load Pluging Manager and let it handle the plugins
+# Load Plugin Manager and let it handle the plugins
 source "$HOME"/dotfiles/zsh/oh_my_zsh_settings.sh
 
 # Start Starship for prompt customization
