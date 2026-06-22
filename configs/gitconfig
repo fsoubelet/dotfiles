@@ -14,10 +14,10 @@
   pager = true
 
 [core]
-  pager = 'less -FRSX'
+  pager = less
   editor = vim
   # lets you define a global .gitignore for all those *.swp, *~, *.o, etc things that you're frequently sticking in .gitignore
-  excludes = ~/.config/git/ignore
+  excludesfile = ~/.config/git/ignore
   # tells git to ignore file permission changes
   filemode = false
   # lets you tweak the default pager, see 'man less' for the meaning of these flags
