@@ -1,8 +1,5 @@
 tap "anomalyco/tap", trusted: true
 tap "fortran-lang/fortran", trusted: true
-tap "github/gh", trusted: true
-tap "homebrew/cask"
-tap "homebrew/core"
 # C string library for manipulating Unicode strings
 brew "libunistring"
 # GNU internationalization (i18n) and localization (l10n) library
@@ -244,7 +241,6 @@ cargo "prek"
 cargo "ripgrep"
 cargo "tealdeer"
 cargo "tree-sitter-cli"
-cargo "typst-cli"
 uv "codespell"
 uv "marimo", with: ["altair", "nbformat", "python-lsp-server", "ruff", "ty"]
 uv "pyrefly"
