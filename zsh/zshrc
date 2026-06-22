@@ -21,7 +21,7 @@ source "$HOME/dotfiles/zsh/dockerfuncs.sh"  # docker utility functions
 source "$HOME/dotfiles/zsh/mambasetup.sh"   # conda setup and prepending miniforge to PATH
 
 # Getting the rustup shell setup (if installed)
-if [ -f "$HOME/.zcompdump" ]; then
+if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
 
