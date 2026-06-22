@@ -25,7 +25,7 @@ if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
 
-# Explicitely give locations for these program configs
+# Explicitly give locations for these program configs
 export CONDARC="$HOME/.config/conda/condarc"          # avoids having ~/.condarc
 export IPYTHONDIR="$HOME/.config/ipython"             # avoids having ~/.ipython
 export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"     # avoids having ~/.jupyter
