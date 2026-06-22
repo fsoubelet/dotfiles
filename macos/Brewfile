@@ -99,6 +99,8 @@ brew "libomp", link: true
 brew "llvm"
 # Curses-based tool for viewing and analyzing log files
 brew "lnav"
+# Sudoless performance monitoring for Apple Silicon processors
+brew "macmon"
 # Mac App Store command-line interface
 brew "mas"
 # NCurses Disk Usage
@@ -111,6 +113,8 @@ brew "node"
 brew "openblas"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# Shell command parallelization utility
+brew "parallel"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Package management made easy
@@ -226,6 +230,7 @@ vscode "tamasfe.even-better-toml"
 vscode "valentjn.vscode-ltex"
 vscode "vkbo.madx"
 vscode "waderyan.gitblame"
+vscode "zensical.zensical-studio"
 vscode "zhuangtongfa.material-theme"
 cargo "bottom"
 cargo "difftastic"
