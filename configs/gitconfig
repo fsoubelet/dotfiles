@@ -20,7 +20,6 @@
   excludesfile = ~/.config/git/ignore
   # tells git to ignore file permission changes
   filemode = false
-  # lets you tweak the default pager, see 'man less' for the meaning of these flags
   autocrlf = input
   symlinks = false
   fsmonitor = true
@@ -84,7 +83,7 @@
   helper = osxkeychain
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [safe]
   directory = *
