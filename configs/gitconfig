@@ -8,23 +8,19 @@
 [color]
   # turn on default colors for many commands
   ui = true
-  filemode = false
   diff = auto
   status = auto
   branch = auto
   pager = true
 
 [core]
-  pager = less
+  pager = 'less -FRSX'
   editor = vim
   # lets you define a global .gitignore for all those *.swp, *~, *.o, etc things that you're frequently sticking in .gitignore
   excludes = ~/.config/git/ignore
   # tells git to ignore file permission changes
   filemode = false
   # lets you tweak the default pager, see 'man less' for the meaning of these flags
-  pager = 'less -FRSX'
-  pager = /usr/bin/less
-  excludesfile = ~/.config/git/ignore
   autocrlf = input
   symlinks = false
   fsmonitor = true
