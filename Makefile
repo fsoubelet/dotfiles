@@ -12,7 +12,7 @@ E = \033[0m
 P = \033[95m
 R = \033[31m
 
-DOTFILES_DIR := $(shell pwd)
+DOTFILES_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 UNAME := $(shell uname -s)
 
 
@@ -44,8 +44,7 @@ linux:
 
 macos:
 	@echo "Ensuring Xcode command-line tools."
-	@xcode-select -p &>/dev/null || (echo "Installing Xcode command-line tools." && xcode-select --install)
-	@softwareupdate -ai
+	@xcode-select -p &>/dev/null || (echo "Installing Xcode command-line tools." && xcode-select --install && echo "Waiting for Xcode CLI tools installation to complete..." && until xcode-select -p &>/dev/null; do sleep 5; done)
 	@make cargo
 	@make brew
 	@make miniforge
@@ -81,7 +80,7 @@ link:  # the -p in mkdir commands is idempotent
 	@ln -nfs $(DOTFILES_DIR)/configs/gitignore_global $(HOME)/.config/git/ignore
 	@echo "Linking other configuration files."
 	@mkdir -p ~/.config/bat/
-	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(shell bat --config-file)
+	@ln -nfs ${DOTFILES_DIR}/configs/bat_config $(HOME)/.config/bat/config
 	@mkdir -p $(HOME)/.config/htop
 	@ln -nfs ${DOTFILES_DIR}/configs/htoprc $(HOME)/.config/htop/htoprc
 	@ln -nfs ${DOTFILES_DIR}/configs/starship.toml $(HOME)/.config/starship.toml
