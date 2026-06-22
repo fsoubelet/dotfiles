@@ -20,8 +20,10 @@ source "$HOME/dotfiles/zsh/pyfuncs.sh"      # Python virtual environment functio
 source "$HOME/dotfiles/zsh/dockerfuncs.sh"  # docker utility functions
 source "$HOME/dotfiles/zsh/mambasetup.sh"   # conda setup and prepending miniforge to PATH
 
-# Getting the rustup shell setup
-source "$HOME/.cargo/env"
+# Getting the rustup shell setup (if installed)
+if [ -f "$HOME/.zcompdump" ]; then
+    source "$HOME/.cargo/env"
+fi
 
 # Explicitely give locations for these program configs
 export CONDARC="$HOME/.config/conda/condarc"          # avoids having ~/.condarc
