@@ -34,6 +34,8 @@ brew "gmp"
 brew "coreutils"
 # General-purpose data compression with high compression ratio
 brew "xz"
+# TIFF library and utilities
+brew "libtiff"
 # Color management engine supporting ICC profiles
 brew "little-cms2"
 # Like neofetch, but much faster because written mostly in C
@@ -54,6 +56,10 @@ brew "gcc"
 brew "fpm"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Command-line downloader for image-hosting site galleries and collections
+brew "gallery-dl"
 # GNU awk utility
 brew "gawk"
 # Graphics library to dynamically manipulate images
@@ -125,7 +131,7 @@ brew "rlwrap"
 # Utility that provides fast incremental file transfer
 brew "rsync"
 # Powerful, clean, object-oriented scripting language
-brew "ruby", link: false
+brew "ruby"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id", link: true
 # Cross-shell prompt for astronauts
@@ -148,8 +154,6 @@ brew "vim"
 brew "wget"
 # High-performance, high-quality MPEG-4 video library
 brew "xvid"
-# Feature-rich command-line audio/video downloader
-brew "yt-dlp"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Additional completion definitions for zsh
