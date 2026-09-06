@@ -92,6 +92,8 @@ brew "hdf5"
 brew "htop"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Duplicate file finder and an enhanced fork of 'fdupes'
+brew "jdupes"
 # User-friendly front-end to ssh-agent(1)
 brew "keychain"
 # DNS library written in C
@@ -162,10 +164,10 @@ brew "zsh-completions"
 brew "anomalyco/tap/opencode"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Cloud storage for CERN users
 cask "cernbox"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # Per-application volume mixer, equalizer, and audio router
 cask "finetune"
 # Web browser
@@ -241,11 +243,12 @@ cargo "du-dust"
 cargo "dysk"
 cargo "eza"
 cargo "hyperfine"
-cargo "prek"
+cargo "prek", source: "https://github.com/j178/prek"
 cargo "ripgrep"
 cargo "tealdeer"
 cargo "tree-sitter-cli"
 uv "codespell"
+uv "ipython"
 uv "marimo", with: ["altair", "nbformat", "python-lsp-server", "ruff", "ty"]
 uv "pyrefly"
 uv "pyupgrade"
