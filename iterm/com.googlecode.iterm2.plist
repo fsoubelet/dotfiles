@@ -30,6 +30,8 @@
 	<string>https://api.anthropic.com/v1/messages</string>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>ClaudeCodeWorkgroupUpsellSuppressed</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>62BAC632-F4EC-436E-80B5-33CD2025115D</string>
 	<key>DimOnlyText</key>
@@ -46,6 +48,10 @@
 	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>NeverWarnAboutShortLivedSessions_62BAC632-F4EC-436E-80B5-33CD2025115D</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_62BAC632-F4EC-436E-80B5-33CD2025115D_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
