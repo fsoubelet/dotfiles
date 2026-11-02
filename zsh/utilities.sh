@@ -98,7 +98,8 @@ archive() {
 
   # Executes tar with maximum bzip2 compression and verbose output
   # We pass on any additional flags and args given to this command
-  if COPYFILE_DISABLE=1 tar \  # COPYFILE option so macOS does not add ._* files
+  # COPYFILE_DISABLE stops macOS from adding ._* files
+  if COPYFILE_DISABLE=1 tar \
        --use-compress-program="bzip2 -9" \
        -chvf "$output_file" \
        "${extra_args[@]}" \
