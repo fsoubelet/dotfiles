@@ -116,4 +116,4 @@ alias madng='rlwrap madng'
 alias path='echo -e ${PATH//:/\\n}'
 
 # Load modifications to zsh environment
-alias reload!='. ~/.zshrc'
+alias reload='. ~/.zshrc'
