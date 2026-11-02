@@ -74,8 +74,13 @@ archive() {
     return 1
   fi
 
+  # We take the main args of the call
   local output_file="$1"
   local source_dir="$2"
+  # Now we capture any additional flags etc
+  shift 2
+  local -a extra_args=("$@")   # may be empty
+
 
   # Check if the target source directory actually exists
   if [[ ! -d "$source_dir" ]]; then
@@ -92,7 +97,12 @@ archive() {
   func_info "$yellow" "Archiving" "Compressing '$source_dir' into '$output_file' (max bzip2, following symlinks)..."
 
   # Executes tar with maximum bzip2 compression and verbose output
-  if tar --use-compress-program="bzip2 -9" -chvf "$output_file" "$source_dir"; then
+  # We pass on any additional flags and args given to this command
+  if COPYFILE_DISABLE=1 tar \  # COPYFILE option so macOS does not add ._* files
+       --use-compress-program="bzip2 -9" \
+       -chvf "$output_file" \
+       "${extra_args[@]}" \
+       "$source_dir"; then
     func_info "$green" "Success" "Archive created successfully at '$output_file'"
     return 0
   else
