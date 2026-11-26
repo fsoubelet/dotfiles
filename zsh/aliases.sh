@@ -94,11 +94,11 @@ alias mel='mamba env list'
 alias mrev='mamba env remove -y -n' # add your env name
 
 # -------------------------------------------------------------------
-# CERN & LXPLUS aliases
+# Specific Application Aliases (Games etc)
 # -------------------------------------------------------------------
 
-# This is a python -m pip install looking at the AccPy indexes, useful for a lot of our internal packages. Requires GPN!!!
-alias accpip='python -m pip install --index-url https://acc-py-repo.cern.ch:8081/repository/vr-py-releases/simple --trusted-host acc-py-repo.cern.ch'
+# To launch the OpenJK engine (Jedi Kinght - Jedi Academy) picking up the SDL3 libs
+alias openjk='DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib /Applications/openjk_sp.arm64.app/Contents/MacOS/openjk_sp.arm64 >/dev/null 2>&1 &!'
 
 # -------------------------------------------------------------------
 # Miscellaneous
